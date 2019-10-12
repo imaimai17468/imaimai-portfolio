@@ -1,0 +1,59 @@
+@font-face {
+    font-family: '851マカポップ';
+    src: local('851MkPOP');
+}
+
+body {
+    font-family: 'Kosugi', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    background-color: #030c2d;
+    color: white;
+    height: 90px;
+}
+
+.header-logo{
+    float: left;
+    font-size: 36px;
+    padding: 25px 40px;
+}
+
+.header-list li {
+    float: left;
+    padding: 33px 20px;
+}
+
+.main {
+    padding: 100px 80px;
+}
+
+.copy-container {
+}
+
+.copy-container {
+    font-family: '851マカポップ';
+}
+
+.copy-container h1 {
+    font-size: 100px;
+}
+
+.copy-container h2 {
+    font-size: 40px;
+}
+
+.footer {
+    background-color: #030c2d;
+    height: 50px;
+}
+
+.copyright {
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
