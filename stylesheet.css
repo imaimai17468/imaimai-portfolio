@@ -11,8 +11,12 @@ li {
     list-style: none;
 }
 
-.header {
-    background-color: #030c2d;
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #2a2a2a;
     color: white;
     height: 90px;
 }
@@ -23,32 +27,154 @@ li {
     padding: 25px 40px;
 }
 
-.header-list li {
-    float: left;
-    padding: 33px 20px;
+.header-list a{
+    transition: all 0.25s;
+    color: white;
+    padding: 37px 20px;
+    display: inline-block;
 }
 
-.main {
-    padding: 100px 80px;
+.header-list a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-.copy-container {
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
-.copy-container {
+.top-wrapper h1 {
     font-family: '851マカポップ';
+    width: 80%;
+    margin: 10px auto;
+    opacity: 0.7;
+    letter-spacing: 5px;
+    font-size: 130px;
 }
 
-.copy-container h1 {
-    font-size: 100px;
-}
-
-.copy-container h2 {
+.top-wrapper h2 {
+    font-family: '851マカポップ';
+    width: 80%;
+    margin: auto;
+    opacity: 0.7;
     font-size: 40px;
+    padding-top: 80px;
+    padding-bottom: 100px;
 }
 
-.footer {
-    background-color: #030c2d;
+.top-wrapper {
+    padding: 100px 0 100px 0;
+    background-image: url("Assets/background-image.jpg");
+    background-size: cover;
+    color: white;
+}
+
+.contents-wrapper {
+    height: 1400px;
+    margin-top: 100px;
+}
+
+.profile {
+    height: 800px;
+}
+
+.section-title {
+    text-align: center;
+    border-bottom: 2px solid #dee7ec;
+    font-size: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.contents-item {
+    float: left;
+    text-align: center;
+    padding-top: 20px;
+    width: 33%;
+}
+
+.contents-item p {
+    margin-top: 15px;
+}
+
+.myicon {
+    position: relative;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.myicon:before, .myicon:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.myicon:before {left: 10px;}
+.myicon:after {right: 10px;}
+.myicon p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.link {
+    height: 500px;
+}
+
+.btn {
+    padding: 8px 24px;
+    margin: 10px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border: 3px solid black;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn-outline {
+    height: 100px;
+    width: 500px;
+    margin: 30px auto;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+.btn-massage {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    float: right;
+    line-height: 0;
+}
+
+.twitter {
+    background-color: #55acee;
+}
+
+.github {
+    background-color: #4183c4;
+}
+
+.qiita {
+    background-color: #1dcd00;
+}
+
+.btn-wrapper {
+    height: 300px;
+    margin: auto;
+}
+
+.fab {
+    margin-right: 5px;
+}
+
+footer {
+    background-color: #2a2a2a;
     height: 50px;
 }
 
