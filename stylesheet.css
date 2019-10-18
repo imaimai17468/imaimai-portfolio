@@ -70,7 +70,7 @@ header {
 }
 
 .contents-wrapper {
-    height: 1500px;
+    height: 2000px;
 }
 
 .profile {
@@ -118,7 +118,37 @@ header {
     padding-bottom: 10px;
 }
 
+.production {
+    height: 600px;
+    text-align: center;
+}
+
+.inner {
+    display:inline-block;
+}
+
+.production-item {
+    float: left;
+    text-align: center;
+    margin: 20px 20px 20px 0;
+    width: 275px;
+    height: 420px;
+    border: 5px solid #5a5a5a;
+    border-radius: 10px;
+}
+
+.production-item h3 {
+    border-bottom: 2px dashed #8a8a8a;
+    padding-bottom: 10px;
+}
+
+.production-comment {
+    border-top: 2px dashed #8a8a8a;
+    margin-top: 20px;
+}
+
 .link {
+    padding-top: 40px;
     height: 500px;
 }
 
