@@ -70,7 +70,7 @@ header {
 }
 
 .contents-wrapper {
-    height: 1400px;
+    height: 1500px;
 }
 
 .profile {
@@ -90,6 +90,7 @@ header {
     text-align: center;
     padding-top: 20px;
     width: 33%;
+    height: 250px;
 }
 
 .contents-item p {
