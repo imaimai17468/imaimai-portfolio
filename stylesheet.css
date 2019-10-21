@@ -15,10 +15,18 @@ a {
     text-decoration: none;
 }
 
+.clear {
+    clear: left;
+}
+
 header {
     background-color: #2a2a2a;
     color: white;
     height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 
 .header-logo{
@@ -39,6 +47,7 @@ header {
 }
 
 .container {
+    width: 100%;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -70,11 +79,10 @@ header {
 }
 
 .contents-wrapper {
-    height: 2000px;
 }
 
 .profile {
-    height: 800px;
+    padding-bottom: 80px;
 }
 
 .section-title {
@@ -119,7 +127,6 @@ header {
 }
 
 .production {
-    height: 600px;
     text-align: center;
 }
 
@@ -132,7 +139,7 @@ header {
     text-align: center;
     margin: 20px 20px 20px 0;
     width: 275px;
-    height: 420px;
+    height: 440px;
     border: 5px solid #5a5a5a;
     border-radius: 10px;
 }

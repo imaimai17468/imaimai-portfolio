@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+@media all and (max-width: 1000px) {
+
+}
+
+@media all and (max-width: 670px) {
+    .contents-item {
+        width: 50%;
+    }
+
+    .production-item {
+        width: 100%;
+    }
+
+    .btn-outline {
+        width: 75%;
+    }
+}
