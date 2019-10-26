@@ -4,7 +4,8 @@
 }
 
 body {
-    font-family: 'Kosugi', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
 }
 
 li {
@@ -20,7 +21,7 @@ a {
 }
 
 header {
-    background-color: #2a2a2a;
+    background-color: rgba(42, 42, 42, 0.95);
     color: white;
     height: 90px;
     width: 100%;
@@ -30,16 +31,19 @@ header {
 }
 
 .header-logo{
+    font-family: 'Amatic SC', cursive;
     float: left;
     font-size: 36px;
     padding: 25px 40px;
 }
 
 .header-list a{
+    width:100px;
     transition: all 0.25s;
     color: white;
     padding: 37px 20px;
     display: inline-block;
+    text-align: center;
 }
 
 .header-list a:hover {
@@ -47,6 +51,7 @@ header {
 }
 
 .container {
+    max-width: 1180px;
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
@@ -72,7 +77,7 @@ header {
 }
 
 .top-wrapper {
-    padding: 100px 0 100px 0;
+    padding: 200px 0 100px 0;
     background-image: url("Assets/background-image.jpg");
     background-size: cover;
     color: white;
@@ -103,27 +108,7 @@ header {
 
 .contents-item p {
     margin-top: 15px;
-}
-
-.myicon {
-    position: relative;
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
-}
-.myicon:before, .myicon:after{
-    content: '';
-    position: absolute;
-    top: -10px;
-    width: 2px;
-    height: -webkit-calc(100% + 20px);
-    height: calc(100% + 20px);
-    background-color: black;
-}
-.myicon:before {left: 10px;}
-.myicon:after {right: 10px;}
-.myicon p {
-    margin: 0;
-    padding-bottom: 10px;
+    color: #5a5a5a;
 }
 
 .production {
@@ -207,6 +192,10 @@ header {
 }
 
 .fab {
+    margin-right: 5px;
+}
+
+.fas {
     margin-right: 5px;
 }
 

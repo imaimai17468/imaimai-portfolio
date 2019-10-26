@@ -2,11 +2,19 @@
     box-sizing: border-box;
 }
 
-@media all and (max-width: 1000px) {
-
-}
-
 @media all and (max-width: 670px) {
+    .top-wrapper {
+        padding: 150px 0 0 0;
+    }
+
+    .top-wrapper h1 {
+        font-size: 90px;
+    }
+
+    .top-wrapper h2 {
+        font-size: 30px;
+    }
+
     .contents-item {
         width: 50%;
     }
