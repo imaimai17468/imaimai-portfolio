@@ -20,6 +20,11 @@ a {
     clear: left;
 }
 
+#a, #l, #m{
+    margin-top: -60px;
+    padding-top: 60px;
+}
+
 header {
     background-color: rgba(42, 42, 42, 0.95);
     color: white;
@@ -35,6 +40,10 @@ header {
     float: left;
     font-size: 36px;
     padding: 25px 40px;
+}
+
+.header-logo a{
+    color: white;
 }
 
 .header-list a{
@@ -83,19 +92,13 @@ header {
     color: white;
 }
 
-.contents-wrapper {
-}
-
-.profile {
-    padding-bottom: 80px;
-}
-
 .section-title {
     text-align: center;
     border-bottom: 2px solid #dee7ec;
     font-size: 20px;
     padding-bottom: 15px;
     margin-bottom: 15px;
+    padding-top: 30px;
 }
 
 .contents-item {
@@ -103,7 +106,7 @@ header {
     text-align: center;
     padding-top: 20px;
     width: 33%;
-    height: 250px;
+    padding-bottom: 30px;
 }
 
 .contents-item p {
@@ -124,7 +127,7 @@ header {
     text-align: center;
     margin: 20px 20px 20px 0;
     width: 275px;
-    height: 440px;
+    height: 460px;
     border: 5px solid #5a5a5a;
     border-radius: 10px;
 }
@@ -141,7 +144,7 @@ header {
 
 .link {
     padding-top: 40px;
-    height: 500px;
+    padding-bottom: 100px;
 }
 
 .btn {

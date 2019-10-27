@@ -16,7 +16,8 @@
     }
 
     .contents-item {
-        width: 50%;
+        padding-bottom: 50px;
+        font-size: 10px;
     }
 
     .production-item {
