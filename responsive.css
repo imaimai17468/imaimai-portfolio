@@ -34,17 +34,4 @@
     .production-item {
         width: 100%;
     }
-
-    .btn {
-        font-size: 70%;
-        padding: 4px 12px;
-    }
-
-    .btn-outline {
-        width: 75%;
-    }
-
-    .btn-massage {
-        font-size: 70%;
-    }
 }

@@ -147,6 +147,12 @@ header {
     padding-bottom: 100px;
 }
 
+.btn-wrapper {
+    height: 300px;
+    margin: auto;
+    max-width: 590px;
+}
+
 .btn {
     padding: 8px 24px;
     margin: 10px;
@@ -155,6 +161,10 @@ header {
     opacity: 0.8;
     border: 3px solid black;
     border-radius: 4px;
+    max-width: 140px;
+    text-align: center;
+    float: left;
+    width: 41%;
 }
 
 .btn:hover {
@@ -162,17 +172,20 @@ header {
 }
 
 .btn-outline {
-    height: 100px;
-    width: 500px;
     margin: 30px auto;
     border: 3px solid black;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .btn-massage {
     width: 50%;
-    display: inline-block;
-    position: relative;
+    float: right;
+    margin-top: 10px;
+}
+
+.btn-massage p{
+    margin: 0;
 }
 
 .twitter {
@@ -185,11 +198,6 @@ header {
 
 .qiita {
     background-color: #1dcd00;
-}
-
-.btn-wrapper {
-    height: 300px;
-    margin: auto;
 }
 
 .fab {
