@@ -3,11 +3,14 @@
 }
 
 @media all and (max-width: 670px) {
-    .header-logo {
-        font-size: 50%;
+    .header-logo{
+        padding: 37px 10px;
+        font-size: 100%;
     }
 
-    .header-list {
+    .header-list a{
+        width: 60px;
+        padding: 37px 10px;
         font-size: 50%;
     }
 
@@ -16,11 +19,11 @@
     }
 
     .top-wrapper h1 {
-        font-size: 70px;
+        font-size: 60px;
     }
 
     .top-wrapper h2 {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .contents-item {
@@ -30,6 +33,11 @@
 
     .production-item {
         width: 100%;
+    }
+
+    .btn {
+        font-size: 70%;
+        padding: 4px 12px;
     }
 
     .btn-outline {
