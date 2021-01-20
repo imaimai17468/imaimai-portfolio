@@ -4,7 +4,11 @@
 
 @media all and (max-width: 670px) {
     .header-logo {
-        font-size: 30px;
+        font-size: 50%;
+    }
+
+    .header-list {
+        font-size: 50%;
     }
 
     .top-wrapper {
@@ -12,11 +16,11 @@
     }
 
     .top-wrapper h1 {
-        font-size: 90px;
+        font-size: 70px;
     }
 
     .top-wrapper h2 {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .contents-item {
