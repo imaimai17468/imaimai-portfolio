@@ -120,6 +120,23 @@ header {
 
 .inner {
     display:inline-block;
+    overflow: auto;
+    height: 450px;
+}
+
+.inner::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.inner::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: 0 0 4px #aaa inset;
+}
+
+.inner::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #8a8a8a;
 }
 
 .production-item {
