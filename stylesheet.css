@@ -121,7 +121,7 @@ header {
 .inner {
     display:inline-block;
     overflow: auto;
-    height: 450px;
+    height: 300px;
 }
 
 .inner::-webkit-scrollbar {
