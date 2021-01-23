@@ -76,6 +76,10 @@ function setup(){
     for(let i = 0; i < 30; i++){
         clouds[i] = new Cloud();
     }
+
+    var button = createButton("もどる");
+    button.position(20, 20);
+    button.mousePressed(jumpurl());
 }
 
 //========================================================
@@ -126,6 +130,14 @@ function preload(){
         cnt += 3;
     }
     print(images);
+}
+
+function jumpurl() {
+    link("https://hasegawa2718.github.io");
+}
+
+function link(url, winName, options) {
+    winName && open(url, winName, options) || (location = url);
 }
 
 //========================================================
