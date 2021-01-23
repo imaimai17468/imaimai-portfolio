@@ -154,9 +154,34 @@ header {
     padding-bottom: 10px;
 }
 
+.production-image {
+    height: 252px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .production-comment {
     border-top: 2px dashed #8a8a8a;
     margin-top: 20px;
+}
+
+.btn-kaseizin {
+    background-color: brown;
+    padding: 8px 24px;
+    margin: 10px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border: 3px solid black;
+    border-radius: 4px;
+    max-width: 140px;
+    text-align: center;
+    float: center;
+}
+
+.btn-kaseizin:hover {
+    opacity: 1;
 }
 
 .link {
