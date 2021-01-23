@@ -87,7 +87,7 @@ header {
 
 .top-wrapper {
     padding: 200px 0 100px 0;
-    background-image: url("Assets/background-image.jpg");
+    background-image: url("../Assets/background-image.jpg");
     background-size: cover;
     color: white;
 }
