@@ -111,11 +111,6 @@ function draw(){
 //========================================================
 //==FUNCTIONS=============================================
 
-function touchMoved(event){
-    player.x = constrain(event.clientX, 0, width-width/10);
-    player.y = constrain(event.clientY, height-height/4, height-height/10);
-}
-
 function preload(){
     let cnt = 0;
     for(let i = 0; i < numFrames; i++){
