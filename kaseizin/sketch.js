@@ -24,8 +24,8 @@ class Player {
     }
 
     direction(){
-        this.xmode = int(random(0, 2));
-        this.ymode = int(random(0, 2));
+        this.xmode = int(random(0, 4));
+        this.ymode = int(random(0, 4));
     }
 }
 
@@ -59,6 +59,8 @@ let player;
 const clouds = [];
 const numFrames = 5;
 const images = [];
+const images_b = [];
+const images_defo = [];
 let currentFrame = 0;
 
 //========================================================
@@ -98,7 +100,16 @@ function draw(){
     if (currentFrame % 120 === 0){
         player.direction();
     }
-    image(images[currentFrame], player.x, player.y, height/10, height/10);
+
+    if(player.xmode == 0 || player.ymode == 0){
+        image(images[currentFrame], player.x, player.y, height/10, height/10);
+    }else if(player.xmode == 1 || player.ymode == 1){
+        image(images_b[currentFrame], player.x, player.y, height/10, height/10);
+    }else{
+        image(images_defo[currentFrame], player.x, player.y, height/10, height/10);
+    }
+    
+    
     currentFrame++;
     if (currentFrame === images.length) {
         currentFrame = 0;
@@ -115,12 +126,20 @@ function preload(){
     let cnt = 0;
     for(let i = 0; i < numFrames; i++){
         const imageName = 'data/monu' + (i+1) + '.png';
+        const imageName_b = 'data/monu' + (i+1) + '_b.png';
+        const imageName_defo = 'data/monu_defo.png';
         images[cnt] = loadImage(imageName);
         images[cnt+1] = loadImage(imageName);
         images[cnt+2] = loadImage(imageName);
+        images_b[cnt] = loadImage(imageName_b);
+        images_b[cnt+1] = loadImage(imageName_b);
+        images_b[cnt+2] = loadImage(imageName_b);
+        images_defo[cnt] = loadImage(imageName_defo);
+        images_defo[cnt+1] = loadImage(imageName_defo);
+        images_defo[cnt+2] = loadImage(imageName_defo);
         cnt += 3;
     }
-    print(images);
+    // print(images);
 }
 
 //========================================================
