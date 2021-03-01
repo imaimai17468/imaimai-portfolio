@@ -49,5 +49,5 @@ function draw(){
     strokeWeight(min(width/2, height/2)/10);
     strokeCap(SQUARE);
     line(cx, cy, cx + cos(h) * dr, cy + sin(h) * dr);
-    line(cx, cy, cx, cy-hr);
+    line(cx, cy, cx + cos(d) * hr, cy + sin(d) * hr);
 }
