@@ -6,6 +6,7 @@
 body {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: normal;
+    background-color: #d9d9d9;
 }
 
 li {
@@ -87,9 +88,9 @@ header {
 
 .top-wrapper {
     padding: 200px 0 100px 0;
-    background-image: url("../Assets/background-image.jpg");
     background-size: cover;
     color: white;
+    text-align: center;
 }
 
 .section-title {
