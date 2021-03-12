@@ -3,6 +3,11 @@
     src: local('851MkPOP');
 }
 
+#defaultCanvas0{
+    position: fixed; /*canvasを固定*/
+    top: 0; /*canvasを上に固定*/
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: normal;

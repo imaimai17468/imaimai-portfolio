@@ -208,7 +208,6 @@ var canvas;
 
 function setup(){
     canvas = createCanvas(windowWidth, windowHeight);
-    canvas.position(0,0);//canvasをページの原点に固定
     canvas.style('z-index','-1');//canvasを後ろに移動する。
     
     canvasSetup();
@@ -232,7 +231,6 @@ function windowResized(){
 
 function canvasSetup(){
     colorMode(RGB);
-    frameRate(60);
 
     flock = new Flock();
     for (let i = 0; i < 100; i++) {
