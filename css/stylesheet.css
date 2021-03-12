@@ -91,6 +91,15 @@ header {
     background-size: cover;
     color: white;
     text-align: center;
+    text-shadow    : 
+       2px  2px 1px #2a2a2a,
+      -2px  2px 1px #2a2a2a,
+       2px -2px 1px #2a2a2a,
+      -2px -2px 1px #2a2a2a,
+       2px  0px 1px #2a2a2a,
+       0px  2px 1px #2a2a2a,
+      -2px  0px 1px #2a2a2a,
+       0px -2px 1px #2a2a2a;        /* 文字の影 */
 }
 
 .section-title {
