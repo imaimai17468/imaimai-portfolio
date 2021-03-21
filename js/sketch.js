@@ -97,11 +97,15 @@ class Boid {
         push();
         translate(this.position.x, this.position.y);
         rotate(theta);
-        beginShape();
-        vertex(0, -this.r * 2);
-        vertex(-this.r, this.r * 2);
-        vertex(this.r, this.r * 2);
-        endShape(CLOSE);
+        
+        // 三角形
+        // beginShape();
+        // vertex(0, -this.r * 2);
+        // vertex(-this.r, this.r * 2);
+        // vertex(this.r, this.r * 2);
+        // endShape(CLOSE);
+
+        text("ゆ", 0, 0);
         pop();
     }
 
@@ -233,7 +237,7 @@ function canvasSetup(){
     colorMode(RGB);
 
     flock = new Flock();
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
         let b = new Boid(width / 2, height / 2);
         flock.addBoid(b);
     }
