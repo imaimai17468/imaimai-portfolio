@@ -1,0 +1,291 @@
+@font-face {
+    font-family: '851マカポップ';
+    src: local('851MkPOP');
+}
+
+#defaultCanvas0{
+    position: fixed; /*canvasを固定*/
+    top: 0; /*canvasを上に固定*/
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    background-color: #d9d9d9;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: left;
+}
+
+#a, #l, #m{
+    margin-top: -60px;
+    padding-top: 60px;
+}
+
+header {
+    background-color: rgba(42, 42, 42, 0.95);
+    color: white;
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.header-logo{
+    font-family: 'Amatic SC', cursive;
+    float: left;
+    font-size: 36px;
+    padding: 25px 40px;
+}
+
+.header-logo a{
+    color: white;
+}
+
+.header-list a{
+    width:100px;
+    transition: all 0.25s;
+    color: white;
+    padding: 33px 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.header-list a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container {
+    max-width: 1180px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.top-wrapper h1 {
+    font-family: '851マカポップ';
+    width: 80%;
+    margin: 10px auto;
+    opacity: 0.7;
+    letter-spacing: 5px;
+    font-size: 130px;
+}
+
+.top-wrapper h2 {
+    font-family: '851マカポップ';
+    width: 80%;
+    margin: auto;
+    opacity: 0.7;
+    font-size: 40px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.top-wrapper {
+    padding: 200px 0 100px 0;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    text-shadow    : 
+       2px  2px 1px #2a2a2a,
+      -2px  2px 1px #2a2a2a,
+       2px -2px 1px #2a2a2a,
+      -2px -2px 1px #2a2a2a,
+       2px  0px 1px #2a2a2a,
+       0px  2px 1px #2a2a2a,
+      -2px  0px 1px #2a2a2a,
+       0px -2px 1px #2a2a2a;        /* 文字の影 */
+}
+
+.section-title {
+    text-align: center;
+    border-bottom: 2px solid #dee7ec;
+    font-size: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-top: 30px;
+}
+
+.contents-item {
+    float: left;
+    text-align: center;
+    padding-top: 20px;
+    width: 33%;
+    padding-bottom: 30px;
+}
+
+.contents-item p {
+    margin-top: 15px;
+    color: #5a5a5a;
+}
+
+.production {
+    text-align: center;
+}
+
+.inner {
+    display:inline-block;
+    overflow: auto;
+    height: 500px;
+}
+
+.inner::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.inner::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: 0 0 4px #aaa inset;
+}
+
+.inner::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #8a8a8a;
+}
+
+.production-item {
+    float: left;
+    text-align: center;
+    margin: 20px 20px 20px 0;
+    width: 275px;
+    height: 460px;
+    border: 5px solid #5a5a5a;
+    border-radius: 10px;
+}
+
+.production-item h3 {
+    border-bottom: 2px dashed #8a8a8a;
+    padding-bottom: 10px;
+}
+
+.production-image {
+    height: 252px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.production-comment {
+    border-top: 2px dashed #8a8a8a;
+    margin-top: 20px;
+}
+
+.btn-kaseizin {
+    background-color: brown;
+    padding: 8px 24px;
+    margin: 10px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border: 3px solid black;
+    border-radius: 4px;
+    max-width: 140px;
+    text-align: center;
+    float: center;
+}
+
+.btn-clock {
+    background-color:dimgrey;
+    padding: 8px 24px;
+    margin: 10px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border: 3px solid black;
+    border-radius: 4px;
+    max-width: 140px;
+    text-align: center;
+    float: center;
+}
+
+.btn-kaseizin:hover {
+    opacity: 1;
+}
+
+.link {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.btn-wrapper {
+    height: 300px;
+    margin: auto;
+    max-width: 590px;
+}
+
+.btn {
+    padding: 8px 24px;
+    margin: 10px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border: 3px solid black;
+    border-radius: 4px;
+    max-width: 140px;
+    text-align: center;
+    float: left;
+    width: 41%;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.btn-outline {
+    margin: 30px auto;
+    border: 3px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.btn-massage {
+    width: 50%;
+    float: right;
+    margin-top: 10px;
+}
+
+.btn-massage p{
+    margin: 0;
+}
+
+.twitter {
+    background-color: #55acee;
+}
+
+.github {
+    background-color: #4183c4;
+}
+
+.qiita {
+    background-color: #1dcd00;
+}
+
+.fab {
+    margin-right: 5px;
+}
+
+.fas {
+    margin-right: 5px;
+}
+
+footer {
+    background-color: #2a2a2a;
+    height: 50px;
+}
+
+.copyright {
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
