@@ -14,18 +14,7 @@
         font-size: 36px;
     }
 
-    .header-list a{
-        width: 60px;
-        padding: 37px 10px;
-        font-size: 50%;
-    }
-
     .top-wrapper {
         padding: 150px 0 0 0;
-    }
-
-    .contents-item {
-        padding-bottom: 50px;
-        font-size: 10px;
     }
 }
