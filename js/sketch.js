@@ -211,7 +211,7 @@ var canvas;
 //==SETUP=================================================
 
 function setup(){
-    canvas = createCanvas(windowWidth, 350);
+    canvas = createCanvas(windowWidth, 325);
     canvas.style('z-index','-1');//canvasを後ろに移動する。
     
     canvasSetup();
@@ -237,8 +237,8 @@ function canvasSetup(){
     colorMode(RGB);
 
     flock = new Flock();
-    for (let i = 0; i < 50; i++) {
-        let b = new Boid(width / 2, height / 2);
+    for (let i = 0; i < 25; i++) {
+        let b = new Boid(random() * width, random() * height);
         flock.addBoid(b);
     }
 }
