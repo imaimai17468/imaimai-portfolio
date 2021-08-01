@@ -3,9 +3,14 @@
 }
 
 @media all and (max-width: 670px) {
+    #defaultCanvas0{
+        top: 620px; /*canvasを上に固定*/
+    }
+
     .header-logo{
-        padding: 37px 10px;
-        font-size: 100%;
+        padding-top: 90px;
+        margin-top: -80px;
+        font-size: 36px;
     }
 
     .header-list a{
@@ -18,20 +23,8 @@
         padding: 150px 0 0 0;
     }
 
-    .top-wrapper h1 {
-        font-size: 50px;
-    }
-
-    .top-wrapper h2 {
-        font-size: 15px;
-    }
-
     .contents-item {
         padding-bottom: 50px;
         font-size: 10px;
-    }
-
-    .production-item {
-        width: 100%;
     }
 }
