@@ -3,10 +3,6 @@
 }
 
 @media all and (max-width: 670px) {
-    #defaultCanvas0{
-        top: 620px; /*canvasを上に固定*/
-    }
-
     .header-logo{
         padding-top: 90px;
         margin-top: -80px;
