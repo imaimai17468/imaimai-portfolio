@@ -3,35 +3,30 @@
 }
 
 @media all and (max-width: 670px) {
-    .header-logo{
-        padding: 37px 10px;
-        font-size: 100%;
+    #defaultCanvas0{
+        position: absolute; /*canvasを固定*/
+        top: 570px; /*canvasを上に固定*/
     }
 
-    .header-list a{
-        width: 60px;
-        padding: 37px 10px;
-        font-size: 50%;
+    .header-logo{
+        padding-top: 90px;
+        margin-top: -80px;
+        font-size: 36px;
     }
 
     .top-wrapper {
         padding: 150px 0 0 0;
     }
 
-    .top-wrapper h1 {
-        font-size: 50px;
-    }
-
-    .top-wrapper h2 {
-        font-size: 15px;
-    }
-
     .contents-item {
-        padding-bottom: 50px;
-        font-size: 10px;
-    }
-
-    .production-item {
+        margin: 0 auto;
         width: 100%;
+        padding-bottom: 0px;
+    }
+}
+
+@media all and (min-width: 670px) {
+    .contents-item {
+        float: left;
     }
 }

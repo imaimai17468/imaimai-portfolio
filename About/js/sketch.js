@@ -211,7 +211,10 @@ var canvas;
 //==SETUP=================================================
 
 function setup(){
-    canvas = createCanvas(windowWidth, windowHeight);
+    canvas = createCanvas(windowWidth, 1600);
+    if(windowWidth <= 670){
+        canvas = createCanvas(windowWidth, 2100);
+    }
     canvas.style('z-index','-1');//canvasを後ろに移動する。
     
     canvasSetup();
@@ -221,7 +224,7 @@ function setup(){
 //==DRAW==================================================
 
 function draw(){
-    background('#d9d9d9');
+    background(255);
     flock.run();
 }
 
@@ -238,7 +241,7 @@ function canvasSetup(){
 
     flock = new Flock();
     for (let i = 0; i < 50; i++) {
-        let b = new Boid(width / 2, height / 2);
+        let b = new Boid(random() * width, random() * height);
         flock.addBoid(b);
     }
 }
