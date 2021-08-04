@@ -142,19 +142,22 @@ header {
 
 .contents-wrapper {
     padding-bottom: 120px;
-    height: 1300px;
+    height: 1600px;
 }
 
 .production {
     text-align: center;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: stretch;
 }
 
 .production-item {
     float: left;
     text-align: center;
     margin: 20px 20px 20px 0;
-    width: 275px;
-    height: 460px;
     border: 5px solid #5a5a5a;
     border-radius: 10px;
 }
@@ -165,10 +168,15 @@ header {
 }
 
 .production-image {
-    height: 252px;
-    display: block;
     margin-right: auto;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.production-image img {
+    padding-bottom: 20px;
 }
 
 .production-comment {
@@ -176,36 +184,41 @@ header {
     margin-top: 20px;
 }
 
-.btn-kaseizin {
+.btn {
+    padding: 8px 24px;
+    margin: 10px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border: 3px solid black;
+    border-radius: 4px;
+    max-width: 140px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.kaseizin {
     background-color: brown;
-    padding: 8px 24px;
-    margin: 10px;
-    color: white;
-    display: inline-block;
-    opacity: 0.8;
-    border: 3px solid black;
-    border-radius: 4px;
-    max-width: 140px;
-    text-align: center;
-    margin: 0 auto;
 }
 
-.btn-clock {
-    background-color:dimgrey;
-    padding: 8px 24px;
-    margin: 10px;
-    color: white;
-    display: inline-block;
-    opacity: 0.8;
-    border: 3px solid black;
-    border-radius: 4px;
-    max-width: 140px;
-    text-align: center;
-    margin: 0 auto;
+.clock {
+    background-color: dimgrey;
 }
 
-.btn-kaseizin:hover {
+.qiita {
+    background-color: #1dcd00;
+}
+
+.github {
+    background-color: #4183c4;
+}
+
+.btn:hover {
     opacity: 1;
+}
+
+.fab {
+    margin-right: 5px;
 }
 
 footer {

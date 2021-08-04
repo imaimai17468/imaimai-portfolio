@@ -19,22 +19,6 @@
     }
 
     .contents-wrapper {
-        height: 2300px;
-    }
-
-    .contents-item {
-        margin: 0 auto;
-        width: 100%;
-        padding-bottom: 0px;
-    }
-
-    .production-item {
-        width: 100%;
-    }
-}
-
-@media all and (min-width: 670px) {
-    .contents-item {
-        float: left;
+        height: 2450px;
     }
 }

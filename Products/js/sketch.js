@@ -212,9 +212,9 @@ var canvas;
 
 function setup(){
     if(windowWidth <= 670){
-        canvas = createCanvas(windowWidth, 2200);
+        canvas = createCanvas(windowWidth, 2450);
     }else{
-        canvas = createCanvas(windowWidth, 1200);
+        canvas = createCanvas(windowWidth, 1600);
     }
     canvas.style('z-index','-1');//canvasを後ろに移動する。
     
@@ -234,9 +234,9 @@ function draw(){
 
 function windowResized(){
     if(windowWidth <= 670){
-        resizeCanvas(windowWidth, 2200);
+        resizeCanvas(windowWidth, 2450);
     }else{
-        resizeCanvas(windowWidth, 1200);
+        resizeCanvas(windowWidth, 1600);
     }
     canvasSetup();
 }
