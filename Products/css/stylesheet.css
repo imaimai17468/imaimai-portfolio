@@ -142,7 +142,7 @@ header {
 
 .contents-wrapper {
     padding-bottom: 120px;
-    height: 1600px;
+    height: 1300px;
 }
 
 .production {
@@ -194,7 +194,7 @@ header {
     border-radius: 4px;
     max-width: 140px;
     text-align: center;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 .kaseizin {
