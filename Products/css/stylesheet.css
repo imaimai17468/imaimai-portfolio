@@ -142,7 +142,7 @@ header {
 
 .contents-wrapper {
     padding-bottom: 120px;
-    height: 1300px;
+    height: 1800px;
 }
 
 .production {
@@ -182,6 +182,7 @@ header {
 .production-comment {
     border-top: 2px dashed #8a8a8a;
     margin-top: 20px;
+    padding: 0px 20px;
 }
 
 .btn {
@@ -203,6 +204,10 @@ header {
 
 .clock {
     background-color: dimgrey;
+}
+
+.humid_temp {
+    background-color: orange;
 }
 
 .qiita {
