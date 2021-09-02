@@ -212,9 +212,9 @@ var canvas;
 
 function setup(){
     if(windowWidth <= 670){
-        canvas = createCanvas(windowWidth, 3200);
+        canvas = createCanvas(windowWidth, 3500);
     }else{
-        canvas = createCanvas(windowWidth, 1800);
+        canvas = createCanvas(windowWidth, 2000);
     }
     canvas.style('z-index','-1');//canvasを後ろに移動する。
     
