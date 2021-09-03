@@ -229,7 +229,7 @@ function draw(){
 //==FUNCTIONS=============================================
 
 function windowResized(){
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, 325);
     canvasSetup();
 }
 

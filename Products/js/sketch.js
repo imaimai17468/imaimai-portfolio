@@ -234,9 +234,9 @@ function draw(){
 
 function windowResized(){
     if(windowWidth <= 670){
-        resizeCanvas(windowWidth, 2550);
+        resizeCanvas(windowWidth, 3500);
     }else{
-        resizeCanvas(windowWidth, 1600);
+        resizeCanvas(windowWidth, 2000);
     }
     canvasSetup();
 }
