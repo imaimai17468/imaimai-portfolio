@@ -13,10 +13,6 @@ body {
     box-sizing: border-box;
 }
 
-li {
-    list-style: none;
-}
-
 a {
     text-decoration: none;
 } 
@@ -143,6 +139,18 @@ header {
 .contents-wrapper {
     padding-bottom: 120px;
     height: 2000px;
+}
+
+ul, ol {
+    background: #fcfcfc;
+    padding: 0.5em 0.5em 0.5em 2em;
+    border: solid 3px gray;
+    list-style-type: square;
+}
+
+.production-details li {
+    line-height: 1.5;
+    padding: 0.5rem 0;
 }
 
 .production {
