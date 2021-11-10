@@ -62,6 +62,7 @@ const images = [];
 const images_b = [];
 const images_defo = [];
 let currentFrame = 0;
+let song;
 
 //========================================================
 //==SETUP=================================================
@@ -70,6 +71,8 @@ function setup(){
     createCanvas(windowWidth, windowHeight);
     colorMode(RGB);
     frameRate(60);
+
+    song.loop();
 
     // プレイヤーを生成
     player = new Player(width/5, height-height/5);
@@ -85,7 +88,7 @@ function setup(){
 
 function draw(){
     background(50, 50, 150);
-    
+
     for(let i = 0; i < clouds.length; i++){
         clouds[i].move();
         clouds[i].display();
@@ -123,6 +126,8 @@ function draw(){
 //==FUNCTIONS=============================================
 
 function preload(){
+    song = loadSound('data/bgm.mp3');
+
     let cnt = 0;
     for(let i = 0; i < numFrames; i++){
         const imageName = 'data/monu' + (i+1) + '.png';
