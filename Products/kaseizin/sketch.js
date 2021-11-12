@@ -72,8 +72,22 @@ function setup(){
     colorMode(RGB);
     frameRate(60);
 
-    song.loop();
-    song.amp(0.1);
+    const button = setButton('LOOP', {
+        x: width/15,
+        y: height/15
+    });
+    button.mousePressed(() => {
+        if (song.isPlaying()) {
+            song.stop();
+            button.html('LOOP');
+        }
+        else {
+            // ループ再生
+            song.loop();
+            button.html('STOP');
+            song.amp(0.1);
+        }
+    });
 
     // プレイヤーを生成
     player = new Player(width/5, height-height/5);
@@ -125,6 +139,13 @@ function draw(){
 
 //========================================================
 //==FUNCTIONS=============================================
+
+function setButton(label, pos) {
+    const button = createButton(label);
+    button.size(100, 30);
+    button.position(pos.x, pos.y);
+    return button;
+}
 
 function preload(){
     song = loadSound('data/bgm.mp3');
