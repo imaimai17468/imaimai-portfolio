@@ -73,6 +73,7 @@ function setup(){
     frameRate(60);
 
     song.loop();
+    song.amp(0.1);
 
     // プレイヤーを生成
     player = new Player(width/5, height-height/5);
