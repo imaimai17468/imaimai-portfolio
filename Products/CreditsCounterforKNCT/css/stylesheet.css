@@ -1,0 +1,72 @@
+h1 {
+	font-size:2.5em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: transparent;
+	background: repeating-linear-gradient( 45deg, #9E9E9E 0 0.2em, #5E5E5E 0.2em 0.4em );
+	-webkit-background-clip: text;
+}
+
+.area {
+	width: 600px;
+	margin: auto;
+	flex-wrap: wrap;
+	display: flex;
+}
+	
+.tab_class {
+	width: calc(100%/5);
+	height: 50px;
+	background-color: darkgrey;
+	line-height: 50px;
+	font-size: 15px;
+	text-align: center;
+	display: block;
+	float: left;
+	order: -1;
+}
+	
+input[name="tab_name"] {
+	display: none;
+}
+	
+input:checked + .tab_class {
+	background-color: cadetblue;
+	color: aliceblue;
+}
+	
+.content_class {
+	display: none;
+	width: 100%;
+	padding-top: 20px;
+}
+	
+input:checked + .tab_class + .content_class {
+	display: block;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	padding: 0;
+	width: 600px;
+	table-layout: fixed;
+}
+
+table tr {
+	background-color: #e6f2f5;
+	border-bottom: 2px solid #fff;
+}
+table th, table td {
+	border-right: 2px solid #fff;
+	border-left: 2px solid #fff;
+}
+table thead tr{
+	background-color: #167F92;
+	color:#fff;
+}
+table tbody th {
+	background: #78bbc7;
+	color: #fff;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>木更津高専単位カウンター</title>
+    <meta name="description" content="木更津高専生用の単位数カウンターです。"/>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <h1>木更津高専単位カウンター</h1>
+    <div class="area">
+        <input type="radio" name="tab_name" id="tab1" checked>
+        <label class="tab_class" for="tab1">機械工学科</label>
+        <div class="content_class">
+            <table>
+                <tbody id="output_csv_m"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab2" >
+        <label class="tab_class" for="tab2">電気電子工学科</label>
+        <div class="content_class">
+            <table>
+                <tbody id="output_csv_e"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab3" >
+        <label class="tab_class" for="tab3">電子制御工学科</label>
+        <div class="content_class">
+            <table>
+                <tbody id="output_csv_d"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab4" >
+        <label class="tab_class" for="tab4">情報工学科</label>
+        <div class="content_class">
+            <table>
+                <tbody id="output_csv_j"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab5" >
+        <label class="tab_class" for="tab5">環境都市工学科</label>
+        <div class="content_class">
+            <table>
+                <tbody id="output_csv_c"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/output_csv.js"></script>
