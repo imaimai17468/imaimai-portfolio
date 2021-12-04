@@ -148,6 +148,11 @@ header {
     width: 100%;
 }
 
+.production-details li {
+    line-height: 1.5;
+    padding: 0.5rem 0;
+}
+
 table {
     border-collapse: collapse;
     font-size: 12px;
