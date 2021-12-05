@@ -37,9 +37,19 @@ for department in department_id:
             tanni.append(str)
             tanni_flag = False
 
+    eigo1a = False
+    eigo1b = False
     f = open('./' + department + '.csv', 'w')
     f.write('教科名,科目,区分,単位数\n')
     for i in range(len(subjects)):
         if '日本語' in subjects[i]:
             hissyu_sentaku[i] = '必修（留学生）'
+        if eigo1a and subjects[i] == '英語演習ⅠＡ':
+            continue
+        if eigo1b and subjects[i] == '英語演習ⅠＢ':
+            continue
+        if subjects[i] == '英語演習ⅠＡ':
+            eigo1a = True
+        if subjects[i] == '英語演習ⅠＢ':
+            eigo1b = True
         f.write(subjects[i] + ',' + ippan_senmon[i] + ',' + hissyu_sentaku[i] + ',' + tanni[i] + '\n')

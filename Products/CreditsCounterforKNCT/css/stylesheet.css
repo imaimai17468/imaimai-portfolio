@@ -3,13 +3,11 @@ h1 {
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
-	color: transparent;
-	background: repeating-linear-gradient( 45deg, #9E9E9E 0 0.2em, #5E5E5E 0.2em 0.4em );
-	-webkit-background-clip: text;
+	color: cadetblue;
 }
 
 .area {
-	width: 600px;
+	width: 80%;
 	margin: auto;
 	flex-wrap: wrap;
 	display: flex;
@@ -39,7 +37,6 @@ input:checked + .tab_class {
 .content_class {
 	display: none;
 	width: 100%;
-	padding-top: 20px;
 }
 	
 input:checked + .tab_class + .content_class {
@@ -50,7 +47,7 @@ table {
 	border-collapse: collapse;
 	margin: 0 auto;
 	padding: 0;
-	width: 600px;
+	width: 100%;
 	table-layout: fixed;
 }
 

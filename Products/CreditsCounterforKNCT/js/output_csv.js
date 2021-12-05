@@ -20,19 +20,25 @@ function convertArray(data, outputElement) {
     for (let i = 0; i < dataString.length; i++) {
         dataArray[i] = dataString[i].split(',');
     }
+    dataArray.pop();
     let insertElement = '';
-    let cnt = 0;
+    let rowcnt = 0;
+    let colcnt = 0;
     dataArray.forEach((element) => {
         insertElement += '<tr>';
         element.forEach((childElement) => {
-            if(cnt === 0) {
+            if(rowcnt === 0) {
                 insertElement += `<th>${childElement}</th>`
+            }else if(colcnt === 0) {
+                insertElement += `<td><label><input type="checkbox">${childElement}</label></td>`
             }else{
                 insertElement += `<td>${childElement}</td>`
             }
+            colcnt++;
         });
         insertElement += '</tr>';
-        cnt++;
+        rowcnt++;
+        colcnt = 0;
     });
     outputElement.innerHTML = insertElement;
 }

@@ -15,6 +15,28 @@
         <input type="radio" name="tab_name" id="tab1" checked>
         <label class="tab_class" for="tab1">機械工学科</label>
         <div class="content_class">
+            <div class="counter">
+                <p>現在の合計単位数</p>
+            </div>
+            <div class="options">
+                <p>全ての授業(必修選択以外)にチェックを <input type="button" value="入れる"> <input type="button" value="外す"></button></p>
+                <p>一般科目にチェックを <input type="button" value="入れる"> <input type="button" value="外す"></p>
+                <p>専門科目にチェックを <input type="button" value="入れる"> <input type="button" value="外す"></p>
+                <p>必修科目にチェックを <input type="button" value="入れる"> <input type="button" value="外す"></p>
+                <p>選択科目にチェックを <input type="button" value="入れる"> <input type="button" value="外す"></p>
+                <p>留学生の科目にチェックを <input type="button" value="入れる"> <input type="button" value="外す"></p>
+                <details>
+                    <summary>必修選択一覧</summary>
+                    <p>
+                        <label><input type="checkbox">一般特別セミナー</label> or <label><input type="checkbox">プロジェクト実習</label><br>
+                        <label><input type="checkbox">英語演習ⅠＡ</label> or <label><input type="checkbox">英会話ⅠＡ</label> (単位振替をした場合は適当にどちらかを選択)<br>
+                        <label><input type="checkbox">英語演習ⅠＢ</label> or <label><input type="checkbox">英会話ⅠＢ</label> (単位振替をした場合は適当にどちらかを選択)<br>
+                        <label><input type="checkbox">哲学A</label> or <label><input type="checkbox">経済学A</label> or <label><input type="checkbox">社会学A</label><br>
+                        <label><input type="checkbox">哲学B</label> or <label><input type="checkbox">経済学B</label> or <label><input type="checkbox">社会学B</label><br>
+                        <label><input type="checkbox">応用数学B</label> or <label><input type="checkbox">応用数学C</label><br>
+                    </p>
+                </details>
+            </div>
             <table>
                 <tbody id="output_csv_m"></tbody>
             </table>
