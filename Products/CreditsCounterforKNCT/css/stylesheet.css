@@ -6,6 +6,14 @@ h1 {
 	color: cadetblue;
 }
 
+#caution {
+	font-size:1em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: cadetblue;
+}
+
 .area {
 	width: 80%;
 	margin: auto;

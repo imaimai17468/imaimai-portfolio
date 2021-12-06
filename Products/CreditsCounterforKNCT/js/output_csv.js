@@ -4,6 +4,9 @@ const outputElement_d = document.getElementById('output_csv_d');
 const outputElement_j = document.getElementById('output_csv_j');
 const outputElement_c = document.getElementById('output_csv_c');
 
+const department = ['m ', 'e ', 'd ', 'j ', 'c '];
+let department_count = 0;
+
 function getCsvData(dataPath, outputElement) {
     const request = new XMLHttpRequest();
     request.addEventListener('load', (event) => {
@@ -26,11 +29,20 @@ function convertArray(data, outputElement) {
     let colcnt = 0;
     dataArray.forEach((element) => {
         insertElement += '<tr>';
-        element.forEach((childElement) => {
+        element.forEach((childElement, index, array) => {
             if(rowcnt === 0) {
                 insertElement += `<th>${childElement}</th>`
             }else if(colcnt === 0) {
-                insertElement += `<td><label><input type="checkbox">${childElement}</label></td>`
+                let add_class = department[department_count];
+                if(array[index + 1] === '一般') add_class += 'normal ';
+                else add_class += 'special ';
+                if(array[index + 2] === '必修') add_class += 'required';
+                else if(array[index + 2] === '選択') add_class += 'elective';
+                else if(array[index + 2] === '必修（留学生）') add_class += 'international';
+                else add_class += 'other';
+                insertElement += `<td><label><input type="checkbox" class="${add_class}">${childElement}</label></td>`
+            }else if(colcnt === 3) {
+                insertElement += `<td class="credit">${childElement}</td>`
             }else{
                 insertElement += `<td>${childElement}</td>`
             }
@@ -40,6 +52,7 @@ function convertArray(data, outputElement) {
         rowcnt++;
         colcnt = 0;
     });
+    department_count++;
     outputElement.innerHTML = insertElement;
 }
 
