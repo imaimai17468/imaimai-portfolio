@@ -7,7 +7,7 @@ h1 {
 }
 
 #caution {
-	font-size:2vw;
+	font-size:1.5vw;
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
@@ -52,20 +52,19 @@ input:checked + .tab_class + .content_class {
 }
 
 input {
-	font-size: 2vw;
+	font-size: 1.2vw;
 }
 
 .options {
-	font-size: 2vw;
+	font-size: 1.8vw;
 }
 
 table {
 	border-collapse: collapse;
 	margin: 0 auto;
 	padding: 0;
-	width: 100%;
-	table-layout: fixed;
 	font-size: 2vw;
+	width: 100%;
 }
 
 table tr {
