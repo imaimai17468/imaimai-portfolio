@@ -29,27 +29,3 @@ function required_checked(condition, department){
         all_list[i].checked = condition;
     }
 }
-
-function elective_checked(condition, department){
-    let department_list = [".m", ".e", ".d", ".j", ".c"];
-    let all_list = document.querySelectorAll(".elective" + department_list[department]);
-    for(let i in all_list){
-        all_list[i].checked = condition;
-    }
-}
-
-function other_checked(condition, department){
-    let department_list = [".m", ".e", ".d", ".j", ".c"];
-    let all_list = document.querySelectorAll(".other" + department_list[department]);
-    for(let i in all_list){
-        all_list[i].checked = condition;
-    }
-}
-
-function international_checked(condition, department){
-    let department_list = [".m", ".e", ".d", ".j", ".c"];
-    let all_list = document.querySelectorAll(".international" + department_list[department]);
-    for(let i in all_list){
-        all_list[i].checked = condition;
-    }
-}

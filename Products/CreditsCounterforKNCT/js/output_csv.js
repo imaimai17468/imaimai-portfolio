@@ -5,6 +5,7 @@ const outputElement_j = document.getElementById('output_csv_j');
 const outputElement_c = document.getElementById('output_csv_c');
 
 const department = ['m ', 'e ', 'd ', 'j ', 'c '];
+const department_ = ['m_', 'e_', 'd_', 'j_', 'c_'];
 let department_count = 0;
 
 function getCsvData(dataPath, outputElement) {
@@ -42,7 +43,7 @@ function convertArray(data, outputElement) {
                 else add_class += 'other';
                 insertElement += `<td><label><input type="checkbox" class="${add_class}">${childElement}</label></td>`
             }else if(colcnt === 3) {
-                insertElement += `<td class="credit">${childElement}</td>`
+                insertElement += `<td class="${department_[department_count]}credit">${childElement}</td>`
             }else{
                 insertElement += `<td>${childElement}</td>`
             }

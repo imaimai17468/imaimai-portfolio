@@ -1,5 +1,5 @@
 h1 {
-	font-size:2.5em;
+	font-size: 5vw;
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
@@ -7,11 +7,11 @@ h1 {
 }
 
 #caution {
-	font-size:1em;
+	font-size:2vw;
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
-	color: cadetblue;
+	color: #5a5a5a;
 }
 
 .area {
@@ -26,7 +26,7 @@ h1 {
 	height: 50px;
 	background-color: darkgrey;
 	line-height: 50px;
-	font-size: 15px;
+	font-size: 3vw;
 	text-align: center;
 	display: block;
 	float: left;
@@ -51,12 +51,21 @@ input:checked + .tab_class + .content_class {
 	display: block;
 }
 
+input {
+	font-size: 2vw;
+}
+
+.options {
+	font-size: 2vw;
+}
+
 table {
 	border-collapse: collapse;
 	margin: 0 auto;
 	padding: 0;
 	width: 100%;
 	table-layout: fixed;
+	font-size: 2vw;
 }
 
 table tr {

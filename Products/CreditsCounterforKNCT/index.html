@@ -13,12 +13,13 @@
     <h1>木更津高専単位カウンター</h1>
     <p id="caution">注意・確認</p>
     <p id="caution">本当に合計単位数が正しいか確認してください。</p>
-    <p id="caution">各種資格や行事等で得られる単位は含みません。</p>
+    <p id="caution">各種資格や大会等で得られる単位は含みません。</p>
     <p id="caution">選択科目・必修選択科目・留学生の必修科目のチェックに注意してください。</p>
+    <p id="caution">不具合が起きた場合リロードしてみてください。</p>
     </p>
     <div class="area">
         <input type="radio" name="tab_name" id="tab1" checked>
-        <label class="tab_class" for="tab1">機械工学科</label>
+        <label class="tab_class" for="tab1">M</label>
         <div class="content_class">
             <input type="button" value="合計単位数を計算する" onclick="credit_click(0);">
             <div class="counter">
@@ -26,21 +27,13 @@
                 <h1 id="credit_count_m">0</h1>
                 <p id="caution">単位</p>
             </div>
-            <div class="options">
-                <p>全ての授業(必修選択以外)にチェックを <input type="button" value="入れる" onclick="all_checked(true, 0);"> <input type="button" value="外す" onclick="all_checked(false, 0);"></button></p>
-                <p>一般科目のチェックを <input type="button" value="入れる" onclick="normal_checked(true, 0);"> <input type="button" value="外す" onclick="normal_checked(false, 0);"></p>
-                <p>専門科目のチェックを <input type="button" value="入れる" onclick="special_checked(true, 0);"> <input type="button" value="外す" onclick="special_checked(false, 0);"></p>
-                <p>必修科目のチェックを <input type="button" value="入れる" onclick="required_checked(true, 0);"> <input type="button" value="外す" onclick="required_checked(false, 0);"></p>
-                <p>選択科目のチェックを <input type="button" value="入れる" onclick="elective_checked(true, 0);"> <input type="button" value="外す" onclick="elective_checked(false, 0);"></p>
-                <p>必修選択科目のチェックを <input type="button" value="入れる" onclick="other_checked(true, 0);"> <input type="button" value="外す" onclick="other_checked(false, 0);"></p>
-                <p>留学生の科目のチェックを <input type="button" value="入れる" onclick="international_checked(true, 0);"> <input type="button" value="外す" onclick="international_checked(false, 0);"></p>
-            </div>
+            <div class="options"></div>
             <table>
                 <tbody id="output_csv_m"></tbody>
             </table>
         </div>
         <input type="radio" name="tab_name" id="tab2" >
-        <label class="tab_class" for="tab2">電気電子工学科</label>
+        <label class="tab_class" for="tab2">E</label>
         <div class="content_class">
             <input type="button" value="合計単位数を計算する" onclick="credit_click(1);">
             <div class="counter">
@@ -48,21 +41,13 @@
                 <h1 id="credit_count_e">0</h1>
                 <p id="caution">単位</p>
             </div>
-            <div class="options">
-                <p>全ての授業(必修選択以外)にチェックを <input type="button" value="入れる" onclick="all_checked(true, 1);"> <input type="button" value="外す" onclick="all_checked(false, 1);"></button></p>
-                <p>一般科目のチェックを <input type="button" value="入れる" onclick="normal_checked(true, 1);"> <input type="button" value="外す" onclick="normal_checked(false, 1);"></p>
-                <p>専門科目のチェックを <input type="button" value="入れる" onclick="special_checked(true, 1);"> <input type="button" value="外す" onclick="special_checked(false, 1);"></p>
-                <p>必修科目のチェックを <input type="button" value="入れる" onclick="required_checked(true, 1);"> <input type="button" value="外す" onclick="required_checked(false, 1);"></p>
-                <p>選択科目のチェックを <input type="button" value="入れる" onclick="elective_checked(true, 1);"> <input type="button" value="外す" onclick="elective_checked(false, 1);"></p>
-                <p>必修選択科目のチェックを <input type="button" value="入れる" onclick="other_checked(true, 1);"> <input type="button" value="外す" onclick="other_checked(false, 1);"></p>
-                <p>留学生の科目のチェックを <input type="button" value="入れる" onclick="international_checked(true, 1);"> <input type="button" value="外す" onclick="international_checked(false, 1);"></p>
-            </div>
+            <div class="options"></div>
             <table>
                 <tbody id="output_csv_e"></tbody>
             </table>
         </div>
         <input type="radio" name="tab_name" id="tab3" >
-        <label class="tab_class" for="tab3">電子制御工学科</label>
+        <label class="tab_class" for="tab3">D</label>
         <div class="content_class">
             <input type="button" value="合計単位数を計算する" onclick="credit_click(2);">
             <div class="counter">
@@ -70,21 +55,13 @@
                 <h1 id="credit_count_d">0</h1>
                 <p id="caution">単位</p>
             </div>
-            <div class="options">
-                <p>全ての授業(必修選択以外)にチェックを <input type="button" value="入れる" onclick="all_checked(true, 2);"> <input type="button" value="外す" onclick="all_checked(false, 2);"></button></p>
-                <p>一般科目のチェックを <input type="button" value="入れる" onclick="normal_checked(true, 2);"> <input type="button" value="外す" onclick="normal_checked(false, 2);"></p>
-                <p>専門科目のチェックを <input type="button" value="入れる" onclick="special_checked(true, 2);"> <input type="button" value="外す" onclick="special_checked(false, 2);"></p>
-                <p>必修科目のチェックを <input type="button" value="入れる" onclick="required_checked(true, 2);"> <input type="button" value="外す" onclick="required_checked(false, 2);"></p>
-                <p>選択科目のチェックを <input type="button" value="入れる" onclick="elective_checked(true, 2);"> <input type="button" value="外す" onclick="elective_checked(false, 2);"></p>
-                <p>必修選択科目のチェックを <input type="button" value="入れる" onclick="other_checked(true, 2);"> <input type="button" value="外す" onclick="other_checked(false, 2);"></p>
-                <p>留学生の科目のチェックを <input type="button" value="入れる" onclick="international_checked(true, 2);"> <input type="button" value="外す" onclick="international_checked(false, 2);"></p>
-            </div>
+            <div class="options"></div>
             <table>
                 <tbody id="output_csv_d"></tbody>
             </table>
         </div>
         <input type="radio" name="tab_name" id="tab4" >
-        <label class="tab_class" for="tab4">情報工学科</label>
+        <label class="tab_class" for="tab4">J</label>
         <div class="content_class">
             <input type="button" value="合計単位数を計算する" onclick="credit_click(3);">
             <div class="counter">
@@ -92,21 +69,13 @@
                 <h1 id="credit_count_j">0</h1>
                 <p id="caution">単位</p>
             </div>
-            <div class="options">
-                <p>全ての授業(必修選択以外)にチェックを <input type="button" value="入れる" onclick="all_checked(true, 3);"> <input type="button" value="外す" onclick="all_checked(false, 3);"></button></p>
-                <p>一般科目のチェックを <input type="button" value="入れる" onclick="normal_checked(true, 3);"> <input type="button" value="外す" onclick="normal_checked(false, 3);"></p>
-                <p>専門科目のチェックを <input type="button" value="入れる" onclick="special_checked(true, 3);"> <input type="button" value="外す" onclick="special_checked(false, 3);"></p>
-                <p>必修科目のチェックを <input type="button" value="入れる" onclick="required_checked(true, 3);"> <input type="button" value="外す" onclick="required_checked(false, 3);"></p>
-                <p>選択科目のチェックを <input type="button" value="入れる" onclick="elective_checked(true, 3);"> <input type="button" value="外す" onclick="elective_checked(false, 3);"></p>
-                <p>必修選択科目のチェックを <input type="button" value="入れる" onclick="other_checked(true, 3);"> <input type="button" value="外す" onclick="other_checked(false, 3);"></p>
-                <p>留学生の科目のチェックを <input type="button" value="入れる" onclick="international_checked(true, 3);"> <input type="button" value="外す" onclick="international_checked(false, 3);"></p>
-            </div>
+            <div class="options"></div>
             <table>
                 <tbody id="output_csv_j"></tbody>
             </table>
         </div>
         <input type="radio" name="tab_name" id="tab5" >
-        <label class="tab_class" for="tab5">環境都市工学科</label>
+        <label class="tab_class" for="tab5">C</label>
         <div class="content_class">
             <input type="button" value="合計単位数を計算する" onclick="credit_click(4);">
             <div class="counter">
@@ -114,15 +83,7 @@
                 <h1 id="credit_count_c">0</h1>
                 <p id="caution">単位</p>
             </div>
-            <div class="options">
-                <p>全ての授業(必修選択以外)にチェックを <input type="button" value="入れる" onclick="all_checked(true, 4);"> <input type="button" value="外す" onclick="all_checked(false, 4);"></button></p>
-                <p>一般科目のチェックを <input type="button" value="入れる" onclick="normal_checked(true, 4);"> <input type="button" value="外す" onclick="normal_checked(false, 4);"></p>
-                <p>専門科目のチェックを <input type="button" value="入れる" onclick="special_checked(true, 4);"> <input type="button" value="外す" onclick="special_checked(false, 4);"></p>
-                <p>必修科目のチェックを <input type="button" value="入れる" onclick="required_checked(true, 4);"> <input type="button" value="外す" onclick="required_checked(false, 4);"></p>
-                <p>選択科目のチェックを <input type="button" value="入れる" onclick="elective_checked(true, 4);"> <input type="button" value="外す" onclick="elective_checked(false, 4);"></p>
-                <p>必修選択科目のチェックを <input type="button" value="入れる" onclick="other_checked(true, 4);"> <input type="button" value="外す" onclick="other_checked(false, 4);"></p>
-                <p>留学生の科目のチェックを <input type="button" value="入れる" onclick="international_checked(true, 4);"> <input type="button" value="外す" onclick="international_checked(false, 4);"></p>
-            </div>
+            <div class="options"></div>
             <table>
                 <tbody id="output_csv_c"></tbody>
             </table>
@@ -133,3 +94,4 @@
 <script type="text/javascript" src="js/output_csv.js"></script>
 <script type="text/javascript" src="js/checkbox.js"></script>
 <script type="text/javascript" src="js/count_credits.js"></script>
+<script type="text/javascript" src="js/output_option.js"></script>
