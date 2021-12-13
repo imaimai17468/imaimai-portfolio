@@ -1,5 +1,6 @@
 h1 {
-	font-size: 6vw;
+	font-size: min(6vw, 60px);
+	
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
@@ -7,7 +8,7 @@ h1 {
 }
 
 #caution {
-	font-size:1.5vw;
+	font-size: min(1.5vw, 15px);
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
@@ -16,6 +17,7 @@ h1 {
 
 .area {
 	width: 80%;
+	max-width: 700px;
 	margin: auto;
 	flex-wrap: wrap;
 	display: flex;
@@ -26,7 +28,7 @@ h1 {
 	height: 50px;
 	background-color: darkgrey;
 	line-height: 50px;
-	font-size: 3vw;
+	font-size: min(3vw, 30px);
 	text-align: center;
 	display: block;
 	float: left;
@@ -52,18 +54,18 @@ input:checked + .tab_class + .content_class {
 }
 
 input {
-	font-size: 1.5vw;
+	font-size: min(1.5vw, 15px);
 }
 
 .options {
-	font-size: 2vw;
+	font-size: min(20vw, 20px);
 }
 
 table {
 	border-collapse: collapse;
 	margin: 0 auto;
 	padding: 0;
-	font-size: 2vw;
+	font-size: min(2vw, 20px);
 	width: 100%;
 }
 
