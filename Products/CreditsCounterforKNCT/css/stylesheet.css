@@ -54,11 +54,11 @@ input:checked + .tab_class + .content_class {
 }
 
 input {
-	font-size: min(1.5vw, 15px);
+	font-size: min(2vw, 15px);
 }
 
 .options {
-	font-size: min(20vw, 20px);
+	font-size: min(2vw, 15px);
 }
 
 table {

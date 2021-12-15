@@ -35,14 +35,14 @@ function convertArray(data, outputElement) {
                 insertElement += `<th>${childElement}</th>`
             }else if(colcnt === 0) {
                 let add_class = department[department_count];
-                if(array[index + 1] === '一般') add_class += 'normal ';
+                if(array[index + 2] === '一般') add_class += 'normal ';
                 else add_class += 'special ';
-                if(array[index + 2] === '必修') add_class += 'required';
-                else if(array[index + 2] === '選択') add_class += 'elective';
-                else if(array[index + 2] === '必修（留学生）') add_class += 'international';
+                if(array[index + 3] === '必修') add_class += 'required';
+                else if(array[index + 3] === '選択') add_class += 'elective';
+                else if(array[index + 3] === '必修（留学生）') add_class += 'international';
                 else add_class += 'other';
                 insertElement += `<td><label><input type="checkbox" class="${add_class}">${childElement}</label></td>`
-            }else if(colcnt === 3) {
+            }else if(colcnt === 4) {
                 insertElement += `<td class="${department_[department_count]}credit">${childElement}</td>`
             }else{
                 insertElement += `<td>${childElement}</td>`

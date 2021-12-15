@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 school_id = '14'
 
 department_id = ['11', '12', '13', '14', '15']
+# department_id = ['11']
 
 year = '2021'
 
@@ -22,25 +23,44 @@ for department in department_id:
     tanni = []
     tanni_flag = False
     for element in soup.find_all('td'):
-        str = element.get_text()
-        if str == '一般' or str == '専門':
-            ippan_senmon.append(str)
+        data = element.get_text()
+        if data == '一般' or data == '専門':
+            ippan_senmon.append(data)
         
-        if '必修' in str or '選択' in str:
-            hissyu_sentaku.append(str)
+        if '必修' in data or '選択' in data:
+            hissyu_sentaku.append(data)
         
-        if '単位' in str:
+        if '単位' in data:
             tanni_flag = True
             continue
 
-        if tanni_flag and len(str) == 1 and str != '前' and str != '後':
-            tanni.append(str)
+        if tanni_flag and len(data) == 1 and data != '前' and data != '後':
+            tanni.append(data)
             tanni_flag = False
+
+    cnm = [[] for i in range(5)]
+    for i in range(1, 6):
+        class_name = 'c' + str(i) + 'm'
+        for element in soup.find_all(class_=class_name):
+            name = element.get_text()
+            cnm[i-1].append(name)
+
+    grade = []
+    grade_count = 0
+    cnt = 0
+    for i in range((int)(len(cnm[0]) / 4)):
+        if cnm[grade_count][cnt] != '' or cnm[grade_count][cnt+1] != '' or cnm[grade_count][cnt+2] != '' or cnm[grade_count][cnt+3] != '':
+            grade.append(grade_count + 1)
+        else:
+            grade_count += 1
+            grade.append(grade_count + 1)
+        
+        cnt += 4
 
     eigo1a = False
     eigo1b = False
     f = open('./' + department + '.csv', 'w')
-    f.write('教科名,科目,区分,単位数\n')
+    f.write('教科名,学年,科目,区分,単位数\n')
     for i in range(len(subjects)):
         if '日本語' in subjects[i]:
             hissyu_sentaku[i] = '必修（留学生）'
@@ -52,4 +72,4 @@ for department in department_id:
             eigo1a = True
         if subjects[i] == '英語演習ⅠＢ':
             eigo1b = True
-        f.write(subjects[i] + ',' + ippan_senmon[i] + ',' + hissyu_sentaku[i] + ',' + tanni[i] + '\n')
+        f.write(subjects[i] + ',' + str(grade[i]) + ',' + ippan_senmon[i] + ',' + hissyu_sentaku[i] + ',' + tanni[i] + '\n')
