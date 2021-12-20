@@ -1,5 +1,5 @@
 h1 {
-	font-size: min(6vw, 60px);
+	font-size: min(7vw, 70px);
 	
 	text-align:center;
 	line-height:0.95em;
@@ -8,7 +8,15 @@ h1 {
 }
 
 #caution {
-	font-size: min(1.5vw, 15px);
+	font-size: min(3vw, 15px);
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #5a5a5a;
+}
+
+.counter p {
+	font-size: min(3vw, 15px);
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
@@ -28,7 +36,7 @@ h1 {
 	height: 50px;
 	background-color: darkgrey;
 	line-height: 50px;
-	font-size: min(3vw, 30px);
+	font-size: min(4vw, 30px);
 	text-align: center;
 	display: block;
 	float: left;
@@ -54,18 +62,18 @@ input:checked + .tab_class + .content_class {
 }
 
 input {
-	font-size: min(2vw, 15px);
+	font-size: min(3vw, 15px);
 }
 
 .options {
-	font-size: min(2vw, 15px);
+	font-size: min(3vw, 15px);
 }
 
 table {
 	border-collapse: collapse;
 	margin: 0 auto;
 	padding: 0;
-	font-size: min(2vw, 20px);
+	font-size: min(3vw, 20px);
 	width: 100%;
 }
 
