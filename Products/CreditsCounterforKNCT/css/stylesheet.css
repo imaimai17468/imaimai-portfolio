@@ -16,7 +16,7 @@ h1 {
 }
 
 .counter p {
-	font-size: min(3vw, 15px);
+	font-size: min(4vw, 20px);
 	text-align:center;
 	line-height:0.95em;
 	font-weight:bold;
