@@ -212,7 +212,7 @@ var canvas;
 
 function setup(){
     if(windowWidth <= 670){
-        canvas = createCanvas(windowWidth, 3700);
+        canvas = createCanvas(windowWidth, 4000);
     }else{
         canvas = createCanvas(windowWidth, 2200);
     }
