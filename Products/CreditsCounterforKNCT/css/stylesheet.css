@@ -116,14 +116,33 @@ table tbody th {
 	color: #fff;
 }
 
+.btn {
+    padding: 0.5em 1em;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border: 0.2em solid black;
+    border-radius: 0.75em;
+    text-align: center;
+    margin: 0.5em auto;
+	background-color: dimgrey;
+	text-decoration: none;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
 footer {
+	margin-top: 3em;
     background-color: #2a2a2a;
     width: 100%;
     text-align: center;
 }
 
 .copyright {
+	margin: 0;
     text-align: center;
     color: white;
-    padding: 15px;
+    padding-bottom: 15px;
 }
