@@ -12,17 +12,15 @@
 </head>
 <body>
     <h1>木更津高専単位カウンター</h1>
-    <p id="caution">注意・確認</p>
-    <p id="caution">
+    <p id="caution">注意・確認
         ※必ずしも計算結果は保証できません<br>
-        各自自己責任で使用してください
-    </p>
-    <p id="caution">各種資格や大会等で得られる単位は含みません。</p>
-    <p id="caution">必修選択科目・留学生科目のチェックに注意してください。</p>
-    <p id="caution">不具合が起きた場合リロードしてみてください。</p>
-    <p id="caution">
-        【おすすめの流れ】<br><br>
-        必修全てにチェック → 取得した選択・選択必修を個別にチェック
+        各自自己責任で使用してください<br>
+        必修選択科目・留学生科目のチェックに注意してください<br>
+        不具合が起きた場合リロードしてみてください<br>
+        【おすすめの流れ】<br>
+        ①必修全てにチェック<br>
+        ②取得した選択・選択必修を個別にチェック<br>
+        ③取得した特別学修を個別にチェック<br>
     </p>
     <div class="area">
         <input type="radio" name="tab_name" id="tab1" checked>
@@ -31,6 +29,14 @@
             <input type="button" value="合計単位数を計算する" onclick="credit_click(0);">
             <div class="counter"></div>
             <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_m"></div>
+                <div id="sikaku_m"></div>
+            </details>
             <table>
                 <tbody id="output_csv_m"></tbody>
             </table>
@@ -41,6 +47,14 @@
             <input type="button" value="合計単位数を計算する" onclick="credit_click(1);">
             <div class="counter"></div>
             <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_e"></div>
+                <div id="sikaku_e"></div>
+            </details>
             <table>
                 <tbody id="output_csv_e"></tbody>
             </table>
@@ -51,6 +65,14 @@
             <input type="button" value="合計単位数を計算する" onclick="credit_click(2);">
             <div class="counter"></div>
             <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_d"></div>
+                <div id="sikaku_d"></div>
+            </details>
             <table>
                 <tbody id="output_csv_d"></tbody>
             </table>
@@ -61,6 +83,14 @@
             <input type="button" value="合計単位数を計算する" onclick="credit_click(3);">
             <div class="counter"></div>
             <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_j"></div>
+                <div id="sikaku_j"></div>
+            </details>
             <table>
                 <tbody id="output_csv_j"></tbody>
             </table>
@@ -71,6 +101,14 @@
             <input type="button" value="合計単位数を計算する" onclick="credit_click(4);">
             <div class="counter"> </div>
             <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_c"></div>
+                <div id="sikaku_c"></div>
+            </details>
             <table>
                 <tbody id="output_csv_c"></tbody>
             </table>
@@ -78,8 +116,10 @@
     </div>
 </body>
 </html>
+<script type="text/javascript" src="js/output_counter.js"></script>
+<script type="text/javascript" src="js/output_option.js"></script>
+<script type="text/javascript" src="js/output_tokubetu.js"></script>
+<script type="text/javascript" src="js/output_sikaku.js"></script>
 <script type="text/javascript" src="js/output_csv.js"></script>
 <script type="text/javascript" src="js/checkbox.js"></script>
 <script type="text/javascript" src="js/count_credits.js"></script>
-<script type="text/javascript" src="js/output_counter.js"></script>
-<script type="text/javascript" src="js/output_option.js"></script>

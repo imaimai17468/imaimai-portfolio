@@ -10,7 +10,7 @@ h1 {
 #caution {
 	font-size: min(3vw, 15px);
 	text-align:center;
-	line-height:0.95em;
+	line-height:1.5em;
 	font-weight:bold;
 	color: #5a5a5a;
 }
@@ -67,6 +67,28 @@ input {
 
 .options {
 	font-size: min(3vw, 15px);
+}
+
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+	margin: .5em 0;
+}
+
+summary {
+	font-size: min(3vw, 15px);
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
 }
 
 table {

@@ -1,8 +1,6 @@
 {
     const outputElement = document.querySelectorAll('.options');
 
-    console.log(outputElement);
-
     for(let i = 0; i < outputElement.length; i++) {
         let insertElement = '';
         insertElement += `<p>必修科目のチェックを <input type="button" value="入れる" onclick="required_checked(true, ${i});"> <input type="button" value="外す" onclick="required_checked(false, ${i});"></p>`;
