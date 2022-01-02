@@ -1,13 +1,87 @@
+@font-face {
+    font-family: '03スマートフォンUI';
+    src: url('/Products/ange_matome/assets/03スマートフォントUI.OTF');
+}
+
+body {
+    margin: 0;
+    background-color: #FA6E67;
+    font-family: '03スマートフォンUI';
+    color: white;
+}
+
+.heading{
+    text-align: center;
+}
+
+.contents-movie {
+    width: 35em;
+    border-radius: 2em;
+    background-color: white;
+    margin: 1em auto;
+    color: black;
+    box-shadow:  1em 1em 2em #d55e58,
+                 -1em -1em 2em #ff7f76;
+}
+
+.contents-movie h2 {
+    color: #C83C35;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 1em;
+
+}
+
+hr {
+    height: 0;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    width: 80%;
+    height: 8px;
+    background-image: repeating-linear-gradient(45deg, #ff7f76 0, #ff7f76 1px, transparent 0, transparent 50%);
+    background-size: 8px 8px;
+}
+
+#movies {
+    width: 30em;
+    margin: 0 auto;
+    padding-bottom: 1.5em;
+}
+
+.movie {
+    text-align: center;
+    margin: 3em auto;
+    padding: 0 2em;
+    border-left: double 7px #C83C35;
+    border-right: double 7px #C83C35;
+}
+
+.movie-thumbnail{
+	position:relative;
+	width:100%;
+	height:0;
+	padding-top:75%;
+}
+
+.movie-thumbnail iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
 footer {
-	margin-top: 3em;
     background-color: #C83C35;
     width: 100%;
     text-align: center;
+    margin-top: 3em;
 }
 
 .copyright {
 	margin: 0;
     text-align: center;
     color: white;
-    padding-bottom: 15px;
+    padding: 1em;
 }
