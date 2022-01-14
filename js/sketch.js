@@ -211,7 +211,7 @@ var canvas;
 //==SETUP=================================================
 
 function setup(){
-    canvas = createCanvas(windowWidth, 325);
+    canvas = createCanvas(windowWidth, 400);
     canvas.style('z-index','-1');//canvasを後ろに移動する。
     
     canvasSetup();
@@ -229,7 +229,7 @@ function draw(){
 //==FUNCTIONS=============================================
 
 function windowResized(){
-    resizeCanvas(windowWidth, 325);
+    resizeCanvas(windowWidth, 400);
     canvasSetup();
 }
 

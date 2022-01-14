@@ -212,7 +212,7 @@ var canvas;
 
 function setup(){
     if(windowWidth <= 670){
-        canvas = createCanvas(windowWidth, 650);
+        canvas = createCanvas(windowWidth, 750);
     }else{
         canvas = createCanvas(windowWidth, 650);
     }
@@ -234,7 +234,7 @@ function draw(){
 
 function windowResized(){
     if(windowWidth <= 670){
-        resizeCanvas(windowWidth, 650);
+        resizeCanvas(windowWidth, 750);
     }else{
         resizeCanvas(windowWidth, 650);
     }
