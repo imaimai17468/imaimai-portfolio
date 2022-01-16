@@ -1,4 +1,4 @@
-{
+(function(){
     const outputElement_m = document.getElementById('output_csv_m');
     const outputElement_e = document.getElementById('output_csv_e');
     const outputElement_d = document.getElementById('output_csv_d');
@@ -63,4 +63,4 @@
     getCsvData('./js/13.csv', outputElement_d);
     getCsvData('./js/14.csv', outputElement_j);
     getCsvData('./js/15.csv', outputElement_c);
-}
+})();

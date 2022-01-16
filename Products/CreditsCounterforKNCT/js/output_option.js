@@ -1,4 +1,4 @@
-{
+(function(){
     const outputElement = document.querySelectorAll('.options');
 
     for(let i = 0; i < outputElement.length; i++) {
@@ -11,4 +11,4 @@
 
         outputElement[i].innerHTML = insertElement;
     }
-}
+})();

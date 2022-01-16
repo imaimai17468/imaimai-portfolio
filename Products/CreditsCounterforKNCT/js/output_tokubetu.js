@@ -1,4 +1,4 @@
-{
+(function(){
     const department = ['m ', 'e ', 'd ', 'j ', 'c '];
     const department_ = ['m_', 'e_', 'd_', 'j_', 'c_'];
     let department_count = 0;
@@ -58,4 +58,4 @@
     }
 
     getCsvData('./js/tokubetu.csv', outputElement);
-}
+})();

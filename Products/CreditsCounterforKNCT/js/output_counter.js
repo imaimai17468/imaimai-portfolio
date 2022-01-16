@@ -1,4 +1,4 @@
-{
+(function(){
     const outputElement = document.querySelectorAll('.counter');
 
     department_list = ["m", "e", "d", "j", "c"];
@@ -15,11 +15,4 @@
         insertElement += `<p id="senmon_countdown_${department_list[i]}">[専門] 82 単位まで残り 82 単位</p>`;
         outputElement[i].innerHTML = insertElement;
     }
-}
-
-{/* <p>現在の合計単位数</p>
-<h1 id="credit_count_m">0</h1>
-<p>単位</p>
-<p id="credit_detail_m">一般科目 : 0 単位 / 専門科目 : 0 単位</p>
-<p id="credit_required_m">必修科目 : 0 単位</p>
-<p id="credit_countdown_m">167 単位まであと 167 単位</p> */}
+})();

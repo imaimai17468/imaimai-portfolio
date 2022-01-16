@@ -1,4 +1,4 @@
-{
+(function(){
     const outputElement_m = document.getElementById('sikaku_m');
     const outputElement_e = document.getElementById('sikaku_e');
     const outputElement_d = document.getElementById('sikaku_d');
@@ -63,4 +63,4 @@
     getCsvData('./js/sikaku_d.csv', outputElement_d);
     getCsvData('./js/sikaku_j.csv', outputElement_j);
     getCsvData('./js/sikaku_c.csv', outputElement_c);
-}
+})();
