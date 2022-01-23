@@ -15,13 +15,13 @@ body {
 }
 
 .contents-movie {
-    width: 35em;
-    border-radius: 2em;
+    width: 80vw;
+    border-radius: 5vw;
     background-color: white;
-    margin: 1em auto;
+    margin: 5vh auto;
     color: black;
-    box-shadow:  1em 1em 2em #d55e58,
-                 -1em -1em 2em #ff7f76;
+    box-shadow:  5vw 5vw 10vw #d55e58,
+                 -5vw -5vw 10vw #ff7f76;
 }
 
 .contents-movie h2 {
@@ -37,24 +37,24 @@ hr {
     margin: 0 auto;
     padding: 0;
     border: 0;
-    width: 80%;
-    height: 8px;
+    width: 70vw;
+    height: 1vh;
     background-image: repeating-linear-gradient(45deg, #ff7f76 0, #ff7f76 1px, transparent 0, transparent 50%);
     background-size: 8px 8px;
 }
 
 #movies {
-    width: 30em;
+    width: 70vw;
     margin: 0 auto;
-    padding-bottom: 1.5em;
+    padding-bottom: 1vh;
 }
 
 .movie {
     text-align: center;
-    margin: 3em auto;
-    padding: 0 2em;
-    border-left: double 7px #C83C35;
-    border-right: double 7px #C83C35;
+    margin: 5vw auto;
+    padding: 0 3vw;
+    border-left: double 1vw #C83C35;
+    border-right: double 1vw #C83C35;
 }
 
 .movie-thumbnail{
