@@ -7,7 +7,7 @@ function getYouTubeData() {
       key: 'AIzaSyBFts6_VnCh_gbbEeCVjEPhM4bNfk1UF_A', 
       channelId: 'UCHVXbQzkl3rDfsXWo8xi2qw', 
       part: 'snippet', 
-      maxResults: 5, 
+      maxResults: 3, 
       order: 'date', 
     }, 
     error: function() { 
