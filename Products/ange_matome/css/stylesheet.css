@@ -176,11 +176,29 @@ hr {
     text-align: center;
     font-size: 1.5em;
     padding-top: 1em;
-
 }
 
 .contents-twitter hr {
     margin-bottom: 3vh;
+}
+
+.contents-analytics {
+    width: min(80vw, 700px);
+    border-radius: 5vw;
+    background-color: white;
+    margin: 5vh auto;
+    color: black;
+}
+
+.contents-analytics h2{
+    color: #C83C35;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 1em;
+}
+
+#analytics {
+    width: 85%;
 }
 
 footer {
