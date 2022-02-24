@@ -37,9 +37,9 @@ getYouTubeData().done(function(data) {
   // console.log(subscriberCount);
   html.push(`
     <h3>チャンネル登録者数</h3>
-    <p>${subscriberCount} 人</p>
+    <p class="value">${subscriberCount} 人</p>
     <h3>チャンネル再生回数</h3>
-    <p>${viewCount} 回</p>
+    <p class="value">${viewCount} 回</p>
   `);
   $('#analytics').html(html.join(''));
 });
