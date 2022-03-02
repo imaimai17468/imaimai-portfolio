@@ -241,7 +241,7 @@ footer hr {
 }
 
 .caution,.policy {
-    text-align: center;
+    text-align: left;
     padding: 0 2.5%;
     line-height: 1.5;
 }
