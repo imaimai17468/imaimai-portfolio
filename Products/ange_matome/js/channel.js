@@ -20,14 +20,15 @@ getYouTubeData().done(function(data) {
   var items = data.items; 
   var html = [];
   // console.log(data);
-  items.forEach(function(v) { 
+  items.forEach(function(v) {
+    console.log(v)
     var videoId = v.id.videoId; 
     var snippet = v.snippet; 
     if (v.id.videoId && snippet.title !== 'Private video') { 
       html.push(` 
         <div class="movie"> 
         ${snippet.title}<br> 
-        ⏱${new Date(snippet.publishedAt).toLocaleString()}<br> 
+        ${new Date(snippet.publishedAt).toLocaleString()}<br> 
         <div class="movie-thumbnail">
           <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
         </div>
