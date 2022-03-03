@@ -15,26 +15,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script><!--不必要なら削除-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script><!--不必要なら削除-->
 </head>
-<body>
+<header>
     <div id="splash">
 		<div id="splash_text"></div>
 		<div class="loader_cover loader_cover-up"></div>
 		<div class="loader_cover loader_cover-down"></div>
 	</div>
-
+    <button type="button" class="btn js-btn">
+        <span class="btn-line"></span>
+    </button>
+    <nav>
+        <ul class="menu">
+            <li class="menu-item">TOP</li>
+            <li class="menu-item">アンジュって？</li>
+            <li class="menu-item">配信</li>
+            <li class="menu-item">曲</li>
+            <li class="menu-item">関連リンク</li>
+        </ul>
+    </nav>
     <div class="contents-top">
         <div id="header-img"></div>
         <div class="logo">
             <img src="./assets/ange_logo.png" alt="ange_logo">
         </div>
     </div>
-    
+</header>
+<body>
     <div class="contents-analytics">
         <h2 class="heading">⚖ チャンネル情報 ⚖</h2>
         <hr>
         <div id="analytics"></div>
     </div>
-
     <div class="contents">
         <div class="contents-movie">
             <h2 class="heading">⚖ 最近の動画 ⚖</h2>
@@ -74,5 +85,6 @@
 <script type="text/javascript" src="./js/channel.js"></script>
 <script type="text/javascript" src="./js/loading.js"></script>
 <script type="text/javascript" src="./js/typing.js"></script>
+<script type="text/javascript" src="./js/button.js"></script>
 </html>
  
