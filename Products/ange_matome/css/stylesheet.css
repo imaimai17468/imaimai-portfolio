@@ -159,6 +159,55 @@ img {
     padding: 2vh 0;
 }
 
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    transform: all .2s;
+    padding:10px 30px;
+}
+
+/*現在地とhoverの設定*/
+.menu li.current a,
+.menu li a:hover {
+    background: #efefef;
+	color:#C83C35;
+}
+
+.menu li a:hover {
+    transition-delay: .5s;
+}
+
+/*線の設定*/
+.menu li a::before,
+.menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #efefef;
+    transition: .5s;
+}
+
+/*線の位置と変化*/
+.menu li a::before {
+    top: 0;
+	transform: translateX(-100%);/*X方向に-100%移動*/
+}
+.menu li a::after {
+    bottom: 0;
+	transform: translateX(100%);/*X方向に100%移動*/
+}
+
+/*hoverした際の線の変化*/
+.menu li a:hover::before ,
+.menu li a:hover::after {
+	transform: translateX(0);/*X方向に0%移動*/
+}
+
 /* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
 @media screen and (min-width: 600px) {
 	.btn {
