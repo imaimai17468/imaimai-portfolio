@@ -38,6 +38,20 @@ html {
     font-size: 62.5%;
 }
 
+/* ホバー関係 */
+@media (hover: hover){
+    #page-top a:hover{
+        background: #fff;
+        color: #C83C35;
+    }
+}
+@media (hover: none){
+    #page-top a:active{
+        background: #fff;
+        color: #C83C35;
+    }
+}
+
 /* コンテンツトップ画像 */
 .contents-top {
     width: 100%;
@@ -169,17 +183,6 @@ img {
     padding:10px 30px;
 }
 
-/*現在地とhoverの設定*/
-.menu li.current a,
-.menu li a:hover {
-    background: #efefef;
-	color:#C83C35;
-}
-
-.menu li a:hover {
-    transition-delay: .5s;
-}
-
 /*線の設定*/
 .menu li a::before,
 .menu li a::after {
@@ -192,6 +195,21 @@ img {
     transition: .5s;
 }
 
+.menu li.current a,
+.menu li a:hover {
+    background: #efefef;
+    color:#C83C35;
+}
+
+.menu li a:hover {
+    transition-delay: .5s;
+}
+
+.menu li a:hover::before ,
+.menu li a:hover::after {
+    transform: translateX(0);/*X方向に0%移動*/
+}
+
 /*線の位置と変化*/
 .menu li a::before {
     top: 0;
@@ -200,12 +218,6 @@ img {
 .menu li a::after {
     bottom: 0;
 	transform: translateX(100%);/*X方向に100%移動*/
-}
-
-/*hoverした際の線の変化*/
-.menu li a:hover::before ,
-.menu li a:hover::after {
-	transform: translateX(0);/*X方向に0%移動*/
 }
 
 /* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
@@ -440,11 +452,6 @@ footer hr {
     text-decoration: none;
     font-size: 0.6rem;
     transition: all 0.3s;
-}
-
-#page-top a:hover{
-	background: #fff;
-    color: #C83C35;
 }
 
 #page-top {
