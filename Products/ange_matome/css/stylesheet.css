@@ -38,6 +38,14 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    font-size: 1.6rem;
+    margin: 0;
+    background-color: #E34E4F;
+    font-family: '03スマートフォンUI';
+    color: white;
+}
+
 /* ホバー関係 */
 @media (hover: hover){
     #page-top a:hover{
@@ -88,9 +96,9 @@ img {
 }
 
 .logo {
-    width: min(80vw, 500px);
     text-align: center;
-    margin: auto auto;
+    right: 50%;
+    top: 50%;
 }
 
 /* メニューボタン */
@@ -244,10 +252,6 @@ img {
     }
 }
 
-body {
-    font-size: 1.6rem;
-}
-
 #splash {
     position: fixed;
 	width: 100%;
@@ -291,13 +295,6 @@ body {
 
 .coveranime {
     transform: scaleY(0);
-}
-
-body {
-    margin: 0;
-    background-color: #FA6E67;
-    font-family: '03スマートフォンUI';
-    color: white;
 }
 
 .heading{
@@ -413,6 +410,7 @@ hr {
     background-color: white;
     margin: 5vh auto;
     color: black;
+
 }
 
 .contents-twitter h2 {
@@ -426,11 +424,26 @@ hr {
     margin-bottom: 3vh;
 }
 
+.mark {
+    width: 200px;
+    position: fixed;
+    right: -50px;
+    bottom: -50px;
+    z-index: -1;
+    animation: 5s linear infinite rotation;
+}
+
+@keyframes rotation{
+    0%{ transform:rotate(0);}
+    100%{ transform:rotate(360deg); }
+}
+
 footer {
     background-color: #C83C35;
     width: 100%;
     text-align: center;
     padding-top: 10px;
+    z-index: 999;
 }
 
 footer hr {
