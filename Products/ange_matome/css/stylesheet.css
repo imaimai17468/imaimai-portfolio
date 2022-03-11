@@ -433,6 +433,15 @@ hr {
     animation: 5s linear infinite rotation;
 }
 
+.mark_2 {
+    width: 150px;
+    position: fixed;
+    left: 0px;
+    top: 300px;
+    z-index: -1;
+    animation: 5s linear infinite rotation;
+}
+
 @keyframes rotation{
     0%{ transform:rotate(0);}
     100%{ transform:rotate(360deg); }
