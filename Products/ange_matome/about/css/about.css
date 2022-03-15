@@ -30,12 +30,12 @@ a {
 }
 
 .name-en {
-    font-size: 3vw;
+    font-size: 4vw;
     margin-top: 10px;
 }
 
 .introduction {
-    font-size: 1.5vw;
+    font-size: 3vw;
     margin-top: 20px;
     color: black;
 }
@@ -53,7 +53,7 @@ a {
 }
 
 .profile-img {
-    width: 40%;
+    width: 50%;
 }
 
 .detail {
@@ -61,7 +61,7 @@ a {
 }
 
 table{
-    font-size: 1.25vw;
+    font-size: 2vw;
     width: 100%;
     border-collapse: collapse;
 }
@@ -104,4 +104,57 @@ table td{
     text-align: center;
     background-color: #eee;
     padding: 5px 0;
+}
+
+.sub {
+    font-size: 2vw;
+}
+
+.movies {
+   display: flex; 
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.movie {
+    border: none;
+    margin: 10px auto;
+}
+
+.costume-list {
+    margin: 5vh auto;
+    width: 80%;
+    max-width: 1200px;
+
+    border-radius: 50px;
+    background: #E34E4F;
+    box-shadow:  20px 20px 60px #c14243,
+                -20px -20px 60px #ff5a5b;
+}
+
+.costume-list a{
+    text-decoration: none;
+    color: white;
+}
+
+.title {
+    padding: 25px;
+}
+
+.list {
+    margin: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+.cos-btn {
+    font-size: 2vw;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #cc4647, #f35355);
+    box-shadow:  5px 5px 10px #c14243,
+                 -5px -5px 10px #ff5a5b;
+    padding: 15px;
+    margin: 15px;
 }
