@@ -14,13 +14,13 @@ var bar = new ProgressBar.Line(splash_text, {//id名を指定
 			padding: '0',
 			margin: '-30px 0 0 0',//バーより上に配置
 			transform:'translate(-50%,-50%)',
-			'font-size':'1rem',
+			'font-size':'2rem',
 			color: '#fff',
 		},
 		autoStyleContainer: false //自動付与のスタイルを切る
 	},
 	step: function(state, bar) {
-		bar.setText(Math.round(bar.value() * 100) + ' %'); //テキストの数値
+		bar.setText('おまたせ、まった？'); //テキストの数値
 	}
 });
 
