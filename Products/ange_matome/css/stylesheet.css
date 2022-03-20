@@ -116,6 +116,13 @@ img {
     background-color: #C83C35;
 }
 
+.top-border {
+    width: 100%;
+    border-color: #C83C35;
+    border-style: solid;
+    border-width: 0 0 10px 0;
+}
+
 /* メニューボタンの線 */
 .btn-line {
     display: block;
@@ -312,7 +319,7 @@ img {
     align-items: flex-start;
 }
 
-hr {
+.border {
     margin: 0 auto;
     padding: 0;
     border: 0;
@@ -531,8 +538,13 @@ footer hr {
 
 .caution,.policy {
     text-align: left;
-    padding: 0 2.5%;
+    padding: 0 2vw;
     line-height: 1.5;
+}
+
+.caution hr, .policy hr {
+    width: 96vw;
+    margin: 10px 0;
 }
 
 .caution,.policy p {
