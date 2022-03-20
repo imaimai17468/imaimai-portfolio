@@ -46,6 +46,10 @@ body {
     color: white;
 }
 
+h2 {
+    padding-bottom: 10px;
+}
+
 /* ホバー関係 */
 @media (hover: hover){
     #page-top a:hover{
@@ -318,16 +322,28 @@ hr {
     background-size: 8px 8px;
 }
 
+.glass {
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* 背景色 */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+    border-right-color: rgba(255, 255, 255, 0.2);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+    box-shadow: 0 5px 20px #E34E4F; /* 薄い影 */
+}
+
 .contents-analytics {
     width: min(80vw, 700px);
     border-radius: 5vw;
-    background-color: white;
     margin: 5vh auto;
     color: black;
 }
 
 .contents-analytics h2{
-    color: #C83C35;
+    color: white;
     text-align: center;
     font-size: 1.5em;
     padding-top: 1em;
@@ -336,7 +352,7 @@ hr {
 #analytics {
     width: 85%;
     margin: 0 auto;
-    padding-bottom: 3vh;
+    padding: 3vh 0;
 }
 
 .value {
@@ -361,13 +377,12 @@ hr {
 .contents-movie {
     width: min(80vw, 700px);
     border-radius: 5vw;
-    background-color: white;
     margin: 5vh auto;
     color: black;
 }
 
 .contents-movie h2 {
-    color: #C83C35;
+    color: white;
     text-align: center;
     font-size: 1.5em;
     padding-top: 1em;
@@ -407,14 +422,13 @@ hr {
     width: min(80vw, 700px);
     text-align: center;
     border-radius: 5vw;
-    background-color: white;
     margin: 5vh auto;
     color: black;
 
 }
 
 .contents-twitter h2 {
-    color: #C83C35;
+    color: white;
     text-align: center;
     font-size: 1.5em;
     padding-top: 1em;
