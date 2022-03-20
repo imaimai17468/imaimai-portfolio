@@ -3,6 +3,16 @@
     src: url('/Products/ange_matome/assets/03スマートフォントUI.OTF');
 }
 
+@font-face {
+    font-family: '851マカポップ';
+    src: url('/Products/ange_matome/assets/851MKPOP.TTF');
+}
+
+@font-face {
+    font-family: 'NeueEinstellung';
+    src: url('/Products/ange_matome/assets/NeueEinstellung-Normal.otf');
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -43,7 +53,7 @@ body {
     margin: 0;
     background-color: #E34E4F;
     font-family: '03スマートフォンUI';
-    color: white;
+    color: #efefef;
 }
 
 h2 {
@@ -65,10 +75,9 @@ h2 {
 }
 
 /* コンテンツトップ画像 */
-.contents-top {
+.contents-top  {
     width: 100%;
-    height: 40vh;
-    min-height: 400px;
+    height: 100vh;
     background: url('/Products/ange_matome/assets/ange_top.png') no-repeat center;
     background-size: cover;
     position: relative;
@@ -99,10 +108,77 @@ img {
     height: auto;
 }
 
-.logo {
+@keyframes fadeInAnime{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.title {
+    font-family: '851マカポップ';
+    margin-top: 30vh;
     text-align: center;
-    right: 50%;
-    top: 50%;
+    font-size: min(9vw, 90px);
+    color: #efefef;
+    letter-spacing: 10px;
+    transform: rotate(-5deg);
+
+    animation-name:fadeInAnime;
+    animation-delay: 1s;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+.marker {
+    background: linear-gradient(transparent 60%, #ffce5b 40%);
+}
+
+.logo {
+    display: flex;
+}
+
+.logo-img {
+    width: 40%;
+    min-width: 400px;
+    margin: 5vh auto;
+    text-align: center;
+
+    animation-name:fadeInAnime;
+    animation-delay: 1.125s;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+}
+
+@keyframes fadeLeftAnime{
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+  
+    to {
+      opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logo-text {
+    font-family: 'NeueEinstellung';
+    font-size: min(7vw, 50px);
+    color: #efefef;
+    position: absolute;
+    top: 85vh;
+    left: 5vw;
+
+    animation-name:fadeLeftAnime;
+    animation-delay: 1.5s;
+    animation-duration: 0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
 }
 
 /* メニューボタン */
@@ -163,6 +239,11 @@ img {
 }
 .btn-line.open::after {
 	transform: rotate(-45deg);  /* 下の線を傾ける */
+}
+
+.menu-logo {
+    background-color: #efefef;
+    color: #C83C35
 }
 
 /* メニュー */
@@ -342,15 +423,19 @@ img {
     box-shadow: 0 5px 20px #E34E4F; /* 薄い影 */
 }
 
+.ange-mark {
+    color: #C83C35;
+}
+
 .contents-analytics {
     width: min(80vw, 700px);
     border-radius: 5vw;
     margin: 5vh auto;
-    color: black;
+    color: #efefef;
 }
 
 .contents-analytics h2{
-    color: white;
+    color: #efefef;
     text-align: center;
     font-size: 1.5em;
     padding-top: 1em;
@@ -371,16 +456,6 @@ img {
     display: none;
 }
 
-.value::after {
-    content: '|';
-    animation: typinganime .8s ease infinite;
-}
-
-@keyframes typinganime{
-	from{opacity:0}
-	to{opacity:1}
-}
-
 .contents-movie {
     width: min(80vw, 700px);
     border-radius: 5vw;
@@ -389,7 +464,7 @@ img {
 }
 
 .contents-movie h2 {
-    color: white;
+    color: #efefef;
     text-align: center;
     font-size: 1.5em;
     padding-top: 1em;
@@ -435,7 +510,7 @@ img {
 }
 
 .contents-twitter h2 {
-    color: white;
+    color: #efefef;
     text-align: center;
     font-size: 1.5em;
     padding-top: 1em;
@@ -443,6 +518,11 @@ img {
 
 .contents-twitter hr {
     margin-bottom: 3vh;
+}
+
+.topics {
+    width: 90%;
+    margin: 30px auto;
 }
 
 .mark {
@@ -558,6 +638,6 @@ footer hr {
 .copyright {
 	margin: 0;
     text-align: center;
-    color: white;
+    color: #efefef;
     padding: 1em;
 }
