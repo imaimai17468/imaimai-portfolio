@@ -1,5 +1,5 @@
 $('#normal-btn').click(function () {
-    const top = $('#normal').offset().top;
+    const top = $('#normal').offset().top - 125;
     $('body,html').animate({
         scrollTop: top
     }, 500);
@@ -7,7 +7,7 @@ $('#normal-btn').click(function () {
 });
 
 $('#summer-btn').click(function () {
-    const top = $('#summer').offset().top;
+    const top = $('#summer').offset().top - 125;
     $('body,html').animate({
         scrollTop: top
     }, 500);
@@ -15,7 +15,7 @@ $('#summer-btn').click(function () {
 });
 
 $('#dress-btn').click(function () {
-    const top = $('#dress').offset().top;
+    const top = $('#dress').offset().top - 125;
     $('body,html').animate({
         scrollTop: top
     }, 500);
@@ -23,7 +23,7 @@ $('#dress-btn').click(function () {
 });
 
 $('#idle-btn').click(function () {
-    const top = $('#idle').offset().top;
+    const top = $('#idle').offset().top - 125;
     $('body,html').animate({
         scrollTop: top
     }, 500);
@@ -31,7 +31,7 @@ $('#idle-btn').click(function () {
 });
 
 $('#hakui-btn').click(function () {
-    const top = $('#hakui').offset().top;
+    const top = $('#hakui').offset().top - 125;
     $('body,html').animate({
         scrollTop: top
     }, 500);
@@ -39,7 +39,7 @@ $('#hakui-btn').click(function () {
 });
 
 $('#val-btn').click(function () {
-    const top = $('#val').offset().top;
+    const top = $('#val').offset().top - 125;
     $('body,html').animate({
         scrollTop: top
     }, 500);

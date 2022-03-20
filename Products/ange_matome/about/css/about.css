@@ -6,10 +6,20 @@ a {
     color: black;
 }
 
+.pro-1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.heading {
+    padding-top: 15px;
+    font-size: min(6vw, 60px);
+}
+
 .profile {
     margin: 5vh auto;
-    width: 80%;
-    max-width: 1000px;
+    width: 70%;
+    max-width: 850px;
 }
 
 .glass {
@@ -26,16 +36,16 @@ a {
 }
 
 .name {
-    font-size: 4.5vw;
+    font-size: min(4.5vw, 45px);
 }
 
 .name-en {
-    font-size: 4vw;
+    font-size: min(4vw, 40px);
     margin-top: 10px;
 }
 
 .introduction {
-    font-size: 3vw;
+    font-size: min(3vw, 25px);
     margin-top: 20px;
     color: black;
 }
@@ -61,7 +71,7 @@ a {
 }
 
 table{
-    font-size: 2vw;
+    font-size: min(2vw, 20px);
     width: 100%;
     border-collapse: collapse;
 }
@@ -107,7 +117,7 @@ table td{
 }
 
 .sub {
-    font-size: 2vw;
+    font-size: min(2vw, 20px);
 }
 
 .movies {
@@ -119,6 +129,11 @@ table td{
 .movie {
     border: none;
     margin: 10px auto;
+}
+
+.costumes {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .costume-list {
@@ -136,16 +151,12 @@ table td{
     color: white;
 }
 
-.cos-title {
-    padding: 25px;
-}
-
 .list {
     margin: 0 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-bottom: 30px;
+    padding: 30px 0;
 }
 
 .cos-btn {
@@ -160,8 +171,8 @@ table td{
 
 .costume-detail {
     margin: 5vh auto;
-    width: 80%;
-    max-width: 1000px;
+    width: 75%;
+    max-width: 850px;
 }
 
 .costume-img {
