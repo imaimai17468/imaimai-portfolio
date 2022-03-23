@@ -177,6 +177,18 @@ img {
     opacity:0;
 }
 
+@media (orientation: landscape) and (max-height: 500px) {
+    .logo-img {
+        width: 50vh;
+        min-width: 0;
+    }
+    .logo-text {
+        top: 80vh;
+        left: 5vw;
+        font-size: 3vw;
+    }
+}
+
 /* メニューボタン */
 .btn {
     position: fixed;
@@ -309,11 +321,11 @@ img {
 /*線の位置と変化*/
 .menu li a::before {
     top: 0;
-	transform: translateX(-100%);/*X方向に-100%移動*/
+	transform: translateX(-101%);/*X方向に-100%移動*/
 }
 .menu li a::after {
     bottom: 0;
-	transform: translateX(100%);/*X方向に100%移動*/
+	transform: translateX(101%);/*X方向に100%移動*/
 }
 
 /* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
@@ -419,10 +431,6 @@ img {
     box-shadow: 0 5px 20px #E34E4F; /* 薄い影 */
 }
 
-.ange-mark {
-    color: #C83C35;
-}
-
 .contents-analytics {
     width: min(80vw, 700px);
     border-radius: 5vw;
@@ -511,6 +519,15 @@ img {
     position: fixed;
     left: 0px;
     top: 300px;
+    z-index: -1;
+    animation: 5s linear infinite rotation;
+}
+
+.mark_3 {
+    width: 125px;
+    position: fixed;
+    right: 50px;
+    top: 100px;
     z-index: -1;
     animation: 5s linear infinite rotation;
 }
