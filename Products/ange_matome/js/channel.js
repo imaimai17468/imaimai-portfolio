@@ -7,7 +7,7 @@ function getYouTubeData() {
       key: 'AIzaSyBFts6_VnCh_gbbEeCVjEPhM4bNfk1UF_A', 
       channelId: 'UCHVXbQzkl3rDfsXWo8xi2qw', 
       part: 'snippet', 
-      maxResults: 3, 
+      maxResults: 5, 
       order: 'date', 
     }, 
     error: function() { 
@@ -21,20 +21,22 @@ getYouTubeData().done(function(data) {
   var html = [];
   // console.log(data);
   items.forEach(function(v) {
-    console.log(v)
+    // console.log(v)
     var videoId = v.id.videoId; 
     var snippet = v.snippet; 
     if (v.id.videoId && snippet.title !== 'Private video') { 
       html.push(` 
-        <div class="movie"> 
-        ${snippet.title}<br> 
-        ${new Date(snippet.publishedAt).toLocaleString()}<br> 
-        <div class="movie-thumbnail">
-          <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+        <div class="glass">
+          <div class="movie"> 
+            ${snippet.title}<br> 
+            ${new Date(snippet.publishedAt).toLocaleString()}<br> 
+            <div class="movie-thumbnail">
+              <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            </div>
+          </div> 
         </div>
-        </div> 
       `); 
     } 
   }); 
-  $('#movies').html(html.join('')); 
+  $('.movies').html(html.join('')); 
 });

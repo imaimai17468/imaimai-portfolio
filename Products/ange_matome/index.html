@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <title>アンジュまとめサイト</title>
     <meta name="description" content="にじさんじライバーアンジュカトリーナの様々な情報を掲載するサイトです。"/>
-    <link rel="stylesheet" href="css/stylesheet.css">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <!-- js -->
     <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+    <!-- jquery -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+    <!-- slick -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <header>
     <div id="splash">
@@ -20,7 +26,7 @@
 		<div class="loader_cover loader_cover-up"></div>
 		<div class="loader_cover loader_cover-down"></div>
 	</div>
-    <button type="button" class="btn js-btn">
+    <button type="button" class="btn    s-btn">
         <span class="btn-line"></span>
     </button>
     <nav>
@@ -48,33 +54,37 @@
 </header>
 <body>
     <div class="contents-analytics">
+        <div class="heading">
+            <h2>INFORMATION</h2>
+            <h3>チャンネル情報</h3>
+        </div>
         <div class="glass">
-            <h2 class="heading"><span class="ange-mark">⚖</span> チャンネル情報 <span class="ange-mark">⚖</span></h2>
-            <hr class="border">
             <div id="analytics"></div>
         </div>
     </div>
-    <div class="contents">
-        <div class="contents-movie">
-            <div class="glass">
-                <h2 class="heading"><span class="ange-mark">⚖</span> 最近の動画 <span class="ange-mark">⚖</span></h2>
-                <hr class="border">
-                <div id="movies"></div>
-            </div>
+    <div class="contents-movie">
+        <div class="heading">
+            <h2>VIDEOS</h2>
+            <h3>最近の動画</h3>
         </div>
-        <div class="contents-twitter">
-            <div class="glass">
-                <h2 class="heading"><span class="ange-mark">⚖</span> 最近のツイート <span class="ange-mark">⚖</span></h2>
-                <hr class="border">
-                <a class="twitter-timeline" data-lang="ja" data-width="80%" data-height="100vh" data-chrome= "noheader transparent" href="https://twitter.com/Ange_Katrina_?ref_src=twsrc%5Etfw">Tweets by Ange_Katrina_</a>
-            </div>
-        </div>
+        <div class="movies"></div>
     </div>
-    <div class="topics">
+    <!-- <div class="contents-topics">
+        <div class="heading">
+            <h2>TOPICS</h2>
+            <h3>トピックス</h3>
+        </div>
         <div class="glass" style="border-radius: 0;">
-            <h2 class="heading"><span class="ange-mark">⚖</span> TOPICS <span class="ange-mark">⚖</span></h2>
-            <hr class="border">
             <div id="tags"></div>
+        </div>
+    </div> -->
+    <div class="contents-twitter">
+        <div class="heading">
+            <h2>TWEETS</h2>
+            <h3>最近のツイート</h3>
+        </div>
+        <div class="glass">
+            <a class="twitter-timeline" data-lang="ja" data-width="80%" data-height="100vh" href="https://twitter.com/Ange_Katrina_?ref_src=twsrc%5Etfw">Tweets by Ange_Katrina_</a>
         </div>
     </div>
     <div class="mark">
@@ -107,9 +117,9 @@
     <p class="copyright">&copy; 2021-, imaimai All Right Reserved.</p>
 </footer>
 <script type="text/javascript" src="./js/statistics.js"></script>
+<script type="text/javascript" src="./js/slider.js"></script>
 <script type="text/javascript" src="./js/channel.js"></script>
 <script type="text/javascript" src="./js/loading.js"></script>
-<script type="text/javascript" src="./js/typing.js"></script>
 <script type="text/javascript" src="./js/button.js"></script>
 <script type="text/javascript" src="./js/pagetop.js"></script>
 </html>

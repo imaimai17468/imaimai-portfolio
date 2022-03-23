@@ -56,10 +56,6 @@ body {
     color: #efefef;
 }
 
-h2 {
-    padding-bottom: 10px;
-}
-
 /* ホバー関係 */
 @media (hover: hover){
     #page-top a:hover{
@@ -127,7 +123,7 @@ img {
     transform: rotate(-5deg);
 
     animation-name:fadeInAnime;
-    animation-delay: 1s;
+    animation-delay: 1.25s;
     animation-duration:1s;
     animation-fill-mode:forwards;
     opacity:0;
@@ -148,7 +144,7 @@ img {
     text-align: center;
 
     animation-name:fadeInAnime;
-    animation-delay: 1.125s;
+    animation-delay: 1.5s;
     animation-duration:1s;
     animation-fill-mode:forwards;
     opacity:0;
@@ -175,7 +171,7 @@ img {
     left: 5vw;
 
     animation-name:fadeLeftAnime;
-    animation-delay: 1.5s;
+    animation-delay: 1.75s;
     animation-duration: 0.5s;
     animation-fill-mode:forwards;
     opacity:0;
@@ -389,15 +385,15 @@ img {
     transform: scaleY(0);
 }
 
-.heading{
+.heading {
+    margin-bottom: 2vh;
+    font-family: 'NeueEinstellung';
+    color: #efefef;
     text-align: center;
 }
 
-.contents {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+.heading h2{
+    font-size: 5rem;
 }
 
 .border {
@@ -430,15 +426,8 @@ img {
 .contents-analytics {
     width: min(80vw, 700px);
     border-radius: 5vw;
-    margin: 5vh auto;
+    margin: 10vh auto;
     color: #efefef;
-}
-
-.contents-analytics h2{
-    color: #efefef;
-    text-align: center;
-    font-size: 1.5em;
-    padding-top: 1em;
 }
 
 #analytics {
@@ -457,32 +446,26 @@ img {
 }
 
 .contents-movie {
-    width: min(80vw, 700px);
     border-radius: 5vw;
-    margin: 5vh auto;
+    margin: 10vh auto;
     color: black;
 }
 
-.contents-movie h2 {
-    color: #efefef;
-    text-align: center;
-    font-size: 1.5em;
-    padding-top: 1em;
-
-}
-
-#movies {
-    width: 85%;
+.movies {
     margin: 0 auto;
     padding-bottom: 1vh;
 }
 
 .movie {
     text-align: center;
-    margin: 5vw auto;
     padding: 0 3vw;
     border-left: double 1vw #C83C35;
     border-right: double 1vw #C83C35;
+    color: #efefef;
+}
+
+.movie,.slick-slide {
+    margin: 0 1vw;
 }
 
 .movie-thumbnail {
@@ -500,29 +483,18 @@ img {
 	height:100%;
 }
 
+.contents-topics {
+    width: 90%;
+    margin: 10vh auto;
+}
+
 .contents-twitter {
     width: min(80vw, 700px);
     text-align: center;
     border-radius: 5vw;
-    margin: 5vh auto;
+    margin: 10vh auto;
     color: black;
 
-}
-
-.contents-twitter h2 {
-    color: #efefef;
-    text-align: center;
-    font-size: 1.5em;
-    padding-top: 1em;
-}
-
-.contents-twitter hr {
-    margin-bottom: 3vh;
-}
-
-.topics {
-    width: 90%;
-    margin: 30px auto;
 }
 
 .mark {
