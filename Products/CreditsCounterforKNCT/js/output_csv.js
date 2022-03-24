@@ -7,19 +7,18 @@
 
     const department = ['m ', 'e ', 'd ', 'j ', 'c '];
     const department_ = ['m_', 'e_', 'd_', 'j_', 'c_'];
-    let department_count = 0;
 
-    function getCsvData(dataPath, outputElement) {
+    function getCsvData(dataPath, outputElement, department_count) {
         const request = new XMLHttpRequest();
         request.addEventListener('load', (event) => {
             const response = event.target.responseText;
-            convertArray(response, outputElement);
+            convertArray(response, outputElement, department_count);
         });
         request.open('GET', dataPath, true);
         request.send();
     }
 
-    function convertArray(data, outputElement) {
+    function convertArray(data, outputElement, department_count) {
         const dataArray = [];
         const dataString = data.split('\n');
         for (let i = 0; i < dataString.length; i++) {
@@ -54,13 +53,12 @@
             rowcnt++;
             colcnt = 0;
         });
-        department_count++;
         outputElement.innerHTML = insertElement;
     }
 
-    getCsvData('./js/11.csv', outputElement_m);
-    getCsvData('./js/12.csv', outputElement_e);
-    getCsvData('./js/13.csv', outputElement_d);
-    getCsvData('./js/14.csv', outputElement_j);
-    getCsvData('./js/15.csv', outputElement_c);
+    getCsvData('./js/11.csv', outputElement_m, 0);
+    getCsvData('./js/12.csv', outputElement_e, 1);
+    getCsvData('./js/13.csv', outputElement_d, 2);
+    getCsvData('./js/14.csv', outputElement_j, 3);
+    getCsvData('./js/15.csv', outputElement_c, 4);
 })();
