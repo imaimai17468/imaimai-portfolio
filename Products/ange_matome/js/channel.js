@@ -41,7 +41,7 @@ getYouTubeData().done(function(data) {
 	$('.movies').html(html.join(''));
 
 	$('.movies').slick({
-		arrows: true,
+		arrows: false,
 		dots: true,
 		infinite: true,
 		autoplay: true,
