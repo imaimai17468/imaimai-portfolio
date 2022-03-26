@@ -41,7 +41,7 @@ getYouTubeData().done(function(data) {
 	$('.movies').html(html.join(''));
 
 	$('.movies').slick({
-		arrows: false,
+		arrows: true,
 		dots: true,
 		infinite: true,
 		autoplay: true,
@@ -49,7 +49,6 @@ getYouTubeData().done(function(data) {
 		cssEase: 'linear',
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		centerMode: true,
 		responsive: [
 			{
 				breakpoint: 1200,//モニターの横幅が769px以下の見せ方

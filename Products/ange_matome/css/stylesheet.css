@@ -462,6 +462,7 @@ img {
 .movies {
     margin: 0 auto;
     padding-bottom: 1vh;
+    width: 90%;
 }
 
 .movie {
