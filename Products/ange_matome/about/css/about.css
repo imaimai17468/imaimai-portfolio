@@ -128,7 +128,9 @@ table td{
 
 .movie {
     border: none;
-    margin: 10px auto;
+    margin: 20px auto;
+    width: 70vw;
+    height: 30vh;
 }
 
 .costumes {
@@ -183,9 +185,13 @@ table td{
 }
 
 .images {
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    
+}
+
+.frame {
+    border: outset 10px #E34E4F;
 }
