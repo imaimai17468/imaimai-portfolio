@@ -446,7 +446,8 @@ img {
 
 .value {
     text-align: right;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    padding: 10px 0;
 }
 
 .value span {
