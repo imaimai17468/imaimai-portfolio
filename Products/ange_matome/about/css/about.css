@@ -121,16 +121,15 @@ table td{
 }
 
 .movies {
-   display: flex; 
-   flex-wrap: wrap;
-   justify-content: center;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .movie {
     border: none;
-    margin: 20px auto;
-    width: 70vw;
-    height: 30vh;
+    height: min(30vh, 300px);
 }
 
 .costumes {
