@@ -194,3 +194,50 @@ footer {
     color: white;
     padding: 15px;
 }
+
+.skills-controller {
+    margin: 0 auto;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px dashed #dee7ec;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.skill-container p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.skill-contents {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.component {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px dashed #dee7ec;
+    border-radius: 20px;
+    padding: 5px 15px 5px 15px;
+}
+
+.component i {
+    margin-right: 10px;
+}
