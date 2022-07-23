@@ -212,9 +212,9 @@ var canvas;
 
 function setup(){
     if(windowWidth <= 670){
-        canvas = createCanvas(windowWidth, 4100);
+        canvas = createCanvas(windowWidth, 4400);
     }else{
-        canvas = createCanvas(windowWidth, 2200);
+        canvas = createCanvas(windowWidth, 2500);
     }
     canvas.style('z-index','-1');//canvasを後ろに移動する。
     
@@ -234,9 +234,9 @@ function draw(){
 
 function windowResized(){
     if(windowWidth <= 670){
-        resizeCanvas(windowWidth, 4100);
+        resizeCanvas(windowWidth, 4400);
     }else{
-        resizeCanvas(windowWidth, 2200);
+        resizeCanvas(windowWidth, 2500);
     }
     canvasSetup();
 }
@@ -245,7 +245,7 @@ function canvasSetup(){
     colorMode(RGB);
 
     flock = new Flock();
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
         let b = new Boid(random() * width, random() * height);
         flock.addBoid(b);
     }
