@@ -144,6 +144,10 @@ header {
     padding-top: 30px;
 }
 
+.contents-wrapper {
+    background-color: white;
+}
+
 .top-contents{
     margin-top: 0;
 }
