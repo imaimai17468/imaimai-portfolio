@@ -134,11 +134,12 @@ header {
     padding-bottom: 15px;
     margin-bottom: 15px;
     padding-top: 30px;
+    margin-top: 0;
 }
 
 .contents-wrapper {
     padding-bottom: 120px;
-    height: 2500px;
+    background-color: white;
 }
 
 ul, ol {
@@ -168,6 +169,7 @@ ul, ol {
     margin: 20px 20px 20px 0;
     border: 5px solid #5a5a5a;
     border-radius: 10px;
+    width: 300px;
 }
 
 .production-item h3 {
