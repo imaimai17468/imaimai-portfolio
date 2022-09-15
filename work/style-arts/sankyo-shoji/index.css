@@ -13,3 +13,13 @@
     font-size:large;
     font-weight:800;
 }
+
+input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#input_image {
+    display: none;
+}

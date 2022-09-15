@@ -135,6 +135,13 @@ function addForm() {
     
 }
 
+function img_flg0(ischecked){
+    if(ischecked){
+        document.getElementById("input_image").style.display = "block";
+    }else{
+        document.getElementById("input_image").style.display = "none";
+    }
+}
 
 /*
 //clone_element[j].querySelector('input[name="num"]:checked').value
