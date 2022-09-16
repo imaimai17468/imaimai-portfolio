@@ -59,14 +59,11 @@
         </div>
         <div class="mt-0 form-inline">
             <label><input type="radio" id="deadline" name="deadline" value=1 onclick="date_flg1(this.checked);"/>日付入力　<input type="date" class="form-control" id="input_date" name="input_date" maxlength="10" size="10"></label>
-            <p class="ml-4 border border-dark my-auto px-2">指定納期 / までに</p>
+            <p class="ml-4 border border-dark my-auto px-2">指定納期<span id="specify_date"> / </span>までに</p>
         </div>
 
         <!--//参考画像（file）-->
         <p class="mt-3 mb-0 font-weight-bold">画像</p>
-        <div class="mt-0">
-            <label><input type="checkbox" id="item_image" name="item_image" value=0 onclick="img_flg0(this.checked);"/>&nbsp;あり（画像はフォーム送信後、そのまま送信）</label>
-        </div>
         <div class="mt-0">
             <input type="file" id="input_image" name="input_image">
         </div>

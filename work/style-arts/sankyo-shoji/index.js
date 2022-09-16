@@ -135,13 +135,11 @@ function addForm() {
     
 }
 
-function img_flg0(ischecked){
-    if(ischecked){
-        document.getElementById("input_image").style.display = "block";
-    }else{
-        document.getElementById("input_image").style.display = "none";
-    }
-}
+let date = document.querySelector(`input[type='date'][name='input_date']`);
+date.addEventListener(`change`, () => {
+    console.log("change");
+    document.querySelector(`#specify_date`).innerHTML = date.value;
+});
 
 /*
 //clone_element[j].querySelector('input[name="num"]:checked').value
