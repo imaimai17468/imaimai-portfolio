@@ -25,7 +25,7 @@
         <p class="mt-3 mb-0 font-weight-bold">個数</p>
         <div class="form-inline">
             <div class="mt-0 pr-5">
-                <label><input type="radio" id="item_number" name="item_number" value=0 checked onclick="num_flg0(this.checked);"/> <input type="number" id="input_num" name="input_num" min="1" max="100"/>&nbsp;個</label>
+                <label><input type="radio" id="item_number" name="item_number" value=0 checked onclick="num_flg0(this.checked);"/> <input type="number" id="item_number_text" name="item_number_text" min="1" max="100"/>&nbsp;個</label>
             </div>
             <div class="mt-0">
                 <label><input type="radio" id="item_number" name="item_number" value=1 onclick="num_flg1(this.checked);"/>&nbsp;1（最小個数）</label>
@@ -48,7 +48,7 @@
                 <label><input type="radio" id="unit" name="unit" value=3 onclick="unit_flg1(this.checked);"/>&nbsp;式</label>
             </div>
             <div class="mt-0">
-                <label><input type="radio" id="unit" name="unit" value=0 onclick="num_flg0(this.checked);"/> <input type="text" id="input_unit" name="input_unit" min="1" max="100"/></label>
+                <label><input type="radio" id="unit" name="unit" value=4 onclick="num_flg0(this.checked);"/> <input type="text" id="unit_text" name="unit_text" min="1" max="100"/></label>
             </div>
         </div> 
 
@@ -58,8 +58,8 @@
             <label><input type="radio" id="deadline" name="deadline" value=0 checked onclick="date_flg0(this.checked);"/>&nbsp;次回訪問日（10日以内）</label>
         </div>
         <div class="mt-0 form-inline">
-            <label><input type="radio" id="deadline" name="deadline" value=1 onclick="date_flg1(this.checked);"/>日付入力　<input type="date" class="form-control" id="input_date" name="input_date" maxlength="10" size="10"></label>
-            <p class="ml-4 border border-dark my-auto px-2">指定納期<span id="specify_date"> / </span>までに</p>
+            <label><input type="radio" id="deadline" name="deadline" value=1 onclick="date_flg1(this.checked);"/>日付入力　<input type="date" class="form-control" id="deadline" name="deadline" maxlength="10" size="10"></label>
+            <p class="ml-4 border border-dark my-auto px-2">指定納期<span id="deadline_text_0" name="deadline_text_0"> / </span>までに</p>
         </div>
 
         <!--//参考画像（file）-->

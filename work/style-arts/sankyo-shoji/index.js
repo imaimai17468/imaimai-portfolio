@@ -132,13 +132,19 @@ function addForm() {
     new_element.className = "ttt";
 
     content_area.after(new_element);
-    
+
+    var new_deadline_text = document.querySelector(`#form_${i-1} div p span`);
+    // console.log(new_deadline_text);
+    new_deadline_text.setAttribute('id', `deadline_text_${i-1}`);
+    new_deadline_text.setAttribute('name', `deadline_text_${i-1}`);
+
+    console.log(date);
 }
 
-let date = document.querySelector(`input[type='date'][name='input_date']`);
+let date = document.querySelectorAll(`input[type='date'][name='deadline']`);
 date.addEventListener(`change`, () => {
     console.log("change");
-    document.querySelector(`#specify_date`).innerHTML = date.value;
+    document.querySelector(`#deadline_text`).innerHTML = date.value;
 });
 
 /*
