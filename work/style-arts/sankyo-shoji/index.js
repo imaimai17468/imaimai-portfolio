@@ -23,6 +23,8 @@ function subForm() {
     let item_name = {};
     let num = {};
     let num_buff = {};
+    let unit = {};
+    let unit_buff = {};
     let date = {};
     let date_buff = {};
     let note = {};
@@ -30,25 +32,40 @@ function subForm() {
 
     item_name[0] = $('input[name="item_name"]').val();
     note[0] = document.getElementById("note").value;
+    console.log($('input[name="item_number_text"]').val());
 
     //個数について
-    if($('input[name="num"]:checked').val()== 0){
-        num[0] = "いつもの個数";
+    if($('input[name="item_number"]:checked').val()== 0){
+        num[0] = $('input[name="item_number_text"]').val();
     }
-    else if($('input[name="num"]:checked').val()== 1){
-        num[0] = "最小ロット";
-    }else{
-        num[0] = $('input[name="input_num"]').val();
+    else if($('input[name="item_number"]:checked').val()== 1){
+        num[0] = "1（最小個数）";
+    }
+    console.log(num[0]);
+
+    //単位について
+    if($('input[name="unit"]:checked').val()== 0){
+        unit[0] = "個";
+    }
+    else if($('input[name="unit"]:checked').val()== 1){
+        unit[0] = "箱";
+    }
+    else if($('input[name="unit"]:checked').val()== 2){
+        unit[0] = "枚";
+    }
+    else if($('input[name="unit"]:checked').val()== 3){
+        unit[0] = "式";
+    }
+    else if($('input[name="unit"]:checked').val()== 4){
+        unit[0] = $('input[name="unit_text"]').val();
     }
 
     //納期について
-    if($('input[name="date"]:checked').val()== 0){
-        date[0] = "急ぐ";
+    if($('input[name="deadline"]:checked').val()== 0){
+        date[0] = "次回訪問日（10日以内）";
     }
-    else if($('input[name="date"]:checked').val()== 1){
-        date[0] = "急がない";
-    }else{
-        date[0] = $('input[name="input_date"]').val();
+    else if($('input[name="deadline"]:checked').val()== 1){
+        date[0] = $('input[name="deadline_text"]').val();
     }
     
     
@@ -56,35 +73,51 @@ function subForm() {
 
         item_name[j] = clone_element[j].querySelector("#item_name").value;
         note[j] = clone_element[j].querySelector("#note").value;
-        num_buff[j] =  clone_element[j].querySelector('input[name="num"]:checked').value;
-        date_buff[j] = clone_element[j].querySelector('input[name="date"]:checked').value;
+        num_buff[j] =  clone_element[j].querySelector('input[name="item_number"]:checked').value;
+        unit_buff[j] = clone_element[j].querySelector('input[name="unit"]:checked').value
+        date_buff[j] = clone_element[j].querySelector('input[name="deadline"]:checked').value;
 
+        // 数量について
         if(num_buff[j] == 0){
-            num[j] = "いつもの個数";
+            num[j] = clone_element[j].querySelector("#item_number_text").value;
         }
         else if(num_buff[j] == 1){
-            num[j] = "最小ロット";
-        }else{
-            num[j] = clone_element[j].querySelector("#input_num").value;
+            num[j] = "1（最小個数）";
+        }
+
+        // 単位について
+        if(unit_buff[j] == 0){
+            unit[j] = "個";
+        }
+        else if(unit_buff[j] == 1){
+            unit[j] = "箱";
+        }
+        else if(unit_buff[j] == 2){
+            unit[j] = "枚";
+        }
+        else if(unit_buff[j] == 3){
+            unit[j] = "式";
+        }
+        else if(unit_buff[j] == 4){
+            unit[j] = clone_element[j].querySelector("#unit_text").value;
         }
     
         //納期について
         if(date_buff[j] == 0){
-            date[j] = "急ぐ";
+            date[j] = "次回訪問日（10日以内）";
         }
         else if(date_buff[j] == 1){
-            date[j] = "急がない";
-        }else{
-            date[j] = clone_element[j].querySelector("#input_date").value ;
+            date[j] = clone_element[j].querySelector("#deadline_text").value ;
         }
 
     }
         
-    console.log(i);
+    // console.log(i);
     for(let k=0; k<i; k++){
-        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
+        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         console.log(msg);
-        syncDelay(5000);
+        sendText(msg);
+        // syncDelay(5000);
         //setTimeout(sendText(msg), 1000);
     }
     return false;
