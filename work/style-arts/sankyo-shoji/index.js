@@ -137,15 +137,22 @@ function addForm() {
     // console.log(new_deadline_text);
     new_deadline_text.setAttribute('id', `deadline_text_${i-1}`);
     new_deadline_text.setAttribute('name', `deadline_text_${i-1}`);
+    new_deadline_text.innerHTML = ` / `
 
+    var new_deadline = document.querySelector(`#form_${i-1} input[type='date'][name='deadline']`);
+    console.log(new_deadline);
+
+    date = document.querySelectorAll(`input[type='date'][name='deadline']`);
     console.log(date);
 }
 
 let date = document.querySelectorAll(`input[type='date'][name='deadline']`);
-date.addEventListener(`change`, () => {
-    console.log("change");
-    document.querySelector(`#deadline_text`).innerHTML = date.value;
-});
+for(let j = 0; j < date.length; j++){
+    date[j].addEventListener(`change`, () => {
+        console.log("change " + j);
+        document.querySelector(`#deadline_text_${j}`).innerHTML = date[j].value;
+    });
+}
 
 /*
 //clone_element[j].querySelector('input[name="num"]:checked').value
