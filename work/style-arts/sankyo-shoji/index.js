@@ -103,9 +103,15 @@ let i = 1;
 let clone_element = {};
 
 function addForm() {
-
     // 複製するHTML要素を取得
     var content_area = document.getElementById(`form_${i-1}`);
+    
+    if(i >= 3){
+        // var over_text = document.createElement('p');
+        // over_text.textContent = `一度に3個以上の注文はできません`;
+        // content_area.after(over_text);
+        return;
+    }
 
     // 複製
     clone_element[i] = content_area.cloneNode(true);
@@ -141,18 +147,15 @@ function addForm() {
 
     var new_deadline = document.querySelector(`#form_${i-1} input[type='date'][name='deadline']`);
     console.log(new_deadline);
-
-    date = document.querySelectorAll(`input[type='date'][name='deadline']`);
-    console.log(date);
+    new_deadline.setAttribute('onchange', `date_flg2(${i-1});`)
 }
 
-let date = document.querySelectorAll(`input[type='date'][name='deadline']`);
-for(let j = 0; j < date.length; j++){
-    date[j].addEventListener(`change`, () => {
-        console.log("change " + j);
-        document.querySelector(`#deadline_text_${j}`).innerHTML = date[j].value;
-    });
+function date_flg2(index){
+    var date = document.querySelector(`#form_${index} input[type='date'][name='deadline']`);
+    console.log("change " + index);
+    document.querySelector(`#deadline_text_${index}`).innerHTML = date.value;
 }
+
 
 /*
 //clone_element[j].querySelector('input[name="num"]:checked').value
