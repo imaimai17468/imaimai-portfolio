@@ -53,6 +53,6 @@ function shareTargetPicker(text) {
 }
 
 function getUserName(){
-    const idToken = liff.getDecodedIDToken();
-    return idToken.name;
+    const profile = liff.getProfile();
+    return profile;
 }

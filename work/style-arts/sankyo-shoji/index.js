@@ -112,11 +112,11 @@ function subForm() {
 
     }
         
-    let userName = getUserName();
+    let profile = getProfile();
 
     // console.log(i);
     for(let k=0; k<i; k++){
-        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}\n 発注者:${userName}\n`;
+        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}\n`;
         console.log(msg);
         sendText(msg);
         
@@ -127,6 +127,7 @@ function subForm() {
             unit: unit[k],
             deadline: date[k],
             note: note[k],
+            profile: profile,
         }
         console.log(data);
         sendWithAjax(data);
@@ -140,7 +141,7 @@ function subForm() {
 
 // ajaxを使ってGASのURLにPOSTする
 function sendWithAjax(data){
-    var url = 'https://script.google.com/macros/s/AKfycbwf5h2hIgCIDlK2OxkhBS2WP-WOQ9GIs9iO8kx1PqszP1KXbdjQZnsLckVoTIIHJ2Y/exec';
+    var url = 'https://script.google.com/macros/s/AKfycbwkZakHg2q_DeiLt1KP0X8N02l9t43ie2UCRTjA4tHvmzJ1o3iviongucp4D6RmaHjI/exec';
     $.ajax({
         url: url,
         type:'POST',
