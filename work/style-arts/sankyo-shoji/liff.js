@@ -51,3 +51,8 @@ function shareTargetPicker(text) {
         window.alert('Failed to send message ' + error);
     });
 }
+
+function getUserName(){
+    const idToken = liff.getDecodedIDToken();
+    return idToken.name;
+}
