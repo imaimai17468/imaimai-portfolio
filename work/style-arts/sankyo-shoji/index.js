@@ -10,7 +10,7 @@ $(function () {
 */
 
 function subForm() {
-    console.log("送信完了");
+    console.log("push submit");
     let now = new Date();
     let Year = now.getFullYear();
     let Month = now.getMonth()+1;
@@ -117,11 +117,44 @@ function subForm() {
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         console.log(msg);
         sendText(msg);
+        
+        data = {
+            date: Year + "-" + Month + "-" + Date1 + " " + Hour + ":" + Min,
+            name: item_name[k],
+            num: num[k],
+            unit: unit[k],
+            deadline: date[k],
+            note: note[k],
+        }
+        console.log(data);
+        sendWithAjax(data);
+
         // syncDelay(5000);
         //setTimeout(sendText(msg), 1000);
     }
     return false;
  
+}
+
+function sendWithAjax(data){
+    var url = 'https://script.google.com/macros/s/AKfycbwf5h2hIgCIDlK2OxkhBS2WP-WOQ9GIs9iO8kx1PqszP1KXbdjQZnsLckVoTIIHJ2Y/exec';
+    $.ajax({
+        url: url,
+        type:'POST',
+        data: data
+    }).done(function(res){
+        if(res.response != "success") {
+            console.log(JSON.stringify(res.error));
+            console.log(JSON.stringify(res.data));
+            console.log('送信失敗'); 
+            return;
+        }
+        console.log('送信完了');
+    }).fail(function(){
+        console.log('送信失敗'); 
+    }).always(function(){
+        location.href="./index.html";
+    })
 }
 
 function syncDelay(milliseconds){
@@ -172,17 +205,20 @@ function addForm() {
 
     content_area.after(new_element);
 
+    // 商品の数によってidとnameを変更する
     var new_deadline_text = document.querySelector(`#form_${i-1} div p span`);
     // console.log(new_deadline_text);
     new_deadline_text.setAttribute('id', `deadline_text_${i-1}`);
     new_deadline_text.setAttribute('name', `deadline_text_${i-1}`);
     new_deadline_text.innerHTML = ` / `
 
+    // 商品の数によって関数の戻り値を変更する
     var new_deadline = document.querySelector(`#form_${i-1} input[type='date'][name='deadline']`);
     console.log(new_deadline);
     new_deadline.setAttribute('onchange', `date_flg2(${i-1});`)
 }
 
+// カレンダーが変更されたら
 function date_flg2(index){
     var date = document.querySelector(`#form_${index} input[type='date'][name='deadline']`);
     console.log("change " + index);
