@@ -112,7 +112,7 @@ function subForm() {
 
     }
         
-    let profile = getProfile();
+    // let profile = getProfile();
 
     // console.log(i);
     for(let k=0; k<i; k++){
