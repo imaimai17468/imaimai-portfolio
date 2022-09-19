@@ -116,7 +116,7 @@ function subForm() {
 
     // console.log(i);
     for(let k=0; k<i; k++){
-        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}\n`;
+        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         console.log(msg);
         sendText(msg);
         
@@ -141,7 +141,7 @@ function subForm() {
 
 // ajaxを使ってGASのURLにPOSTする
 function sendWithAjax(data){
-    var url = 'https://script.google.com/macros/s/AKfycbwkZakHg2q_DeiLt1KP0X8N02l9t43ie2UCRTjA4tHvmzJ1o3iviongucp4D6RmaHjI/exec';
+    var url = 'https://script.google.com/macros/s/AKfycbyuQuOA3ghOiimmx8DNZt9Y6XiwkhNdMnFXQusFhPOT0DfBak1xIGZmGQ4o4A8rs3M/exec';
     $.ajax({
         url: url,
         type:'POST',
@@ -150,12 +150,15 @@ function sendWithAjax(data){
         if(res.response != "success") {
             console.log(JSON.stringify(res.error));
             console.log(JSON.stringify(res.data));
-            console.log('送信失敗'); 
+            console.log('送信失敗');
+            sendText("送信失敗") ;
             return;
         }
         console.log('送信完了');
+        sendText("送信完了") ;
     }).fail(function(){
         console.log('送信失敗'); 
+        sendText("送信失敗") ;
     }).always(function(){
         location.href="./index.html";
     })
