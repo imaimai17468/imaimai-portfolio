@@ -32,7 +32,6 @@ function subForm() {
 
     item_name[0] = $('input[name="item_name"]').val();
     note[0] = document.getElementById("note").value;
-    console.log($('input[name="item_number_text"]').val());
 
     //個数について
     if($('input[name="item_number"]:checked').val()== 0){
@@ -114,6 +113,9 @@ function subForm() {
         
     // let profile = getProfile();
 
+    // imgがbase64になっているか確認
+    // console.log(base64Text);
+
     // console.log(i);
     for(let k=0; k<i; k++){
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
@@ -121,13 +123,13 @@ function subForm() {
         sendText(msg);
         
         data = {
-            date: Year + "-" + Month + "-" + Date1 + " " + Hour + ":" + Min,
+            date: Year + "-" + Month + "-" + Date1 + "-" + Hour + "-" + Min,
             name: item_name[k],
             num: num[k],
             unit: unit[k],
             deadline: date[k],
             note: note[k],
-            profile: profile,
+            img: base64Text,
         }
         console.log(data);
         sendWithAjax(data);
@@ -139,9 +141,25 @@ function subForm() {
  
 }
 
+// 画像を取得してbase64に変換
+let base64Text = "";
+function previewFile() {
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+  
+    reader.addEventListener("load", function () {
+        // 画像ファイルを base64 文字列に変換します
+        base64Text = reader.result;
+    }, false);
+  
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+}
+
 // ajaxを使ってGASのURLにPOSTする
 function sendWithAjax(data){
-    var url = 'https://script.google.com/macros/s/AKfycbyuQuOA3ghOiimmx8DNZt9Y6XiwkhNdMnFXQusFhPOT0DfBak1xIGZmGQ4o4A8rs3M/exec';
+    var url = 'https://script.google.com/macros/s/AKfycbz-FY6G5HuHyGd1IDP9m0-BcffL7znLpstloFwfY5dzd5WodKMFT5StAGf36CrFBsnm/exec';
     $.ajax({
         url: url,
         type:'POST',
@@ -151,14 +169,14 @@ function sendWithAjax(data){
             console.log(JSON.stringify(res.error));
             console.log(JSON.stringify(res.data));
             console.log('送信失敗');
-            sendText("送信失敗") ;
+            sendText("送信に失敗しました") ;
             return;
         }
         console.log('送信完了');
-        sendText("送信完了") ;
+        sendText("送信に成功しました") ;
     }).fail(function(){
         console.log('送信失敗'); 
-        sendText("送信失敗") ;
+        sendText("送信に失敗しました") ;
     }).always(function(){
         location.href="./index.html";
     })
@@ -220,15 +238,16 @@ function addForm() {
     new_deadline_text.innerHTML = ` / `
 
     // 商品の数によって関数の戻り値を変更する
-    var new_deadline = document.querySelector(`#form_${i-1} input[type='date'][name='deadline']`);
+    var new_deadline = document.querySelector(`#form_${i-1} input[type='date'][name='deadline_text']`);
     console.log(new_deadline);
     new_deadline.setAttribute('onchange', `date_flg2(${i-1});`)
 }
 
 // カレンダーが変更されたら
 function date_flg2(index){
-    var date = document.querySelector(`#form_${index} input[type='date'][name='deadline']`);
+    var date = document.querySelector(`#form_${index} input[type='date'][name='deadline_text']`);
     console.log("change " + index);
+    console.log(date);
     document.querySelector(`#deadline_text_${index}`).innerHTML = date.value;
 }
 
