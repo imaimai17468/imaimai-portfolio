@@ -169,14 +169,11 @@ function sendWithAjax(data){
             console.log(JSON.stringify(res.error));
             console.log(JSON.stringify(res.data));
             console.log('送信失敗');
-            sendText("送信に失敗しました") ;
             return;
         }
         console.log('送信完了');
-        sendText("送信に成功しました") ;
     }).fail(function(){
         console.log('送信失敗'); 
-        sendText("送信に失敗しました") ;
     }).always(function(){
         location.href="./index.html";
     })
