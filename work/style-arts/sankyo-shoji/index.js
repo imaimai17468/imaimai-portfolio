@@ -132,7 +132,7 @@ function subForm() {
             img: base64Text,
         }
         console.log(data);
-        sendWithAjax(data);
+        // sendWithAjax(data);
 
         // syncDelay(5000);
         //setTimeout(sendText(msg), 1000);
