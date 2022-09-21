@@ -120,7 +120,8 @@ function subForm() {
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         sendText(msg);
 
-        if(image_urls != ''){
+        if(isEmpty(image_urls)){
+            console.log(image_urls);
             let image_url = image_urls[k].slice(5);
             sendImage(image_url);
             console.log(image_url);
@@ -202,6 +203,10 @@ function date_flg2(index){
     document.querySelector(`#deadline_text_${index}`).innerHTML = date.value;
 }
 
+// オブジェクトが空かどうか
+function isEmpty(obj){
+    return !Object.keys(obj).length;
+}
 
 /*
 //clone_element[j].querySelector('input[name="num"]:checked').value
