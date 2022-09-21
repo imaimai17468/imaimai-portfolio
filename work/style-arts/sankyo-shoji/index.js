@@ -159,7 +159,7 @@ function previewFile() {
 
 // ajaxを使ってGASのURLにPOSTする
 function sendWithAjax(data){
-    var url = 'https://script.google.com/macros/s/AKfycbz-FY6G5HuHyGd1IDP9m0-BcffL7znLpstloFwfY5dzd5WodKMFT5StAGf36CrFBsnm/exec';
+    var url = 'https://script.google.com/macros/s/AKfycbym79IAypq1ZcGDtdw-SrxN_jMMRSx2y8g8OvX960yWj5xrN-NijgBBPANgZtAlwYTC/exec';
     $.ajax({
         url: url,
         type:'POST',
