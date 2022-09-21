@@ -138,7 +138,7 @@ function subForm() {
               "body": JSON.stringify(data),
             };
 
-            const url = "https://script.google.com/macros/s/AKfycbxr77Vfn_en0vDQoFAtF3VbxK-iw-bH4nLi_i77SDfW2IWKl6sQSGu7S01cIqN36GF0/exec";
+            const url = "https://script.google.com/macros/s/AKfycbzVJtjkyILARLwI7kp_vlT5zZeUXeplQ-Bp3rfAWIfqk33fprjbElh4YFivqrmW_txR/exec";
             fetch(url, postparam);
 
             console.log(postparam);
