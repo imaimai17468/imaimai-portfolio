@@ -135,7 +135,7 @@ function subForm() {
               "method": "POST",
               "mode": "no-cors",
               "Content-Type": "application/x-www-form-urlencoded",
-              "body": JSON.stringify(SendDATA)
+              "body": JSON.stringify(data),
             };
 
             const url = "https://script.google.com/macros/s/AKfycbxCcA6ZsppvSPDSJpzmiOcXT4Wxd0tfOEix6R-PY0E9we2DA1NySxPl455qJ4s6dtfH/exec";
