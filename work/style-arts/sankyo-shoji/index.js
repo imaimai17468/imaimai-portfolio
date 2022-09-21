@@ -117,14 +117,15 @@ function subForm() {
         // 数量・単位・納期のどれかが空なら送信できないようにする
         if(num[k] == '' || unit[k] == '' || deadline[k] == '') return false;
 
-        image_url = image_urls[k].slice(5);
-
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         sendText(msg);
-        sendImage(image_url);
 
+        if(image_urls[k] != ""){
+            let image_url = image_urls[k].slice(5);
+            sendImage(image_url);
+            console.log(image_url);
+        }
         console.log(msg);
-        console.log(image_url);
     }
     return false;
  
