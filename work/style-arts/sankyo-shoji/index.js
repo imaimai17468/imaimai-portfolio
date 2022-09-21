@@ -110,51 +110,38 @@ function subForm() {
         }
 
     }
-        
-    // let profile = getProfile();
-
-    // imgがbase64になっているか確認
-    // console.log(base64Text);
+    
 
     // console.log(i);
     for(let k=0; k<i; k++){
+        // 数量・単位・納期のどれかが空なら送信できないようにする
+        if(num[k] == '' || unit[k] == '' || date[k] == '') return false;
+
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
-        console.log(msg);
         sendText(msg);
-        
+
+        // if(!isEmpty(image_urls)){
+        //     console.log(image_urls);
+        //     let image_url = image_urls[k].slice(5);
+        //     sendImage(image_url);
+        //     console.log(image_url);
+        // }
+
         data = {
-            date: Year + "-" + Month + "-" + Date1 + "-" + Hour + "-" + Min,
+            date: `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
             name: item_name[k],
             num: num[k],
             unit: unit[k],
             deadline: date[k],
             note: note[k],
-            img: base64Text,
+            base64: base64Texts[k],
         }
         console.log(data);
-        // sendWithAjax(data);
-
-        // syncDelay(5000);
-        //setTimeout(sendText(msg), 1000);
+        sendWithAjax(data);
+        console.log(msg);
     }
     return false;
  
-}
-
-// 画像を取得してbase64に変換
-let base64Text = "";
-function previewFile() {
-    const file = document.querySelector('input[type=file]').files[0];
-    const reader = new FileReader();
-  
-    reader.addEventListener("load", function () {
-        // 画像ファイルを base64 文字列に変換します
-        base64Text = reader.result;
-    }, false);
-  
-    if (file) {
-      reader.readAsDataURL(file);
-    }
 }
 
 // ajaxを使ってGASのURLにPOSTする
@@ -179,27 +166,39 @@ function sendWithAjax(data){
     })
 }
 
-function syncDelay(milliseconds){
-    var start = new Date().getTime();
-    var end=0;
-    while( (end-start) < milliseconds){
-        end = new Date().getTime();
+image_urls = {};
+function loadURL(index){
+    let images = document.querySelectorAll('input[type=file]');
+    image_urls[index] = images[index].value;
+    console.log(image_urls);
+    console.log(images);
+}
+
+let base64Texts = {};
+function previewFile(index) {
+    const files = document.querySelectorAll('input[type=file]');
+    const file = files[index].files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        // 画像ファイルを base64 文字列に変換します
+        base64Texts[index] = reader.result;
+        console.log(base64Texts);
+        console.log(files);
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
     }
 }
 
 let i = 1;
 let clone_element = {};
-
 function addForm() {
+    if(i >= 3) return;
+
     // 複製するHTML要素を取得
     var content_area = document.getElementById(`form_${i-1}`);
-    
-    if(i >= 3){
-        // var over_text = document.createElement('p');
-        // over_text.textContent = `一度に3個以上の注文はできません`;
-        // content_area.after(over_text);
-        return;
-    }
 
     // 複製
     clone_element[i] = content_area.cloneNode(true);
@@ -216,6 +215,9 @@ function addForm() {
     //clone_element[j].querySelector("#sub").remove();
     document.getElementById(`sub`).remove();
     document.getElementById(`add`).remove();
+
+    // 商品 3 で追加の注文ボタンを消す
+    if(i == 2) document.getElementById(`add`).remove();
 
     //clone_element[i].querySelector("#num0").onclick = `date_flg0_${i}(this.checked);`
 
@@ -234,10 +236,15 @@ function addForm() {
     new_deadline_text.setAttribute('name', `deadline_text_${i-1}`);
     new_deadline_text.innerHTML = ` / `
 
-    // 商品の数によって関数の戻り値を変更する
+    // 商品の数によって納期に関する関数の戻り値を変更する
     var new_deadline = document.querySelector(`#form_${i-1} input[type='date'][name='deadline_text']`);
-    console.log(new_deadline);
-    new_deadline.setAttribute('onchange', `date_flg2(${i-1});`)
+    // console.log(new_deadline);
+    new_deadline.setAttribute('onchange', `date_flg2(${i-1});`);
+
+    // 商品の数によって入力画像に関する関数の戻り値を変更する
+    var new_image = document.querySelector(`#form_${i-1} input[type='file'][name='input_image']`);
+    console.log(new_image);
+    new_image.setAttribute('onchange', `previewFile(${i-1});`);
 }
 
 // カレンダーが変更されたら
@@ -248,6 +255,10 @@ function date_flg2(index){
     document.querySelector(`#deadline_text_${index}`).innerHTML = date.value;
 }
 
+// オブジェクトが空かどうか
+function isEmpty(obj){
+    return !Object.keys(obj).length;
+}
 
 /*
 //clone_element[j].querySelector('input[name="num"]:checked').value

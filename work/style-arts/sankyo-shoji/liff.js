@@ -30,6 +30,14 @@ function sendText(text) {
     }
 }
 
+function sendImage(img) {
+    if (!liff.isInClient()) {
+        shareTargetPickerImage(img);
+    } else {
+        sendMessagesImage(img);
+    }
+}
+
 // LINEトーク画面上でメッセージ送信
 function sendMessages(text) {
     liff.sendMessages([{
@@ -42,11 +50,34 @@ function sendMessages(text) {
     });
 }
 
+// LINEトーク画面上で画像を送信
+function sendMessagesImage(img) {
+    liff.sendMessages([{
+        'type': 'image',
+        "originalContentUrl": img,
+        "previewImageUrl": img
+    }]).then(function () {
+        liff.closeWindow();
+    }).catch(function (error) {
+        window.alert('Failed to send message ' + error);
+    });
+}
+
 // Webブラウザからメッセージ送信
 function shareTargetPicker(text) {
     liff.shareTargetPicker([{
         'type': 'text',
         'text': text
+    }]).catch(function (error) {
+        window.alert('Failed to send message ' + error);
+    });
+}
+
+function shareTargetPickerImage(img) {
+    liff.shareTargetPicker([{
+        'type': 'image',
+        'originalContentUrl': img,
+        'previewImageUrl': img
     }]).catch(function (error) {
         window.alert('Failed to send message ' + error);
     });

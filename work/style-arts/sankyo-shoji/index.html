@@ -22,7 +22,7 @@
         </div>
 
         <!--//個数（radio＋number）-->
-        <p class="mt-3 mb-0 font-weight-bold">個数</p>
+        <p class="mt-3 mb-0 font-weight-bold">個数（*必須）</p>
         <div class="form-inline">
             <div class="mt-0 pr-5">
                 <label>
@@ -36,7 +36,7 @@
         </div> 
 
         <!-- //単位 ( radio+text ) -->
-        <p class="mt-3 mb-0 font-weight-bold">単位</p>
+        <p class="mt-3 mb-0 font-weight-bold">単位（*必須）</p>
         <div class="form-inline">
             <div class="mt-0 pr-4">
                 <label><input type="radio" id="unit" name="unit" value=0 checked onclick="unit_flg1(this.checked);"/>&nbsp;個</label>
@@ -56,7 +56,7 @@
         </div> 
 
         <!--//納期（radio＋date）-->
-        <p class="mt-3 mb-0 font-weight-bold">納期</p>
+        <p class="mt-3 mb-0 font-weight-bold">納期（*必須）</p>
         <div class="mt-0">
             <label><input type="radio" id="deadline" name="deadline" value=0 checked onclick="date_flg0(this.checked);"/>&nbsp;次回訪問日（10日以内）</label>
         </div>
@@ -71,7 +71,7 @@
         <!--//参考画像（file）-->
         <p class="mt-3 mb-0 font-weight-bold">画像</p>
         <div class="mt-0">
-            <input type="file" accept='image/*' id="input_image" name="input_image" onchange="previewFile()">
+            <input type="file" accept='image/*' id="input_image" name="input_image" onchange="previewFile(0)">
         </div>
         
         <!--//備考（textarea）-->
@@ -93,7 +93,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-    <script src="liff.js"></script>
+    <!-- <script src="liff.js"></script> -->
     <script src="index.js"></script>
 </body>
 
