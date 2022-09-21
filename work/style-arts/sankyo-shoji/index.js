@@ -122,44 +122,31 @@ function subForm() {
 
         if(!isEmpty(base64Texts)){
             data = {
-                date: `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
-                name: item_name[k],
-                num: num[k],
-                unit: unit[k],
-                deadline: date[k],
-                note: note[k],
-                base64: base64Texts[k],
+                "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
+                "name": item_name[k],
+                "num": num[k],
+                "unit": unit[k],
+                "deadline": date[k],
+                "note": note[k],
+                "base64": base64Texts[k],
             }
 
-            console.log(data);
-            sendWithAjax(data);
+            var postparam = {
+              "method": "POST",
+              "mode": "no-cors",
+              "Content-Type": "application/x-www-form-urlencoded",
+              "body": JSON.stringify(SendDATA)
+            };
+
+            const url = "https://script.google.com/macros/s/AKfycbxCcA6ZsppvSPDSJpzmiOcXT4Wxd0tfOEix6R-PY0E9we2DA1NySxPl455qJ4s6dtfH/exec";
+            fetch(url, postparam);
+
+            console.log(postparam);
         }
         console.log(msg);
     }
     return false;
  
-}
-
-// ajaxを使ってGASのURLにPOSTする
-function sendWithAjax(data){
-    var url = 'https://script.google.com/macros/s/AKfycbw7RrihUjvDwTy1k4iaJmhRJ-UlPfxishRMXCng4Io24Ytf4NgMXKKTSpHjODVGTaWA/exec';
-    $.ajax({
-        url: url,
-        type:'POST',
-        data: data
-    }).done(function(res){
-        if(res.response != "success") {
-            console.log(JSON.stringify(res.error));
-            console.log(JSON.stringify(res.data));
-            console.log('送信失敗');
-            return;
-        }
-        console.log('送信完了');
-    }).fail(function(){
-        console.log('送信失敗'); 
-    }).always(function(){
-        location.href="./index.html";
-    })
 }
 
 image_urls = {};
