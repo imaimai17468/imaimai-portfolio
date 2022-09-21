@@ -111,13 +111,15 @@ function subForm() {
 
     }
         
-    // let profile = getProfile();
 
     // imgがbase64になっているか確認
     // console.log(base64Text);
 
     // console.log(i);
     for(let k=0; k<i; k++){
+        // 数量・単位・納期のどれかが空なら送信できないようにする
+        if(num[k] == '' || unit[k] == '' || deadline[k] == '') return false;
+
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         console.log(msg);
         sendText(msg);
@@ -132,10 +134,6 @@ function subForm() {
             img: base64Text,
         }
         console.log(data);
-        // sendWithAjax(data);
-
-        // syncDelay(5000);
-        //setTimeout(sendText(msg), 1000);
     }
     return false;
  
@@ -157,49 +155,14 @@ function previewFile() {
     }
 }
 
-// ajaxを使ってGASのURLにPOSTする
-function sendWithAjax(data){
-    var url = 'https://script.google.com/macros/s/AKfycbz-FY6G5HuHyGd1IDP9m0-BcffL7znLpstloFwfY5dzd5WodKMFT5StAGf36CrFBsnm/exec';
-    $.ajax({
-        url: url,
-        type:'POST',
-        data: data
-    }).done(function(res){
-        if(res.response != "success") {
-            console.log(JSON.stringify(res.error));
-            console.log(JSON.stringify(res.data));
-            console.log('送信失敗');
-            return;
-        }
-        console.log('送信完了');
-    }).fail(function(){
-        console.log('送信失敗'); 
-    }).always(function(){
-        location.href="./index.html";
-    })
-}
-
-function syncDelay(milliseconds){
-    var start = new Date().getTime();
-    var end=0;
-    while( (end-start) < milliseconds){
-        end = new Date().getTime();
-    }
-}
 
 let i = 1;
 let clone_element = {};
-
 function addForm() {
+    if(i >= 3) return;
+
     // 複製するHTML要素を取得
     var content_area = document.getElementById(`form_${i-1}`);
-    
-    if(i >= 3){
-        // var over_text = document.createElement('p');
-        // over_text.textContent = `一度に3個以上の注文はできません`;
-        // content_area.after(over_text);
-        return;
-    }
 
     // 複製
     clone_element[i] = content_area.cloneNode(true);
@@ -216,6 +179,9 @@ function addForm() {
     //clone_element[j].querySelector("#sub").remove();
     document.getElementById(`sub`).remove();
     document.getElementById(`add`).remove();
+
+    // 商品 3 で追加の注文ボタンを消す
+    if(i == 2) document.getElementById(`add`).remove();
 
     //clone_element[i].querySelector("#num0").onclick = `date_flg0_${i}(this.checked);`
 
