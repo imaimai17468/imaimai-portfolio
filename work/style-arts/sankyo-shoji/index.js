@@ -110,51 +110,33 @@ function subForm() {
         }
 
     }
-        
-
-    // imgがbase64になっているか確認
-    // console.log(base64Text);
+    
 
     // console.log(i);
     for(let k=0; k<i; k++){
         // 数量・単位・納期のどれかが空なら送信できないようにする
         if(num[k] == '' || unit[k] == '' || deadline[k] == '') return false;
 
+        image_url = image_urls[k].slice(5);
+
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
-        console.log(msg);
         sendText(msg);
-        
-        data = {
-            date: Year + "-" + Month + "-" + Date1 + "-" + Hour + "-" + Min,
-            name: item_name[k],
-            num: num[k],
-            unit: unit[k],
-            deadline: date[k],
-            note: note[k],
-            img: base64Text,
-        }
-        console.log(data);
+        sendImage(image_url);
+
+        console.log(msg);
+        console.log(image_url);
     }
     return false;
  
 }
 
-// 画像を取得してbase64に変換
-let base64Text = "";
-function previewFile() {
-    const file = document.querySelector('input[type=file]').files[0];
-    const reader = new FileReader();
-  
-    reader.addEventListener("load", function () {
-        // 画像ファイルを base64 文字列に変換します
-        base64Text = reader.result;
-    }, false);
-  
-    if (file) {
-      reader.readAsDataURL(file);
-    }
+image_urls = {};
+function loadURL(index){
+    let images = document.querySelectorAll('input[type=file]');
+    image_urls[index] = URL.createObjectURL(images[index].files[0]);
+    // console.log(image_urls);
+    // console.log(images);
 }
-
 
 let i = 1;
 let clone_element = {};
@@ -200,10 +182,15 @@ function addForm() {
     new_deadline_text.setAttribute('name', `deadline_text_${i-1}`);
     new_deadline_text.innerHTML = ` / `
 
-    // 商品の数によって関数の戻り値を変更する
+    // 商品の数によって納期に関する関数の戻り値を変更する
     var new_deadline = document.querySelector(`#form_${i-1} input[type='date'][name='deadline_text']`);
-    console.log(new_deadline);
-    new_deadline.setAttribute('onchange', `date_flg2(${i-1});`)
+    // console.log(new_deadline);
+    new_deadline.setAttribute('onchange', `date_flg2(${i-1});`);
+
+    // 商品の数によって入力画像に関する関数の戻り値を変更する
+    var new_image = document.querySelector(`#form_${i-1} input[type='file'][name='input_image']`);
+    console.log(new_image);
+    new_image.setAttribute('onchange', `loadURL(${i-1});`);
 }
 
 // カレンダーが変更されたら

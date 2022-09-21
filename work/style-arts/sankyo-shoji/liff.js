@@ -42,6 +42,19 @@ function sendMessages(text) {
     });
 }
 
+// LINEトーク画面上で画像を送信
+function sendImage(img) {
+    liff.sendMessages([{
+        'type': 'image',
+        "originalContentUrl": img,
+        "previewImageUrl": img
+    }]).then(function () {
+        liff.closeWindow();
+    }).catch(function (error) {
+        window.alert('Failed to send message ' + error);
+    });
+}
+
 // Webブラウザからメッセージ送信
 function shareTargetPicker(text) {
     liff.shareTargetPicker([{
