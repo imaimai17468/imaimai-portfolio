@@ -142,7 +142,7 @@ function subForm() {
 
 // ajaxを使ってGASのURLにPOSTする
 function sendWithAjax(data){
-    var url = 'https://script.google.com/macros/s/AKfycbym79IAypq1ZcGDtdw-SrxN_jMMRSx2y8g8OvX960yWj5xrN-NijgBBPANgZtAlwYTC/exec';
+    var url = 'https://script.google.com/macros/s/AKfycbw7RrihUjvDwTy1k4iaJmhRJ-UlPfxishRMXCng4Io24Ytf4NgMXKKTSpHjODVGTaWA/exec';
     $.ajax({
         url: url,
         type:'POST',
