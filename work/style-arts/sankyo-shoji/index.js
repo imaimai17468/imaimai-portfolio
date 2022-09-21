@@ -120,24 +120,70 @@ function subForm() {
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         sendText(msg);
 
-        if(!isEmpty(image_urls)){
-            console.log(image_urls);
-            let image_url = image_urls[k].slice(5);
-            sendImage(image_url);
-            console.log(image_url);
+        // if(!isEmpty(image_urls)){
+        //     console.log(image_urls);
+        //     let image_url = image_urls[k].slice(5);
+        //     sendImage(image_url);
+        //     console.log(image_url);
+        // }
+
+        data = {
+            base64: base64Texts[k],
         }
+        console.log(data);
+        sendWithAjax(data);
         console.log(msg);
     }
     return false;
  
 }
 
+// ajaxを使ってGASのURLにPOSTする
+function sendWithAjax(data){
+    var url = 'https://script.google.com/macros/s/AKfycbz-FY6G5HuHyGd1IDP9m0-BcffL7znLpstloFwfY5dzd5WodKMFT5StAGf36CrFBsnm/exec';
+    $.ajax({
+        url: url,
+        type:'POST',
+        data: data
+    }).done(function(res){
+        if(res.response != "success") {
+            console.log(JSON.stringify(res.error));
+            console.log(JSON.stringify(res.data));
+            console.log('送信失敗');
+            return;
+        }
+        console.log('送信完了');
+    }).fail(function(){
+        console.log('送信失敗'); 
+    }).always(function(){
+        location.href="./index.html";
+    })
+}
+
 image_urls = {};
 function loadURL(index){
     let images = document.querySelectorAll('input[type=file]');
-    image_urls[index] = URL.createObjectURL(images[index].files[0]);
-    // console.log(image_urls);
-    // console.log(images);
+    image_urls[index] = images[index].value;
+    console.log(image_urls);
+    console.log(images);
+}
+
+let base64Texts = {};
+function previewFile(index) {
+    const files = document.querySelectorAll('input[type=file]');
+    const file = files[index].files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        // 画像ファイルを base64 文字列に変換します
+        base64Texts[index] = reader.result;
+        console.log(base64Texts);
+        console.log(files);
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
 }
 
 let i = 1;
@@ -192,7 +238,7 @@ function addForm() {
     // 商品の数によって入力画像に関する関数の戻り値を変更する
     var new_image = document.querySelector(`#form_${i-1} input[type='file'][name='input_image']`);
     console.log(new_image);
-    new_image.setAttribute('onchange', `loadURL(${i-1});`);
+    new_image.setAttribute('onchange', `previewFile(${i-1});`);
 }
 
 // カレンダーが変更されたら
