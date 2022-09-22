@@ -30,6 +30,14 @@ function sendText(text) {
     }
 }
 
+function sendTextWithImage(text, img_url) {
+    if (!liff.isInClient()) {
+        shareTargetPickerWithImage(text, img_url);
+    } else {
+        sendMessagesWithImage(text, img_url);
+    }
+}
+
 function sendImage(img) {
     if (!liff.isInClient()) {
         shareTargetPickerImage(img);
@@ -50,12 +58,15 @@ function sendMessages(text) {
     });
 }
 
-// LINEトーク画面上で画像を送信
-function sendMessagesImage(img) {
+// LINEトーク画面上でメッセージと画像を送信
+function sendMessagesWithImage(text, img_url) {
     liff.sendMessages([{
-        'type': 'image',
-        "originalContentUrl": img,
-        "previewImageUrl": img
+        'type': 'text',
+        'text': text
+    },{
+        "type": "image",
+        "originalContentUrl": img_url,
+        "previewImageUrl": img_url
     }]).then(function () {
         liff.closeWindow();
     }).catch(function (error) {
@@ -73,11 +84,15 @@ function shareTargetPicker(text) {
     });
 }
 
-function shareTargetPickerImage(img) {
+// Webブラウザからメッセージ送信
+function shareTargetPickerWithImage(text, img_url) {
     liff.shareTargetPicker([{
-        'type': 'image',
-        'originalContentUrl': img,
-        'previewImageUrl': img
+        'type': 'text',
+        'text': text
+    },{
+        "type": "image",
+        "originalContentUrl": img_url,
+        "previewImageUrl": img_url
     }]).catch(function (error) {
         window.alert('Failed to send message ' + error);
     });

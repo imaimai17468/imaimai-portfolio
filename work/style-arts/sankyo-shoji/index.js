@@ -118,31 +118,32 @@ function subForm() {
         if(num[k] == '' || unit[k] == '' || date[k] == '') return false;
 
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
-        sendText(msg);
+        img_url = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcrTa5CxunCDTnYMs47QqS1SX5c9aq_5BZA-kJ_tWUsYbNvCb2LzunRXRiUYvRFffAgyZReCDy41v774NMxWQX3RRBvpZ3u4TkaCdOc9REXvyEl4OIoVStXY-I4WHwzeu37PJ_7IIQGnYzj7oL63TDldThOvZ1TjG6k887mnpGFincDbGVCmU/w640-h458/Chromecast%20with%20Google%20TV%20(HD)_1.jpg';
+        sendTextWithImage(msg, img_url);
 
-        if(!isEmpty(base64Texts)){
-            data = {
-                "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
-                "name": item_name[k],
-                "num": num[k],
-                "unit": unit[k],
-                "deadline": date[k],
-                "note": note[k],
-                "base64": base64Texts[k],
-            }
+        // if(!isEmpty(base64Texts)){
+        //     data = {
+        //         "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
+        //         "name": item_name[k],
+        //         "num": num[k],
+        //         "unit": unit[k],
+        //         "deadline": date[k],
+        //         "note": note[k],
+        //         "base64": base64Texts[k],
+        //     }
 
-            var postparam = {
-              "method": "POST",
-              "mode": "no-cors",
-              "Content-Type": "application/x-www-form-urlencoded",
-              "body": JSON.stringify(data),
-            };
+        //     var postparam = {
+        //       "method": "POST",
+        //       "mode": "no-cors",
+        //       "Content-Type": "application/x-www-form-urlencoded",
+        //       "body": JSON.stringify(data),
+        //     };
 
-            const url = "https://script.google.com/macros/s/AKfycby267QzOa_tTyp_KU7JY20bLlcok6b-XKOBk4u4EqHS9jVQBi3ReyKycQMd70CBaQw/exec";
-            fetch(url, postparam);
+        //     const url = "https://script.google.com/macros/s/AKfycby267QzOa_tTyp_KU7JY20bLlcok6b-XKOBk4u4EqHS9jVQBi3ReyKycQMd70CBaQw/exec";
+        //     fetch(url, postparam);
 
-            console.log(postparam);
-        }
+        //     console.log(postparam);
+        // }
         console.log(msg);
     }
     return false;
