@@ -118,10 +118,10 @@ function subForm() {
         if(num[k] == '' || unit[k] == '' || date[k] == '') return false;
 
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
-        sendText(msg);
+        // sendText(msg);
+        sendImage('https://imgur.com/gallery/5OMQvOq');
 
         if(base64Texts[k] !== undefined){
-            sendImage('https://imgur.com/gallery/5OMQvOq');
             // data = {
             //     "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
             //     "name": item_name[k],
