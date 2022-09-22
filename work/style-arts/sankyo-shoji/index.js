@@ -138,7 +138,7 @@ function subForm() {
               "body": JSON.stringify(data),
             };
 
-            const url = "https://script.google.com/macros/s/AKfycbzVko9zWuCsoOmrUI_AGPxxTiPHpq4a5QqnLAFQZBEx2QOCmgk6du836oZLVZ0bLBvw/exec";
+            const url = "https://script.google.com/macros/s/AKfycby267QzOa_tTyp_KU7JY20bLlcok6b-XKOBk4u4EqHS9jVQBi3ReyKycQMd70CBaQw/exec";
             fetch(url, postparam);
 
             console.log(postparam);
@@ -159,7 +159,7 @@ function previewFile(index) {
         base64Texts[index] = reader.result;
         console.log(base64Texts);
         console.log(files);
-        let debug = document.getElementById('debug');
+        // let debug = document.getElementById('debug');
         debug.innerHTML = `${base64Texts[0]}`;
     }, false);
 
