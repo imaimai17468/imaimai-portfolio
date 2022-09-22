@@ -121,40 +121,33 @@ function subForm() {
         sendText(msg);
 
         if(!isEmpty(base64Texts)){
-            data = {
-                "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
-                "name": item_name[k],
-                "num": num[k],
-                "unit": unit[k],
-                "deadline": date[k],
-                "note": note[k],
-                "base64": base64Texts[k],
-            }
+            sendImage(base64Texts[k]);
+            // data = {
+            //     "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
+            //     "name": item_name[k],
+            //     "num": num[k],
+            //     "unit": unit[k],
+            //     "deadline": date[k],
+            //     "note": note[k],
+            //     "base64": base64Texts[k],
+            // }
 
-            var postparam = {
-              "method": "POST",
-              "mode": "no-cors",
-              "Content-Type": "application/x-www-form-urlencoded",
-              "body": JSON.stringify(data),
-            };
+            // var postparam = {
+            //   "method": "POST",
+            //   "mode": "no-cors",
+            //   "Content-Type": "application/x-www-form-urlencoded",
+            //   "body": JSON.stringify(data),
+            // };
 
-            const url = "https://script.google.com/macros/s/AKfycbxQDRpl4InaM0yhLoZ1J6lPXm2gIHtL1L5IuONoLN_ZPzGhjVLCJebDtCDdkxKEGeSb/exec";
-            fetch(url, postparam);
+            // const url = "https://script.google.com/macros/s/AKfycbxQDRpl4InaM0yhLoZ1J6lPXm2gIHtL1L5IuONoLN_ZPzGhjVLCJebDtCDdkxKEGeSb/exec";
+            // fetch(url, postparam);
 
-            console.log(postparam);
+            // console.log(postparam);
         }
         console.log(msg);
     }
     return false;
  
-}
-
-image_urls = {};
-function loadURL(index){
-    let images = document.querySelectorAll('input[type=file]');
-    image_urls[index] = images[index].value;
-    console.log(image_urls);
-    console.log(images);
 }
 
 let base64Texts = {};
