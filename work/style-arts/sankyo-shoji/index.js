@@ -124,6 +124,8 @@ function subForm() {
             const imgur_client_id = '1d148cd8caaa99d';
             const imgur_client_secret = 'a6b33229c61fe58b79fa11ae55b54802e93023f9';
 
+            var base64 = base64Texts[k].replace(new RegExp('data.*base64,'), '');
+
             $.ajax({
                 url: 'https://api.imgur.com/3/image',
                 method: 'POST',
@@ -131,7 +133,7 @@ function subForm() {
                   "Authorization": `Client-ID ${imgur_client_id}`
                 },
                 data: {
-                  image: base64Texts[k],
+                  image: base64,
                   type: 'base64'
                 }
               }).done(function(resp){
