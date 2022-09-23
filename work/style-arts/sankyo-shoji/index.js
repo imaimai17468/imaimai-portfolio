@@ -121,7 +121,26 @@ function subForm() {
         img_url = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcrTa5CxunCDTnYMs47QqS1SX5c9aq_5BZA-kJ_tWUsYbNvCb2LzunRXRiUYvRFffAgyZReCDy41v774NMxWQX3RRBvpZ3u4TkaCdOc9REXvyEl4OIoVStXY-I4WHwzeu37PJ_7IIQGnYzj7oL63TDldThOvZ1TjG6k887mnpGFincDbGVCmU/w640-h458/Chromecast%20with%20Google%20TV%20(HD)_1.jpg';
 
         if(base64Texts[k] !== undefined){
-            sendTextWithImage(msg, img_url);
+            const imgur_client_id = '1d148cd8caaa99d';
+            const imgur_client_secret = 'a6b33229c61fe58b79fa11ae55b54802e93023f9';
+
+            $.ajax({
+                url: 'https://api.imgur.com/3/image',
+                method: 'POST',
+                headers: {
+                  "Authorization": `Client-ID ${imgur_client_id}`
+                },
+                data: {
+                  image: base64,
+                  type: 'base64'
+                }
+              }).done(function(resp){
+                console.log('レスポンス : ', resp);
+                sendTextWithImage(msg, img_url);
+              }).fail(function(error){
+                console.error('アップロード失敗...');
+                sendText('画像のアップロードに失敗しました');
+              });
         }else{
             sendText(msg);
         }
