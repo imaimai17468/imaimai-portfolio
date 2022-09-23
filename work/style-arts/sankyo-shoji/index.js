@@ -185,7 +185,7 @@ function previewFile(index) {
         console.log(base64Texts);
         console.log(files);
         // let debug = document.getElementById('debug');
-        debug.innerHTML = `${base64Texts[0]}`;
+        // debug.innerHTML = `${base64Texts[0]}`;
     }, false);
 
     if (file) {
