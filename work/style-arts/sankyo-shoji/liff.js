@@ -58,6 +58,16 @@ function sendMessages(text) {
     });
 }
 
+// LINEトーク画面上で複数のメッセージ送信
+function sendMultiMessages(messages) {
+    liff.sendMessages(messages)
+    .then(function () {
+        liff.closeWindow();
+    }).catch(function (error) {
+        window.alert('Failed to send message ' + error);
+    });
+}
+
 // LINEトーク画面上でメッセージと画像を送信
 function sendMessagesWithImage(text, img_url) {
     liff.sendMessages([{
