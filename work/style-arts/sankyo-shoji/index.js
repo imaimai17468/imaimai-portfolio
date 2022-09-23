@@ -111,8 +111,6 @@ function subForm() {
 
     }
     
-    var postMessages = [];
-
     // console.log(i);
     for(let k=0; k<i; k++){
         // 数量・単位・納期のどれかが空なら送信できないようにする
@@ -121,13 +119,12 @@ function subForm() {
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
         img_url = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcrTa5CxunCDTnYMs47QqS1SX5c9aq_5BZA-kJ_tWUsYbNvCb2LzunRXRiUYvRFffAgyZReCDy41v774NMxWQX3RRBvpZ3u4TkaCdOc9REXvyEl4OIoVStXY-I4WHwzeu37PJ_7IIQGnYzj7oL63TDldThOvZ1TjG6k887mnpGFincDbGVCmU/w640-h458/Chromecast%20with%20Google%20TV%20(HD)_1.jpg';
 
-        postMessages.push(returnMessageJson(msg));
-
         if(base64Texts[k] !== undefined){
             const imgur_client_id = '1d148cd8caaa99d';
             const imgur_client_secret = 'a6b33229c61fe58b79fa11ae55b54802e93023f9';
 
             var base64 = base64Texts[k].replace(new RegExp('data.*base64,'), '');
+            var sendImageUrl;
 
             $.ajax({
                 url: 'https://api.imgur.com/3/image',
@@ -141,39 +138,43 @@ function subForm() {
                 }
               }).done(function(resp){
                 console.log('レスポンス : ', resp);
-                var sendImageUrl = resp.data.link;
-                postMessages.push(returnImageJson(sendImageUrl));
+                sendImageUrl = resp.data.link;
+                sendTextWithImage(msg, sendImageUrl);
               }).fail(function(error){
                 console.error('アップロード失敗...');
+                sendText('画像のアップロードに失敗しました');
               });
+        }else{
+            sendText(msg);
         }
 
-        sendMultiMessages(postMessages);
+        // if(!isEmpty(base64Texts)){
+        //     data = {
+        //         "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
+        //         "name": item_name[k],
+        //         "num": num[k],
+        //         "unit": unit[k],
+        //         "deadline": date[k],
+        //         "note": note[k],
+        //         "base64": base64Texts[k],
+        //     }
 
+        //     var postparam = {
+        //       "method": "POST",
+        //       "mode": "no-cors",
+        //       "Content-Type": "application/x-www-form-urlencoded",
+        //       "body": JSON.stringify(data),
+        //     };
+
+        //     const url = "https://script.google.com/macros/s/AKfycby267QzOa_tTyp_KU7JY20bLlcok6b-XKOBk4u4EqHS9jVQBi3ReyKycQMd70CBaQw/exec";
+        //     fetch(url, postparam);
+
+        //     console.log(postparam);
+        // }
         console.log(msg);
-        console.log(postMessages);
     }
     return false;
  
-}
-
-function returnMessageJson(text){
-    var returnJson = {
-        'type': 'text',
-        'text': text
-    };
-
-    return returnJson;
-}
-
-function returnImageJson(img_url){
-    var returnJson = {
-        "type": "image",
-        "originalContentUrl": img_url,
-        "previewImageUrl": img_url
-    };
-
-    return returnJson;
 }
 
 let base64Texts = {};
