@@ -149,30 +149,7 @@ function subForm() {
         }else{
             sendText(msg);
         }
-
-        // if(!isEmpty(base64Texts)){
-        //     data = {
-        //         "date": `${Year}年${Month}月${Date1}日${Hour}時${Min}分`,
-        //         "name": item_name[k],
-        //         "num": num[k],
-        //         "unit": unit[k],
-        //         "deadline": date[k],
-        //         "note": note[k],
-        //         "base64": base64Texts[k],
-        //     }
-
-        //     var postparam = {
-        //       "method": "POST",
-        //       "mode": "no-cors",
-        //       "Content-Type": "application/x-www-form-urlencoded",
-        //       "body": JSON.stringify(data),
-        //     };
-
-        //     const url = "https://script.google.com/macros/s/AKfycby267QzOa_tTyp_KU7JY20bLlcok6b-XKOBk4u4EqHS9jVQBi3ReyKycQMd70CBaQw/exec";
-        //     fetch(url, postparam);
-
-        //     console.log(postparam);
-        // }
+        
         console.log(msg);
     }
     return false;
