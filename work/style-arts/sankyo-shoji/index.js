@@ -10,10 +10,12 @@ $(function () {
 */
 
 function subForm() {
+    console.log("push submit");
+    
+    document.getElementById(`sub`).remove();
     let doPostMessage = document.getElementById('dopost');
     doPostMessage.innerHTML = '送信中です';
-
-    console.log("push submit");
+    
     let now = new Date();
     let Year = now.getFullYear();
     let Month = now.getMonth()+1;
@@ -149,7 +151,7 @@ function subForm() {
         }else{
             sendText(msg);
         }
-        
+
         console.log(msg);
     }
     return false;
