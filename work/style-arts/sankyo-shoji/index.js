@@ -10,6 +10,9 @@ $(function () {
 */
 
 function subForm() {
+    let doPostMessage = document.getElementById('dopost');
+    doPostMessage.innerHTML = '送信中です';
+
     console.log("push submit");
     let now = new Date();
     let Year = now.getFullYear();
