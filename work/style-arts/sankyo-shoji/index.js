@@ -145,7 +145,6 @@ function subForm() {
                 postMessages.push(returnImageJson(sendImageUrl));
               }).fail(function(error){
                 console.error('アップロード失敗...');
-                sendText('画像のアップロードに失敗しました');
               });
         }
 
