@@ -111,7 +111,6 @@ function subForm() {
 
     }
     
-
     // console.log(i);
     for(let k=0; k<i; k++){
         // 数量・単位・納期のどれかが空なら送信できないようにする
@@ -125,6 +124,7 @@ function subForm() {
             const imgur_client_secret = 'a6b33229c61fe58b79fa11ae55b54802e93023f9';
 
             var base64 = base64Texts[k].replace(new RegExp('data.*base64,'), '');
+            var sendImageUrl;
 
             $.ajax({
                 url: 'https://api.imgur.com/3/image',
@@ -138,7 +138,8 @@ function subForm() {
                 }
               }).done(function(resp){
                 console.log('レスポンス : ', resp);
-                sendTextWithImage(msg, img_url);
+                sendImageUrl = resp.data.link;
+                sendTextWithImage(msg, sendImageUrl);
               }).fail(function(error){
                 console.error('アップロード失敗...');
                 sendText('画像のアップロードに失敗しました');
