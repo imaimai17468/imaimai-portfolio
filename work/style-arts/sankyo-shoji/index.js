@@ -131,7 +131,7 @@ function subForm() {
                   "Authorization": `Client-ID ${imgur_client_id}`
                 },
                 data: {
-                  image: base64,
+                  image: base64Texts[k],
                   type: 'base64'
                 }
               }).done(function(resp){
