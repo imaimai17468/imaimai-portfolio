@@ -13,6 +13,7 @@ function subForm() {
     console.log("push submit");
     
     document.getElementById(`sub`).remove();
+    document.getElementById(`add`).remove();
     let doPostMessage = document.getElementById('dopost');
     doPostMessage.innerHTML = '送信中です';
     
