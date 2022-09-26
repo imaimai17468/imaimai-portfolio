@@ -39,7 +39,7 @@ function subForm() {
         num[0] = $('input[name="item_number_text"]').val();
     }
     else if($('input[name="item_number"]:checked').val()== 1){
-        num[0] = "1（最小個数）";
+        num[0] = "1";
     }
     console.log(num[0]);
 
@@ -82,7 +82,7 @@ function subForm() {
             num[j] = clone_element[j].querySelector("#item_number_text").value;
         }
         else if(num_buff[j] == 1){
-            num[j] = "1（最小個数）";
+            num[j] = "1";
         }
 
         // 単位について
