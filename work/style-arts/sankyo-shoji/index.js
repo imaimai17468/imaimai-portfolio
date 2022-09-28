@@ -28,6 +28,8 @@ function subForm() {
     let unit_buff = {};
     let date = {};
     let date_buff = {};
+    let file = {};
+    let file_buff = {};
     let note = {};
 
 
@@ -68,6 +70,13 @@ function subForm() {
         date[0] = $('input[name="deadline_text"]').val();
     }
     
+    //画像について
+    if($('input[name="file"]:checked').val()== 0){
+        file[0] = "なし";
+    }
+    else if($('input[name="file"]:checked').val()== 1){
+        file[0] = "あり";
+    }
     
     for(let j=1; j<i; j++){
 
@@ -76,6 +85,7 @@ function subForm() {
         num_buff[j] =  clone_element[j].querySelector('input[name="item_number"]:checked').value;
         unit_buff[j] = clone_element[j].querySelector('input[name="unit"]:checked').value
         date_buff[j] = clone_element[j].querySelector('input[name="deadline"]:checked').value;
+        file_buff[j] = clone_element[j].querySelector('input[name="file"]:checked').value;
 
         // 数量について
         if(num_buff[j] == 0){
@@ -110,6 +120,14 @@ function subForm() {
             date[j] = clone_element[j].querySelector("#deadline_text").value ;
         }
 
+        //画像について
+        if(file_buff[j] == 0){
+            file[j] = "なし";
+        }
+        else if(file_buff[j] == 1){
+            file[j] = "あり";
+        }
+
     }
 
     for(let k=0; k<i; k++){
@@ -126,34 +144,11 @@ function subForm() {
     for(let k=0; k<i; k++){
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
 
-        if(base64Texts[k] !== undefined){
-            const imgur_client_id = '1d148cd8caaa99d';
-            const imgur_client_secret = 'a6b33229c61fe58b79fa11ae55b54802e93023f9';
-
-            var base64 = base64Texts[k].replace(new RegExp('data.*base64,'), '');
-
-            $.ajax({
-                url: 'https://api.imgur.com/3/image',
-                method: 'POST',
-                headers: {
-                  "Authorization": `Client-ID ${imgur_client_id}`
-                },
-                data: {
-                  image: base64,
-                  type: 'base64'
-                }
-              }).done(function(resp){
-                console.log('レスポンス : ', resp);
-                var sendImageUrl = resp.data.link;
-                sendTextWithImage(msg, sendImageUrl);
-              }).fail(function(error){
-                console.error('アップロード失敗...');
-                sendText('画像のアップロードに失敗しました');
-              });
-        }else{
-            sendText(msg);
+        if(file[k] == "あり"){
+            sendText("画像を送信してください");
         }
 
+        sendText(msg);
         console.log(msg);
     }
     return false;
