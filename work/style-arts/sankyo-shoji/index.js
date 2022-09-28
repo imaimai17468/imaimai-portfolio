@@ -125,32 +125,36 @@ function subForm() {
     // console.log(i);
     for(let k=0; k<i; k++){
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
-        sendText(msg);
-        console.log(msg);
 
         if(base64Texts[k] !== undefined){
-            data = {
-                "date": `${Year}-${Month}-${Date1}-${Hour}-${Min}`,
-                "name": item_name[k],
-                "num": num[k],
-                "unit": unit[k],
-                "deadline": date[k],
-                "note": note[k],
-                "base64": base64Texts[k],
-            }
+            const imgur_client_id = '1d148cd8caaa99d';
+            const imgur_client_secret = 'a6b33229c61fe58b79fa11ae55b54802e93023f9';
 
-            var postparam = {
-                "method": "POST",
-                "mode": "no-cors",
-                "Content-Type": "application/x-www-form-urlencoded",
-                "body": JSON.stringify(data),
-            };
+            var base64 = base64Texts[k].replace(new RegExp('data.*base64,'), '');
 
-            const url = "https://script.google.com/macros/s/AKfycbwmWC-yhwoY0aWeDZu1uEPE7gOUhtoq26zTBPKZO35QWyVeA7G_FzbtnyZXKqU9b0_G/exec";
-            fetch(url, postparam);
-
-            console.log(postparam);
+            $.ajax({
+                url: 'https://api.imgur.com/3/image',
+                method: 'POST',
+                headers: {
+                  "Authorization": `Client-ID ${imgur_client_id}`
+                },
+                data: {
+                  image: base64,
+                  type: 'base64'
+                }
+              }).done(function(resp){
+                console.log('レスポンス : ', resp);
+                var sendImageUrl = resp.data.link;
+                sendTextWithImage(msg, sendImageUrl);
+              }).fail(function(error){
+                console.error('アップロード失敗...');
+                sendText('画像のアップロードに失敗しました');
+              });
+        }else{
+            sendText(msg);
         }
+
+        console.log(msg);
     }
     return false;
  
