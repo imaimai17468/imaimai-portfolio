@@ -12,10 +12,6 @@ $(function () {
 function subForm() {
     console.log("push submit");
     
-    document.getElementById(`sub`).remove();
-    let doPostMessage = document.getElementById('dopost');
-    doPostMessage.innerHTML = '送信中です';
-    
     let now = new Date();
     let Year = now.getFullYear();
     let Month = now.getMonth()+1;
@@ -32,6 +28,8 @@ function subForm() {
     let unit_buff = {};
     let date = {};
     let date_buff = {};
+    let file = {};
+    let file_buff = {};
     let note = {};
 
 
@@ -43,7 +41,7 @@ function subForm() {
         num[0] = $('input[name="item_number_text"]').val();
     }
     else if($('input[name="item_number"]:checked').val()== 1){
-        num[0] = "1（最小個数）";
+        num[0] = "1";
     }
     console.log(num[0]);
 
@@ -72,6 +70,13 @@ function subForm() {
         date[0] = $('input[name="deadline_text"]').val();
     }
     
+    //画像について
+    if($('input[name="file"]:checked').val()== 0){
+        file[0] = "なし";
+    }
+    else if($('input[name="file"]:checked').val()== 1){
+        file[0] = "あり";
+    }
     
     for(let j=1; j<i; j++){
 
@@ -80,13 +85,14 @@ function subForm() {
         num_buff[j] =  clone_element[j].querySelector('input[name="item_number"]:checked').value;
         unit_buff[j] = clone_element[j].querySelector('input[name="unit"]:checked').value
         date_buff[j] = clone_element[j].querySelector('input[name="deadline"]:checked').value;
+        file_buff[j] = clone_element[j].querySelector('input[name="file"]:checked').value;
 
         // 数量について
         if(num_buff[j] == 0){
             num[j] = clone_element[j].querySelector("#item_number_text").value;
         }
         else if(num_buff[j] == 1){
-            num[j] = "1（最小個数）";
+            num[j] = "1";
         }
 
         // 単位について
@@ -114,14 +120,30 @@ function subForm() {
             date[j] = clone_element[j].querySelector("#deadline_text").value ;
         }
 
+        //画像について
+        if(file_buff[j] == 0){
+            file[j] = "なし";
+        }
+        else if(file_buff[j] == 1){
+            file[j] = "あり";
+        }
+
     }
+
+    for(let k=0; k<i; k++){
+        // 数量・単位・納期のどれかが空なら送信できないようにする
+        if(item_name[k] == '' || num[k] == '' || unit[k] == '' || date[k] == '') return false;
+    }
+
+    document.getElementById(`sub`).remove();
+    document.getElementById(`add`).remove();
+    let doPostMessage = document.getElementById('dopost');
+    doPostMessage.innerHTML = '送信中です';
     
     // console.log(i);
     for(let k=0; k<i; k++){
-        // 数量・単位・納期のどれかが空なら送信できないようにする
-        if(num[k] == '' || unit[k] == '' || date[k] == '') return false;
-
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
+<<<<<<< HEAD
         // img_url = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcrTa5CxunCDTnYMs47QqS1SX5c9aq_5BZA-kJ_tWUsYbNvCb2LzunRXRiUYvRFffAgyZReCDy41v774NMxWQX3RRBvpZ3u4TkaCdOc9REXvyEl4OIoVStXY-I4WHwzeu37PJ_7IIQGnYzj7oL63TDldThOvZ1TjG6k887mnpGFincDbGVCmU/w640-h458/Chromecast%20with%20Google%20TV%20(HD)_1.jpg';
 
         if(base64Texts[k] !== undefined){
@@ -150,8 +172,14 @@ function subForm() {
               });
         }else{
             sendText(msg);
+=======
+
+        if(file[k] == "あり"){
+            sendText("画像を送信してください");
+>>>>>>> e5ac4332973d2a7e24086ed36bbae0765213e9ad
         }
 
+        sendText(msg);
         console.log(msg);
     }
     return false;
