@@ -143,7 +143,6 @@ function subForm() {
     // console.log(i);
     for(let k=0; k<i; k++){
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
-<<<<<<< HEAD
         // img_url = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcrTa5CxunCDTnYMs47QqS1SX5c9aq_5BZA-kJ_tWUsYbNvCb2LzunRXRiUYvRFffAgyZReCDy41v774NMxWQX3RRBvpZ3u4TkaCdOc9REXvyEl4OIoVStXY-I4WHwzeu37PJ_7IIQGnYzj7oL63TDldThOvZ1TjG6k887mnpGFincDbGVCmU/w640-h458/Chromecast%20with%20Google%20TV%20(HD)_1.jpg';
 
         if(base64Texts[k] !== undefined){
@@ -172,11 +171,6 @@ function subForm() {
               });
         }else{
             sendText(msg);
-=======
-
-        if(file[k] == "あり"){
-            sendText("画像を送信してください");
->>>>>>> e5ac4332973d2a7e24086ed36bbae0765213e9ad
         }
 
         sendText(msg);
