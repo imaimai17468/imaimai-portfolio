@@ -25,6 +25,8 @@ function subForm() {
     let machine_model = {};
     let serial_number = {};
     let sympromps = {};
+    let sympromps_name = {};
+    let sympromps_count = {};
     let machine_image = {};
     let remarks = {};
 
@@ -42,7 +44,9 @@ function subForm() {
         sympromps[0] = $('textarea[name="symptoms"]').val();
     }
     else if($('input[name="symptoms"]:checked').val()== 1){
-        sympromps[0] = $('input[name="symptoms_name"]').val() + "  " + $('input[name="symptoms_number"]').val() + "個";
+        sympromps[0] = "納品のみ";
+        sympromps_name[0] = $('input[name="symptoms_name"]').val();
+        sympromps_count[0] = $('input[name="symptoms_number"]').val();
     }
     
     //画像について
@@ -75,7 +79,9 @@ function subForm() {
         if(sympromps_buff[j] == 0){
             sympromps[j] = clone_element[j].querySelector('extarea[name="symptoms"]').value;
         }else{
-            sympromps[j] = clone_element[j].querySelector('input[name="symptoms_name"]').value + "  " + clone_element[j].querySelector('input[name="symptoms_number"]').value + "個";
+            sympromps[j] = "納品のみ";
+            sympromps_name[j] = clone_element[j].querySelector('input[name="symptoms_name"]').value;
+            sympromps_count[j] = clone_element[j].querySelector('input[name="symptoms_number"]').value;
         }
 
         //画像について
@@ -99,7 +105,14 @@ function subForm() {
     doPostMessage.innerHTML = '送信中です';
     
     for(let k=0; k<i; k++){
-        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 機械名：${machine_name[k]}\n 機種：${machine_model[k]}\n 製造番号：${serial_number[k]}\n 修理内容・症状：${sympromps[k]}\n 画像：${machine_image[k]}\n 備考：${remarks[k]}`;
+        let sympromps_text;
+        if(sympromps[k] == '納品のみ'){
+            sympromps_text =`${sympromps[k]}\n 商品名：${sympromps_name[k]}\n 個数：${sympromps_count[k]}`;
+        }else{
+            sympromps_text = sympromps[k];
+        }
+
+        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 機械名：${machine_name[k]}\n 機種：${machine_model[k]}\n 製造番号：${serial_number[k]}\n 修理内容・症状：${sympromps_text}\n 画像：${machine_image[k]}\n 備考：${remarks[k]}`;
         
         console.log(msg);
         sendText(msg);
