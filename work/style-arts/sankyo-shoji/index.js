@@ -43,7 +43,6 @@ function subForm() {
     else if($('input[name="item_number"]:checked').val()== 1){
         num[0] = "1";
     }
-    console.log(num[0]);
 
     //単位について
     if($('input[name="unit"]:checked').val()== 0){
@@ -59,7 +58,7 @@ function subForm() {
         unit[0] = "式";
     }
     else if($('input[name="unit"]:checked').val()== 4){
-        unit[0] = $('input[name="unit_text"]').val();
+        unit[0] = "その他";
     }
 
     //納期について
@@ -67,14 +66,17 @@ function subForm() {
         date[0] = "次回訪問日（10日以内）";
     }
     else if($('input[name="deadline"]:checked').val()== 1){
-        date[0] = $('input[name="deadline_text"]').val();
+        date[0] = document.getElementById("deadline_text_0").value;
+    }
+    else if($('input[name="deadline"]:checked').val()== 2){
+        date[0] = document.getElementById("deadline_text_1").value + "までに";
     }
     
     //画像について
     if($('input[name="file"]:checked').val()== 0){
         file[0] = "なし";
     }
-    else if($('input[name="file"]:checked').val()== 1){
+    else{
         file[0] = "あり";
     }
     
@@ -109,7 +111,7 @@ function subForm() {
             unit[j] = "式";
         }
         else if(unit_buff[j] == 4){
-            unit[j] = clone_element[j].querySelector("#unit_text").value;
+            unit[j] = "その他";
         }
     
         //納期について
@@ -117,7 +119,10 @@ function subForm() {
             date[j] = "次回訪問日（10日以内）";
         }
         else if(date_buff[j] == 1){
-            date[j] = clone_element[j].querySelector("#deadline_text").value ;
+            date[j] = clone_element[j].querySelector("#deadline_text").value;
+        }
+        else if(date_buff[j] == 2){
+            date[j] = clone_element[j].querySelector("#deadline_text").value + "までに";
         }
 
         //画像について
@@ -136,42 +141,13 @@ function subForm() {
     }
 
     document.getElementById(`sub`).remove();
-    document.getElementById(`add`).remove();
+    // document.getElementById(`add`).remove();
     let doPostMessage = document.getElementById('dopost');
     doPostMessage.innerHTML = '送信中です';
     
-    // console.log(i);
+    console.log(date);
     for(let k=0; k<i; k++){
-        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 備考：${note[k]}`;
-        // img_url = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcrTa5CxunCDTnYMs47QqS1SX5c9aq_5BZA-kJ_tWUsYbNvCb2LzunRXRiUYvRFffAgyZReCDy41v774NMxWQX3RRBvpZ3u4TkaCdOc9REXvyEl4OIoVStXY-I4WHwzeu37PJ_7IIQGnYzj7oL63TDldThOvZ1TjG6k887mnpGFincDbGVCmU/w640-h458/Chromecast%20with%20Google%20TV%20(HD)_1.jpg';
-
-        if(base64Texts[k] !== undefined){
-            const imgur_client_id = '1d148cd8caaa99d';
-            const imgur_client_secret = 'a6b33229c61fe58b79fa11ae55b54802e93023f9';
-
-            var base64 = base64Texts[k].replace(new RegExp('data.*base64,'), '');
-
-            $.ajax({
-                url: 'https://api.imgur.com/3/image',
-                method: 'POST',
-                headers: {
-                  "Authorization": `Client-ID ${imgur_client_id}`
-                },
-                data: {
-                  image: base64,
-                  type: 'base64'
-                }
-              }).done(function(resp){
-                console.log('レスポンス : ', resp);
-                var sendImageUrl = resp.data.link;
-                sendTextWithImage(msg, sendImageUrl);
-              }).fail(function(error){
-                console.error('アップロード失敗...');
-                sendText('画像のアップロードに失敗しました');
-              });
-        }else{
-            sendText(msg);
-        }
+        msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 商品名：${item_name[k]}\n 個数：${num[k]}\n 単位：${unit[k]}\n 納期：${date[k]}\n 画像：${file[k]}\n 備考：${note[k]}`;
 
         sendText(msg);
         console.log(msg);
@@ -221,10 +197,10 @@ function addForm() {
 
     //clone_element[j].querySelector("#sub").remove();
     document.getElementById(`sub`).remove();
-    document.getElementById(`add`).remove();
+    // document.getElementById(`add`).remove();
 
     // 商品 3 で追加の注文ボタンを消す
-    if(i == 2) document.getElementById(`add`).remove();
+    // if(i == 2) document.getElementById(`add`).remove();
 
     //clone_element[i].querySelector("#num0").onclick = `date_flg0_${i}(this.checked);`
 

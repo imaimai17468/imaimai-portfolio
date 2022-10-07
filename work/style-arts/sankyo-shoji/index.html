@@ -17,7 +17,7 @@
     <form id="form_0" class="w-75 mx-auto">
 
         <!--//商品名（text）-->
-        <p class="mt-3 mb-0 font-weight-bold">商品名</p>
+        <p class="mt-3 mb-0 font-weight-bold">商品名（*必須）</p>
         <div class="mt-0">
             <input type="text" id="item_name" name="item_name" min="100" max="250">
         </div>
@@ -52,7 +52,7 @@
                 <label><input type="radio" id="unit" name="unit" value=3 onclick="unit_flg1(this.checked);"/>&nbsp;式</label>
             </div>
             <div class="mt-0">
-                <label><input type="radio" id="unit" name="unit" value=4 onclick="num_flg0(this.checked);"/> <input type="text" id="unit_text" name="unit_text" min="1" max="100"/></label>
+                <label><input type="radio" id="unit" name="unit" value=4 onclick="num_flg0(this.checked);"/>&nbsp;その他</label>
             </div>
         </div> 
 
@@ -63,17 +63,24 @@
         </div>
         <div class="mt-0 form-inline">
             <label>
-                <input type="radio" id="deadline" name="deadline" value=1 onclick="date_flg1(this.checked);"/>日付入力　
-                <input type="date" class="form-control" id="deadline_text" name="deadline_text" maxlength="10" size="10" onchange="date_flg2(0);">
+                <input type="radio" id="deadline" name="deadline" value=1 />日付入力（指定納期）
+                <input type="date" class="form-control" id="deadline_text_0" name="deadline_text" maxlength="10" size="10" onchange="date_flg2(0);">
             </label>
-            <p class="ml-4 border border-dark my-auto px-2">指定納期<span id="deadline_text_0" name="deadline_text_0"> / </span>までに</p>
+        </div>
+        <div class="mt-0 form-inline">
+            <label>
+                <input type="radio" id="deadline" name="deadline" value=2 />日付入力（までに）
+                <input type="date" class="form-control" id="deadline_text_1" name="deadline_text" maxlength="10" size="10" onchange="date_flg2(0);">
+            </label>
         </div>
 
         <!--//参考画像（file）-->
         <p class="mt-3 mb-0 font-weight-bold">画像</p>
-        <div class="mt-0">
+        <div class="mt-0 pr-4">
             <label><input type="radio" id="file" name="file" value=0 checked/>&nbsp;なし</label>
-            <label><input type="radio" id="file" name="file" value=1/>&nbsp;あり</label>
+        </div>
+        <div class="mt-0">
+            <label><input type="radio" id="file" name="file" value=1 />&nbsp;あり</label>
         </div>
         
         <!--//備考（textarea）-->
