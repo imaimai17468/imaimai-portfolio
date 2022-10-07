@@ -156,25 +156,6 @@ function subForm() {
  
 }
 
-let base64Texts = {};
-function previewFile(index) {
-    const files = document.querySelectorAll('input[type=file]');
-    const file = files[index].files[0];
-    const reader = new FileReader();
-    reader.addEventListener("load", function () {
-        // 画像ファイルを base64 文字列に変換します
-        base64Texts[index] = reader.result;
-        console.log(base64Texts);
-        console.log(files);
-        // let debug = document.getElementById('debug');
-        // debug.innerHTML = `${base64Texts[0]}`;
-    }, false);
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-}
-
 let i = 1;
 let clone_element = {};
 function addForm() {
