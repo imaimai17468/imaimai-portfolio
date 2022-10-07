@@ -1,0 +1,21 @@
+.blue-{
+    background-color: blue;
+}
+
+.space{
+    margin-top:30%;
+}
+
+.ttt{
+    margin: 10% 10%;
+    text-align: center;
+    background-color: aquamarine;
+    font-size:large;
+    font-weight:800;
+}
+
+input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
