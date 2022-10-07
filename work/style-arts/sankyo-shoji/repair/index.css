@@ -19,3 +19,7 @@ input {
     border-right: none;
     border-left: none;
 }
+
+.required {
+    color: red;
+}
