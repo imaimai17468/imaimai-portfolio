@@ -23,3 +23,7 @@ input {
 .required {
     color: red;
 }
+
+.caution {
+    font-size: 5px;
+}
