@@ -1,0 +1,12 @@
+version: '3'
+services:
+  view:
+    build: ./frontend
+    container_name: "portfolio-view"
+    volumes:
+      - ./frontend:/app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
