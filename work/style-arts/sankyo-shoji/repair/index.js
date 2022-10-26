@@ -91,7 +91,7 @@ function subForm() {
     }
 
     document.getElementById(`sub`).remove();
-    // document.getElementById(`add`).remove();
+    if(i < 3)document.getElementById(`add`).remove();
     let doPostMessage = document.getElementById('dopost');
     doPostMessage.innerHTML = '送信中です';
     
@@ -106,7 +106,7 @@ function subForm() {
         msg = `【注文内容】\n注文日時：${Year}年${Month}月${Date1}日${Hour}時${Min}分\n 機械名：${machine_name[k]}\n 機種：${machine_model[k]}\n 製造番号：${serial_number[k]}\n 修理内容・症状：${sympromps_text}\n 画像：${machine_image[k]}\n 備考：${remarks[k]}`;
         
         console.log(msg);
-        // sendText(msg);
+        sendText(msg);
     }
     return false;
  
