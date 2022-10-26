@@ -18,7 +18,6 @@ function subForm() {
     let Date1 = now.getDate();
     let Hour = now.getHours();
     let Min = now.getMinutes();
-    //let Sec = now.getSeconds();
     
     let msg
     let machine_name = {};
@@ -30,7 +29,6 @@ function subForm() {
     let machine_image = {};
     let remarks = {};
     let sympromps_buff = {};
-    let machine_image_buff = {};
 
 
     // 機械名について
