@@ -25,14 +25,14 @@ export default function MainLayout(props: LayoutProps) {
         <meta name="" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={clsx('h-screen w-full')}>
-        <div className={clsx('h-16 w-full')}>
-          <Header />
-        </div>
-        <div className={clsx(s.parent)}>
+      <div className={clsx(s.parent)}>
           <div className={clsx('h-full w-full', s.content)}>
             {props.children}
           </div>
+        </div>
+      <div className={clsx('h-screen w-full hidden')}>
+        <div className={clsx('h-16 w-full')}>
+          <Header />
         </div>
       </div>
     </>

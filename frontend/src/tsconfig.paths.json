@@ -5,7 +5,8 @@
       "@api/*": ["./utils/api/*"],
       "@pages/*": ["./pages/*"],
       "@styles/*": ["./styles/*"],
-      "@type/*": ["./type/*"]
+      "@type/*": ["./type/*"],
+      "@animations/*": ["./animations/*"],
     }
   }
 }
