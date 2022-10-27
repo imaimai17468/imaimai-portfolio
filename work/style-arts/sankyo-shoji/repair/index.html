@@ -82,10 +82,10 @@
                 <p class="caution">（※ありにした場合、画像は注文送信後に添付してください）</p>
             </div>
             <div class="mt-0 pr-4">
-                <label><input type="radio" id="machine_image" name="machine_image" value=0 checked/>&nbsp;なし</label>
+                <label><input type="radio" id="machine_image" name="machine_image" value=0 checked onclick="showButtonHandler()" />&nbsp;なし</label>
             </div>
             <div class="mt-0">
-                <label><input type="radio" id="machine_image" name="machine_image" value=1 />&nbsp;あり</label>
+                <label><input type="radio" id="machine_image" name="machine_image" value=1 onclick="showButtonHandler()" />&nbsp;あり</label>
             </div>
         </div>
 
@@ -97,9 +97,10 @@
 
         <!--追加ボタン（button）-->
         <input type="button" id="add" name="add" class="mt-4 btn btn-primary add" value="追加で注文する" onclick="addForm()">
-
+        
         <!--送信ボタン（submit）-->
         <input type="button" id="sub" name="sub" class="mt-4 btn btn-primary sub" value="送信" onclick="subForm()">
+          
         <p id="dopost"></p>
         <div class="space"></div>
     </form>

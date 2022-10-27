@@ -151,3 +151,11 @@ function addForm() {
 
     content_area.after(new_element);
 }
+
+function showButtonHandler(){
+    if($('input[name="machine_image"]:checked').val() == 1){
+        document.getElementById(`add`).style.display = "none";
+    }else{
+        document.getElementById(`add`).style.display = "";
+    }
+}
