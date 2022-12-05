@@ -82,11 +82,17 @@
                 <p class="caution">（※ありにした場合、画像は注文送信後に添付してください）</p>
             </div>
             <div class="mt-0 pr-4">
-                <label><input type="radio" id="machine_image" name="machine_image" value=0 checked onclick="showButtonHandler()" />&nbsp;なし</label>
+                <label><input type="radio" id="machine_image" name="machine_image" value=0 checked />&nbsp;なし</label>
             </div>
             <div class="mt-0">
-                <label><input type="radio" id="machine_image" name="machine_image" value=1 onclick="showButtonHandler()" />&nbsp;あり</label>
+                <label><input type="radio" id="machine_image" name="machine_image" value=1 />&nbsp;あり</label>
             </div>
+        </div>
+
+        <!--//修理先名（text）-->
+        <p class="mt-3 mb-0 font-weight-bold">修理先名（指定がある場合）</p>
+        <div class="mt-0">
+            <input type="text" id="repair_name" name="repair_name" min="100" max="250">
         </div>
 
         <!--//備考（textarea）-->
@@ -94,9 +100,6 @@
         <div class="mt-0">
             <textarea id="remarks" name="remarks" min="100" max="250"></textarea>
         </div>
-
-        <!--追加ボタン（button）-->
-        <input type="button" id="add" name="add" class="mt-4 btn btn-primary add" value="追加で注文する" onclick="addForm()">
         
         <!--送信ボタン（submit）-->
         <input type="button" id="sub" name="sub" class="mt-4 btn btn-primary sub" value="送信" onclick="subForm()">
