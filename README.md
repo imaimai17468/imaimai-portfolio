@@ -1,75 +1,38 @@
-# SumiMatch -スミマチ-
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-![Group 8](https://user-images.githubusercontent.com/52590941/197280835-23d40701-68f0-4879-8a9c-db41cb584e4d.png)
+## Getting Started
 
-デモ動画
-https://www.youtube.com/watch?v=j7xpdzDhdIA
+First, run the development server:
 
-## 製品概要
-### 背景(製品開発のきっかけ、課題等）
-コロナ禍や、リモートワークなどの新しい働き方の発生、またそれによる転職や異動などにより、不動産会社の需要は高まっています。現在の不動産情報サイトでは、欲しい物件の条件を入力するとたくさんの候補が出てくるが、それとは引き換えに自分の希望の物件を見つけることは困難であるという課題があります。また、不動産会社は売りたい物件があるのにもかかわらず、買い手を見つけることが困難です。
-そこで私たちは、買い手・売り手それぞれに課題があることに着目し、両者の課題を解決できる方法として、顧客自身が欲しい物件情報を登録し、それに対して不動産会社がその条件に**MATCH**する物件を提案するサービスを作成しました。
-これにより、顧客は希望の条件を提案してもらうことが可能であり、不動産会社はその地域のニーズや条件に合致した物件を直接提案することができます。
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-### 製品説明（具体的な製品の説明）
-### 特長
-#### 1. 特長1
-- 売り手にとっての利点
- フリーマーケット系アプリケーションは、自分が売りたいものを提示しますが、このアプリケーションは自分が欲しい物件を提示することができます。逆フリマ形式を採用することで，売り手が在庫を抱える期間が短くなり売り手に優しいシステムとなっています.
- 小さな不動産会社では大手物件探しサービスは掲載費用はどうしても高くなってしまいます。また、そのようなサイトは物件数が多いので、見つけてもらう可能性も低いこともあります。本サービスでは、小さな不動産会社でも直接顧客に物件を紹介できるので、上記のような課題を解決することが可能です。
- 
-#### 2. 特長2
-- 買い手にとっての利点
-通常の不動産アプリでは，買い手が物件を探すことが一般的です。しかし，引っ越しの回数が少ない人や，物件に詳しくない人も世の中に多く存在します。その中で，大多数の物件から自分に合った物件を探すことは非常に難しいです。そこで自分が希望する条件を設定しておくだけでその条件に合った物件を提案してもらえるため，ミス**MATCH**を防ぐことができます。また，近年のコロナ禍において，対面での物件紹介の機会は困難であるため，オンラインで完結する本アプリがそのような問題を解決することも可能です。
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-#### 3. 特長3
-- サービスの市場価値
-競合になりうるSUUMOなどの物件探しサービスは月間2000万人のサイト訪問者数を誇っているので，不動産業界の市場は広いと考えられます。現代ではコロナ禍やSNSの普及により、受動的な人が増えてきているため自分から物件を探すことよりも探してもらうことや提案してもらうことに価値を感じやすい傾向にあります。そこで市場価値が高い不動産業界において、本アプリは有効であると考えられます。
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-### 解決出来ること
-- ユーザ
-    - 実際に不動産会社に赴いた時、自分の条件に合致した物件を提示してもらえますが、このサービスはそれを複数受けることが可能になり、物件選びに困ることがなくなります
-- 不動産会社 
-     - その地域のニーズを知ることができます
-     - ユーザに対して直接的に会社をPRすることができます
-     - 広告費や掲載費の削減に繋がります
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-### 今後の展望
-- API機能の充実
-- ログイン機能の実装
-- その他未実装ページの実装
-### 注力したこと（こだわり等）
-**デザイン**
-* UIをPOPなデザインにすることでより親しみやすいデザインにすることを意識しました
+## Learn More
 
-**設計**
-* 今回のバックエンドは運用のことを実際に考えて、Go + CleanArchitecture + Gormを採用しました。Go+CleanArchitectureを採用することで、保守しやすい環境の下地を作ることができたと考えています。また、Gormを採用することで、DBからのデータを取得やテーブル同士のアソシエーションを簡単に行えるようにしました。
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 開発技術
-### 活用した技術
-#### API・データ
-* 国土交通省 都道府県内市区町村一覧取得API
-  * http://zipcloud.ibsnet.co.jp/doc/api
-* 郵便番号検索API
-  * http://zipcloud.ibsnet.co.jp/doc/api
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-#### フレームワーク・ライブラリ・モジュール
-* フロントエンド
-  * Next.js TypeScript TailwindCSS Recoil
-* バックエンド
-  * Go Air Gorm
-* インフラ
-  * Docker DockerCompose Cloudflared
+## Deploy on Vercel
 
-#### デバイス・ツール
-* Figma FigJam
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### 独自技術
-#### ハッカソンで開発した独自機能・技術
-* 独自で開発したものの内容をこちらに記載してください
-* 特に力を入れた部分をファイルリンク、またはcommit_idを記載してください。
-
-アプリケーションのデプロイは学内で製作しているオンプレミスサーバーにて行いました。
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
