@@ -12,6 +12,7 @@ const Playlist = () => {
   const [nowIndex, setNowIndex] = useState(0);
   const [isRandom, setIsRandom] = useState(false);
   const [widnowWidth, windowHeight] = useWindowSize();
+  const [isDelete, setIsDelete] = useState(false);
 
   const [play, { pause, stop }] = useSound(SOUNDS[nowIndex].path, {
     volume: 0.5,
@@ -84,10 +85,27 @@ const Playlist = () => {
         bottom: windowHeight - 450,
       }}
     >
-      <div className="font-mono text-sm flex flex-col items-center justify-center w-fit py-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200">
+      <div className={`
+        m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
+        ${isDelete && "opacity-0"}
+        `}
+      >
+        <div className="my-2 w-full flex flex-row justify-between">
+          <div
+            className="rounded-sm border-2 border-gray-200 w-6 h-6 flex justify-items-center cursor-pointer"
+            onClick={() => {
+              setIsDelete(true);
+            }}
+          >
+            <span className="m-auto text-xs">x</span>
+          </div>
+          <div className="w-4/5 bg-gray-200 text-slate-800 rounded-sm px-2 flex items-center">
+            {"///MUSIC/////////////"}
+          </div>
+        </div>
         <div className="w-fit h-fit border-x-2 border-gray-200 px-5">
           <p className="text-gray-200 mr-auto mb-8 border-b-2 py-1 w-fit border-gray-200">
-            imaimai playlist
+            imaimai&#39;s playlist
           </p>
           <Scratch togglePlay={togglePlay} />
         </div>
@@ -111,8 +129,7 @@ const Playlist = () => {
             <span className="m-auto">👈</span>
           </div>
           <div
-            className={
-              `flex justify-items-center cursor-pointer border-2 border-gray-200 rounded-full h-10 w-10 hover:border-4 transition-all 
+            className={`flex justify-items-center cursor-pointer border-2 border-gray-200 rounded-full h-10 w-10 hover:border-4 transition-all 
               ${isRandom && "border-orange-300"}
               `}
             onClick={() => {
