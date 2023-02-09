@@ -1,14 +1,12 @@
 import Head from "next/head";
 import { useState, useMemo, useCallback } from "react";
-
-import { SideNavi } from "@/components/screen";
-import { Playlist } from "@/components/screen";
+import { SideNavi, Playlist, BackgroundAnimation } from "@/components/screen";
 import { Drag } from "@/components/Layout";
 import { useWindowSize } from "@react-hook/window-size";
 
 export default function Home() {
   const [windowWidth, windowHeight] = useWindowSize();
-  const [openMusic, setOpenMusic] = useState(windowWidth > 640);
+  const [openMusic, setOpenMusic] = useState(false);
   const [openAbout, setOpenAbout] = useState(false);
   const [openWorks, setOpenWorks] = useState(false);
   const [openSkills, setOpenSkills] = useState(false);
@@ -58,6 +56,7 @@ export default function Home() {
         <link rel="icon" href="/images/frog_circle.png" />
       </Head>
       <main className="text-gray-200 font-mono">
+        <BackgroundAnimation />
         <SideNavi onClicks={onClicks} isOpens={isOpens} />
         <Drag
           container={{
