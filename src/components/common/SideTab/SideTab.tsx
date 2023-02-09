@@ -6,7 +6,7 @@ export const SideTab = (props: SideTabProps) => {
 
   return (
     <div
-      className={`z-10 absolute
+      className={`z-30 absolute
         ${className}`}
       onClick={() => {onClick && onClick()}}
     >

@@ -77,7 +77,7 @@ const Playlist = (props: PlaylistProps) => {
   return (
     <div
       className={`
-        m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
+        absolute z-20 m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
         ${isOpen ? "visible" : "collapse opacity-0"}
         `}
     >
@@ -88,7 +88,7 @@ const Playlist = (props: PlaylistProps) => {
             setOpen(false);
           }}
         >
-          <span className="m-auto text-xs">x</span>
+          <span className="m-auto">×</span>
         </div>
         <div className="w-4/5 bg-gray-200 text-slate-800 rounded-sm px-2 flex items-center">
           {"///MUSIC/////////////"}
