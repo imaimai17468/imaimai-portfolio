@@ -8,7 +8,7 @@ import { useWindowSize } from "@react-hook/window-size";
 
 export default function Home() {
   const [windowWidth, windowHeight] = useWindowSize();
-  const [openMusic, setOpenMusic] = useState(false);
+  const [openMusic, setOpenMusic] = useState(windowWidth > 640);
   const [openAbout, setOpenAbout] = useState(false);
   const [openWorks, setOpenWorks] = useState(false);
   const [openSkills, setOpenSkills] = useState(false);
@@ -66,9 +66,8 @@ export default function Home() {
             right: windowWidth - windowWidth / 10,
             bottom: windowHeight - windowHeight / 10,
           }}
-          className="collapse sm:visible"
         >
-          <Playlist />
+          <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
         </Drag>
       </main>
     </>

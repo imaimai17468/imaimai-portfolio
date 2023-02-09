@@ -2,14 +2,16 @@ import React, { useState, useEffect, useMemo } from "react";
 import useSound from "use-sound";
 import { Scratch } from "@/components/common";
 import { SOUNDS } from "@/constants/sounds";
+import { PlaylistProps } from "./Playlist.type";
 
 const MAX_LENGTH = 15;
 
-const Playlist = () => {
+const Playlist = (props: PlaylistProps) => {
+  const { setOpen, isOpen } = props;
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [nowIndex, setNowIndex] = useState(0);
   const [isRandom, setIsRandom] = useState(false);
-  const [isDelete, setIsDelete] = useState(false);
 
   const [play, { pause, stop }] = useSound(SOUNDS[nowIndex].path, {
     volume: 0.5,
@@ -76,14 +78,14 @@ const Playlist = () => {
     <div
       className={`
         m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
-        ${isDelete && "opacity-0"}
+        ${isOpen ? "opacity-100" : "opacity-0"}
         `}
     >
       <div className="my-2 w-full flex flex-row justify-between">
         <div
           className="rounded-sm border-2 border-gray-200 w-6 h-6 flex justify-items-center cursor-pointer"
           onClick={() => {
-            setIsDelete(true);
+            setOpen(false);
           }}
         >
           <span className="m-auto text-xs">x</span>
