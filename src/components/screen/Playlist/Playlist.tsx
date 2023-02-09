@@ -78,7 +78,7 @@ const Playlist = (props: PlaylistProps) => {
     <div
       className={`
         m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
-        ${isOpen ? "opacity-100" : "opacity-0"}
+        ${isOpen ? "visible" : "collapse opacity-0"}
         `}
     >
       <div className="my-2 w-full flex flex-row justify-between">
