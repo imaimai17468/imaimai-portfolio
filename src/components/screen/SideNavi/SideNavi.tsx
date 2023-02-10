@@ -7,6 +7,11 @@ export const SideNavi = (props: SideNaviProps) => {
   return (
     <div className={className}>
       <SideTab
+        iconName="dont"
+        className="top-96 rotate-6 hover:-left-3 -left-8 transition-all"
+        title="⬆︎DRAG⬇︎"
+      />
+      <SideTab
         iconName="cd"
         title="MUSICS"
         className="top-80 -rotate-1 hover:-left-3 -left-8 transition-all"
