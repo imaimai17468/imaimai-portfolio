@@ -57,7 +57,17 @@ export default function Home() {
       </Head>
       <main className="text-gray-200 font-mono">
         <BackgroundAnimation />
-        <SideNavi onClicks={onClicks} isOpens={isOpens} />
+        <Drag
+          drag="y"
+          container={{
+            left: 0,
+            top: -windowHeight / 10,
+            right: 0,
+            bottom: windowHeight / 3,
+          }}
+        >
+          <SideNavi onClicks={onClicks} isOpens={isOpens} />
+        </Drag>
         <Drag
           container={{
             left: -windowWidth / 10,
