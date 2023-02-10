@@ -3,6 +3,8 @@ export const SVG_ICON = {
     USER: 'user',
     CODE: 'code',
     BAG: 'bag',
+    ARROW: 'arrow',
+    DONT: 'dont',
 } as const;
 
 export type SVG_ICON = typeof SVG_ICON[keyof typeof SVG_ICON];
