@@ -5,9 +5,10 @@ export const Drag: React.FC<DragProps> = ({
   children,
   container,
   className,
+  drag = true
 }) => {
   return (
-    <motion.div className={className} drag dragConstraints={container}>
+    <motion.div className={className} drag={drag} dragConstraints={container}>
       {children}
     </motion.div>
   );

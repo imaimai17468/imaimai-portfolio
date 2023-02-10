@@ -9,5 +9,6 @@ export interface DragProps {
     children: React.ReactNode;
     container: Container;
     className?: string;
+    drag?: boolean | "x" | "y";
 }
 
