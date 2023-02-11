@@ -8,7 +8,7 @@ export const WorkWindow: React.FC<WorkWindowProps> = ({
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="WORKS">
       <div className="text-gray-200 flex flex-col ">
-        <p>This is Skill Page</p>
+        <p>This is Work Page</p>
         <p>Coming Soon...</p>
       </div>
     </Modal>
