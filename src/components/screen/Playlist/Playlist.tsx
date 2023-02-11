@@ -77,7 +77,7 @@ const Playlist = (props: PlaylistProps) => {
   return (
     <div
       className={`
-        absolute z-20 m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
+        absolute z-30 m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
         ${isOpen ? "visible" : "collapse opacity-0"}
         `}
     >
