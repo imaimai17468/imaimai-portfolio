@@ -82,14 +82,14 @@ const Playlist = (props: PlaylistProps) => {
         `}
     >
       <div className="my-2 w-full flex flex-row justify-between">
-        <div
+        <button
           className="rounded-sm border-2 border-gray-200 w-6 h-6 flex justify-items-center cursor-pointer"
           onClick={() => {
             setOpen(false);
           }}
         >
           <span className="m-auto">×</span>
-        </div>
+        </button>
         <div className="w-4/5 bg-gray-200 text-slate-800 rounded-sm px-2 flex items-center">
           {"///MUSIC/////////////"}
         </div>
