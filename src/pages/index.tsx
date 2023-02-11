@@ -1,8 +1,16 @@
 import Head from "next/head";
 import { useState, useMemo, useCallback } from "react";
-import { SideNavi, Playlist, BackgroundAnimation } from "@/components/screen";
+import {
+  SideNavi,
+  Playlist,
+  BackgroundAnimation,
+  AboutWindow,
+  SkillWindow,
+  WorkWindow,
+} from "@/components/screen";
 import { Drag } from "@/components/Layout";
 import { useWindowSize } from "@react-hook/window-size";
+import { Modal } from "@/components/common";
 
 export default function Home() {
   const [windowWidth, windowHeight] = useWindowSize();
@@ -10,6 +18,13 @@ export default function Home() {
   const [openAbout, setOpenAbout] = useState(false);
   const [openWorks, setOpenWorks] = useState(false);
   const [openSkills, setOpenSkills] = useState(false);
+
+  const ModalContainer = {
+    left: -windowWidth / 10,
+    top: -windowHeight / 10,
+    right: windowWidth - windowWidth / 10,
+    bottom: windowHeight - windowHeight / 10,
+  };
 
   const toggleMusic = useCallback(() => {
     setOpenMusic(!openMusic);
@@ -69,14 +84,37 @@ export default function Home() {
           <SideNavi onClicks={onClicks} isOpens={isOpens} />
         </Drag>
         <Drag
-          container={{
-            left: -windowWidth / 10,
-            top: -windowHeight / 10,
-            right: windowWidth - windowWidth / 10,
-            bottom: windowHeight - windowHeight / 10,
-          }}
+          container={ModalContainer}
         >
           <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
+        </Drag>
+        <Drag container={ModalContainer}>
+          <AboutWindow
+            onClose={() => {
+              setOpenAbout(false);
+            }}
+            isOpen={openAbout}
+          />
+        </Drag>
+        <Drag
+          container={ModalContainer}
+        >
+          <SkillWindow
+            onClose={() => {
+              setOpenSkills(false);
+            }}
+            isOpen={openSkills}
+          />
+        </Drag>
+        <Drag
+          container={ModalContainer}
+        >
+          <WorkWindow
+            onClose={() => {
+              setOpenWorks(false);
+            }}
+            isOpen={openWorks}
+          />
         </Drag>
       </main>
     </>
