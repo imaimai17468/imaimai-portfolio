@@ -5,7 +5,7 @@ export const Modal = ({ children, isOpen, title, onClose }: ModalProps) => {
   return (
     <div
       className={`
-         absolute z-10  translate-x-1/2 translate-y-1/2 border-2 w-72 sm:w-1/2 h-fit border-accent rounded-md bg-primary shadow-md shadow-accent p-3
+         absolute z-10 md:translate-x-1/2 translate-y-1/2 border-2 w-72 sm:w-1/2 h-fit border-accent rounded-md bg-primary shadow-md shadow-accent p-3
         ${isOpen ? "opacity-100" : "opacity-0 hidden"}
     `}
     >
