@@ -15,14 +15,14 @@ import { Modal } from "@/components/common";
 export default function Home() {
   const [windowWidth, windowHeight] = useWindowSize();
   const [openMusic, setOpenMusic] = useState(false);
-  const [openAbout, setOpenAbout] = useState(false);
+  const [openAbout, setOpenAbout] = useState(true);
   const [openWorks, setOpenWorks] = useState(false);
   const [openSkills, setOpenSkills] = useState(false);
 
   const ModalContainer = {
-    left: -windowWidth / 10,
-    top: -windowHeight / 10,
-    right: windowWidth - windowWidth / 10,
+    left: -windowWidth + windowWidth / 3,
+    top: -windowHeight / 5,
+    right: windowWidth - windowWidth / 4,
     bottom: windowHeight - windowHeight / 10,
   };
 
@@ -72,20 +72,8 @@ export default function Home() {
       </Head>
       <main className="text-gray-200 font-mono">
         <BackgroundAnimation />
-        <Drag
-          drag="y"
-          container={{
-            left: 0,
-            top: -windowHeight / 10,
-            right: 0,
-            bottom: windowHeight / 3,
-          }}
-        >
-          <SideNavi onClicks={onClicks} isOpens={isOpens} />
-        </Drag>
-        <Drag
-          container={ModalContainer}
-        >
+        <SideNavi onClicks={onClicks} isOpens={isOpens} />
+        <Drag container={ModalContainer}>
           <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
         </Drag>
         <Drag container={ModalContainer}>
@@ -96,9 +84,7 @@ export default function Home() {
             isOpen={openAbout}
           />
         </Drag>
-        <Drag
-          container={ModalContainer}
-        >
+        <Drag container={ModalContainer}>
           <SkillWindow
             onClose={() => {
               setOpenSkills(false);
@@ -106,9 +92,7 @@ export default function Home() {
             isOpen={openSkills}
           />
         </Drag>
-        <Drag
-          container={ModalContainer}
-        >
+        <Drag container={ModalContainer}>
           <WorkWindow
             onClose={() => {
               setOpenWorks(false);
