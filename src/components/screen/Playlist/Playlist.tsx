@@ -77,8 +77,8 @@ const Playlist = (props: PlaylistProps) => {
   return (
     <div
       className={`
-        absolute z-30 m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
-        ${isOpen ? "visible" : "collapse opacity-0"}
+        z-10 absolute m-3 bg-slate-800 text-sm flex flex-col items-center justify-center w-fit pt-1 pb-5 px-3 rounded-xl border-2 border-gray-200 shadow-lg shadow-gray-200 transition-all 
+        ${isOpen ? "opacity-100" : "hidden opacity-0"}
         `}
     >
       <div className="my-2 w-full flex flex-row justify-between">
@@ -88,7 +88,14 @@ const Playlist = (props: PlaylistProps) => {
             setOpen(false);
           }}
         >
-          <span className="m-auto">×</span>
+          <span
+            className="m-auto cursor-pointer"
+            onClick={() => {
+              setOpen(false);
+            }}
+          >
+            ×
+          </span>
         </button>
         <div className="w-4/5 bg-gray-200 text-slate-800 rounded-sm px-2 flex items-center">
           {"///MUSIC/////////////"}
