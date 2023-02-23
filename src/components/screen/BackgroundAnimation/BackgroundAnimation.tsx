@@ -8,13 +8,9 @@ export const BackgroundAnimation = () => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {
-    console.log(container);
-  }, []);
   return (
     <Particles
       init={particlesInit}
-      loaded={particlesLoaded}
       id="tsparticles"
       options={{
         background: {
