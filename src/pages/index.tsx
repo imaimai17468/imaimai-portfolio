@@ -8,7 +8,7 @@ import {
   SkillWindow,
   WorkWindow,
 } from "@/components/screen";
-import { Drag } from "@/components/Layout";
+import { Drag } from "@/components/layout";
 import { useWindowSize } from "@react-hook/window-size";
 import { Modal } from "@/components/common";
 
