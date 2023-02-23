@@ -42,10 +42,10 @@ export const BackgroundAnimation = () => {
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: "#A7FF83",
           },
           links: {
-            color: "#ffffff",
+            color: "#17B978",
             distance: 150,
             enable: true,
             opacity: 0.5,

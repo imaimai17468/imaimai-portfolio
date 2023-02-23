@@ -11,8 +11,8 @@ export const SideTab = (props: SideTabProps) => {
       onClick={() => {onClick && onClick()}}
     >
       <div className={
-        `bg-slate-800 border-2 rounded-md p-2  cursor-pointer h-fit w-28 flex flex-col items-end justify-center hover:shadow-md transition-all
-         ${isClicked ? "border-orange-500 hover:shadow-orange-500" : "border-gray-200 hover:shadow-gray-200"}`
+        `bg-primary border-2 rounded-md p-2  cursor-pointer h-fit w-28 flex flex-col items-end justify-center hover:shadow-md transition-all
+         ${isClicked ? "border-accent hover:shadow-accent border-4" : "border-secondary"}`
         }>
         <Image
           src={`/images/${iconName}.svg`}
