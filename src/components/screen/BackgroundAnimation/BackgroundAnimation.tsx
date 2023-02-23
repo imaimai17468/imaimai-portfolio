@@ -10,6 +10,7 @@ export const BackgroundAnimation = () => {
 
   return (
     <Particles
+      className="-z-10 fixed"
       init={particlesInit}
       id="tsparticles"
       options={{
