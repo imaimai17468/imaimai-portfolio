@@ -8,7 +8,7 @@ import {
   SkillWindow,
   WorkWindow,
 } from "@/components/screen";
-import { Drag } from "@/components/layout";
+import { Drag, MainLayout } from "@/components/layout";
 import { useWindowSize } from "@react-hook/window-size";
 import { Modal } from "@/components/common";
 
@@ -71,35 +71,37 @@ export default function Home() {
         <link rel="icon" href="/images/frog_circle.png" />
       </Head>
       <main className="text-gray-200 font-mono">
-        <BackgroundAnimation />
-        <SideNavi onClicks={onClicks} isOpens={isOpens} />
-        <Drag container={ModalContainer}>
-          <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
-        </Drag>
-        <Drag container={ModalContainer}>
-          <AboutWindow
-            onClose={() => {
-              setOpenAbout(false);
-            }}
-            isOpen={openAbout}
-          />
-        </Drag>
-        <Drag container={ModalContainer}>
-          <SkillWindow
-            onClose={() => {
-              setOpenSkills(false);
-            }}
-            isOpen={openSkills}
-          />
-        </Drag>
-        <Drag container={ModalContainer}>
-          <WorkWindow
-            onClose={() => {
-              setOpenWorks(false);
-            }}
-            isOpen={openWorks}
-          />
-        </Drag>
+        <MainLayout>
+          <BackgroundAnimation />
+          <SideNavi onClicks={onClicks} isOpens={isOpens} />
+          <Drag container={ModalContainer}>
+            <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
+          </Drag>
+          <Drag container={ModalContainer}>
+            <AboutWindow
+              onClose={() => {
+                setOpenAbout(false);
+              }}
+              isOpen={openAbout}
+            />
+          </Drag>
+          <Drag container={ModalContainer}>
+            <SkillWindow
+              onClose={() => {
+                setOpenSkills(false);
+              }}
+              isOpen={openSkills}
+            />
+          </Drag>
+          <Drag container={ModalContainer}>
+            <WorkWindow
+              onClose={() => {
+                setOpenWorks(false);
+              }}
+              isOpen={openWorks}
+            />
+          </Drag>
+        </MainLayout>
       </main>
     </>
   );
