@@ -1,5 +1,7 @@
 import { useEffect, useState, useMemo } from 'react'
 
+import { News } from '@/components/common'
+
 export const Header = () => {
   const [time, setTime] = useState(() => {
     const date = new Date()
@@ -30,15 +32,23 @@ export const Header = () => {
   }, [])
 
   return (
-    <div className='flex w-full flex-row items-center border-b border-gray-200 bg-background py-1 font-press text-sm'>
-      <div className='flex h-full grow items-center border-r border-gray-200 px-3'>
-        <p className='text-gray-200'>imaimai&#39;s portfolio</p>
+    <div>
+      <div className='flex w-full flex-row items-center border-b border-gray-200 bg-background py-1 font-press text-xs md:text-sm'>
+        <div className='flex h-full items-center border-r border-gray-200 px-3'>
+          <p className='text-gray-200'>imaimai&#39;s portfolio</p>
+        </div>
+        <div className='invisible grow md:visible'>
+          <News mode='absolute' />
+        </div>
+        <div className='flex h-full items-center border-gray-200 px-3 md:border-l'>
+          <p className='text-gray-200'>{time}</p>
+        </div>
+        <div className='flex h-full items-center border-l border-gray-200 px-3'>
+          <p className='text-gray-200'>{date}</p>
+        </div>
       </div>
-      <div className='flex h-full items-center px-3'>
-        <p className='text-gray-200'>{time}</p>
-      </div>
-      <div className='flex h-full items-center border-l border-gray-200 px-3'>
-        <p className='text-gray-200'>{date}</p>
+      <div className='visible  md:invisible'>
+        <News />
       </div>
     </div>
   )
