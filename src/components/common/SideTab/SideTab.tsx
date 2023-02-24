@@ -1,30 +1,27 @@
-import { SideTabProps } from "./SideTab.type";
-import Image from "next/image";
+import Image from 'next/image'
+
+import { SideTabProps } from './SideTab.type'
 
 export const SideTab = (props: SideTabProps) => {
-  const { iconName, className, title, onClick, isClicked } = props;
+  const { iconName, className, title, onClick, isClicked } = props
 
   return (
     <div
-      className={`z-0 absolute
-        ${className}`}
-      onClick={() => {onClick && onClick()}}
+      className={`absolute z-0
+        ${className || ''}`}
+      onClick={() => {
+        if (onClick) onClick()
+      }}
     >
-      <div className={
-        `bg-primary border-2 rounded-md p-2  cursor-pointer h-fit w-28 flex flex-col items-end justify-center hover:shadow-md transition-all
-         ${isClicked ? "border-accent hover:shadow-accent border-4" : "border-secondary"}`
-        }>
-        <Image
-          src={`/images/${iconName}.svg`}
-          alt="iconName"
-          width={40}
-          height={40}
-          className="my-1"
-        />
-        <p className="text-center">{title}</p>
+      <div
+        className={`flex h-fit w-28 cursor-pointer  flex-col items-end justify-center rounded-md border-2 bg-primary p-2 transition-all hover:shadow-md
+         ${isClicked ? 'border-4 border-accent hover:shadow-accent' : 'border-secondary'}`}
+      >
+        <Image src={`/images/${iconName}.svg`} alt='iconName' width={40} height={40} className='my-1' />
+        <p className='text-center'>{title}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SideTab;
+export default SideTab

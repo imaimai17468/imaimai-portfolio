@@ -1,1 +1,1 @@
-export { default as AboutWindow } from "./AboutWindow";
+export { default as AboutWindow } from './AboutWindow'

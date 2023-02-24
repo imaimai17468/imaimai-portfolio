@@ -1,18 +1,14 @@
-import { WorkWindowProps } from "./WorkWindow.type";
-import { Modal } from "@/components/common";
+import { Modal } from '@/components/common'
 
-export const WorkWindow: React.FC<WorkWindowProps> = ({
-  isOpen,
-  onClose,
-}) => {
-  return (
-    <Modal isOpen={isOpen} onClose={onClose} title="WORKS">
-      <div className="text-gray-200 flex flex-col ">
-        <p>This is Work Page</p>
-        <p>Coming Soon...</p>
-      </div>
-    </Modal>
-  );
-};
+import { WorkWindowProps } from './WorkWindow.type'
 
-export default WorkWindow;
+export const WorkWindow: React.FC<WorkWindowProps> = ({ isOpen, onClose }: WorkWindowProps) => (
+  <Modal isOpen={isOpen} onClose={onClose} title='WORKS'>
+    <div className='flex flex-col text-gray-200 '>
+      <p>This is Work Page</p>
+      <p>Coming Soon...</p>
+    </div>
+  </Modal>
+)
+
+export default WorkWindow

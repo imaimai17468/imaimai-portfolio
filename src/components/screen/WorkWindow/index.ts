@@ -1,1 +1,1 @@
-export { default as WorkWindow } from "./WorkWindow";
+export { default as WorkWindow } from './WorkWindow'

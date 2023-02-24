@@ -1,4 +1,4 @@
 export interface SkillWindowProps {
-    onClose: () => void;
-    isOpen: boolean;
+  onClose: () => void
+  isOpen: boolean
 }

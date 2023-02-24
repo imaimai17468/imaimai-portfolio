@@ -1,1 +1,1 @@
-export { default as SkillWindow } from "./SkillWindow";
+export { default as SkillWindow } from './SkillWindow'

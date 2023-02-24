@@ -1,46 +1,39 @@
-import Head from "next/head";
-import { useState, useMemo, useCallback } from "react";
-import {
-  SideNavi,
-  Playlist,
-  BackgroundAnimation,
-  AboutWindow,
-  SkillWindow,
-  WorkWindow,
-} from "@/components/screen";
-import { Drag, MainLayout } from "@/components/layout";
-import { useWindowSize } from "@react-hook/window-size";
-import { Modal } from "@/components/common";
+import { useWindowSize } from '@react-hook/window-size'
+import Head from 'next/head'
+import { useState, useMemo, useCallback } from 'react'
+
+import { Drag, MainLayout } from '@/components/layout'
+import { SideNavi, Playlist, BackgroundAnimation, AboutWindow, SkillWindow, WorkWindow } from '@/components/screen'
 
 export default function Home() {
-  const [windowWidth, windowHeight] = useWindowSize();
-  const [openMusic, setOpenMusic] = useState(false);
-  const [openAbout, setOpenAbout] = useState(true);
-  const [openWorks, setOpenWorks] = useState(false);
-  const [openSkills, setOpenSkills] = useState(false);
+  const [windowWidth, windowHeight] = useWindowSize()
+  const [openMusic, setOpenMusic] = useState(false)
+  const [openAbout, setOpenAbout] = useState(true)
+  const [openWorks, setOpenWorks] = useState(false)
+  const [openSkills, setOpenSkills] = useState(false)
 
   const ModalContainer = {
     left: -windowWidth + windowWidth / 3,
     top: -windowHeight / 5,
     right: windowWidth - windowWidth / 4,
     bottom: windowHeight - windowHeight / 10,
-  };
+  }
 
   const toggleMusic = useCallback(() => {
-    setOpenMusic(!openMusic);
-  }, [openMusic]);
+    setOpenMusic(!openMusic)
+  }, [openMusic])
 
   const toggleAbout = useCallback(() => {
-    setOpenAbout(!openAbout);
-  }, [openAbout]);
+    setOpenAbout(!openAbout)
+  }, [openAbout])
 
   const toggleWorks = useCallback(() => {
-    setOpenWorks(!openWorks);
-  }, [openWorks]);
+    setOpenWorks(!openWorks)
+  }, [openWorks])
 
   const toggleSkills = useCallback(() => {
-    setOpenSkills(!openSkills);
-  }, [openSkills]);
+    setOpenSkills(!openSkills)
+  }, [openSkills])
 
   const onClicks = useMemo(
     () => ({
@@ -49,8 +42,8 @@ export default function Home() {
       onWorksClick: toggleWorks,
       onSkillsClick: toggleSkills,
     }),
-    [toggleAbout, toggleMusic, toggleSkills, toggleWorks]
-  );
+    [toggleAbout, toggleMusic, toggleSkills, toggleWorks],
+  )
 
   const isOpens = useMemo(
     () => ({
@@ -59,18 +52,18 @@ export default function Home() {
       isOpenWorks: openWorks,
       isOpenSkills: openSkills,
     }),
-    [openAbout, openMusic, openSkills, openWorks]
-  );
+    [openAbout, openMusic, openSkills, openWorks],
+  )
 
   return (
     <>
       <Head>
         <title>imaimai Portfolio</title>
-        <meta name="description" content="いまいまいのポートフォリオ" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/images/frog_circle.png" />
+        <meta name='description' content='いまいまいのポートフォリオ' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/images/frog_circle.png' />
       </Head>
-      <main className="text-gray-200 font-mono">
+      <main className='font-mono text-gray-200'>
         <MainLayout>
           <BackgroundAnimation />
           <SideNavi onClicks={onClicks} isOpens={isOpens} />
@@ -80,7 +73,7 @@ export default function Home() {
           <Drag container={ModalContainer}>
             <AboutWindow
               onClose={() => {
-                setOpenAbout(false);
+                setOpenAbout(false)
               }}
               isOpen={openAbout}
             />
@@ -88,7 +81,7 @@ export default function Home() {
           <Drag container={ModalContainer}>
             <SkillWindow
               onClose={() => {
-                setOpenSkills(false);
+                setOpenSkills(false)
               }}
               isOpen={openSkills}
             />
@@ -96,7 +89,7 @@ export default function Home() {
           <Drag container={ModalContainer}>
             <WorkWindow
               onClose={() => {
-                setOpenWorks(false);
+                setOpenWorks(false)
               }}
               isOpen={openWorks}
             />
@@ -104,5 +97,5 @@ export default function Home() {
         </MainLayout>
       </main>
     </>
-  );
+  )
 }

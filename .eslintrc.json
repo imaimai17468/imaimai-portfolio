@@ -21,15 +21,7 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": [
-    "@typescript-eslint",
-    "import",
-    "jsx-a11y",
-    "react",
-    "react-hooks",
-    "storybook",
-    "unused-imports"
-  ],
+  "plugins": ["@typescript-eslint", "import", "jsx-a11y", "react", "react-hooks", "storybook", "unused-imports"],
   "rules": {
     "@typescript-eslint/no-floating-promises": [
       "warn",

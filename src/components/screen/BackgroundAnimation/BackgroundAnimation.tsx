@@ -1,33 +1,34 @@
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { useCallback } from "react";
-import type { Engine } from "tsparticles-engine";
+import { useCallback } from 'react'
+import Particles from 'react-tsparticles'
+import { loadFull } from 'tsparticles'
+
+import type { Engine } from 'tsparticles-engine'
 
 export const BackgroundAnimation = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
-  }, []);
+    await loadFull(engine)
+  }, [])
 
   return (
     <Particles
-      className="-z-10 fixed"
+      className='fixed -z-10'
       init={particlesInit}
-      id="tsparticles"
+      id='tsparticles'
       options={{
         background: {
           opacity: 0,
         },
         fpsLimit: 60,
         interactivity: {
-          detectsOn: "canvas",
+          detectsOn: 'canvas',
           events: {
             onClick: {
               enable: true,
-              mode: "push",
+              mode: 'push',
             },
             onHover: {
               enable: true,
-              mode: "repulse",
+              mode: 'repulse',
             },
             resize: true,
           },
@@ -43,10 +44,10 @@ export const BackgroundAnimation = () => {
         },
         particles: {
           color: {
-            value: "#A7FF83",
+            value: '#A7FF83',
           },
           links: {
-            color: "#17B978",
+            color: '#17B978',
             distance: 150,
             enable: true,
             opacity: 0.5,
@@ -56,9 +57,9 @@ export const BackgroundAnimation = () => {
             enable: true,
           },
           move: {
-            direction: "none",
+            direction: 'none',
             enable: true,
-            outMode: "bounce",
+            outMode: 'bounce',
             random: false,
             speed: 4,
             straight: false,
@@ -74,7 +75,7 @@ export const BackgroundAnimation = () => {
             value: 0.5,
           },
           shape: {
-            type: "triangle",
+            type: 'triangle',
           },
           size: {
             random: true,
@@ -84,7 +85,7 @@ export const BackgroundAnimation = () => {
         detectRetina: true,
       }}
     />
-  );
-};
+  )
+}
 
-export default BackgroundAnimation;
+export default BackgroundAnimation

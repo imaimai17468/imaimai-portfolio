@@ -1,4 +1,4 @@
 export interface PlaylistProps {
-  setOpen: Function;
-  isOpen: boolean;
+  setOpen: (value: boolean) => void
+  isOpen: boolean
 }
