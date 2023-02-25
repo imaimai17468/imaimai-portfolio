@@ -12,4 +12,9 @@ export const NEWS = [
     date: '2023-02-16',
     link: 'https://docs.google.com/presentation/d/1CKEqloaSzNfMWTkktveyhels57wNNtL1AVdOTIFGop0/edit#slide=id.p',
   },
+  {
+    title: 'SAIBASHI LT会',
+    description: '開発をすることについて',
+    date: '2022-2-13',
+  },
 ] as News[]
