@@ -15,8 +15,8 @@ export default function Home() {
   const ModalContainer = {
     left: -windowWidth + windowWidth / 3,
     top: -windowHeight / 5,
-    right: windowWidth - windowWidth / 4,
-    bottom: windowHeight - windowHeight / 10,
+    right: windowWidth - windowWidth / 3,
+    bottom: windowHeight - windowHeight / 5,
   }
 
   const toggleMusic = useCallback(() => {
