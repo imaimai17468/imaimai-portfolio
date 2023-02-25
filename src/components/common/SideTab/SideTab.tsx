@@ -14,7 +14,7 @@ export const SideTab = (props: SideTabProps) => {
       }}
     >
       <div
-        className={`flex h-fit w-28 cursor-pointer  flex-col items-end justify-center rounded-md border-2 bg-primary p-2 transition-all hover:shadow-md
+        className={`flex h-fit w-28 cursor-pointer  flex-col items-end justify-center rounded-sm border-2 bg-primary p-2 transition-all hover:shadow-md
          ${isClicked ? 'border-4 border-accent hover:shadow-accent' : 'border-secondary'}`}
       >
         <Image src={`/images/${iconName}.svg`} alt='iconName' width={40} height={40} className='my-1' />
