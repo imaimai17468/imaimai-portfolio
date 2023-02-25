@@ -5,10 +5,10 @@ import { NEWS } from '@/constants/news'
 
 import { NewsProps } from './News.type'
 
-export const News = ({ mode = 'static' }: NewsProps) => {
+export const News = ({ mode = 'relative' }: NewsProps) => {
   const recentNews = useMemo(() => NEWS[0], [])
   const className = useMemo(() => {
-    if (mode === 'static') {
+    if (mode === 'relative') {
       return 'w-full text-xs'
     }
     if (mode === 'absolute') {
@@ -18,18 +18,24 @@ export const News = ({ mode = 'static' }: NewsProps) => {
   }, [mode])
 
   return (
-    <div
-      className={`${className} top-1 left-48 overflow-hidden whitespace-nowrap border border-gray-200 bg-primary font-bold text-gray-200`}
-    >
-      <motion.div
-        initial={{ x: '0%' }}
-        animate={{ x: '-80%' }}
-        transition={{ duration: 10, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
-        className='flex flex-nowrap gap-5'
+    <div className={`${className} top-1 left-52 z-0`}>
+      <div className={` overflow-hidden whitespace-nowrap border border-gray-200 bg-primary font-bold text-gray-200`}>
+        <motion.div
+          initial={{ x: '0%' }}
+          animate={{ x: '-80%' }}
+          transition={{ duration: 10, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
+          className='flex flex-nowrap gap-5'
+        >
+          <p>{`${recentNews.title}::${recentNews.description}::${recentNews.date}`}</p>
+          <p>{`${recentNews.title}::${recentNews.description}::${recentNews.date}`}</p>
+        </motion.div>
+      </div>
+      <button
+        type='button'
+        className='absolute right-0 z-30 border border-gray-200 bg-background px-2 transition-all hover:bg-gray-200 hover:text-background md:top-0'
       >
-        <p>{`${recentNews.title}::${recentNews.description}::${recentNews.date}`}</p>
-        <p>{`${recentNews.title}::${recentNews.description}::${recentNews.date}`}</p>
-      </motion.div>
+        Open NEWS
+      </button>
     </div>
   )
 }
