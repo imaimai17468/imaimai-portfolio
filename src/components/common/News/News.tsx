@@ -6,7 +6,7 @@ import { NEWS } from '@/constants/news'
 import { NewsProps } from './News.type'
 
 const NewsTab = () => (
-  <div className='relative z-0 flex flex-col gap-3 border border-gray-200 bg-primary p-2 text-xs'>
+  <div className='relative z-0 flex max-h-32 flex-col gap-3 overflow-scroll border border-gray-200 bg-primary p-2 text-xs'>
     {NEWS.map((news, index) => (
       <>
         {index !== 0 && <hr className='border-dashed' />}
@@ -15,13 +15,32 @@ const NewsTab = () => (
           href={news.link || ''}
           target='_blank'
           rel='noreferrer'
-          className='flex cursor-pointer flex-col border-x border-gray-200 px-1 transition-all hover:bg-gray-200 hover:text-primary'
+          className='flex cursor-pointer flex-row items-center border-x border-gray-200 px-1 transition-all hover:bg-gray-200 hover:text-primary'
         >
-          <p className='text-secondary'>{news.date}</p>
-          <div className='flex flex-row gap-5'>
-            <p>{news.title}</p>
-            <p>{news.description}</p>
+          <div className='flex flex-col'>
+            <p className='text-secondary'>{news.date}</p>
+            <div className='flex flex-row items-center gap-5'>
+              <p>{news.title}</p>
+              <p>{news.description}</p>
+            </div>
           </div>
+          <motion.div
+            className='ml-auto mr-5 flex h-3 w-3 items-center justify-center bg-gray-200 p-2'
+            animate={{
+              scale: [1, 2, 2, 1, 1],
+              rotate: [0, 0, 180, 180, 0],
+              borderRadius: ['10%', '10%', '50%', '50%', '10%'],
+            }}
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+              times: [0, 0.2, 0.5, 0.8, 1],
+              repeat: Infinity,
+              repeatDelay: 1,
+            }}
+          >
+            🐸
+          </motion.div>
         </a>
       </>
     ))}
@@ -43,7 +62,7 @@ export const News = ({ mode = 'relative' }: NewsProps) => {
   }, [mode])
 
   return (
-    <div className={`${className} top-0 left-52`}>
+    <div className={`${className} top-1 left-52`}>
       <div className='relative z-10 overflow-hidden whitespace-nowrap border border-gray-200 bg-primary text-gray-200'>
         <motion.div
           initial={{ x: '0%' }}
