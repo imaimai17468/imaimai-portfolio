@@ -1,4 +1,4 @@
-import { Header } from '@/components/screen'
+import { Header } from '@/components/screen/Header'
 
 import { MainLayoutProps } from './MainLayout.type'
 
