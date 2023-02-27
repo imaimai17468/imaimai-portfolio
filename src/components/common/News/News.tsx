@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import React, { useMemo, useState } from 'react'
+import { FaFrog } from 'react-icons/fa'
 
 import { NEWS } from '@/constants/news'
 
@@ -20,16 +21,18 @@ const NewsTab = () => (
           <div className='flex flex-col'>
             <p className='text-secondary'>{news.date}</p>
             <div className='flex flex-row items-center gap-5'>
-              <p>{news.title}</p>
-              <p>{news.description}</p>
+              <FaFrog className='ml-1' />
+              <div className='flex flex-col'>
+                <p className='text-sm'>{news.title}</p>
+                <p>{news.description}</p>
+              </div>
             </div>
           </div>
           <motion.div
-            className='ml-auto mr-5 flex h-3 w-3 items-center justify-center bg-gray-200 p-2'
+            className='ml-auto mr-5 flex h-3 w-3 items-center justify-center p-2'
             animate={{
               scale: [1, 2, 2, 1, 1],
               rotate: [0, 0, 180, 180, 0],
-              borderRadius: ['10%', '10%', '50%', '50%', '10%'],
             }}
             transition={{
               duration: 2,
