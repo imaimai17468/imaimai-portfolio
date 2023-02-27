@@ -1,4 +1,3 @@
-import { useWindowSize } from '@react-hook/window-size'
 import Head from 'next/head'
 import { useState, useMemo, useCallback } from 'react'
 
@@ -6,18 +5,10 @@ import { Drag, MainLayout } from '@/components/layout'
 import { SideNavi, Playlist, BackgroundAnimation, AboutWindow, SkillWindow, WorkWindow } from '@/components/screen'
 
 export default function Home() {
-  const [windowWidth, windowHeight] = useWindowSize()
   const [openMusic, setOpenMusic] = useState(false)
   const [openAbout, setOpenAbout] = useState(true)
   const [openWorks, setOpenWorks] = useState(false)
   const [openSkills, setOpenSkills] = useState(false)
-
-  const ModalContainer = {
-    left: -windowWidth + windowWidth / 3,
-    top: -windowHeight / 4,
-    right: windowWidth - windowWidth / 3,
-    bottom: windowHeight - windowHeight / 3,
-  }
 
   const toggleMusic = useCallback(() => {
     setOpenMusic(!openMusic)
@@ -67,10 +58,10 @@ export default function Home() {
         <MainLayout>
           <BackgroundAnimation />
           <SideNavi onClicks={onClicks} isOpens={isOpens} />
-          <Drag container={ModalContainer}>
+          <Drag>
             <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
           </Drag>
-          <Drag container={ModalContainer}>
+          <Drag>
             <AboutWindow
               onClose={() => {
                 setOpenAbout(false)
@@ -78,7 +69,7 @@ export default function Home() {
               isOpen={openAbout}
             />
           </Drag>
-          <Drag container={ModalContainer}>
+          <Drag>
             <SkillWindow
               onClose={() => {
                 setOpenSkills(false)
@@ -86,7 +77,7 @@ export default function Home() {
               isOpen={openSkills}
             />
           </Drag>
-          <Drag container={ModalContainer}>
+          <Drag>
             <WorkWindow
               onClose={() => {
                 setOpenWorks(false)
