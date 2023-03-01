@@ -10,10 +10,10 @@ export const Modal = ({ children, isOpen, title, onClose }: ModalProps) => (
     <div className='mb-1 flex flex-row items-center gap-3 border-b pb-1'>
       <button
         type='button'
-        className='flex h-4 w-4 items-center justify-center rounded-md border border-gray-200'
+        className='flex h-4 w-4 items-center justify-center rounded-md border border-gray-200 active:bg-gray-200 active:text-background'
         onClick={onClose}
       >
-        <span className='mx-auto cursor-pointer text-sm ' onClick={onClose}>
+        <span className='mx-auto cursor-pointer text-sm' onClick={onClose}>
           ×
         </span>
       </button>
