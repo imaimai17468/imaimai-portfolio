@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import { useState } from 'react'
-import { AiFillPicture } from 'react-icons/ai'
+import { AiFillPicture, AiFillRightCircle, AiFillLeftCircle, AiFillCode } from 'react-icons/ai'
 import { BiLink } from 'react-icons/bi'
 import { BsTwitter, BsGithub } from 'react-icons/bs'
 import { FaSchool, FaBirthdayCake } from 'react-icons/fa'
 import { GiFrogPrince, GiBrain, GiCook } from 'react-icons/gi'
+import { MdFavorite } from 'react-icons/md'
 
 import { Modal } from '@/components/common'
 import { Drag } from '@/components/layout/Drag'
@@ -44,7 +45,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
   return (
     <Modal isOpen={isOpen} onClose={onClose} title='ABOUT'>
       <div className='flex flex-row items-center gap-10'>
-        <div className='mb-5 flex flex-col border-y border-dashed border-gray-200 py-3'>
+        <div className='mb-5 flex flex-col gap-1 border-y border-dashed border-gray-200 py-3'>
           <div
             className='flex flex-row items-center gap-3 font-mono transition-all hover:scale-105'
             onClick={clickGeko}
@@ -66,8 +67,16 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
             <p>2001.08.01</p>
           </div>
           <div className='flex flex-row items-center gap-3 font-mono'>
+            <AiFillCode />
+            <p>Front / IoT</p>
+          </div>
+          <div className='flex flex-row items-center gap-3 font-mono'>
+            <MdFavorite />
+            <p>思いつき開発 / 自炊</p>
+          </div>
+          <div className='flex flex-row items-center gap-3 font-mono'>
             <GiCook />
-            <p>いももち・麻婆豆腐・ドリア</p>
+            <p>いももち / 麻婆豆腐 / ドリア</p>
           </div>
         </div>
         <Image src='/images/frog_circle.png' alt='profile' className='hidden md:block' width={150} height={150} />
@@ -78,7 +87,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           onClick={() => setPictureModalOpen(!pictureModalOpen)}
           className={`${
             pictureModalOpen ? 'bg-secondary' : 'bg-primary'
-          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-sm text-gray-200 transition-all`}
+          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-200 transition-all`}
         >
           <AiFillPicture size={50} />
           PICTURES
@@ -88,7 +97,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           onClick={() => setLinkModalOpen(!linkModalOpen)}
           className={`${
             linkModalOpen ? 'bg-secondary' : 'bg-primary'
-          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-sm text-gray-200 transition-all`}
+          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-200 transition-all`}
         >
           <BiLink size={50} />
           LINKS
@@ -96,20 +105,22 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
       </div>
       <Drag>
         <Modal isOpen={pictureModalOpen} onClose={() => setPictureModalOpen(false)} title='PICS'>
-          <div className='flex flex-row items-center justify-center gap-4'>
+          <div className='flex h-80 flex-row items-center justify-center gap-4'>
             <button type='button' className='text-xs' onClick={() => picturePageNation('prev')}>
-              ⬅︎
+              <AiFillLeftCircle size={30} />
             </button>
-            {PICTURES.map((picture, index) => {
-              if (index === picturePage) {
-                return (
-                  <Image key={picture.id} src={picture.src} alt={`picture-${picture.id}`} width={200} height={200} />
-                )
-              }
-              return null
-            })}
+            {PICTURES.map((picture, index) => (
+              <Image
+                className={`${index === picturePage ? 'block' : 'hidden'} rounded-md border border-gray-200`}
+                key={picture.id}
+                src={picture.src}
+                alt={`picture-${picture.id}`}
+                width={200}
+                height={200}
+              />
+            ))}
             <button type='button' className='text-xs' onClick={() => picturePageNation('next')}>
-              ➡︎
+              <AiFillRightCircle size={30} />
             </button>
           </div>
         </Modal>
@@ -121,7 +132,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
               href='https://twitter.com/imaimai17468'
               target='_blank'
               rel='noopener noreferrer'
-              className='rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+              className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
             >
               <BsTwitter size={30} />
             </a>
@@ -129,9 +140,17 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
               href='https://github.com/imaimai17468'
               target='_blank'
               rel='noopener noreferrer'
-              className='rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+              className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
             >
               <BsGithub size={30} />
+            </a>
+            <a
+              href='https://note.com/imaimai17468'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+            >
+              Note
             </a>
           </div>
         </Modal>
