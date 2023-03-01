@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { AiFillPicture } from 'react-icons/ai'
 import { BiLink } from 'react-icons/bi'
+import { BsTwitter, BsGithub } from 'react-icons/bs'
 import { FaSchool, FaBirthdayCake } from 'react-icons/fa'
 import { GiFrogPrince, GiBrain, GiCook } from 'react-icons/gi'
 
@@ -13,8 +14,8 @@ import { AboutWindowProps } from './AboutWindow.type'
 
 export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: AboutWindowProps) => {
   const [pictureModalOpen, setPictureModalOpen] = useState(false)
-  const [picturePage, setPicturePage] = useState(0)
   const [linkModalOpen, setLinkModalOpen] = useState(false)
+  const [picturePage, setPicturePage] = useState(0)
 
   const [isGeko, setIsGeko] = useState(false)
   const clickGeko = () => {
@@ -43,7 +44,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
   return (
     <Modal isOpen={isOpen} onClose={onClose} title='ABOUT'>
       <div className='flex flex-row items-center gap-10'>
-        <div className='mb-5 flex flex-col'>
+        <div className='mb-5 flex flex-col border-y border-dashed border-gray-200 py-3'>
           <div
             className='flex flex-row items-center gap-3 font-mono transition-all hover:scale-105'
             onClick={clickGeko}
@@ -77,7 +78,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           onClick={() => setPictureModalOpen(!pictureModalOpen)}
           className={`${
             pictureModalOpen ? 'bg-secondary' : 'bg-primary'
-          } flex flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-sm text-gray-200 transition-all`}
+          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-sm text-gray-200 transition-all`}
         >
           <AiFillPicture size={50} />
           PICTURES
@@ -87,7 +88,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           onClick={() => setLinkModalOpen(!linkModalOpen)}
           className={`${
             linkModalOpen ? 'bg-secondary' : 'bg-primary'
-          } flex flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-sm text-gray-200 transition-all`}
+          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-sm text-gray-200 transition-all`}
         >
           <BiLink size={50} />
           LINKS
@@ -110,6 +111,28 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
             <button type='button' className='text-xs' onClick={() => picturePageNation('next')}>
               ➡︎
             </button>
+          </div>
+        </Modal>
+      </Drag>
+      <Drag>
+        <Modal isOpen={linkModalOpen} onClose={() => setLinkModalOpen(false)} title='LINKS'>
+          <div className='grid grid-cols-3 gap-4'>
+            <a
+              href='https://twitter.com/imaimai17468'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+            >
+              <BsTwitter size={30} />
+            </a>
+            <a
+              href='https://github.com/imaimai17468'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+            >
+              <BsGithub size={30} />
+            </a>
           </div>
         </Modal>
       </Drag>
