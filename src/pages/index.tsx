@@ -1,8 +1,13 @@
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useState, useMemo, useCallback } from 'react'
 
 import { Drag, MainLayout } from '@/components/layout'
 import { SideNavi, Playlist, BackgroundAnimation, AboutWindow, SkillWindow, WorkWindow } from '@/components/screen'
+
+const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
+  ssr: false,
+})
 
 export default function Home() {
   const [openMusic, setOpenMusic] = useState(false)
@@ -56,6 +61,7 @@ export default function Home() {
       </Head>
       <main className='font-mono text-gray-200'>
         <MainLayout>
+          <AnimatedCursor />
           <BackgroundAnimation />
           <SideNavi onClicks={onClicks} isOpens={isOpens} />
           <Drag>
