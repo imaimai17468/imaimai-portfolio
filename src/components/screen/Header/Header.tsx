@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
+import { AiFillCloseCircle } from 'react-icons/ai'
 
 import { News } from '@/components/common'
 
@@ -9,6 +10,8 @@ export const Header = () => {
     const minute = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
     return `${hour}:${minute}`
   })
+
+  const [warningClose, setWarningClose] = useState(false)
 
   const date = useMemo(() => {
     const date = new Date()
@@ -47,8 +50,16 @@ export const Header = () => {
           <p className='text-gray-200'>{date}</p>
         </div>
       </div>
-      <div className='visible  md:invisible'>
+      <div className='block  md:hidden'>
         <News />
+      </div>
+      <div
+        className={`${
+          warningClose ? 'hidden' : 'block'
+        } m-2 flex w-fit flex-row items-center gap-2 rounded-md bg-primary py-1 px-2 transition-all`}
+      >
+        <AiFillCloseCircle className='cursor-pointer' onClick={() => setWarningClose(true)} />
+        <p>ウィンドウは動くよ</p>
       </div>
     </div>
   )
