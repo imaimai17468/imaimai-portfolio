@@ -3,7 +3,7 @@ import { ModalProps } from './Modal.type'
 export const Modal = ({ children, isOpen, title, onClose }: ModalProps) => (
   <div
     className={`
-         md:max-w-2/3 absolute z-10 h-fit w-fit translate-y-1/2 rounded-md border border-gray-200 bg-slate-800 px-3 py-1 shadow-md shadow-gray-200 md:translate-x-1/2
+         md:max-w-2/3 absolute z-10 h-fit w-fit translate-x-1/2 rounded-md border border-gray-200 bg-slate-800 px-3 py-1 shadow-md shadow-gray-200
         ${isOpen ? 'opacity-100' : 'hidden opacity-0'}
     `}
   >

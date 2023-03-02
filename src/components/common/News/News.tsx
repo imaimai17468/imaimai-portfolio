@@ -7,7 +7,7 @@ import { NEWS } from '@/constants/news'
 import { NewsProps } from './News.type'
 
 const NewsTab = () => (
-  <div className='relative z-0 flex max-h-32 flex-col gap-3 overflow-scroll border border-gray-200 bg-primary p-2 text-xs'>
+  <div className='relative z-0 flex flex-col gap-3 overflow-scroll border border-gray-200 bg-primary p-2 text-xs'>
     {NEWS.map((news, index) => (
       <>
         {index !== 0 && <hr className='border-dashed' />}
@@ -59,13 +59,13 @@ export const News = ({ mode = 'relative' }: NewsProps) => {
       return 'w-full text-xs'
     }
     if (mode === 'absolute') {
-      return 'absolute mx-3 w-1/3'
+      return 'absolute mx-3 w-1/3 top-1 left-52'
     }
     return ''
   }, [mode])
 
   return (
-    <div className={`${className} top-1 left-52`}>
+    <div className={`${className} max-h-8`}>
       <div className='relative z-10 overflow-hidden whitespace-nowrap border border-gray-200 bg-primary text-gray-200'>
         <motion.div
           initial={{ x: '0%' }}
