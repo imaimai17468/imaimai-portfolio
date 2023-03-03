@@ -1,14 +1,21 @@
+import { motion } from 'framer-motion'
 import Head from 'next/head'
-import { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback, useRef, ReactNode } from 'react'
+import { RiWindow2Fill } from 'react-icons/ri'
 
 import { Drag, MainLayout } from '@/components/layout'
 import { SideNavi, Playlist, BackgroundAnimation, AboutWindow, SkillWindow, WorkWindow } from '@/components/screen'
+import { useVariants, spring } from '@/hooks/useVariants'
 
 export default function Home() {
   const [openMusic, setOpenMusic] = useState(false)
   const [openAbout, setOpenAbout] = useState(true)
   const [openWorks, setOpenWorks] = useState(false)
   const [openSkills, setOpenSkills] = useState(false)
+  const [cursorText, setCursorText] = useState<ReactNode>('🐸')
+  const [cursorVariant, setCursorVariant] = useState('default')
+  const ref = useRef(null)
+  const variants = useVariants(ref)
 
   const toggleMusic = useCallback(() => {
     setOpenMusic(!openMusic)
@@ -55,37 +62,58 @@ export default function Home() {
         <link rel='icon' href='/images/frog_circle.png' />
       </Head>
       <main className='font-mono text-gray-200'>
-        <MainLayout>
-          <BackgroundAnimation />
-          <SideNavi onClicks={onClicks} isOpens={isOpens} />
-          <Drag>
-            <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
-          </Drag>
-          <Drag>
-            <AboutWindow
-              onClose={() => {
-                setOpenAbout(false)
+        <div ref={ref}>
+          <MainLayout>
+            <BackgroundAnimation />
+            <motion.div
+              variants={variants}
+              className='absolute z-50 flex items-center justify-center rounded-full'
+              animate={cursorVariant}
+              transition={spring}
+            >
+              <span>{cursorText}</span>
+            </motion.div>
+            <div
+              onMouseEnter={() => {
+                setCursorText(<RiWindow2Fill />)
+                setCursorVariant('tab')
               }}
-              isOpen={openAbout}
-            />
-          </Drag>
-          <Drag>
-            <SkillWindow
-              onClose={() => {
-                setOpenSkills(false)
+              onMouseLeave={() => {
+                setCursorText('🐸')
+                setCursorVariant('default')
               }}
-              isOpen={openSkills}
-            />
-          </Drag>
-          <Drag>
-            <WorkWindow
-              onClose={() => {
-                setOpenWorks(false)
-              }}
-              isOpen={openWorks}
-            />
-          </Drag>
-        </MainLayout>
+            >
+              <SideNavi onClicks={onClicks} isOpens={isOpens} />
+            </div>
+            <Drag>
+              <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
+            </Drag>
+            <Drag>
+              <AboutWindow
+                onClose={() => {
+                  setOpenAbout(false)
+                }}
+                isOpen={openAbout}
+              />
+            </Drag>
+            <Drag>
+              <SkillWindow
+                onClose={() => {
+                  setOpenSkills(false)
+                }}
+                isOpen={openSkills}
+              />
+            </Drag>
+            <Drag>
+              <WorkWindow
+                onClose={() => {
+                  setOpenWorks(false)
+                }}
+                isOpen={openWorks}
+              />
+            </Drag>
+          </MainLayout>
+        </div>
       </main>
     </>
   )
