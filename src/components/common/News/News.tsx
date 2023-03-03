@@ -7,7 +7,7 @@ import { NEWS } from '@/constants/news'
 import { NewsProps } from './News.type'
 
 const NewsTab = () => (
-  <div className='relative z-0 flex flex-col gap-3 overflow-scroll border border-gray-200 bg-primary p-2 text-xs'>
+  <div className='relative z-0 flex max-h-40 flex-col gap-3 overflow-scroll border border-gray-200 bg-primary p-2 text-xs'>
     {NEWS.map((news, index) => (
       <>
         {index !== 0 && <hr className='border-dashed' />}
