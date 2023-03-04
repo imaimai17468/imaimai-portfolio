@@ -1,19 +1,19 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import React, { useState, useMemo, useCallback, useRef, ReactNode } from 'react'
-import { RiWindow2Fill } from 'react-icons/ri'
+import React, { useState, useMemo, useCallback, useRef } from 'react'
+import { useRecoilValue } from 'recoil'
 
 import { Drag, MainLayout } from '@/components/layout'
 import { SideNavi, Playlist, BackgroundAnimation, AboutWindow, SkillWindow, WorkWindow } from '@/components/screen'
 import { useVariants, spring } from '@/hooks/useVariants'
+import { cursorState } from '@/store/cursor'
 
 export default function Home() {
   const [openMusic, setOpenMusic] = useState(false)
   const [openAbout, setOpenAbout] = useState(true)
   const [openWorks, setOpenWorks] = useState(false)
   const [openSkills, setOpenSkills] = useState(false)
-  const [cursorText, setCursorText] = useState<ReactNode>('🐸')
-  const [cursorVariant, setCursorVariant] = useState('default')
+  const cursor = useRecoilValue(cursorState)
   const ref = useRef(null)
   const variants = useVariants(ref)
 
@@ -67,24 +67,13 @@ export default function Home() {
             <BackgroundAnimation />
             <motion.div
               variants={variants}
-              className='absolute z-50 flex items-center justify-center rounded-full'
-              animate={cursorVariant}
+              className='invisible absolute z-50 flex items-center justify-center rounded-full md:visible'
+              animate={cursor.variant}
               transition={spring}
             >
-              <span>{cursorText}</span>
+              <span>{cursor.text}</span>
             </motion.div>
-            <div
-              onMouseEnter={() => {
-                setCursorText(<RiWindow2Fill />)
-                setCursorVariant('tab')
-              }}
-              onMouseLeave={() => {
-                setCursorText('🐸')
-                setCursorVariant('default')
-              }}
-            >
-              <SideNavi onClicks={onClicks} isOpens={isOpens} />
-            </div>
+            <SideNavi onClicks={onClicks} isOpens={isOpens} />
             <Drag>
               <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
             </Drag>
