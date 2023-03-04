@@ -30,9 +30,9 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
         mass: 0.6,
       },
     },
-    tab: {
+    open: {
       opacity: 1,
-      backgroundColor: '#29B550',
+      backgroundColor: '#A7FF83',
       color: '#000',
       height: 64,
       width: 64,
@@ -40,9 +40,9 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
       x: mouseXPosition + 10,
       y: mouseYPosition - 100,
     },
-    news: {
+    close: {
       opacity: 1,
-      backgroundColor: '#EF5151',
+      backgroundColor: '#D9D9D9',
       color: '#000',
       height: 64,
       width: 64,
