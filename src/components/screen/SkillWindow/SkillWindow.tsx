@@ -52,7 +52,7 @@ export const SkillWindow: React.FC<SkillWindowProps> = ({ isOpen, onClose }: Ski
       <div className='flex h-48 w-80 flex-row items-center justify-between gap-3 text-gray-200'>
         <BiSkipPreviousCircle size={30} className='cursor-pointer' onClick={() => pageNationHandler('prev')} />
         <div>
-          <div className={`${currentPage === 0 ? 'block' : 'hidden'} flex flex-col items-center`}>
+          <div className={`${currentPage === 1 ? 'block' : 'hidden'} flex flex-col items-center`}>
             <p className='mb-3'>Frontend</p>
             <div className='grid grid-cols-4 justify-items-center gap-3'>
               <AiFillHtml5
@@ -96,7 +96,7 @@ export const SkillWindow: React.FC<SkillWindowProps> = ({ isOpen, onClose }: Ski
               />
             </div>
           </div>
-          <div className={`${currentPage === 1 ? 'block' : 'hidden'} flex flex-col items-center`}>
+          <div className={`${currentPage === 0 ? 'block' : 'hidden'} flex flex-col items-center`}>
             <p className='mb-3'>Backend</p>
             <div className='grid grid-cols-4 justify-items-center gap-3'>
               <SiGo
