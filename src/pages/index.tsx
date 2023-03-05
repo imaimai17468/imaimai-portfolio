@@ -71,7 +71,7 @@ export default function Home() {
               animate={cursor.variant}
               transition={spring}
             >
-              <span>{cursor.text}</span>
+              <div>{cursor.text}</div>
             </motion.div>
             <SideNavi onClicks={onClicks} isOpens={isOpens} />
             <Drag>
