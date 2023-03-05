@@ -79,7 +79,14 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
             <p>いももち / 麻婆豆腐 / ドリア</p>
           </div>
         </div>
-        <Image src='/images/frog_circle.png' alt='profile' className='hidden md:block' width={150} height={150} />
+        <Image
+          src='/images/frog_circle.png'
+          priority
+          alt='profile'
+          className='hidden md:block'
+          width={150}
+          height={150}
+        />
       </div>
       <div className='flex flex-row items-center justify-start gap-3'>
         <button
@@ -113,6 +120,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
               <Image
                 className={`${index === picturePage ? 'block' : 'hidden'} rounded-md border border-gray-200`}
                 key={picture.id}
+                priority={index === picturePage}
                 src={picture.src}
                 alt={`picture-${picture.id}`}
                 width={200}
