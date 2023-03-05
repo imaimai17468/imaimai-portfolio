@@ -4,7 +4,7 @@ import React, { useState, useMemo, useCallback, useRef } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { Drag, MainLayout } from '@/components/layout'
-import { SideNavi, Playlist, BackgroundAnimation, AboutWindow, SkillWindow, WorkWindow } from '@/components/screen'
+import { SideNavi, Playlist, BackgroundAnimation, AboutWindow, WorkWindow } from '@/components/screen'
 import { useVariants, spring } from '@/hooks/useVariants'
 import { cursorState } from '@/store/cursor'
 
@@ -85,14 +85,14 @@ export default function Home() {
                 isOpen={openAbout}
               />
             </Drag>
-            <Drag>
+            {/* <Drag>
               <SkillWindow
                 onClose={() => {
                   setOpenSkills(false)
                 }}
                 isOpen={openSkills}
               />
-            </Drag>
+            </Drag> */}
             <Drag>
               <WorkWindow
                 onClose={() => {
