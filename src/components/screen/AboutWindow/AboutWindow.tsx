@@ -60,7 +60,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           </div>
           <div className='flex flex-row items-center gap-3 font-mono'>
             <GiBrain />
-            <p>電気電子情報工学課程 脳情報工学研究室</p>
+            <p>電気電子情報工学課程</p>
           </div>
           <div className='flex flex-row items-center gap-3 font-mono'>
             <FaBirthdayCake />
