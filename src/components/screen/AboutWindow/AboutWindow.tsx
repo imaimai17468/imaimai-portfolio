@@ -193,7 +193,10 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
         <Modal isOpen={historyModalOpen} onClose={() => setHistoryModalOpen(false)} title='HISTORY'>
           <div className='flex flex-col items-center justify-center gap-4'>
             {HISTORY.map((history: History, index: number) => (
-              <div key={index} className='flex w-full flex-row items-center justify-start gap-4'>
+              <div
+                key={index}
+                className='flex w-full flex-row items-center justify-start gap-4 border-b border-dashed border-gray-200 pb-2'
+              >
                 <p className='w-1/5 text-center'>{history.date}</p>
                 <p>{history.content}</p>
               </div>
@@ -215,7 +218,10 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           </motion.div>
           <div className='flex max-h-72 flex-col items-center gap-4 overflow-y-scroll'>
             {ACTIVITY.map((Activity: Activity, index: number) => (
-              <div key={index} className='flex w-full flex-row items-center justify-start gap-4'>
+              <div
+                key={index}
+                className='flex w-full flex-row items-center justify-start gap-4  border-b border-dashed border-gray-200 pb-2'
+              >
                 <p className='w-1/5 text-center'>{Activity.date}</p>
                 <p>{Activity.content}</p>
               </div>
