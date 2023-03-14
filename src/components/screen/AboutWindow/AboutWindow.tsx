@@ -1,14 +1,18 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 import { AiFillPicture, AiFillRightCircle, AiFillLeftCircle, AiFillCode } from 'react-icons/ai'
 import { BiLink } from 'react-icons/bi'
 import { BsTwitter, BsGithub } from 'react-icons/bs'
+import { CgScrollV } from 'react-icons/cg'
 import { FaSchool, FaBirthdayCake } from 'react-icons/fa'
 import { GiFrogPrince, GiBrain, GiCook } from 'react-icons/gi'
-import { MdFavorite } from 'react-icons/md'
+import { MdFavorite, MdHistoryEdu, MdLocalActivity } from 'react-icons/md'
 
 import { Modal } from '@/components/common'
 import { Drag } from '@/components/layout/Drag'
+import { Activity, ACTIVITY } from '@/constants/activity'
+import { HISTORY, History } from '@/constants/history'
 import { PICTURES } from '@/constants/pictures'
 
 import { AboutWindowProps } from './AboutWindow.type'
@@ -17,6 +21,8 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
   const [pictureModalOpen, setPictureModalOpen] = useState(false)
   const [linkModalOpen, setLinkModalOpen] = useState(false)
   const [picturePage, setPicturePage] = useState(0)
+  const [historyModalOpen, setHistoryModalOpen] = useState(false)
+  const [activityModalOpen, setActivityModalOpen] = useState(false)
 
   const [isGeko, setIsGeko] = useState(false)
   const clickGeko = () => {
@@ -44,7 +50,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title='ABOUT'>
-      <div className='flex flex-row items-center gap-10'>
+      <div className='flex flex-row items-center justify-center gap-10'>
         <div className='mb-5 flex flex-col gap-1 border-y border-dashed border-gray-200 py-3'>
           <div
             className='flex flex-row items-center gap-3 font-mono transition-all hover:scale-105'
@@ -88,7 +94,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           height={150}
         />
       </div>
-      <div className='flex flex-row items-center justify-start gap-3'>
+      <div className='flex flex-row items-center justify-center gap-3'>
         <button
           type='button'
           onClick={() => setPictureModalOpen(!pictureModalOpen)}
@@ -108,6 +114,26 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
         >
           <BiLink size={50} />
           LINKS
+        </button>
+        <button
+          type='button'
+          onClick={() => setHistoryModalOpen(!historyModalOpen)}
+          className={`${
+            historyModalOpen ? 'bg-secondary' : 'bg-primary'
+          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-200 transition-all`}
+        >
+          <MdHistoryEdu size={50} />
+          HISTORY
+        </button>
+        <button
+          type='button'
+          onClick={() => setActivityModalOpen(!activityModalOpen)}
+          className={`${
+            activityModalOpen ? 'bg-secondary' : 'bg-primary'
+          } flex w-1/4 flex-col items-center rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-200 transition-all`}
+        >
+          <MdLocalActivity size={50} />
+          ACTIVITY
         </button>
       </div>
       <Drag>
@@ -160,6 +186,40 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
             >
               Note
             </a>
+          </div>
+        </Modal>
+      </Drag>
+      <Drag>
+        <Modal isOpen={historyModalOpen} onClose={() => setHistoryModalOpen(false)} title='HISTORY'>
+          <div className='flex flex-col items-center justify-center gap-4'>
+            {HISTORY.map((history: History, index: number) => (
+              <div key={index} className='flex w-full flex-row items-center justify-start gap-4'>
+                <p className='w-1/5 text-center'>{history.date}</p>
+                <p>{history.content}</p>
+              </div>
+            ))}
+          </div>
+        </Modal>
+      </Drag>
+      <Drag>
+        <Modal isOpen={activityModalOpen} onClose={() => setActivityModalOpen(false)} title='ACTIVITY'>
+          <motion.div
+            // 上下に動く
+            animate={{ y: [-4, 4, -4] }}
+            transition={{ duration: 1, repeat: Infinity }}
+            className='mb-3 flex flex-row items-center gap-2'
+          >
+            <CgScrollV />
+            <p className='text-sm'>scroll</p>
+            <CgScrollV />
+          </motion.div>
+          <div className='flex max-h-72 flex-col items-center gap-4 overflow-y-scroll'>
+            {ACTIVITY.map((Activity: Activity, index: number) => (
+              <div key={index} className='flex w-full flex-row items-center justify-start gap-4'>
+                <p className='w-1/5 text-center'>{Activity.date}</p>
+                <p>{Activity.content}</p>
+              </div>
+            ))}
           </div>
         </Modal>
       </Drag>
