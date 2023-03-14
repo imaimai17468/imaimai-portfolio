@@ -216,7 +216,7 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
             <p className='text-sm'>scroll</p>
             <CgScrollV />
           </motion.div>
-          <div className='flex max-h-72 flex-col items-center gap-4 overflow-y-scroll'>
+          <div className='flex max-h-72 touch-pan-y flex-col items-center gap-4 overflow-auto'>
             {ACTIVITY.map((Activity: Activity, index: number) => (
               <div
                 key={index}
