@@ -54,7 +54,7 @@ export const SkillWindow: React.FC<SkillWindowProps> = ({ isOpen, onClose }: Ski
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title='SKILLS'>
-      <div className='flex h-60 w-80 flex-row items-center justify-between gap-3 text-gray-200'>
+      <div className='mx-auto flex h-60 w-fit flex-row items-center justify-between gap-3 text-gray-200'>
         <BiSkipPreviousCircle size={30} className='cursor-pointer' onClick={() => pageNationHandler('prev')} />
         <div>
           <div
