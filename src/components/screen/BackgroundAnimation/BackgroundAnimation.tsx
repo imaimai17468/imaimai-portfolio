@@ -1,91 +1,45 @@
-import { useCallback } from 'react'
-import Particles from 'react-tsparticles'
-import { loadFull } from 'tsparticles'
+/* eslint-disable */
 
-import type { Engine } from 'tsparticles-engine'
+import React from 'react'
+import * as THREE from 'three'
+import GLOBE from 'vanta/dist/vanta.globe.min.js'
 
-export const BackgroundAnimation = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine)
-  }, [])
+class BackgroundAnimation extends React.Component {
+  constructor() {
+    super()
+    this.vantaRef = React.createRef()
+  }
 
-  return (
-    <Particles
-      className='fixed -z-10'
-      init={particlesInit}
-      id='tsparticles'
-      options={{
-        background: {
-          opacity: 0,
-        },
-        fpsLimit: 60,
-        interactivity: {
-          detectsOn: 'canvas',
-          events: {
-            onClick: {
-              enable: true,
-              mode: 'push',
-            },
-            onHover: {
-              enable: true,
-              mode: 'repulse',
-            },
-            resize: true,
-          },
-          modes: {
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
-        },
-        particles: {
-          color: {
-            value: '#A7FF83',
-          },
-          links: {
-            color: '#17B978',
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 2,
-          },
-          collisions: {
-            enable: true,
-          },
-          move: {
-            direction: 'none',
-            enable: true,
-            outMode: 'bounce',
-            random: false,
-            speed: 4,
-            straight: false,
-          },
-          number: {
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-            value: 80,
-          },
-          opacity: {
-            value: 0.5,
-          },
-          shape: {
-            type: 'triangle',
-          },
-          size: {
-            random: true,
-            value: 5,
-          },
-        },
-        detectRetina: true,
-      }}
-    />
-  )
+  componentDidMount() {
+    this.vantaEffect = GLOBE({
+      el: this.vantaRef.current,
+      THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0xa7ff83,
+      backgroundColor: 0x202428,
+    })
+  }
+
+  componentWillUnmount() {
+    if (this.vantaEffect) {
+      this.vantaEffect.destroy()
+    }
+  }
+
+  render() {
+    return (
+      <div
+        style={{ height: '100vh', width: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}
+        ref={this.vantaRef}
+      />
+    )
+  }
 }
 
 export default BackgroundAnimation
