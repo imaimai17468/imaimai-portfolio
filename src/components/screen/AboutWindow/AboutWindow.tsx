@@ -204,31 +204,28 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
           </div>
         </Modal>
       </Drag>
-      <Drag>
-        <Modal isOpen={activityModalOpen} onClose={() => setActivityModalOpen(false)} title='ACTIVITY'>
-          <motion.div
-            // 上下に動く
-            animate={{ y: [-4, 4, -4] }}
-            transition={{ duration: 1, repeat: Infinity }}
-            className='mb-3 flex flex-row items-center gap-2'
-          >
-            <CgScrollV />
-            <p className='text-sm'>scroll</p>
-            <CgScrollV />
-          </motion.div>
-          <div className='flex max-h-72 touch-pan-y flex-col items-center gap-4 overflow-auto'>
-            {ACTIVITY.map((Activity: Activity, index: number) => (
-              <div
-                key={index}
-                className='flex w-full flex-row items-center justify-start gap-4  border-b border-dashed border-gray-200 pb-2'
-              >
-                <p className='w-1/5 text-center'>{Activity.date}</p>
-                <p>{Activity.content}</p>
-              </div>
-            ))}
-          </div>
-        </Modal>
-      </Drag>
+      <Modal isOpen={activityModalOpen} onClose={() => setActivityModalOpen(false)} title='ACTIVITY'>
+        <motion.div
+          animate={{ y: [-4, 4, -4] }}
+          transition={{ duration: 1, repeat: Infinity }}
+          className='mb-3 flex flex-row items-center gap-2'
+        >
+          <CgScrollV />
+          <p className='text-sm'>scroll</p>
+          <CgScrollV />
+        </motion.div>
+        <div className='flex max-h-72 touch-pan-y flex-col items-center gap-4 overflow-auto'>
+          {ACTIVITY.map((Activity: Activity, index: number) => (
+            <div
+              key={index}
+              className='flex w-full flex-row items-center justify-start gap-4  border-b border-dashed border-gray-200 pb-2'
+            >
+              <p className='w-1/5 text-center'>{Activity.date}</p>
+              <p>{Activity.content}</p>
+            </div>
+          ))}
+        </div>
+      </Modal>
     </Modal>
   )
 }
