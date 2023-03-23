@@ -35,7 +35,7 @@ export const Header = () => {
   }, [])
 
   return (
-    <div>
+    <div className='relative z-50'>
       <div className='flex w-full flex-row items-center border-b border-gray-200 bg-background py-1 font-press text-xs md:text-sm'>
         <div className='flex h-full items-center border-r border-gray-200 px-3'>
           <p className='text-gray-200'>imaimai&#39;s portfolio</p>
