@@ -1,18 +1,14 @@
 /* eslint-disable */
-
-import React from 'react'
+import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
-import GLOBE from 'vanta/dist/vanta.globe.min.js'
+import GLOBE from 'vanta/dist/vanta.globe.min'
 
-class BackgroundAnimation extends React.Component {
-  constructor() {
-    super()
-    this.vantaRef = React.createRef()
-  }
+const BackgroundAnimation = () => {
+  const vantaRef = useRef(null)
 
-  componentDidMount() {
-    this.vantaEffect = GLOBE({
-      el: this.vantaRef.current,
+  useEffect(() => {
+    const vantaEffect = GLOBE({
+      el: vantaRef.current,
       THREE,
       mouseControls: true,
       touchControls: true,
@@ -24,22 +20,25 @@ class BackgroundAnimation extends React.Component {
       color: 0xa7ff83,
       backgroundColor: 0x202428,
     })
-  }
 
-  componentWillUnmount() {
-    if (this.vantaEffect) {
-      this.vantaEffect.destroy()
+    return () => {
+      if (vantaEffect) vantaEffect.destroy()
     }
-  }
+  }, [])
 
-  render() {
-    return (
-      <div
-        style={{ height: '100vh', width: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}
-        ref={this.vantaRef}
-      />
-    )
-  }
+  return (
+    <div
+      style={{
+        height: '100vh',
+        width: '100%',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        zIndex: 0,
+      }}
+      ref={vantaRef}
+    />
+  )
 }
 
 export default BackgroundAnimation
