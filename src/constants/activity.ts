@@ -6,7 +6,7 @@ export interface Activity {
 export const ACTIVITY: Activity[] = [
   {
     date: '2019-5',
-    content: 'AtCoder茶色',
+    content: 'AtCoder茶色到達',
   },
   {
     date: '2019-8',
@@ -22,7 +22,7 @@ export const ACTIVITY: Activity[] = [
   },
   {
     date: '2020-5',
-    content: 'AtCoder 緑色',
+    content: 'AtCoder緑色到達',
   },
   {
     date: '2020-8',
@@ -74,7 +74,7 @@ export const ACTIVITY: Activity[] = [
   },
   {
     date: '2022-8',
-    content: 'SeeFTの開発に参加',
+    content: 'NUTMEG SeeFTの開発に参加',
   },
   {
     date: '2022-8',
@@ -94,7 +94,7 @@ export const ACTIVITY: Activity[] = [
   },
   {
     date: '2022-9',
-    content: 'FinanSuにPMとして開発に参加',
+    content: 'NUTMEG FinanSuにPMとして開発に参加',
   },
   {
     date: '2022-9',
@@ -130,10 +130,10 @@ export const ACTIVITY: Activity[] = [
   },
   {
     date: '2023-2',
-    content: 'GroupManager2の開発に参加',
+    content: 'NUTMEG GroupManager2の開発に参加',
   },
   {
     date: '2023-3',
-    content: 'Lotteryの開発に参加',
+    content: 'NUTMEG Lotteryの開発に参加',
   },
 ]

@@ -77,14 +77,12 @@ export default function Home() {
             <Drag>
               <Playlist setOpen={setOpenMusic} isOpen={openMusic} />
             </Drag>
-            <Drag>
-              <AboutWindow
-                onClose={() => {
-                  setOpenAbout(false)
-                }}
-                isOpen={openAbout}
-              />
-            </Drag>
+            <AboutWindow
+              onClose={() => {
+                setOpenAbout(false)
+              }}
+              isOpen={openAbout}
+            />
             <Drag>
               <SkillWindow
                 onClose={() => {
