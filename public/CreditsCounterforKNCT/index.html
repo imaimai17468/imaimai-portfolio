@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>木更津高専単位カウンター</title>
+    <meta name="description" content="木更津高専生用の単位数カウンターです。"/>
+    <link rel="icon" href="assets/tanni.jpg" type="image/jpg"/>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <h1>木更津高専単位カウンター</h1>
+    <p id="caution">注意・確認<br>
+        <span style="color:red;">※必ずしも計算結果は保証できません</span><br>
+        <span style="color:red;">各自自己責任で使用してください</span><br>
+        必修選択科目・留学生科目のチェックに注意してください<br>
+        【おすすめの流れ】<br>
+        ①必修全てにチェック<br>
+        ②取得した選択・選択必修を個別にチェック<br>
+        ③取得した特別学修を個別にチェック<br>
+    </p>
+    <div class="area">
+        <input type="radio" name="tab_name" id="tab1" checked>
+        <label class="tab_class" for="tab1">M</label>
+        <div class="content_class">
+            <input type="button" value="合計単位数を計算する" onclick="credit_click(0);">
+            <div class="counter"></div>
+            <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_m"></div>
+                <div id="sikaku_m"></div>
+            </details>
+            <table>
+                <tbody id="output_csv_m"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab2" >
+        <label class="tab_class" for="tab2">E</label>
+        <div class="content_class">
+            <input type="button" value="合計単位数を計算する" onclick="credit_click(1);">
+            <div class="counter"></div>
+            <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_e"></div>
+                <div id="sikaku_e"></div>
+            </details>
+            <table>
+                <tbody id="output_csv_e"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab3" >
+        <label class="tab_class" for="tab3">D</label>
+        <div class="content_class">
+            <input type="button" value="合計単位数を計算する" onclick="credit_click(2);">
+            <div class="counter"></div>
+            <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_d"></div>
+                <div id="sikaku_d"></div>
+            </details>
+            <table>
+                <tbody id="output_csv_d"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab4" >
+        <label class="tab_class" for="tab4">J</label>
+        <div class="content_class">
+            <input type="button" value="合計単位数を計算する" onclick="credit_click(3);">
+            <div class="counter"></div>
+            <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_j"></div>
+                <div id="sikaku_j"></div>
+            </details>
+            <table>
+                <tbody id="output_csv_j"></tbody>
+            </table>
+        </div>
+        <input type="radio" name="tab_name" id="tab5" >
+        <label class="tab_class" for="tab5">C</label>
+        <div class="content_class">
+            <input type="button" value="合計単位数を計算する" onclick="credit_click(4);">
+            <div class="counter"> </div>
+            <div class="options"></div>
+            <details>
+                <summary>特別学修</summary>
+                <p id="caution">※特別学修は合計で最大10単位まで有効<br>
+                    英語科目に関し以下の単位で振替措置を行った場合、チェックはしないこと<br>
+                    (実用英検準2級・技術英検3級・TOEIC L&R 400点以上)</p>
+                <div class="tokubetu_c"></div>
+                <div id="sikaku_c"></div>
+            </details>
+            <table>
+                <tbody id="output_csv_c"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<footer>
+    <p class="copyright">&copy; 2021-, imaimai17468 All Right Reserved.</p></footer>
+</html>
+<script type="text/javascript" src="js/output_counter.js"></script>
+<script type="text/javascript" src="js/output_option.js"></script>
+<script type="text/javascript" src="js/output_tokubetu.js"></script>
+<script type="text/javascript" src="js/output_sikaku.js"></script>
+<script type="text/javascript" src="js/output_csv.js"></script>
+<script type="text/javascript" src="js/checkbox.js"></script>
+<script type="text/javascript" src="js/count_credits.js"></script>

@@ -1,0 +1,149 @@
+h1 {
+  font-size: min(7vw, 70px);
+
+  text-align: center;
+  line-height: 0.95em;
+  font-weight: bold;
+  color: cadetblue;
+}
+
+#caution {
+  font-size: min(3vw, 15px);
+  text-align: center;
+  line-height: 1.5em;
+  font-weight: bold;
+  color: #5a5a5a;
+}
+
+.counter p {
+  font-size: min(4vw, 20px);
+  text-align: center;
+  line-height: 0.95em;
+  font-weight: bold;
+  color: #5a5a5a;
+}
+
+.area {
+  width: 80%;
+  max-width: 700px;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.tab_class {
+  width: calc(100% / 5);
+  height: 50px;
+  background-color: darkgrey;
+  line-height: 50px;
+  font-size: min(4vw, 30px);
+  text-align: center;
+  display: block;
+  float: left;
+  order: -1;
+}
+
+input[name='tab_name'] {
+  display: none;
+}
+
+input:checked + .tab_class {
+  background-color: cadetblue;
+  color: aliceblue;
+}
+
+.content_class {
+  display: none;
+  width: 100%;
+}
+
+input:checked + .tab_class + .content_class {
+  display: block;
+}
+
+input {
+  font-size: min(3vw, 15px);
+}
+
+.options {
+  font-size: min(3vw, 15px);
+}
+
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+  margin: 0.5em 0;
+}
+
+summary {
+  font-size: min(3vw, 15px);
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  font-size: min(3vw, 20px);
+  width: 100%;
+}
+
+table tr {
+  background-color: #e6f2f5;
+  border-bottom: 2px solid #fff;
+}
+table th,
+table td {
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+}
+table thead tr {
+  background-color: #167f92;
+  color: #fff;
+}
+table tbody th {
+  background: #78bbc7;
+  color: #fff;
+}
+
+.btn {
+  padding: 0.5em 1em;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border: 0.2em solid black;
+  border-radius: 0.75em;
+  text-align: center;
+  margin: 0.5em auto;
+  background-color: dimgrey;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+footer {
+  margin-top: 3em;
+  background-color: #2a2a2a;
+  width: 100%;
+  text-align: center;
+}
+
+.copyright {
+  margin: 0;
+  text-align: center;
+  color: white;
+  padding-bottom: 15px;
+}
