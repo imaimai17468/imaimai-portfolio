@@ -79,6 +79,21 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
         </div>
       </FixedModal>
       <Drag>
+        <Modal isOpen={historyModalOpen} onClose={() => setHistoryModalOpen(false)} title='HISTORY'>
+          <div className='flex flex-col items-center justify-center gap-4'>
+            {HISTORY.map((history: History, index: number) => (
+              <div
+                key={index}
+                className='flex w-full flex-row items-center justify-start gap-4 border-b border-dashed border-gray-200 pb-2'
+              >
+                <p className='w-1/5 text-center'>{history.date}</p>
+                <p>{history.content}</p>
+              </div>
+            ))}
+          </div>
+        </Modal>
+      </Drag>
+      <Drag>
         <Modal isOpen={isOpen} onClose={onClose} title='ABOUT'>
           <div className='flex flex-row items-center justify-center gap-10'>
             <div className='mb-5 flex flex-col gap-1 border-y border-dashed border-gray-200 py-3'>
@@ -166,74 +181,59 @@ export const AboutWindow: React.FC<AboutWindowProps> = ({ isOpen, onClose }: Abo
               ACTIVITY
             </button>
           </div>
-          <Drag>
-            <Modal isOpen={pictureModalOpen} onClose={() => setPictureModalOpen(false)} title='PICS'>
-              <div className='flex h-80 flex-row items-center justify-center gap-4'>
-                <button type='button' className='text-xs' onClick={() => picturePageNation('prev')}>
-                  <AiFillLeftCircle size={30} />
-                </button>
-                {PICTURES.map((picture, index) => (
-                  <Image
-                    className={`${index === picturePage ? 'block' : 'hidden'} rounded-md border border-gray-200`}
-                    key={picture.id}
-                    priority={index === picturePage}
-                    src={picture.src}
-                    alt={`picture-${picture.id}`}
-                    width={200}
-                    height={200}
-                  />
-                ))}
-                <button type='button' className='text-xs' onClick={() => picturePageNation('next')}>
-                  <AiFillRightCircle size={30} />
-                </button>
-              </div>
-            </Modal>
-          </Drag>
-          <Drag>
-            <Modal isOpen={linkModalOpen} onClose={() => setLinkModalOpen(false)} title='LINKS'>
-              <div className='grid grid-cols-3 gap-4'>
-                <a
-                  href='https://twitter.com/imaimai17468'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
-                >
-                  <BsTwitter size={30} />
-                </a>
-                <a
-                  href='https://github.com/imaimai17468'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
-                >
-                  <BsGithub size={30} />
-                </a>
-                <a
-                  href='https://note.com/imaimai17468'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
-                >
-                  Note
-                </a>
-              </div>
-            </Modal>
-          </Drag>
-          <Drag>
-            <Modal isOpen={historyModalOpen} onClose={() => setHistoryModalOpen(false)} title='HISTORY'>
-              <div className='flex flex-col items-center justify-center gap-4'>
-                {HISTORY.map((history: History, index: number) => (
-                  <div
-                    key={index}
-                    className='flex w-full flex-row items-center justify-start gap-4 border-b border-dashed border-gray-200 pb-2'
-                  >
-                    <p className='w-1/5 text-center'>{history.date}</p>
-                    <p>{history.content}</p>
-                  </div>
-                ))}
-              </div>
-            </Modal>
-          </Drag>
+        </Modal>
+      </Drag>
+      <Drag className='z-20'>
+        <Modal isOpen={linkModalOpen} onClose={() => setLinkModalOpen(false)} title='LINKS'>
+          <div className='grid grid-cols-3 gap-4'>
+            <a
+              href='https://twitter.com/imaimai17468'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+            >
+              <BsTwitter size={30} />
+            </a>
+            <a
+              href='https://github.com/imaimai17468'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+            >
+              <BsGithub size={30} />
+            </a>
+            <a
+              href='https://note.com/imaimai17468'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex items-center justify-center rounded-md border p-2 transition-all hover:shadow-md hover:shadow-gray-200'
+            >
+              Note
+            </a>
+          </div>
+        </Modal>
+      </Drag>
+      <Drag>
+        <Modal isOpen={pictureModalOpen} onClose={() => setPictureModalOpen(false)} title='PICS'>
+          <div className='flex h-80 flex-row items-center justify-center gap-4'>
+            <button type='button' className='text-xs' onClick={() => picturePageNation('prev')}>
+              <AiFillLeftCircle size={30} />
+            </button>
+            {PICTURES.map((picture, index) => (
+              <Image
+                className={`${index === picturePage ? 'block' : 'hidden'} rounded-md border border-gray-200`}
+                key={picture.id}
+                priority={index === picturePage}
+                src={picture.src}
+                alt={`picture-${picture.id}`}
+                width={200}
+                height={200}
+              />
+            ))}
+            <button type='button' className='text-xs' onClick={() => picturePageNation('next')}>
+              <AiFillRightCircle size={30} />
+            </button>
+          </div>
         </Modal>
       </Drag>
     </>
