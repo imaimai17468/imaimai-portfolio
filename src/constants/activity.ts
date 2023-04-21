@@ -29,8 +29,16 @@ export const ACTIVITY: Activity[] = [
     content: '高専カンファレンス 参加',
   },
   {
+    date: '2020-11',
+    content: 'K-SEC 2020 冬 機械制御コース参加',
+  },
+  {
     date: '2021-2',
     content: '筋電位を用いたサーボモーターの制御',
+  },
+  {
+    date: '2021-8',
+    content: '高専AIサマースクール 機械学習部門 1位 / 200人中',
   },
   {
     date: '2021-9',
@@ -102,7 +110,11 @@ export const ACTIVITY: Activity[] = [
   },
   {
     date: '2022-10',
-    content: 'R&D 長期インターン',
+    content: 'R&D 長期インターン 参加',
+  },
+  {
+    date: '2022-10',
+    content: 'CA主催 学生団体紹介LTに参加',
   },
   {
     date: '2022-10',
@@ -117,12 +129,16 @@ export const ACTIVITY: Activity[] = [
     content: 'ゆめみ株式会社 内定',
   },
   {
+    date: '2022-12',
+    content: 'SAIBASHI 学生エンジニア勉強会 登壇',
+  },
+  {
     date: '2023-1',
     content: 'しば犬閲覧アプリ ShibaMatchを開発',
   },
   {
     date: '2023-1',
-    content: '技大祭実行委員会 HPの開発に参加',
+    content: '技大祭 HPの開発に参加',
   },
   {
     date: '2023-1',
