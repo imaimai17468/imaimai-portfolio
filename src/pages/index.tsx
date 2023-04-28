@@ -1,6 +1,7 @@
+import { useWindowWidth } from '@react-hook/window-size'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import React, { useState, useMemo, useCallback, useRef } from 'react'
+import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
 
 import { Drag, MainLayout } from '@/components/layout'
@@ -10,12 +11,19 @@ import { cursorState } from '@/store/cursor'
 
 export default function Home() {
   const [openMusic, setOpenMusic] = useState(false)
-  const [openAbout, setOpenAbout] = useState(true)
+  const [openAbout, setOpenAbout] = useState(false)
   const [openWorks, setOpenWorks] = useState(false)
   const [openSkills, setOpenSkills] = useState(false)
   const cursor = useRecoilValue(cursorState)
   const ref = useRef(null)
   const variants = useVariants(ref)
+  const width = useWindowWidth()
+
+  useEffect(() => {
+    if (width > 768) {
+      setOpenAbout(true)
+    }
+  }, [width])
 
   const toggleMusic = useCallback(() => {
     setOpenMusic(!openMusic)
