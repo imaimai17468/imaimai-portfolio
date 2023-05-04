@@ -47,7 +47,7 @@ export const Header = () => {
           <div className='invisible grow md:visible'>
             <News mode='absolute' />
           </div>
-          <div className='flex h-full items-center border-r border-gray-200 px-3'>
+          <div className='flex h-full items-center px-3'>
             <button
               type='button'
               className='text-gray-200'
