@@ -69,7 +69,7 @@ export const Header = () => {
           <News />
         </div>
       </div>
-      <Drag>
+      <Drag className='absolute z-10 w-72'>
         <Playlist isOpen={isPlaylistOpen} setOpen={setIsPlaylistOpen} />
       </Drag>
     </>
