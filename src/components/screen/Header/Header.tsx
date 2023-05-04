@@ -1,7 +1,10 @@
 import { useEffect, useState, useMemo } from 'react'
-import { AiFillCloseCircle } from 'react-icons/ai'
+import { BsMusicNoteList } from 'react-icons/bs'
 
 import { News } from '@/components/common'
+import { Drag } from '@/components/layout/Drag'
+
+import { Playlist } from '../Playlist'
 
 export const Header = () => {
   const [time, setTime] = useState(() => {
@@ -11,7 +14,7 @@ export const Header = () => {
     return `${hour}:${minute}`
   })
 
-  const [warningClose, setWarningClose] = useState(false)
+  const [isPlaylistOpen, setIsPlaylistOpen] = useState(false)
 
   const date = useMemo(() => {
     const date = new Date()
@@ -35,33 +38,41 @@ export const Header = () => {
   }, [])
 
   return (
-    <div className='relative z-50'>
-      <div className='flex w-full flex-row items-center border-b border-gray-200 bg-background py-1 font-press text-xs md:text-sm'>
-        <div className='flex h-full items-center border-r border-gray-200 px-3'>
-          <p className='text-gray-200'>imaimai&#39;s portfolio</p>
+    <>
+      <div className='relative z-50'>
+        <div className='flex w-full flex-row items-center border-b border-gray-200 bg-background py-1 font-press text-xs md:text-sm'>
+          <div className='flex h-full items-center border-r border-gray-200 px-3'>
+            <p className='text-gray-200'>imaimai&#39;s portfolio</p>
+          </div>
+          <div className='invisible grow md:visible'>
+            <News mode='absolute' />
+          </div>
+          <div className='flex h-full items-center border-r border-gray-200 px-3'>
+            <button
+              type='button'
+              className='text-gray-200'
+              onClick={() => {
+                setIsPlaylistOpen(!isPlaylistOpen)
+              }}
+            >
+              <BsMusicNoteList />
+            </button>
+          </div>
+          <div className='flex h-full items-center border-gray-200 px-3 md:border-l'>
+            <p className='text-gray-200'>{time}</p>
+          </div>
+          <div className='flex h-full items-center border-l border-gray-200 px-3'>
+            <p className='text-gray-200'>{date}</p>
+          </div>
         </div>
-        <div className='invisible grow md:visible'>
-          <News mode='absolute' />
-        </div>
-        <div className='flex h-full items-center border-gray-200 px-3 md:border-l'>
-          <p className='text-gray-200'>{time}</p>
-        </div>
-        <div className='flex h-full items-center border-l border-gray-200 px-3'>
-          <p className='text-gray-200'>{date}</p>
+        <div className='block  md:hidden'>
+          <News />
         </div>
       </div>
-      <div className='block  md:hidden'>
-        <News />
-      </div>
-      <div
-        className={`${
-          warningClose ? 'hidden' : 'block'
-        } m-2 flex w-fit flex-row items-center gap-2 rounded-md bg-primary py-1 px-2 transition-all`}
-      >
-        <AiFillCloseCircle className='cursor-pointer' onClick={() => setWarningClose(true)} />
-        <p>ウィンドウは動くよ</p>
-      </div>
-    </div>
+      <Drag>
+        <Playlist isOpen={isPlaylistOpen} setOpen={setIsPlaylistOpen} />
+      </Drag>
+    </>
   )
 }
 
