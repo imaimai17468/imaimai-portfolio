@@ -81,14 +81,14 @@ const Playlist = (props: PlaylistProps) => {
   return (
     <div
       className={`
-        absolute z-10 m-3 flex w-fit flex-col items-center justify-center rounded-xl border-2 border-gray-200 bg-slate-800 px-3 pt-1 pb-5 text-sm shadow-lg shadow-gray-200 transition-all 
+        absolute z-20 m-3 flex w-fit flex-col items-center justify-center rounded-xl bg-background px-3 pt-1 pb-5 text-sm shadow-lg shadow-gray-200 transition-all 
         ${isOpen ? 'opacity-100' : 'hidden opacity-0'}
         `}
     >
       <div className='my-2 flex w-full flex-row justify-between'>
         <button
           type='button'
-          className='flex h-6 w-6 cursor-pointer justify-items-center rounded-sm border-2 border-gray-200'
+          className='flex h-6 w-6 cursor-pointer justify-items-center rounded-md border border-gray-200'
           onClick={() => {
             setOpen(false)
           }}
@@ -105,8 +105,8 @@ const Playlist = (props: PlaylistProps) => {
         {/* eslint-disable-next-line */}
         <div className='flex w-4/5 items-center rounded-sm bg-gray-200 px-2 text-slate-800'>///MUSIC/////////////</div>
       </div>
-      <div className='h-fit w-fit border-x-2 border-gray-200 px-5'>
-        <p className='mr-auto mb-8 w-fit border-b-2 border-gray-200 py-1 text-gray-200'>imaimai&#39;s playlist</p>
+      <div className='h-fit w-fit border-x border-gray-200 px-5'>
+        <p className='mr-auto mb-8 w-fit border-b border-gray-200 py-1 text-gray-200'>imaimai&#39;s playlist</p>
         <Scratch togglePlay={togglePlay} />
       </div>
       <div className='mt-5 flex flex-row place-items-center gap-10 text-gray-200'>
