@@ -1,19 +1,16 @@
-import useMouse from '@react-hook/mouse-position'
+import useMouse from './useMouse'
 
-export const useVariants = (ref: React.MutableRefObject<null>) => {
-  const mouse = useMouse(ref, {
-    enterDelay: 100,
-    leaveDelay: 100,
-  })
+export const useVariants = () => {
+  const mousePosition = useMouse()
 
   let mouseXPosition = 0
   let mouseYPosition = 0
-  if (mouse.clientX !== null) {
-    mouseXPosition = mouse.clientX
+  if (mousePosition.x !== null) {
+    mouseXPosition = mousePosition.x
   }
 
-  if (mouse.clientY !== null) {
-    mouseYPosition = mouse.clientY
+  if (mousePosition.y !== null) {
+    mouseYPosition = mousePosition.y
   }
 
   return {
@@ -23,14 +20,14 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
       width: 30,
       fontSize: '20px',
       backgroundColor: '#A7FF83',
-      x: mouseXPosition + 10,
-      y: mouseYPosition - 100,
+      x: mouseXPosition + 15,
+      y: mouseYPosition - 60,
       transition: {
         type: 'spring',
         mass: 0.6,
       },
     },
-    open: {
+    move: {
       opacity: 1,
       backgroundColor: '#A7FF83',
       color: '#000',
@@ -38,9 +35,9 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
       width: 64,
       fontSize: '32px',
       x: mouseXPosition + 10,
-      y: mouseYPosition - 100,
+      y: mouseYPosition - 50,
     },
-    close: {
+    link: {
       opacity: 1,
       backgroundColor: '#D9D9D9',
       color: '#000',
@@ -48,7 +45,7 @@ export const useVariants = (ref: React.MutableRefObject<null>) => {
       width: 64,
       fontSize: '32px',
       x: mouseXPosition + 10,
-      y: mouseYPosition - 100,
+      y: mouseYPosition - 50,
     },
   }
 }
