@@ -66,7 +66,7 @@ const IndexPage: NextPage = () => {
                 className='fixed bottom-0 left-3 top-0 w-0.5 origin-bottom bg-emerald-600'
                 style={{ scaleY }}
               />
-              <div className='fixed left-10 my-10 flex flex-col gap-10 text-2xl font-thin text-gray-200'>
+              <div className='fixed left-10 z-10 my-10 flex flex-col gap-10 text-2xl font-thin text-gray-200'>
                 <a href=' #top' className='flex items-center gap-2'>
                   <BsCaretRightFill className='text-emerald-400' />
                   <span>Top</span>
