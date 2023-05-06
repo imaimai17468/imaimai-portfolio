@@ -3,11 +3,12 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useRef, useMemo } from 'react'
+import { AiOutlineLink } from 'react-icons/ai'
 import { BsMouseFill } from 'react-icons/bs'
 import { FaBirthdayCake } from 'react-icons/fa'
 import { GiMaterialsScience, GiPaintBrush } from 'react-icons/gi'
 import { SiTwitter, SiGithub } from 'react-icons/si'
-import { useRecoilValue } from 'recoil'
+import { useRecoilState } from 'recoil'
 
 import { CharAnimation } from '@/components/common'
 import { MainLayout, IconList } from '@/components/layout'
@@ -18,9 +19,8 @@ import { frontendIcons, backendIcons, otherIcons, toolIcons } from '@/utils/icon
 import { containerMotion, childMotion } from '@/utils/motions'
 
 const IndexPage: NextPage = () => {
-  const cursor = useRecoilValue(cursorState)
-  const ref = useRef(null)
-  const variants = useVariants(ref)
+  const [cursor, setCursor] = useRecoilState(cursorState)
+  const variants = useVariants()
   const topRef = useRef(null)
   const aboutRef = useRef(null)
   const skillRef = useRef(null)
@@ -37,6 +37,20 @@ const IndexPage: NextPage = () => {
     return 'Good Evening!!'
   }, [])
 
+  const cursorChange2Link = () => {
+    setCursor({
+      text: <AiOutlineLink className='text-3xl' />,
+      variant: 'link',
+    })
+  }
+
+  const cursorChange2Default = () => {
+    setCursor({
+      text: '🐸',
+      variant: 'default',
+    })
+  }
+
   return (
     <>
       <Head>
@@ -45,13 +59,14 @@ const IndexPage: NextPage = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/images/frog_circle.png' />
       </Head>
-      <main ref={ref} className='font-mono text-gray-200'>
+      <main className='font-mono text-gray-200'>
         <div>
           <MainLayout>
             <BackgroundAnimation />
             <motion.div
               variants={variants}
-              className='invisible absolute z-50 flex items-center justify-center rounded-full md:visible'
+              style={{ position: 'fixed' }}
+              className='invisible z-50 flex items-center justify-center rounded-full md:visible'
               animate={cursor.variant}
               transition={spring}
             >
@@ -84,10 +99,22 @@ const IndexPage: NextPage = () => {
                     <div className='flex items-center gap-5'>
                       <CharAnimation char='Toshiki_Imai' className='text-3xl' />
                       <div className='flex gap-2'>
-                        <a href='https://twitter.com/imaimai17468' target='_blank' rel='noopener noreferrer'>
+                        <a
+                          href='https://twitter.com/imaimai17468'
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          onMouseEnter={cursorChange2Link}
+                          onMouseLeave={cursorChange2Default}
+                        >
                           <SiTwitter className='text-xl text-emerald-400 transition-all hover:text-emerald-300' />
                         </a>
-                        <a href='https://github.com/imaimai17468' target='_blank' rel='noopener noreferrer'>
+                        <a
+                          href='https://github.com/imaimai17468'
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          onMouseEnter={cursorChange2Link}
+                          onMouseLeave={cursorChange2Default}
+                        >
                           <SiGithub className='text-xl text-emerald-400 transition-all hover:text-emerald-300' />
                         </a>
                       </div>

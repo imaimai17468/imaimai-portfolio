@@ -6,7 +6,7 @@ const { persistAtom } = recoilPersist()
 
 interface Cursor {
   text: ReactNode
-  variant: 'default' | 'open' | 'close'
+  variant: 'default' | 'move' | 'link'
 }
 
 export const cursorState = atom<Cursor>({

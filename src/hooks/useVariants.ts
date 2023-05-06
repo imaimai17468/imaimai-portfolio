@@ -34,8 +34,8 @@ export const useVariants = () => {
       height: 64,
       width: 64,
       fontSize: '32px',
-      x: mouseXPosition + 10,
-      y: mouseYPosition - 50,
+      x: mouseXPosition + 15,
+      y: mouseYPosition - 60,
     },
     link: {
       opacity: 1,
@@ -44,8 +44,8 @@ export const useVariants = () => {
       height: 64,
       width: 64,
       fontSize: '32px',
-      x: mouseXPosition + 10,
-      y: mouseYPosition - 50,
+      x: mouseXPosition + 15,
+      y: mouseYPosition - 60,
     },
   }
 }
