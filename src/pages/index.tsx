@@ -67,7 +67,7 @@ const IndexPage: NextPage = () => {
                 </div>
                 <h1>Front End Developer</h1>
               </div>
-              <div className='flex items-center gap-3 text-2xl'>
+              <div className='flex flex-col items-center gap-3 text-2xl'>
                 <p>Scroll Down</p>
                 <BsMouseFill className='animate-bounce' />
               </div>
