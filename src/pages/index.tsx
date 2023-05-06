@@ -21,6 +21,9 @@ const IndexPage: NextPage = () => {
   const cursor = useRecoilValue(cursorState)
   const ref = useRef(null)
   const variants = useVariants(ref)
+  const topRef = useRef(null)
+  const aboutRef = useRef(null)
+  const skillRef = useRef(null)
 
   const timeText = useMemo(() => {
     const date = new Date()
@@ -54,10 +57,11 @@ const IndexPage: NextPage = () => {
             >
               <div>{cursor.text}</div>
             </motion.div>
-            <ProgressBar />
+            <ProgressBar topRef={topRef} aboutRef={aboutRef} skillsRef={skillRef} />
             <div
               id='top'
               className='flex h-screen -translate-y-24 flex-col items-center justify-center text-2xl font-thin text-gray-200 md:text-5xl'
+              ref={topRef}
             >
               <div className='mb-10 w-fit bg-background bg-opacity-70 p-5 md:p-10'>
                 <h1>{timeText}</h1>
@@ -73,10 +77,8 @@ const IndexPage: NextPage = () => {
               </div>
             </div>
             <div className='my-10 flex flex-col items-center gap-20'>
-              <div className='w-9/10 bg-background bg-opacity-70 p-10 lg:w-1/2'>
-                <h2 id='about' className='w-fit border-b-2 border-emerald-400 text-2xl'>
-                  About
-                </h2>
+              <div id='about' className='w-9/10 bg-background bg-opacity-70 p-10 lg:w-1/2' ref={aboutRef}>
+                <h2 className='w-fit border-b-2 border-emerald-400 text-2xl'>About</h2>
                 <div className='my-5 flex flex-col items-center justify-between md:flex-row md:gap-20'>
                   <div>
                     <div className='flex items-center gap-5'>
@@ -116,10 +118,8 @@ const IndexPage: NextPage = () => {
                   />
                 </div>
               </div>
-              <div className='w-9/10 bg-background bg-opacity-70 p-10 lg:w-1/2'>
-                <h2 id='skill' className='w-fit border-b-2 border-emerald-400 text-2xl'>
-                  Skill
-                </h2>
+              <div id='skill' className='w-9/10 bg-background bg-opacity-70 p-10 lg:w-1/2' ref={skillRef}>
+                <h2 className='w-fit border-b-2 border-emerald-400 text-2xl'>Skill</h2>
                 <div className='my-5'>
                   <p className='text-xl font-thin text-emerald-400'>Front End</p>
                   <IconList icons={frontendIcons} />
