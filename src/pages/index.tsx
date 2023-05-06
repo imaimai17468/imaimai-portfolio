@@ -1,16 +1,17 @@
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useRef, useMemo } from 'react'
-import { BsCaretRightFill, BsMouseFill } from 'react-icons/bs'
+import { BsMouseFill } from 'react-icons/bs'
 import { FaBirthdayCake } from 'react-icons/fa'
 import { GiMaterialsScience, GiPaintBrush } from 'react-icons/gi'
 import { SiTwitter, SiGithub } from 'react-icons/si'
 import { useRecoilValue } from 'recoil'
 
-import { MainLayout } from '@/components/layout'
-import { BackgroundAnimation } from '@/components/screen'
+import { CharAnimation } from '@/components/common'
+import { MainLayout, IconList } from '@/components/layout'
+import { BackgroundAnimation, ProgressBar } from '@/components/screen'
 import { useVariants, spring } from '@/hooks/useVariants'
 import { cursorState } from '@/store/cursor'
 import { frontendIcons, backendIcons, otherIcons, toolIcons } from '@/utils/icons'
@@ -20,12 +21,6 @@ const IndexPage: NextPage = () => {
   const cursor = useRecoilValue(cursorState)
   const ref = useRef(null)
   const variants = useVariants(ref)
-  const { scrollYProgress } = useScroll()
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  })
 
   const timeText = useMemo(() => {
     const date = new Date()
@@ -40,14 +35,14 @@ const IndexPage: NextPage = () => {
   }, [])
 
   return (
-    <html lang='ja' className='scroll-smooth'>
+    <>
       <Head>
         <title>imaimai Portfolio</title>
         <meta name='description' content='いまいまいのポートフォリオ' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/images/frog_circle.png' />
       </Head>
-      <main ref={ref} className='scroll-smooth font-mono text-gray-200'>
+      <main ref={ref} className='font-mono text-gray-200'>
         <div>
           <MainLayout>
             <BackgroundAnimation />
@@ -59,28 +54,7 @@ const IndexPage: NextPage = () => {
             >
               <div>{cursor.text}</div>
             </motion.div>
-            <div className='hidden md:block'>
-              <motion.div className='fixed bottom-0 left-5 top-0 w-1 origin-top bg-emerald-400' style={{ scaleY }} />
-              <motion.div className='fixed bottom-0 left-4 top-0 w-0.5 bg-emerald-500' style={{ scaleY }} />
-              <motion.div
-                className='fixed bottom-0 left-3 top-0 w-0.5 origin-bottom bg-emerald-600'
-                style={{ scaleY }}
-              />
-              <div className='fixed left-10 z-10 my-10 flex flex-col gap-10 text-2xl font-thin text-gray-200'>
-                <a href=' #top' className='flex items-center gap-2'>
-                  <BsCaretRightFill className='text-emerald-400' />
-                  <span>Top</span>
-                </a>
-                <a href=' #about' className='flex items-center gap-2'>
-                  <BsCaretRightFill className='text-emerald-400' />
-                  <span>About</span>
-                </a>
-                <a href=' #skill' className='flex items-center gap-2'>
-                  <BsCaretRightFill className='text-emerald-400' />
-                  <span>Skill</span>
-                </a>
-              </div>
-            </div>
+            <ProgressBar />
             <div
               id='top'
               className='flex h-screen -translate-y-24 flex-col items-center justify-center text-2xl font-thin text-gray-200 md:text-5xl'
@@ -89,18 +63,7 @@ const IndexPage: NextPage = () => {
                 <h1>{timeText}</h1>
                 <div className='flex gap-10'>
                   <h1>I&apos;m</h1>
-                  <motion.div
-                    className='flex text-emerald-400'
-                    variants={containerMotion}
-                    initial='hidden'
-                    animate='visible'
-                  >
-                    {Array.from('imaimai.').map((char, i) => (
-                      <motion.h1 key={i} variants={childMotion}>
-                        {char}
-                      </motion.h1>
-                    ))}
-                  </motion.div>
+                  <CharAnimation char='imaimai.' className='text-emerald-500' />
                 </div>
                 <h1>Front End Developer</h1>
               </div>
@@ -117,18 +80,7 @@ const IndexPage: NextPage = () => {
                 <div className='my-5 flex flex-col items-center justify-between md:flex-row md:gap-20'>
                   <div>
                     <div className='flex items-center gap-5'>
-                      <motion.div
-                        className='flex text-3xl'
-                        variants={containerMotion}
-                        initial='hidden'
-                        whileInView='visible'
-                      >
-                        {Array.from('Toshiki_Imai').map((char, i) => (
-                          <motion.h3 key={i} variants={childMotion}>
-                            {char}
-                          </motion.h3>
-                        ))}
-                      </motion.div>
+                      <CharAnimation char='Toshiki_Imai' className='text-3xl' />
                       <div className='flex gap-2'>
                         <a href='https://twitter.com/imaimai17468' target='_blank' rel='noopener noreferrer'>
                           <SiTwitter className='text-xl text-emerald-400 transition-all hover:text-emerald-300' />
@@ -170,89 +122,29 @@ const IndexPage: NextPage = () => {
                 </h2>
                 <div className='my-5'>
                   <p className='text-xl font-thin text-emerald-400'>Front End</p>
-                  <motion.div
-                    className='my-5 grid grid-cols-3 justify-items-center gap-y-5 text-4xl md:grid-cols-6 md:gap-y-10'
-                    variants={containerMotion}
-                    initial='hidden'
-                    whileInView='visible'
-                  >
-                    {frontendIcons.map((skill, i) => (
-                      <div
-                        key={i}
-                        className='flex flex-col items-center justify-center transition-all hover:text-emerald-400'
-                      >
-                        {skill.icon}
-                        <p className='mt-2 text-center text-sm font-thin'>{skill.name}</p>
-                      </div>
-                    ))}
-                  </motion.div>
+                  <IconList icons={frontendIcons} />
                 </div>
                 <hr className='border-dotted border-gray-400' />
                 <div className='my-5'>
                   <p className='text-xl font-thin text-emerald-400'>Back End</p>
-                  <motion.div
-                    className='my-5 grid grid-cols-3 justify-items-center gap-y-5 text-4xl md:grid-cols-6 md:gap-y-10'
-                    variants={containerMotion}
-                    initial='hidden'
-                    whileInView='visible'
-                  >
-                    {backendIcons.map((skill, i) => (
-                      <div
-                        key={i}
-                        className='flex flex-col items-center justify-center transition-all hover:text-emerald-400'
-                      >
-                        {skill.icon}
-                        <p className='mt-2 text-center text-sm font-thin'>{skill.name}</p>
-                      </div>
-                    ))}
-                  </motion.div>
+                  <IconList icons={backendIcons} />
                 </div>
                 <hr className='border-dotted border-gray-400' />
                 <div className='my-5'>
                   <p className='text-xl font-thin text-emerald-400'>Other</p>
-                  <motion.div
-                    className='my-5 grid grid-cols-3 justify-items-center gap-y-5 text-4xl md:grid-cols-6 md:gap-y-10'
-                    variants={containerMotion}
-                    initial='hidden'
-                    whileInView='visible'
-                  >
-                    {otherIcons.map((skill, i) => (
-                      <div
-                        key={i}
-                        className='flex flex-col items-center justify-center transition-all hover:text-emerald-400'
-                      >
-                        {skill.icon}
-                        <p className='mt-2 text-center text-sm font-thin'>{skill.name}</p>
-                      </div>
-                    ))}
-                  </motion.div>
+                  <IconList icons={otherIcons} />
                 </div>
                 <hr className='border-dotted border-gray-400' />
                 <div className='my-5'>
                   <p className='text-xl font-thin text-emerald-400'>Tools</p>
-                  <motion.div
-                    className='my-5 grid grid-cols-3 justify-items-center gap-y-5 text-4xl md:grid-cols-6 md:gap-y-10'
-                    variants={containerMotion}
-                    initial='hidden'
-                    whileInView='visible'
-                  >
-                    {toolIcons.map((skill, i) => (
-                      <div
-                        key={i}
-                        className='flex flex-col items-center justify-center transition-all hover:text-emerald-400'
-                      >
-                        {skill.icon}
-                        <p className='mt-2 text-center text-sm font-thin'>{skill.name}</p>
-                      </div>
-                    ))}
-                  </motion.div>
+                  <IconList icons={toolIcons} />
                 </div>
               </div>
             </div>
           </MainLayout>
         </div>
       </main>
-    </html>
+    </>
   )
 }
 
