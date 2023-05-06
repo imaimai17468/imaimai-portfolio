@@ -85,7 +85,7 @@ export const News = ({ mode = 'relative' }: NewsProps) => {
       >
         Open NEWS
       </button>
-      <div className={`${isAnimationStart ? '-translate-y-0' : '-translate-y-full opacity-0'} transition-all`}>
+      <div className={`${isAnimationStart ? '-translate-y-0' : '-translate-y-72 opacity-0'} transition-all`}>
         <NewsTab />
       </div>
     </div>
