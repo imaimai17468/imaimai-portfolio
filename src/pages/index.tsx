@@ -67,7 +67,7 @@ const IndexPage: NextPage = () => {
           <ProgressBar topRef={topRef} aboutRef={aboutRef} skillsRef={skillRef} />
           <div
             id='top'
-            className='flex h-screen -translate-y-24 flex-col items-center justify-center text-2xl font-thin text-gray-200 md:text-5xl'
+            className='flex h-screen -translate-y-8 flex-col items-center justify-center text-2xl font-thin text-gray-200 md:text-5xl'
             ref={topRef}
           >
             <div className='mb-10 w-fit bg-background bg-opacity-70 p-5 md:p-10'>
