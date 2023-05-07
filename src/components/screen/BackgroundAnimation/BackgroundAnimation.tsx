@@ -34,7 +34,7 @@ const BackgroundAnimation = () => {
         position: 'fixed',
         top: 0,
         left: 0,
-        zIndex: -1,
+        zIndex: -30,
       }}
       ref={vantaRef}
     />
