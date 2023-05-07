@@ -47,18 +47,18 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ aboutRef, topRef, skil
       <motion.div className='fixed bottom-0 left-5 top-0 w-1 origin-top bg-emerald-400' style={{ scaleY }} />
       <motion.div className='fixed bottom-0 left-4 top-0 w-0.5 bg-emerald-500' style={{ scaleY }} />
       <motion.div className='fixed bottom-0 left-3 top-0 w-0.5 origin-bottom bg-emerald-600' style={{ scaleY }} />
-      <div className='fixed left-10 -z-10 my-10 flex flex-col gap-10 text-2xl font-thin text-gray-200 md:z-10'>
+      <div className='fixed left-10 -z-10 my-10 flex flex-col gap-10 text-2xl font-thin text-gray-200 lg:z-10'>
         <a href=' #top' className='flex items-center' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <ProgressCircle progress={topScrollYProgress} />
-          <span className='hidden transition-all hover:text-emerald-400 md:block'>Top</span>
+          <span className='hidden transition-all hover:text-emerald-400 lg:block'>Top</span>
         </a>
         <a href=' #about' className='flex items-center' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <ProgressCircle progress={aboutScrollYProgress} />
-          <span className='hidden transition-all hover:text-emerald-400 md:block'>About</span>
+          <span className='hidden transition-all hover:text-emerald-400 lg:block'>About</span>
         </a>
         <a href=' #skill' className='flex items-center' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <ProgressCircle progress={skillsScrollYProgress} />
-          <span className='hidden transition-all hover:text-emerald-400 md:block'>Skill</span>
+          <span className='hidden transition-all hover:text-emerald-400 lg:block'>Skill</span>
         </a>
       </div>
     </div>

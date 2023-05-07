@@ -65,26 +65,30 @@ const IndexPage: NextPage = () => {
             <div>{cursor.text}</div>
           </motion.div>
           <ProgressBar topRef={topRef} aboutRef={aboutRef} skillsRef={skillRef} />
-          <div
-            id='top'
-            className='flex h-screen -translate-y-8 flex-col items-center justify-center text-2xl font-thin text-gray-200 md:text-5xl'
-            ref={topRef}
-          >
-            <div className='mb-10 w-fit bg-background bg-opacity-70 p-5 md:p-10'>
-              <h1>{timeText}</h1>
-              <div className='flex gap-10'>
-                <h1>I&apos;m</h1>
-                <CharAnimation char='imaimai.' className='text-emerald-500' />
-              </div>
-              <h1>Front End Developer</h1>
-            </div>
-            <div className='flex flex-col items-center gap-3 text-2xl'>
-              <p>Scroll Down</p>
-              <BsMouseFill className='animate-bounce' />
-            </div>
-          </div>
           <div className='my-10 flex flex-col items-center gap-20'>
-            <div id='about' className='w-9/10 bg-background bg-opacity-70 p-10 lg:w-1/2' ref={aboutRef}>
+            <div
+              id='top'
+              className='flex h-screen -translate-y-12 flex-col items-center justify-center text-2xl font-thin text-gray-200 md:text-5xl'
+              ref={topRef}
+            >
+              <div className='mb-10 w-fit bg-background bg-opacity-70 p-5 md:p-10'>
+                <h1>{timeText}</h1>
+                <div className='flex gap-10'>
+                  <h1>I&apos;m</h1>
+                  <CharAnimation char='imaimai.' className='text-emerald-500' />
+                </div>
+                <h1>Front End Developer</h1>
+              </div>
+              <div className='flex flex-col items-center gap-3 text-2xl'>
+                <p>Scroll Down</p>
+                <BsMouseFill className='animate-bounce' />
+              </div>
+            </div>
+            <div
+              id='about'
+              className='my-12 w-9/10 bg-background bg-opacity-70 p-10 lg:my-48 lg:w-3/5 xl:w-1/2'
+              ref={aboutRef}
+            >
               <h2 className='w-fit border-b-2 border-emerald-400 text-2xl'>About</h2>
               <div className='my-5 flex flex-col items-center justify-between md:flex-row md:gap-20'>
                 <div>
@@ -131,7 +135,7 @@ const IndexPage: NextPage = () => {
                 <Image alt='profile' src='/images/frog_circle.png' width={200} height={200} className='rounded-full' />
               </div>
             </div>
-            <div id='skill' className='w-9/10 bg-background bg-opacity-70 p-10 lg:w-1/2' ref={skillRef}>
+            <div id='skill' className='w-9/10 bg-background bg-opacity-70 p-10 lg:w-3/5 xl:w-1/2' ref={skillRef}>
               <h2 className='w-fit border-b-2 border-emerald-400 text-2xl'>Skill</h2>
               <div className='my-5'>
                 <p className='text-xl font-thin text-emerald-400'>Front End</p>
