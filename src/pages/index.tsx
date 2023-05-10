@@ -12,14 +12,12 @@ import { useRecoilState } from 'recoil'
 import { CharAnimation } from '@/components/common'
 import { IconList } from '@/components/layout'
 import { ProgressBar } from '@/components/screen'
-import { useVariants } from '@/hooks/useVariants'
 import { cursorState } from '@/store/cursor'
 import { frontendIcons, backendIcons, otherIcons, toolIcons } from '@/utils/icons'
 import { containerMotion, childMotion } from '@/utils/motions'
 
 const IndexPage: NextPage = () => {
-  const [cursor, setCursor] = useRecoilState(cursorState)
-  const variants = useVariants()
+  const [_, setCursor] = useRecoilState(cursorState)
   const topRef = useRef(null)
   const aboutRef = useRef(null)
   const skillRef = useRef(null)
