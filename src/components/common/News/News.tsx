@@ -15,7 +15,7 @@ const NewsTab = () => (
           href={news.link || ''}
           target='_blank'
           rel='noreferrer'
-          className='flex cursor-pointer flex-row items-center border-x border-gray-200 px-1 transition-all hover:bg-gray-200 hover:text-primary'
+          className='flex cursor-pointer flex-row items-center border-x border-gray-200 px-1 text-gray-200 transition-all hover:bg-gray-200 hover:text-primary'
         >
           <div className='flex flex-col'>
             <p className='text-secondary'>{news.date}</p>
@@ -78,7 +78,7 @@ export const News = ({ mode = 'relative' }: NewsProps) => {
       </div>
       <button
         type='button'
-        className='absolute right-0 z-30 border border-gray-200 bg-background px-2 transition-all hover:bg-gray-200 hover:text-background md:top-0'
+        className='absolute right-0 z-30 border border-gray-200 bg-background px-2 text-gray-200 transition-all hover:bg-gray-200 hover:text-background md:top-0'
         onClick={() => {
           setIsAnimationStart(!isAnimationStart)
         }}
