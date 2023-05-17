@@ -1,17 +1,13 @@
 import { NextPage } from 'next'
 import React, { useRef, useMemo } from 'react'
-import { AiOutlineLink } from 'react-icons/ai'
 import { BsMouseFill } from 'react-icons/bs'
-import { useRecoilState } from 'recoil'
 
 import { CharAnimation } from '@/components/common'
 import { IconList, About } from '@/components/layout'
 import { ProgressBar } from '@/components/screen'
-import { cursorState } from '@/store/cursor'
 import { frontendIcons, backendIcons, otherIcons, toolIcons } from '@/utils/icons'
 
 const IndexPage: NextPage = () => {
-  const [_, setCursor] = useRecoilState(cursorState)
   const topRef = useRef(null)
   const aboutRef = useRef(null)
   const skillRef = useRef(null)
@@ -27,20 +23,6 @@ const IndexPage: NextPage = () => {
     }
     return 'Good Evening!!'
   }, [])
-
-  const cursorChange2Link = () => {
-    setCursor({
-      text: <AiOutlineLink className='text-3xl' />,
-      variant: 'link',
-    })
-  }
-
-  const cursorChange2Default = () => {
-    setCursor({
-      text: '🐸',
-      variant: 'default',
-    })
-  }
 
   return (
     <main className='font-mono text-gray-200'>
