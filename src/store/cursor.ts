@@ -1,8 +1,5 @@
 import { ReactNode } from 'react'
 import { atom } from 'recoil'
-import { recoilPersist } from 'recoil-persist'
-
-const { persistAtom } = recoilPersist()
 
 interface Cursor {
   text: ReactNode
@@ -15,5 +12,4 @@ export const cursorState = atom<Cursor>({
     text: '🐸',
     variant: 'default',
   },
-  effects_UNSTABLE: [persistAtom],
 })
