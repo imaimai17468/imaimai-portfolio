@@ -7,7 +7,6 @@ import {
   SiNextdotjs,
   SiNuxtdotjs,
   SiTailwindcss,
-  SiMaterialui,
   SiSass,
   SiRubyonrails,
   SiGo,
@@ -35,7 +34,6 @@ export const frontendIcons = [
   { icon: <SiNextdotjs />, name: 'Next.js' },
   { icon: <SiNuxtdotjs />, name: 'Nuxt.js' },
   { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
-  { icon: <SiMaterialui />, name: 'Material-UI' },
   { icon: <SiSass />, name: 'Sass' },
   { icon: <SiProcessingfoundation />, name: 'p5.js' },
 ]
