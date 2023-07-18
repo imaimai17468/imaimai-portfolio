@@ -1,33 +1,26 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { AiOutlineLink } from 'react-icons/ai'
+import { useRouter } from 'next/router'
+import { useMemo } from 'react'
 import { FaBirthdayCake } from 'react-icons/fa'
 import { GiMaterialsScience, GiPaintBrush } from 'react-icons/gi'
 import { SiTwitter, SiGithub } from 'react-icons/si'
-import { useRecoilState } from 'recoil'
 
-import { CharAnimation } from '@/components/common'
-import { cursorState } from '@/store/cursor'
+import { CharAnimation, Button } from '@/components/common'
+import { useCursor } from '@/hooks/useCursor'
 import { childMotion, containerMotion } from '@/utils/motions'
 
 import { AboutProps } from './About.types'
 
 const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
-  const [_, setCursor] = useRecoilState(cursorState)
+  const router = useRouter()
+  const { cursorChange2Link, cursorChange2Default, cursorChange2Page } = useCursor()
 
-  const cursorChange2Link = () => {
-    setCursor({
-      text: <AiOutlineLink className='text-3xl' />,
-      variant: 'link',
-    })
+  const handleClick = () => {
+    router.push('/about')
   }
 
-  const cursorChange2Default = () => {
-    setCursor({
-      text: '🐸',
-      variant: 'default',
-    })
-  }
+  const isAboutPage = useMemo(() => router.pathname === '/about', [router.pathname])
 
   return (
     <div id='about' className='my-12 w-9/10 bg-background bg-opacity-70 p-10 lg:my-48 lg:w-3/5 xl:w-1/2' ref={aboutRef}>
@@ -76,6 +69,13 @@ const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
         </div>
         <Image alt='profile' src='/images/frog_circle.png' width={200} height={200} className='rounded-full' />
       </div>
+      {!isAboutPage && (
+        <div className='mx-auto w-fit'>
+          <Button onClick={handleClick} onMouseEnter={cursorChange2Page} onMouseLeave={cursorChange2Default}>
+            ABOUT
+          </Button>
+        </div>
+      )}
     </div>
   )
 }
