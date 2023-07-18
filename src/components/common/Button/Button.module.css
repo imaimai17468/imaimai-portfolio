@@ -1,0 +1,18 @@
+.shine {
+  box-shadow: 0 0 20px rgb(52, 211, 153);
+  background-image: linear-gradient(to right, #38ff4a, #46f6ff, #3c3bff, #00d4ff);
+  background-size: 300% 100%;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.shine:hover {
+  box-shadow: 0 0 40px rgb(52, 211, 153);
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
