@@ -1,8 +1,3 @@
-export interface Picture {
-  id: number
-  src: string
-}
-
 export const PICTURES = [
   {
     id: 1,
@@ -36,4 +31,4 @@ export const PICTURES = [
     id: 8,
     src: '/images/imaimai/8.png',
   },
-] as Picture[]
+] as const

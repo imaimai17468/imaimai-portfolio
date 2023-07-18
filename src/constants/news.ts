@@ -1,10 +1,3 @@
-interface News {
-  title: string
-  description: string
-  date: string
-  link: string
-}
-
 export const NEWS = [
   {
     title: 'ゆめみ就活記',
@@ -30,4 +23,4 @@ export const NEWS = [
     date: '2022-2-13',
     link: 'https://drive.google.com/file/d/1SNbIjcAbgF6p81184hVPn_LZ6vlLQeWZ/view?usp=share_link',
   },
-] as News[]
+] as const

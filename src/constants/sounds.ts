@@ -14,4 +14,4 @@ export const SOUNDS = [
     path: '/musics/alex-productions-cyberpunk-computer-game-idra.mp3',
     artist: 'alex productions',
   },
-]
+] as const

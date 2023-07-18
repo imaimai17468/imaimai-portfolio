@@ -1,9 +1,6 @@
-export interface Activity {
-  date: string
-  content: string
-}
+import { TimeTable } from '@/@types/timeTable'
 
-export const ACTIVITY: Activity[] = [
+export const ACTIVITIES = [
   {
     date: '2019-5',
     content: 'AtCoder茶色到達',
@@ -152,4 +149,4 @@ export const ACTIVITY: Activity[] = [
     date: '2023-3',
     content: 'NUTMEG Lotteryの開発に参加',
   },
-]
+] as TimeTable[]

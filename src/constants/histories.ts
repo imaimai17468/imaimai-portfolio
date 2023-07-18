@@ -1,9 +1,6 @@
-export interface History {
-  date: string
-  content: string
-}
+import { TimeTable } from '@/@types/timeTable'
 
-export const HISTORY: History[] = [
+export const HISTORIES = [
   {
     date: '2001-8',
     content: '千葉県にて生まれる',
@@ -20,4 +17,4 @@ export const HISTORY: History[] = [
     date: '2024-',
     content: 'ゆめみ株式会社 入社',
   },
-]
+] as TimeTable[]
