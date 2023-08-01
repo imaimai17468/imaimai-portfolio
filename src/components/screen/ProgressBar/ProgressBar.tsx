@@ -6,7 +6,12 @@ import { useCursor } from '@/hooks/useCursor'
 
 import { ProgressBarProps } from './ProgressBar.types'
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({ aboutRef, topRef, skillsRef }: ProgressBarProps) => {
+export const ProgressBar: React.FC<ProgressBarProps> = ({
+  aboutRef,
+  topRef,
+  skillsRef,
+  contactRef,
+}: ProgressBarProps) => {
   const { scrollYProgress } = useScroll()
   const { scrollYProgress: topScrollYProgress } = useScroll({
     target: topRef,
@@ -20,6 +25,11 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ aboutRef, topRef, skil
     target: skillsRef,
     offset: ['start end', 'end'],
   })
+  const { scrollYProgress: contactScrollYProgress } = useScroll({
+    target: contactRef,
+    offset: ['start', 'end'],
+  })
+
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -63,6 +73,15 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ aboutRef, topRef, skil
           >
             <ProgressCircle progress={skillsScrollYProgress} />
             <span className='hidden transition-all hover:text-emerald-400 lg:block'>Skill</span>
+          </a>
+          <a
+            href=' #contact'
+            className='flex items-center'
+            onMouseEnter={cursorChange2Move}
+            onMouseLeave={cursorChange2Default}
+          >
+            <ProgressCircle progress={contactScrollYProgress} />
+            <span className='hidden transition-all hover:text-emerald-400 lg:block'>Contact</span>
           </a>
         </div>
       )}

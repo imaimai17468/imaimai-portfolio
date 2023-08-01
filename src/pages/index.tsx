@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import React, { useRef, useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 
-import { About, Top, Skill } from '@/components/layout'
+import { About, Top, Skill, Contact } from '@/components/layout'
 import { ProgressBar } from '@/components/screen'
 import { cursorState } from '@/store/cursor'
 
@@ -10,6 +10,7 @@ const IndexPage: NextPage = () => {
   const topRef = useRef(null)
   const aboutRef = useRef(null)
   const skillRef = useRef(null)
+  const contactRef = useRef(null)
   const [_, setCursor] = useRecoilState(cursorState)
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const IndexPage: NextPage = () => {
         <Top topRef={topRef} />
         <About aboutRef={aboutRef} />
         <Skill skillRef={skillRef} />
+        <Contact contactRef={contactRef} />
       </div>
     </main>
   )
