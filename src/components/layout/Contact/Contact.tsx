@@ -31,7 +31,7 @@ const Contact: React.FC<ContactProps> = ({ contactRef }: ContactProps) => {
               <div className='w-full'>
                 <p>Name</p>
                 <input
-                  className='w-full rounded-lg border-b-2 border-emerald-400 bg-transparent p-2 focus:outline-none'
+                  className='w-full border-b-2 border-emerald-400 bg-transparent p-2 focus:outline-none'
                   {...register('name', { required: 'この項目は必須です' })}
                 />
                 {errors.name && <span className='text-red-500'>{errors.name.message}</span>}
@@ -39,7 +39,7 @@ const Contact: React.FC<ContactProps> = ({ contactRef }: ContactProps) => {
               <div className='w-full'>
                 <p>Email</p>
                 <input
-                  className='w-full rounded-lg border-b-2 border-emerald-400 bg-transparent p-2 focus:outline-none'
+                  className='w-full border-b-2 border-emerald-400 bg-transparent p-2 focus:outline-none'
                   {...register('email', {
                     required: 'この項目は必須です',
                     pattern: {
@@ -55,7 +55,7 @@ const Contact: React.FC<ContactProps> = ({ contactRef }: ContactProps) => {
               <p>Message</p>
               <textarea
                 rows={3}
-                className='w-full rounded-lg border-b-2 border-emerald-400 bg-transparent p-2 focus:outline-none'
+                className='w-full border-b-2 border-emerald-400 bg-transparent p-2 focus:outline-none'
                 {...register('message', { required: 'この項目は必須です' })}
               />
               {errors.message && <span className='text-red-500'>この項目は必須です</span>}
