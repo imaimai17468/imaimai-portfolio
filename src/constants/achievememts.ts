@@ -29,4 +29,8 @@ export const ACHIEVEMENTS = [
     date: '2022-9',
     content: 'JPHACKSにてSumiMatchを発表',
   },
+  {
+    date: '2023-7',
+    content: '技育CAMPキャラバンで調整ちゃんを発表',
+  },
 ] as TimeTable[]
