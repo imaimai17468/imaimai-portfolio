@@ -14,6 +14,10 @@ export const JOBS = [
     content: 'StyleArts 長期インターン',
   },
   {
+    date: '2022-10',
+    content: 'R&D 長期インターン',
+  },
+  {
     date: '2022-12',
     content: 'ゆめみ株式会社 内定',
   },
