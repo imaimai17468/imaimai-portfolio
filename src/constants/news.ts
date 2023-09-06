@@ -6,10 +6,10 @@ export const NEWS = [
     link: 'https://note.com/imaimai17468/n/n64c9e1ad60f3?from=notice',
   },
   {
-    title: 'SHIBA MATCH',
-    description: 'しば犬を眺めるアプリ',
-    date: '2023-1-10',
-    link: 'https://shiba-match.vercel.app/',
+    title: 'SAIBASHI LT会',
+    description: '開発をすることについて',
+    date: '2023-2-13',
+    link: 'https://drive.google.com/file/d/1SNbIjcAbgF6p81184hVPn_LZ6vlLQeWZ/view?usp=share_link',
   },
   {
     title: '2023年総まとめ',
@@ -18,9 +18,9 @@ export const NEWS = [
     link: 'https://docs.google.com/presentation/d/1CKEqloaSzNfMWTkktveyhels57wNNtL1AVdOTIFGop0/edit#slide=id.p',
   },
   {
-    title: 'SAIBASHI LT会',
-    description: '開発をすることについて',
-    date: '2022-2-13',
-    link: 'https://drive.google.com/file/d/1SNbIjcAbgF6p81184hVPn_LZ6vlLQeWZ/view?usp=share_link',
+    title: 'NUTMEG LT会',
+    description: 'NUTyama / なんで開発してますか？',
+    date: '2022-8-27',
+    link: 'https://docs.google.com/presentation/d/1IjyJQBm4RFVTVeAWgBo20OaVmWpzGXS_xAP-lRfE1gE/edit?usp=sharing',
   },
 ] as const
