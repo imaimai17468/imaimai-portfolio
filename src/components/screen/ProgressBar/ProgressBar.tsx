@@ -8,6 +8,7 @@ import { ProgressBarProps } from './ProgressBar.types'
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
   aboutRef,
+  applicationRef,
   topRef,
   skillsRef,
   contactRef,
@@ -20,6 +21,10 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   const { scrollYProgress: aboutScrollYProgress } = useScroll({
     target: aboutRef,
     offset: ['end', 'start'],
+  })
+  const { scrollYProgress: applicationScrollYProgress } = useScroll({
+    target: applicationRef,
+    offset: ['start end', 'end'],
   })
   const { scrollYProgress: skillsScrollYProgress } = useScroll({
     target: skillsRef,
@@ -64,6 +69,15 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
           >
             <ProgressCircle progress={aboutScrollYProgress} />
             <span className='hidden transition-all hover:text-emerald-400 lg:block'>About</span>
+          </a>
+          <a
+            href=' #application'
+            className='flex items-center'
+            onMouseEnter={cursorChange2Move}
+            onMouseLeave={cursorChange2Default}
+          >
+            <ProgressCircle progress={applicationScrollYProgress} />
+            <span className='hidden transition-all hover:text-emerald-400 lg:block'>App</span>
           </a>
           <a
             href=' #skill'
