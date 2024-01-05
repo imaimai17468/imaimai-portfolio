@@ -60,3 +60,5 @@ export const NEWS = [
     link: 'https://zenn.dev/imaimai17468/articles/7d3e91cbaae0a6',
   },
 ] as const
+
+export const NEWS_REVERSE = [...NEWS].reverse()

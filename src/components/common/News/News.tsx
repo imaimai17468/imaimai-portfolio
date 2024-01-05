@@ -2,13 +2,13 @@ import { motion } from 'framer-motion'
 import React, { useMemo, useState } from 'react'
 import { FaFrog } from 'react-icons/fa'
 
-import { NEWS } from '@/constants/news'
+import { NEWS_REVERSE } from '@/constants/news'
 
 import { NewsProps } from './News.type'
 
 const NewsTab = () => (
   <div className='relative z-0 flex max-h-40 flex-col gap-3 overflow-scroll border border-gray-200 bg-background p-2 text-xs'>
-    {NEWS.map((news, index) => (
+    {NEWS_REVERSE.map((news, index) => (
       <div key={index}>
         {index !== 0 && <hr className='border-dashed' />}
         <a
@@ -50,7 +50,7 @@ const NewsTab = () => (
 )
 
 export const News = ({ mode = 'relative' }: NewsProps) => {
-  const recentNews = useMemo(() => NEWS[0], [])
+  const recentNews = useMemo(() => NEWS_REVERSE[0], [])
   const [isAnimationStart, setIsAnimationStart] = useState(false)
 
   const className = useMemo(() => {
