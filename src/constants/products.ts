@@ -191,4 +191,29 @@ export const products: Product[] = [
       product: 'https://www.npmjs.com/package/ts-audio-visualizer?activeTab=readme',
     },
   },
+  {
+    name: 'akeo.me',
+    description: '年越しを祝うサイト',
+    popularity: 1,
+    image: '/images/products/akeome.png',
+    role: '全て',
+    date: '2023 12月',
+    techs: ['Next.js', 'TypeScript', 'shadcn/ui', 'ts-particles'],
+    links: {
+      github: 'https://github.com/imaimai17468/akeome',
+      product: 'https://akeo.me/',
+    },
+  },
+  {
+    name: 'AtCoderTeamBattle',
+    description: 'AtCoderでチーム戦ができるサイト',
+    popularity: 1,
+    image: '/images/products/ac-team-battle.png',
+    role: '全て',
+    date: '2023 10月 ~ 現在',
+    techs: ['React', 'TypeScript'],
+    links: {
+      github: 'https://github.com/imaimai17468/atcoder-teambattle',
+    },
+  },
 ]
