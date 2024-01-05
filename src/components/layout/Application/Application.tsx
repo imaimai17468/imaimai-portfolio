@@ -12,6 +12,8 @@ import { ApplicationProps } from './Application.types'
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }: { product: Product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { cursorChange2Link, cursorChange2Default, cursorChange2Page } = useCursor()
+
   return (
     <>
       {isModalOpen && (
@@ -74,8 +76,10 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }: { product: Pro
       )}
       <button
         type='button'
-        className='cursor-pointer border border-emerald-400 p-2 text-sm md:text-xl'
+        className='cursor-pointer break-words border border-emerald-400 p-2 text-sm md:text-xl'
         onClick={() => setIsModalOpen(true)}
+        onMouseEnter={() => cursorChange2Page()}
+        onMouseLeave={() => cursorChange2Default()}
       >
         {product.logo ? <img src={product.logo} className='rounded-sm bg-gray-300 p-2' /> : <p>{product.name}</p>}
       </button>
@@ -83,25 +87,21 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }: { product: Pro
   )
 }
 
-const Application: React.FC<ApplicationProps> = ({ applicationRef }: ApplicationProps) => {
-  const { cursorChange2Link, cursorChange2Default, cursorChange2Page } = useCursor()
-
-  return (
-    <div
-      id='application'
-      className='my-12 w-9/10 bg-background bg-opacity-70 p-10 lg:my-48 lg:w-3/5 xl:w-1/2'
-      ref={applicationRef}
-    >
-      <h2 className='w-fit border-b-2 border-emerald-400 text-2xl'>App</h2>
-      <div className='my-5 flex flex-col items-center justify-between md:flex-row md:gap-20'>
-        <div className='grid w-full grid-cols-2 gap-4'>
-          {products.map((product) => (
-            <ProductCard key={product.name} product={product} />
-          ))}
-        </div>
+const Application: React.FC<ApplicationProps> = ({ applicationRef }: ApplicationProps) => (
+  <div
+    id='application'
+    className='my-12 w-9/10 bg-background bg-opacity-70 p-10 lg:my-48 lg:w-3/5 xl:w-1/2'
+    ref={applicationRef}
+  >
+    <h2 className='w-fit border-b-2 border-emerald-400 text-2xl'>App</h2>
+    <div className='my-5 flex flex-col items-center justify-between md:flex-row md:gap-20'>
+      <div className='grid w-full grid-cols-2 gap-4'>
+        {products.map((product) => (
+          <ProductCard key={product.name} product={product} />
+        ))}
       </div>
     </div>
-  )
-}
+  </div>
+)
 
 export default Application
