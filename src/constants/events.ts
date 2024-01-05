@@ -26,7 +26,11 @@ export const EVENTS = [
     content: 'CA主催 学生団体紹介LTに参加',
   },
   {
-    date: '2022-12',
+    date: '2023-2',
     content: 'SAIBASHI 学生エンジニア勉強会 登壇',
+  },
+  {
+    date: '2023-3',
+    content: '競プロer 大忘年会に参加',
   },
 ] as TimeTable[]
