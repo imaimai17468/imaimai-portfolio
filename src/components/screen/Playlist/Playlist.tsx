@@ -81,7 +81,7 @@ const Playlist = (props: PlaylistProps) => {
   return (
     <div
       className={`
-        absolute z-20 m-3 flex w-fit flex-col items-center justify-center rounded-xl bg-background px-3 pt-1 pb-5 text-sm shadow-lg shadow-gray-200 transition-all 
+        absolute z-20 m-3 flex w-fit flex-col items-center justify-center rounded-xl bg-background px-3 pb-5 pt-1 text-sm shadow-lg shadow-gray-200 transition-all
         ${isOpen ? 'opacity-100' : 'hidden opacity-0'}
         `}
     >
@@ -94,7 +94,7 @@ const Playlist = (props: PlaylistProps) => {
           }}
         >
           <span
-            className='m-auto cursor-pointer'
+            className='m-auto cursor-pointer text-gray-200'
             onClick={() => {
               setOpen(false)
             }}
@@ -106,7 +106,7 @@ const Playlist = (props: PlaylistProps) => {
         <div className='flex w-4/5 items-center rounded-sm bg-gray-200 px-2 text-slate-800'>///MUSIC/////////////</div>
       </div>
       <div className='h-fit w-fit border-x border-gray-200 px-5'>
-        <p className='mr-auto mb-8 w-fit border-b border-gray-200 py-1 text-gray-200'>imaimai&#39;s playlist</p>
+        <p className='mb-8 mr-auto w-fit border-b border-gray-200 py-1 text-gray-200'>imaimai&#39;s playlist</p>
         <Scratch togglePlay={togglePlay} />
       </div>
       <div className='mt-5 flex flex-row place-items-center gap-10 text-gray-200'>
@@ -129,7 +129,7 @@ const Playlist = (props: PlaylistProps) => {
           <span className='m-auto'>👈</span>
         </div>
         <div
-          className={`flex h-10 w-10 cursor-pointer justify-items-center rounded-full border-2 border-gray-200 transition-all hover:border-4 
+          className={`flex h-10 w-10 cursor-pointer justify-items-center rounded-full border-2 border-gray-200 transition-all hover:border-4
               ${isRandom ? 'border-orange-300' : ''}
               `}
           onClick={() => {
