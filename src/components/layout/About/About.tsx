@@ -36,6 +36,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
                 rel='noopener noreferrer'
                 onMouseEnter={cursorChange2Link}
                 onMouseLeave={cursorChange2Default}
+                aria-label='twitter'
               >
                 <SiTwitter className='text-xl text-emerald-400 transition-all hover:text-emerald-300' />
               </a>
@@ -45,6 +46,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
                 rel='noopener noreferrer'
                 onMouseEnter={cursorChange2Link}
                 onMouseLeave={cursorChange2Default}
+                aria-label='github'
               >
                 <SiGithub className='text-xl text-emerald-400 transition-all hover:text-emerald-300' />
               </a>

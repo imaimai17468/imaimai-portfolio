@@ -49,22 +49,22 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }: { product: Pro
                 <p className='w-fit border-b border-emerald-400 font-bold'>関連リンク</p>
                 <div className='flex gap-2'>
                   {product.links?.github && (
-                    <a href={product.links?.github} className='cursor-pointer'>
+                    <a href={product.links?.github} className='cursor-pointer' aria-label='github'>
                       <SiGithub size='2rem' />
                     </a>
                   )}
                   {product.links?.product && (
-                    <a href={product.links?.product} className='cursor-pointer'>
+                    <a href={product.links?.product} className='cursor-pointer' aria-label='link'>
                       <FiExternalLink size='2rem' />
                     </a>
                   )}
                   {product.links?.slide && (
-                    <a href={product.links?.slide} className='cursor-pointer'>
+                    <a href={product.links?.slide} className='cursor-pointer' aria-label='slide'>
                       <RiSlideshowLine size='2rem' />
                     </a>
                   )}
                   {product.links?.qiita && (
-                    <a href={product.links?.qiita} className='cursor-pointer'>
+                    <a href={product.links?.qiita} className='cursor-pointer' aria-label='qiita'>
                       <SiQiita size='2rem' />
                     </a>
                   )}
