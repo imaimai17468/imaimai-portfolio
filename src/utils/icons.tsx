@@ -23,6 +23,10 @@ import {
   SiGit,
   SiGithub,
   SiFigma,
+  SiStorybook,
+  SiSvelte,
+  SiAstro,
+  SiMui,
 } from 'react-icons/si'
 
 export const frontendIcons = [
@@ -36,6 +40,10 @@ export const frontendIcons = [
   { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
   { icon: <SiSass />, name: 'Sass' },
   { icon: <SiProcessingfoundation />, name: 'p5.js' },
+  { icon: <SiStorybook />, name: 'Storybook' },
+  { icon: <SiSvelte />, name: 'Svelte' },
+  { icon: <SiAstro />, name: 'Astro' },
+  { icon: <SiMui />, name: 'Material-UI' },
 ]
 
 export const backendIcons = [
