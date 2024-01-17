@@ -54,6 +54,7 @@ export const Header = () => {
               onClick={() => {
                 setIsPlaylistOpen(!isPlaylistOpen)
               }}
+              aria-label='playlist'
             >
               <BsMusicNoteList />
             </button>
