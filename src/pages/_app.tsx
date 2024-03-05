@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
+import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
 
@@ -18,9 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Analytics />
       <RecoilRoot>
-        <MainLayout>
-          <Component {...pageProps} />
-        </MainLayout>
+        <AnimatePresence mode='wait'>
+          <MainLayout>
+            <Component {...pageProps} />
+          </MainLayout>
+        </AnimatePresence>
       </RecoilRoot>
     </>
   )

@@ -1,27 +1,33 @@
 'use client'
 
-import React, { useState } from 'react'
+import { motion, useAnimation } from 'framer-motion'
+import React, { useEffect } from 'react'
 
 import { CharAnimation } from '@/components/common'
 
 import { SparklesCore } from '../SparklesCore'
 
 export const Loading: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  const controls = useAnimation()
 
-  setTimeout(() => {
-    setIsLoading(false)
-  }, 4000)
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      controls.start({ opacity: 0 })
+    }, 4000)
 
-  if (!isLoading) {
-    return null
-  }
+    return () => clearTimeout(timeout)
+  }, [controls])
 
   return (
-    <div className='absolute top-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-hidden rounded-md bg-black'>
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={controls}
+      transition={{ duration: 1 }}
+      className='absolute top-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-hidden rounded-md bg-black'
+    >
       <CharAnimation
-        char='Hello, World'
         className='relative z-20 text-center text-3xl font-bold text-white md:text-7xl'
+        char='Hello, world'
       />
       <div className='relative h-40 w-[40rem]'>
         <div className='absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm' />
@@ -38,6 +44,6 @@ export const Loading: React.FC = () => {
         />
         <div className='absolute inset-0 h-full w-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]' />
       </div>
-    </div>
+    </motion.div>
   )
 }
