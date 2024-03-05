@@ -23,7 +23,7 @@ export const Loading: React.FC = () => {
       initial={{ opacity: 1 }}
       animate={controls}
       transition={{ duration: 1 }}
-      className='absolute top-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-hidden rounded-md bg-background'
+      className='fixed top-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-hidden rounded-md bg-background'
     >
       <CharAnimation
         className='relative z-20 text-center text-3xl font-bold text-white md:text-7xl'
