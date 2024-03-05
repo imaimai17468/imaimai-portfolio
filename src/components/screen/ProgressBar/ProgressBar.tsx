@@ -11,7 +11,6 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   applicationRef,
   topRef,
   skillsRef,
-  contactRef,
 }: ProgressBarProps) => {
   const { scrollYProgress } = useScroll()
   const { scrollYProgress: topScrollYProgress } = useScroll({
@@ -29,10 +28,6 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   const { scrollYProgress: skillsScrollYProgress } = useScroll({
     target: skillsRef,
     offset: ['start end', 'end'],
-  })
-  const { scrollYProgress: contactScrollYProgress } = useScroll({
-    target: contactRef,
-    offset: ['start', 'end'],
   })
 
   const scaleY = useSpring(scrollYProgress, {
@@ -87,15 +82,6 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
           >
             <ProgressCircle progress={skillsScrollYProgress} />
             <span className='hidden transition-all hover:text-emerald-400 lg:block'>Skill</span>
-          </a>
-          <a
-            href=' #contact'
-            className='flex items-center'
-            onMouseEnter={cursorChange2Move}
-            onMouseLeave={cursorChange2Default}
-          >
-            <ProgressCircle progress={contactScrollYProgress} />
-            <span className='hidden transition-all hover:text-emerald-400 lg:block'>Contact</span>
           </a>
         </div>
       )}

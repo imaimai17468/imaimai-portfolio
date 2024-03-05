@@ -3,5 +3,4 @@ export interface ProgressBarProps {
   aboutRef?: React.RefObject<HTMLDivElement>
   applicationRef?: React.RefObject<HTMLDivElement>
   skillsRef?: React.RefObject<HTMLDivElement>
-  contactRef?: React.RefObject<HTMLDivElement>
 }
