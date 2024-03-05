@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil'
 
 import { About, Top, Skill, Contact, Application } from '@/components/layout'
 import { ProgressBar } from '@/components/screen'
+import { Loading } from '@/components/screen/Loading/Loading'
 import { cursorState } from '@/store/cursor'
 
 const IndexPage: NextPage = () => {
@@ -23,6 +24,7 @@ const IndexPage: NextPage = () => {
 
   return (
     <main className='font-mono text-gray-200'>
+      <Loading />
       <ProgressBar topRef={topRef} aboutRef={aboutRef} skillsRef={skillRef} />
       <div className='my-10 flex flex-col items-center gap-20'>
         <Top topRef={topRef} />

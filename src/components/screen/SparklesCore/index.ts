@@ -1,0 +1,1 @@
+export { SparklesCore } from './SparklesCore'
