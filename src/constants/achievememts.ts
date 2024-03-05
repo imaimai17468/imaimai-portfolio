@@ -30,15 +30,15 @@ export const ACHIEVEMENTS = [
     content: 'JPHACKSにてSumiMatchを発表',
   },
   {
-    date: '2023-7',
+    date: '2023-2',
     content: '技育CAMPキャラバンで調整ちゃんを発表',
   },
   {
-    date: '2024-8',
+    date: '2023-8',
     content: '技育展でFinanSu, TrackingParking, NUTMEG-Seedsを発表',
   },
   {
-    date: '2024-9',
+    date: '2023-9',
     content: '技育展でNUTMEG-Seedsが企業賞を受賞',
   },
 ] as TimeTable[]
