@@ -22,10 +22,6 @@ export const useVariants = () => {
       backgroundColor: '#A7FF83',
       x: mouseXPosition + 15,
       y: mouseYPosition - 60,
-      transition: {
-        type: 'spring',
-        mass: 0.6,
-      },
     },
     move: {
       opacity: 1,
@@ -64,4 +60,5 @@ export const spring = {
   type: 'spring',
   stiffness: 500,
   damping: 28,
+  mass: 1,
 }

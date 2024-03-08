@@ -1,24 +1,20 @@
 import { NextPage } from 'next'
 import React, { useRef, useEffect } from 'react'
-import { useRecoilState } from 'recoil'
 
 import { About, Top, Skill, Application } from '@/components/layout'
 import { ProgressBar } from '@/components/screen'
 import { Loading } from '@/components/screen/Loading/Loading'
-import { cursorState } from '@/store/cursor'
+import { useCursor } from '@/hooks/useCursor'
 
 const IndexPage: NextPage = () => {
   const topRef = useRef(null)
   const aboutRef = useRef(null)
   const applicationRef = useRef(null)
   const skillRef = useRef(null)
-  const [_, setCursor] = useRecoilState(cursorState)
+  const { cursorChange2Default } = useCursor()
 
   useEffect(() => {
-    setCursor({
-      text: '🐸',
-      variant: 'default',
-    })
+    cursorChange2Default()
   }, [])
 
   return (

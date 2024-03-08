@@ -1,8 +1,6 @@
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
-import { MdOutlineContactPage } from 'react-icons/md'
-import { useRecoilState } from 'recoil'
 
 import { Button } from '@/components/common'
 import { TimeTable } from '@/components/feature'
@@ -12,28 +10,14 @@ import { ACHIEVEMENTS } from '@/constants/achievememts'
 import { EVENTS } from '@/constants/events'
 import { HISTORIES } from '@/constants/histories'
 import { JOBS } from '@/constants/jobs'
-import { cursorState } from '@/store/cursor'
+import { useCursor } from '@/hooks/useCursor'
 
 const IndexPage: NextPage = () => {
   const router = useRouter()
-  const [_, setCursor] = useRecoilState(cursorState)
   const handleClickButton = () => {
     router.push('/')
   }
-
-  const cursorChange2Page = () => {
-    setCursor({
-      text: <MdOutlineContactPage className='text-3xl' />,
-      variant: 'page',
-    })
-  }
-
-  const cursorChange2Default = () => {
-    setCursor({
-      text: '🐸',
-      variant: 'default',
-    })
-  }
+  const { cursorChange2Page, cursorChange2Default } = useCursor()
 
   useEffect(() => {
     cursorChange2Default()
