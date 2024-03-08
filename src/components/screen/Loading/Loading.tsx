@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimation } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { CharAnimation } from '@/components/common'
 
@@ -9,10 +9,11 @@ import { SparklesCore } from '../SparklesCore'
 
 export const Loading: React.FC = () => {
   const controls = useAnimation()
+  const [style, setStyle] = useState({})
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      controls.start({ opacity: 0 })
+      controls.start({ opacity: 0 }).then(() => setStyle({ display: 'none' }))
     }, 4000)
 
     return () => clearTimeout(timeout)
@@ -24,6 +25,7 @@ export const Loading: React.FC = () => {
       animate={controls}
       transition={{ duration: 1 }}
       className='fixed top-0 z-50 flex h-screen w-screen flex-col items-center justify-center overflow-hidden rounded-md bg-background'
+      style={style}
     >
       <CharAnimation
         className='relative z-20 text-center text-3xl font-bold text-white md:text-7xl'
