@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 
+import { Icon } from '@/@types/icon'
+import { AnimatedTooltip } from '@/components/common/AnimatedTooltip'
 import { containerMotion } from '@/utils/motions'
 
-import { IconListProps } from './IconList.types'
+type IconListProps = {
+  icons: Icon[]
+}
 
 const IconList: React.FC<IconListProps> = ({ icons }: IconListProps) => (
   <motion.div
@@ -11,11 +15,10 @@ const IconList: React.FC<IconListProps> = ({ icons }: IconListProps) => (
     initial='hidden'
     whileInView='visible'
   >
-    {icons.map((icon, i) => (
-      <div key={i} className='flex flex-col items-center justify-center transition-all hover:text-emerald-400'>
+    {icons.map((icon) => (
+      <AnimatedTooltip key={icon.name} name={icon.name}>
         {icon.icon}
-        <p className='mt-2 text-center text-sm font-thin'>{icon.name}</p>
-      </div>
+      </AnimatedTooltip>
     ))}
   </motion.div>
 )
