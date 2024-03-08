@@ -18,8 +18,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }: MainLayoutPr
       <BackgroundAnimation />
       <motion.div
         variants={variants}
-        style={{ position: 'fixed' }}
-        className='invisible z-50 flex items-center justify-center rounded-full md:visible'
+        className='invisible fixed z-50 flex items-center justify-center rounded-full md:visible'
         animate={cursor.variant}
         transition={spring}
       >
