@@ -2,7 +2,7 @@ import { ModalProps } from './Modal.type'
 
 export const Modal = ({ children, title, onClose }: ModalProps) => (
   <div
-    className='absolute left-1/2 z-50 flex h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center'
+    className='fixed left-1/2 top-1/2 z-50 flex h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center'
     onClick={onClose}
   >
     <div
