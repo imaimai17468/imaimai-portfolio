@@ -13,7 +13,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }: MainLayoutPr
   const variants = useVariants()
 
   return (
-    <div>
+    <div className='font-mono text-gray-200'>
       <Header />
       <BackgroundAnimation />
       <motion.div

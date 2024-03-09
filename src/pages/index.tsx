@@ -18,7 +18,7 @@ const IndexPage: NextPage = () => {
   }, [])
 
   return (
-    <main className='font-mono text-gray-200'>
+    <div>
       <Loading />
       <ProgressBar topRef={topRef} aboutRef={aboutRef} skillsRef={skillRef} applicationRef={applicationRef} />
       <div className='my-10 flex flex-col items-center gap-20'>
@@ -27,7 +27,7 @@ const IndexPage: NextPage = () => {
         <Application applicationRef={applicationRef} />
         <Skill skillRef={skillRef} />
       </div>
-    </main>
+    </div>
   )
 }
 
