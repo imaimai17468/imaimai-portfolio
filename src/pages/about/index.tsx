@@ -12,7 +12,7 @@ import { HISTORIES } from '@/constants/histories'
 import { JOBS } from '@/constants/jobs'
 import { useCursor } from '@/hooks/useCursor'
 
-const IndexPage: NextPage = () => {
+const AboutPage: NextPage = () => {
   const router = useRouter()
   const handleClickButton = () => {
     router.push('/')
@@ -40,4 +40,4 @@ const IndexPage: NextPage = () => {
   )
 }
 
-export default IndexPage
+export default AboutPage
