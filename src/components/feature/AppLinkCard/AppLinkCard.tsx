@@ -8,8 +8,8 @@ import { CardBody, CardContainer, CardItem } from '@/components/common/3dCard'
 
 export function AppLinkCard() {
   return (
-    <CardContainer className='inter-var'>
-      <CardBody className='group/card relative flex  h-auto w-auto flex-col gap-4 rounded-xl border border-neutral-700 bg-background p-6'>
+    <CardContainer className='mx-8'>
+      <CardBody className='relative flex  h-auto w-auto flex-col gap-4 rounded-xl border border-neutral-700 bg-background p-6'>
         <CardItem translateZ='70' className='border-b-2 border-emerald-400 text-2xl font-bold'>
           Applications
         </CardItem>
