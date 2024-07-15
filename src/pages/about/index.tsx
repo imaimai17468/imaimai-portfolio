@@ -6,7 +6,6 @@ import { Button } from '@/components/common'
 import { TimeTable } from '@/components/feature'
 import { About } from '@/components/layout'
 import { ProgressBar } from '@/components/screen'
-import { ACHIEVEMENTS } from '@/constants/achievememts'
 import { EVENTS } from '@/constants/events'
 import { HISTORIES } from '@/constants/histories'
 import { JOBS } from '@/constants/jobs'
@@ -30,7 +29,6 @@ const AboutPage: NextPage = () => {
         <About />
         <TimeTable title='History' data={HISTORIES} />
         <TimeTable title='Job' data={JOBS} />
-        <TimeTable title='Achievement' data={ACHIEVEMENTS} />
         <TimeTable title='Event' data={EVENTS} />
         <Button onClick={handleClickButton} onMouseEnter={cursorChange2Page} onMouseLeave={cursorChange2Default}>
           TOP PAGE

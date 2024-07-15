@@ -2,12 +2,12 @@ import { TimeTable } from '@/@types/timeTable'
 
 export const EVENTS = [
   {
-    date: '2020-8',
-    content: '高専カンファレンス 参加',
+    date: '2019-8',
+    content: 'バンダイナムコスタジオ インターン',
   },
   {
-    date: '2020-11',
-    content: 'K-SEC 2020 冬 機械制御コース参加',
+    date: '2020-2023',
+    content: 'paiza株式会社 学習事業部 学生アルバイト',
   },
   {
     date: '2022~2024',
@@ -19,18 +19,38 @@ export const EVENTS = [
   },
   {
     date: '2022-8',
-    content: 'NUTMEG LTにてWriting Paperを発表',
+    content: '学生団体 Tech Uniに参加',
+  },
+  {
+    date: '2022-9',
+    content: '学生団体 STECHに参加',
+  },
+  {
+    date: '2022-9',
+    content: '株式会社StyleArts 長期インターン',
   },
   {
     date: '2022-10',
-    content: 'CA主催 学生団体紹介LTに参加',
+    content: 'R&D株式会社 長期インターン',
   },
   {
-    date: '2023-2',
-    content: 'SAIBASHI 学生エンジニア勉強会 登壇',
+    date: '2022-12',
+    content: '株式会社ゆめみ 内定',
   },
   {
-    date: '2023-3',
-    content: '競プロer 大忘年会に参加',
+    date: '2023-9',
+    content: '内定者アルバイトとして大型漫画サイトのリニューアルに参加',
+  },
+  {
+    date: '2023-9',
+    content: '技育展でNUTMEG-Seedsが企業賞を受賞',
+  },
+  {
+    date: '2024-1',
+    content: '内定者アルバイトとして大型ホームページのリニューアルに参加',
+  },
+  {
+    date: '2024-4',
+    content: '株式会社ゆめみ 入社',
   },
 ] as TimeTable[]
