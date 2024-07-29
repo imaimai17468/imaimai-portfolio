@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useState } from 'react'
 import { FiExternalLink } from 'react-icons/fi'
 import { RiSlideshowLine } from 'react-icons/ri'
@@ -16,7 +17,15 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }: { produ
       {isModalOpen && (
         <Modal title={product.name} onClose={() => setIsModalOpen(false)}>
           <div className='flex flex-col gap-4 md:flex-row'>
-            {product.image && <img src={product.image} alt={product.name} className='w-full rounded-md md:w-1/2' />}
+            {product.image && (
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={900}
+                height={600}
+                className='w-full rounded-md md:w-1/2'
+              />
+            )}
             <div className='flex flex-col gap-2'>
               <div className='flex flex-col gap-2'>
                 <p className='w-fit border-b border-emerald-400 font-bold'>開発人数</p>
@@ -97,12 +106,22 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }: { produ
       )}
       <button
         type='button'
-        className='cursor-pointer break-words border border-emerald-400 p-2 text-sm md:text-xl'
+        className='cursor-pointer break-words rounded-md border border-emerald-400 p-2 text-sm md:text-xl'
         onClick={() => setIsModalOpen(true)}
         onMouseEnter={() => cursorChange2Page()}
         onMouseLeave={() => cursorChange2Default()}
       >
-        {product.logo ? <img src={product.logo} className='rounded-sm bg-gray-300 p-2' /> : <p>{product.name}</p>}
+        {product.logo ? (
+          <Image
+            src={product.logo}
+            alt={`${product.name}のロゴ`}
+            width={200}
+            height={100}
+            className='h-full w-full rounded-sm bg-gray-300 p-2'
+          />
+        ) : (
+          <p>{product.name}</p>
+        )}
       </button>
     </>
   )
