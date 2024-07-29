@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { FaBirthdayCake } from 'react-icons/fa'
-import { GiMaterialsScience, GiPaintBrush } from 'react-icons/gi'
+import { GiPaintBrush } from 'react-icons/gi'
 import { SiTwitter, SiGithub } from 'react-icons/si'
 
 import { CharAnimation, Button } from '@/components/common'
@@ -52,13 +52,9 @@ const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
               </a>
             </div>
           </div>
-          <p className='text-gray-400'>長岡技術科学大学 電気電子情報工学課程 4年</p>
+          <p className='text-gray-400'>株式会社ゆめみ</p>
           <p className='text-gray-400'>フロントエンドエンジニア</p>
           <motion.div className='my-3' variants={containerMotion} initial='hidden' whileInView='visible'>
-            <motion.div className='flex items-center gap-3' variants={childMotion}>
-              <GiMaterialsScience />
-              <span>脳情報工学研究室</span>
-            </motion.div>
             <motion.div className='flex items-center gap-3' variants={childMotion}>
               <FaBirthdayCake />
               <span>2001/08/01</span>
