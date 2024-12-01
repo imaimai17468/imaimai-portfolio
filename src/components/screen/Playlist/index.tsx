@@ -4,7 +4,10 @@ import useSound from "use-sound";
 import { Scratch } from "@/components/common";
 import { SOUNDS } from "@/constants/sounds";
 
-import type { PlaylistProps } from "./type";
+export interface PlaylistProps {
+	setOpen: (value: boolean) => void;
+	isOpen: boolean;
+}
 
 const MAX_LENGTH = 15;
 

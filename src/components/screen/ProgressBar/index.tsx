@@ -4,7 +4,12 @@ import { useMemo } from "react";
 import { ProgressCircle } from "@/components/common";
 import { useCursor } from "@/hooks/useCursor";
 
-import type { ProgressBarProps } from "./types";
+export interface ProgressBarProps {
+	topRef?: React.RefObject<HTMLDivElement>;
+	aboutRef?: React.RefObject<HTMLDivElement>;
+	applicationRef?: React.RefObject<HTMLDivElement>;
+	skillsRef?: React.RefObject<HTMLDivElement>;
+}
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
 	aboutRef,
