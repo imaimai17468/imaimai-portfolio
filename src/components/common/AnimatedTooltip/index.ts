@@ -1,1 +1,0 @@
-export { AnimatedTooltip } from "./AnimatedTooltip";

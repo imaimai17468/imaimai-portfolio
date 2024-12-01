@@ -2,9 +2,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-import type { ScratchProps } from "./Scratch.type";
+import type { ScratchProps } from "./type";
 
-const Scratch = ({ togglePlay, className, style }: ScratchProps) => {
+export const Scratch: React.FC<ScratchProps> = ({
+	togglePlay,
+	className,
+	style,
+}) => {
 	const [isScratched, setIsScratched] = useState(false);
 
 	const handleScratch = () => {
@@ -50,5 +54,3 @@ const Scratch = ({ togglePlay, className, style }: ScratchProps) => {
 		</div>
 	);
 };
-
-export default Scratch;

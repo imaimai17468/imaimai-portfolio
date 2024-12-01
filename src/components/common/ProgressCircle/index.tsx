@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import type { ProgressCircleProps } from "./ProgressCircle.types";
+import type { ProgressCircleProps } from "./types";
 
 export const ProgressCircle: React.FC<ProgressCircleProps> = ({
 	progress,
@@ -25,5 +25,3 @@ export const ProgressCircle: React.FC<ProgressCircleProps> = ({
 		</svg>
 	</figure>
 );
-
-export default ProgressCircle;

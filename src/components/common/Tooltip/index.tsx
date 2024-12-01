@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import type { TooltipProps } from "./Tooltip.type";
+import type { TooltipProps } from "./type";
 
 export const Tooltip: React.FC<TooltipProps> = ({
 	children,
@@ -36,5 +36,3 @@ export const Tooltip: React.FC<TooltipProps> = ({
 		</div>
 	);
 };
-
-export default Tooltip;

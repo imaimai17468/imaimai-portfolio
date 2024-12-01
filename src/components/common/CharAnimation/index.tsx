@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 import { childMotion, containerMotion } from "@/utils/motions";
 
-import type { CharAnimationProps } from "./CharAnimation.types";
+import type { CharAnimationProps } from "./types";
 
-const CharAnimation: React.FC<CharAnimationProps> = ({
+export const CharAnimation: React.FC<CharAnimationProps> = ({
 	char,
 	className = "",
 }: CharAnimationProps) => (
@@ -21,5 +21,3 @@ const CharAnimation: React.FC<CharAnimationProps> = ({
 		))}
 	</motion.div>
 );
-
-export default CharAnimation;

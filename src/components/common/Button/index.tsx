@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-import s from "./Button.module.css";
-import type { ButtonProps } from "./Button.types";
+import s from "./index.module.css";
+import type { ButtonProps } from "./types";
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
 	children,
 	className = "",
 	onClick,
@@ -30,5 +30,3 @@ const Button: React.FC<ButtonProps> = ({
 		{children}
 	</motion.button>
 );
-
-export default Button;

@@ -1,6 +1,6 @@
-import type { ModalProps } from "./Modal.type";
+import type { ModalProps } from "./type";
 
-export const Modal = ({ children, title, onClose }: ModalProps) => (
+export const Modal: React.FC<ModalProps> = ({ children, title, onClose }) => (
 	<button
 		type="button"
 		className="fixed cursor-default left-1/2 top-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 items-center justify-center"
@@ -25,5 +25,3 @@ export const Modal = ({ children, title, onClose }: ModalProps) => (
 		</div>
 	</button>
 );
-
-export default Modal;

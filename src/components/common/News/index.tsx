@@ -4,9 +4,9 @@ import { FaFrog } from "react-icons/fa";
 
 import { NEWS_REVERSE } from "@/constants/news";
 
-import type { NewsProps } from "./News.type";
+import type { NewsProps } from "./type";
 
-const NewsTab = () => (
+const NewsTab: React.FC = () => (
 	<div className="relative z-0 flex max-h-40 flex-col gap-3 overflow-scroll border border-gray-200 bg-background p-2 text-xs">
 		{NEWS_REVERSE.map((news, index) => (
 			<div key={news.date}>
@@ -49,7 +49,7 @@ const NewsTab = () => (
 	</div>
 );
 
-export const News = ({ mode = "relative" }: NewsProps) => {
+export const News: React.FC<NewsProps> = ({ mode = "relative" }) => {
 	const recentNews = useMemo(() => NEWS_REVERSE[0], []);
 	const [isAnimationStart, setIsAnimationStart] = useState(false);
 
@@ -98,5 +98,3 @@ export const News = ({ mode = "relative" }: NewsProps) => {
 		</div>
 	);
 };
-
-export default News;
