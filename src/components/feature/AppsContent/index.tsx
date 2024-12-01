@@ -4,7 +4,7 @@ import { useCursor } from "@/hooks/useCursor";
 import Link from "next/link";
 import { ProductCard } from "./ProductCard";
 
-export const Apps: React.FC = () => {
+export const AppsContent: React.FC = () => {
 	const { cursorChange2Page, cursorChange2Default } = useCursor();
 	return (
 		<div className="flex flex-col items-center">
