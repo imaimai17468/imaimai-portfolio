@@ -1,51 +1,21 @@
 import { Drag, News } from "@/components/common";
+import dayjs from "dayjs";
 import { useEffect, useMemo, useState } from "react";
 import { BsMusicNoteList } from "react-icons/bs";
 import { Playlist } from "../Playlist";
 
 export const Header: React.FC = () => {
-	const [time, setTime] = useState(() => {
-		const date = new Date();
-		const hour = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
-		const minute =
-			date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-		return `${hour}:${minute}`;
-	});
+	const [time, setTime] = useState(() => dayjs().format("HH:mm"));
 
 	const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
 
 	const date = useMemo(() => {
-		const date = new Date();
-		const day = date.getDay();
-		const dayOfMonth = date.getDate();
-		const month = date.getMonth() + 1;
-		const year = date.getFullYear();
-		const monthName = [
-			"Jan",
-			"Feb",
-			"Mar",
-			"Apr",
-			"May",
-			"Jun",
-			"Jul",
-			"Aug",
-			"Sep",
-			"Oct",
-			"Nov",
-			"Dec",
-		];
-		const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-		return `${week[day]} ${dayOfMonth} ${monthName[month]} ${year}`;
+		return dayjs().format("ddd D MMM YYYY");
 	}, []);
 
 	useEffect(() => {
 		const timer = setInterval(() => {
-			const date = new Date();
-			const hour =
-				date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
-			const minute =
-				date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-			setTime(`${hour}:${minute}`);
+			setTime(dayjs().format("HH:mm"));
 		}, 1000 * 60);
 		return () => clearInterval(timer);
 	}, []);
