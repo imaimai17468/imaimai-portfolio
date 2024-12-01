@@ -1,9 +1,8 @@
+import { About, Application, Skill, Top } from "@/components/feature";
+import { Loading, ProgressBar } from "@/components/screen";
+import { useCursor } from "@/hooks/useCursor";
 import type { NextPage } from "next";
 import { useEffect, useRef } from "react";
-
-import { About, Application, Skill, Top } from "@/components/feature";
-import { ProgressBar } from "@/components/screen";
-import { useCursor } from "@/hooks/useCursor";
 
 const IndexPage: NextPage = () => {
 	const topRef = useRef(null);
@@ -18,7 +17,7 @@ const IndexPage: NextPage = () => {
 
 	return (
 		<div>
-			{/* <Loading /> */}
+			<Loading />
 			<ProgressBar
 				topRef={topRef}
 				aboutRef={aboutRef}
