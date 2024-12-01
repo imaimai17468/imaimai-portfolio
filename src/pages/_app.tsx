@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import { RecoilRoot } from "recoil";
 
-import { MainLayout } from "@/components/layout";
+import { MainLayout } from "@/components/layout/MainLayout";
 
 import type { AppProps } from "next/app";
 

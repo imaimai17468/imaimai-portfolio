@@ -6,7 +6,7 @@ import { Header } from "@/components/screen/Header";
 import { spring, useVariants } from "@/hooks/useVariants";
 import { cursorState } from "@/store/cursor";
 
-import type { MainLayoutProps } from "./MainLayout.type";
+import type { MainLayoutProps } from "./type";
 
 export const MainLayout: React.FC<MainLayoutProps> = ({
 	children,
@@ -30,5 +30,3 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
 		</div>
 	);
 };
-
-export default MainLayout;
