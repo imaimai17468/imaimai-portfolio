@@ -1,1 +1,1 @@
-export { default as CharAnimation } from './CharAnimation'
+export { default as CharAnimation } from "./CharAnimation";

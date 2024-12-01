@@ -1,15 +1,17 @@
-import { RefObject } from 'react'
+import type { RefObject } from "react";
 
-import { AppLinkCard } from '@/components/feature/AppLinkCard'
+import { AppLinkCard } from "@/components/feature/AppLinkCard";
 
 export interface ApplicationProps {
-  applicationRef?: RefObject<HTMLDivElement>
+	applicationRef?: RefObject<HTMLDivElement>;
 }
 
-const Application: React.FC<ApplicationProps> = ({ applicationRef }: ApplicationProps) => (
-  <div ref={applicationRef}>
-    <AppLinkCard />
-  </div>
-)
+const Application: React.FC<ApplicationProps> = ({
+	applicationRef,
+}: ApplicationProps) => (
+	<div ref={applicationRef}>
+		<AppLinkCard />
+	</div>
+);
 
-export default Application
+export default Application;

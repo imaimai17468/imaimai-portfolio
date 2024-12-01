@@ -1,6 +1,6 @@
-import { TimeTable } from '@/@types/timeTable'
+import type { TimeTable } from "@/@types/timeTable";
 
 export type TimeTableProps = {
-  title: string
-  data: TimeTable[]
-}
+	title: string;
+	data: TimeTable[];
+};

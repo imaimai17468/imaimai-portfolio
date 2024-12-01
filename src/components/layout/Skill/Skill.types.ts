@@ -1,3 +1,3 @@
 export interface SkillProps {
-  skillRef: React.RefObject<HTMLDivElement>
+	skillRef: React.RefObject<HTMLDivElement>;
 }

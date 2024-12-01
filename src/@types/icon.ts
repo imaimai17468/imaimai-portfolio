@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
+import type { ReactNode } from "react";
 
 export interface Icon {
-  name: string
-  icon: ReactNode
+	name: string;
+	icon: ReactNode;
 }

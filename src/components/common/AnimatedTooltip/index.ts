@@ -1,1 +1,1 @@
-export { AnimatedTooltip } from './AnimatedTooltip'
+export { AnimatedTooltip } from "./AnimatedTooltip";

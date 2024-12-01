@@ -1,3 +1,3 @@
 export interface NewsProps {
-  mode?: 'absolute' | 'relative'
+	mode?: "absolute" | "relative";
 }

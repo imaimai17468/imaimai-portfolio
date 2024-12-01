@@ -1,4 +1,4 @@
 export interface TooltipProps {
-  children: React.ReactNode
-  text: string
+	children: React.ReactNode;
+	text: string;
 }

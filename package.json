@@ -8,7 +8,7 @@
 		"start": "next start",
 		"prepare": "lefthook install",
 		"format": "biome format --write --no-errors-on-unmatched ./src",
-		"check": "biome check --write --unsafe --no-errors-on-unmatched ./src",
+		"check": "biome check --write --no-errors-on-unmatched ./src",
 		"type": "tsc --noEmit"
 	},
 	"dependencies": {

@@ -1,1 +1,1 @@
-export * from './3dCard'
+export * from "./3dCard";

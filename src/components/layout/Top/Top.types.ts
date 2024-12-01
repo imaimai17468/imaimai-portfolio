@@ -1,3 +1,3 @@
 export interface TopProps {
-  topRef: React.RefObject<HTMLDivElement>
+	topRef: React.RefObject<HTMLDivElement>;
 }

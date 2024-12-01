@@ -1,1 +1,1 @@
-export { AppLinkCard } from './AppLinkCard'
+export { AppLinkCard } from "./AppLinkCard";

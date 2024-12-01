@@ -1,3 +1,3 @@
 export interface MainLayoutProps {
-    children: React.ReactNode;
+	children: React.ReactNode;
 }

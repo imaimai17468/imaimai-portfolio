@@ -1,6 +1,6 @@
 // tailwindのcolor
 
 export interface CharAnimationProps {
-  char: string
-  className?: string
+	char: string;
+	className?: string;
 }

@@ -1,1 +1,1 @@
-export { TimeTable } from './TimeTable'
+export { TimeTable } from "./TimeTable";

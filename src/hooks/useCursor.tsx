@@ -1,45 +1,46 @@
-import { AiOutlineLink } from 'react-icons/ai'
-import { CgScrollV } from 'react-icons/cg'
-import { MdOutlineContactPage } from 'react-icons/md'
-import { useRecoilState } from 'recoil'
+import { useCallback } from "react";
+import { AiOutlineLink } from "react-icons/ai";
+import { CgScrollV } from "react-icons/cg";
+import { MdOutlineContactPage } from "react-icons/md";
+import { useRecoilState } from "recoil";
 
-import { cursorState } from '@/store/cursor'
+import { cursorState } from "@/store/cursor";
 
 export const useCursor = () => {
-  const [_, setCursor] = useRecoilState(cursorState)
+	const [_, setCursor] = useRecoilState(cursorState);
 
-  const cursorChange2Link = () => {
-    setCursor({
-      text: <AiOutlineLink className='text-3xl' />,
-      variant: 'link',
-    })
-  }
+	const cursorChange2Link = useCallback(() => {
+		setCursor({
+			text: <AiOutlineLink className="text-3xl" />,
+			variant: "link",
+		});
+	}, [setCursor]);
 
-  const cursorChange2Default = () => {
-    setCursor({
-      text: '🐸',
-      variant: 'default',
-    })
-  }
+	const cursorChange2Default = useCallback(() => {
+		setCursor({
+			text: "🐸",
+			variant: "default",
+		});
+	}, [setCursor]);
 
-  const cursorChange2Page = () => {
-    setCursor({
-      text: <MdOutlineContactPage className='text-3xl' />,
-      variant: 'page',
-    })
-  }
+	const cursorChange2Page = useCallback(() => {
+		setCursor({
+			text: <MdOutlineContactPage className="text-3xl" />,
+			variant: "page",
+		});
+	}, [setCursor]);
 
-  const cursorChange2Move = () => {
-    setCursor({
-      text: <CgScrollV className='text-3xl' />,
-      variant: 'move',
-    })
-  }
+	const cursorChange2Move = useCallback(() => {
+		setCursor({
+			text: <CgScrollV className="text-3xl" />,
+			variant: "move",
+		});
+	}, [setCursor]);
 
-  return {
-    cursorChange2Link,
-    cursorChange2Default,
-    cursorChange2Page,
-    cursorChange2Move,
-  }
-}
+	return {
+		cursorChange2Link,
+		cursorChange2Default,
+		cursorChange2Page,
+		cursorChange2Move,
+	};
+};
