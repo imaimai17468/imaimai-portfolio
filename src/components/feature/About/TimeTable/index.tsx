@@ -1,9 +1,6 @@
-import type { TimeTableProps } from "./TimeTable.types";
+import type { TimeTableProps } from "./types";
 
-const TimeTable: React.FC<TimeTableProps> = ({
-	title,
-	data,
-}: TimeTableProps) => (
+export const TimeTable: React.FC<TimeTableProps> = ({ title, data }) => (
 	<div className="my-12 w-9/10 bg-background bg-opacity-70 p-4 md:p-10 lg:w-3/5 xl:w-1/2">
 		<h1 className="w-fit border-b-2 border-emerald-400 text-2xl">{title}</h1>
 		<table className="my-5 w-full table-auto">
@@ -32,4 +29,3 @@ const TimeTable: React.FC<TimeTableProps> = ({
 		</table>
 	</div>
 );
-export default TimeTable;

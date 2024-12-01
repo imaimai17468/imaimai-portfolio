@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import type { DragProps } from "./Drag.type";
+import type { DragProps } from "./type";
 
 export const Drag: React.FC<DragProps> = ({
 	children,

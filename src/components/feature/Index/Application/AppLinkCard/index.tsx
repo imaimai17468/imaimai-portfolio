@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { CardBody, CardContainer, CardItem } from "@/components/common/3dCard";
 
-export function AppLinkCard() {
+export const AppLinkCard: React.FC = () => {
 	return (
 		<CardContainer className="mx-8">
 			<CardBody className="relative flex  h-auto w-auto flex-col gap-4 rounded-xl border border-neutral-700 bg-background p-6">
@@ -43,4 +43,4 @@ export function AppLinkCard() {
 			</CardBody>
 		</CardContainer>
 	);
-}
+};

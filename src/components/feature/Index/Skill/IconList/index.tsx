@@ -8,7 +8,7 @@ type IconListProps = {
 	icons: Icon[];
 };
 
-const IconList: React.FC<IconListProps> = ({ icons }: IconListProps) => (
+export const IconList: React.FC<IconListProps> = ({ icons }) => (
 	<motion.div
 		className="my-5 grid grid-cols-3 justify-items-center gap-y-5 text-4xl md:grid-cols-6 md:gap-y-10"
 		variants={containerMotion}
@@ -22,5 +22,3 @@ const IconList: React.FC<IconListProps> = ({ icons }: IconListProps) => (
 		))}
 	</motion.div>
 );
-
-export default IconList;

@@ -5,10 +5,10 @@ import {
 	toolIcons,
 } from "@/utils/icons";
 
-import { IconList } from "../IconList";
-import type { SkillProps } from "./Skill.types";
+import { IconList } from "./IconList";
+import type { SkillProps } from "./types";
 
-const Skill: React.FC<SkillProps> = ({ skillRef }: SkillProps) => (
+export const Skill: React.FC<SkillProps> = ({ skillRef }) => (
 	<div
 		id="skill"
 		className="w-9/10 bg-background bg-opacity-70 p-10 lg:w-3/5 xl:w-1/2"
@@ -36,5 +36,3 @@ const Skill: React.FC<SkillProps> = ({ skillRef }: SkillProps) => (
 		</div>
 	</div>
 );
-
-export default Skill;

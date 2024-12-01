@@ -3,9 +3,9 @@ import { BsMouseFill } from "react-icons/bs";
 
 import { CharAnimation } from "@/components/common";
 
-import type { TopProps } from "./Top.types";
+import type { TopProps } from "./types";
 
-const Top: React.FC<TopProps> = ({ topRef }: TopProps) => {
+export const Top: React.FC<TopProps> = ({ topRef }: TopProps) => {
 	const timeText = useMemo(() => {
 		const date = new Date();
 		const hour = date.getHours();
@@ -39,5 +39,3 @@ const Top: React.FC<TopProps> = ({ topRef }: TopProps) => {
 		</div>
 	);
 };
-
-export default Top;

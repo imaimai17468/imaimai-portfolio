@@ -5,3 +5,4 @@ export { Tooltip } from "./Tooltip";
 export { CharAnimation } from "./CharAnimation";
 export { ProgressCircle } from "./ProgressCircle";
 export { Button } from "./Button";
+export { Drag } from "./Drag";

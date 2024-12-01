@@ -1,9 +1,6 @@
+import { Drag, News } from "@/components/common";
 import { useEffect, useMemo, useState } from "react";
 import { BsMusicNoteList } from "react-icons/bs";
-
-import { News } from "@/components/common";
-import { Drag } from "@/components/layout/Drag";
-
 import { Playlist } from "../Playlist";
 
 export const Header = () => {

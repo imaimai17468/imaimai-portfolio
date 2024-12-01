@@ -8,9 +8,7 @@ import type { Product } from "@/@types/product";
 import { Modal } from "@/components/common";
 import { useCursor } from "@/hooks/useCursor";
 
-export const ProductCard: React.FC<{ product: Product }> = ({
-	product,
-}: { product: Product }) => {
+export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const { cursorChange2Link, cursorChange2Default, cursorChange2Page } =
 		useCursor();

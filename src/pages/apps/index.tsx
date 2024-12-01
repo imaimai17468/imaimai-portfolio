@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/common";
-import { ProductCard } from "@/components/feature/ProductsCard";
+import { ProductCard } from "@/components/feature/Apps/ProductCard";
 import { products } from "@/constants/products";
 import { useCursor } from "@/hooks/useCursor";
 

@@ -10,9 +10,9 @@ import { Button, CharAnimation } from "@/components/common";
 import { useCursor } from "@/hooks/useCursor";
 import { childMotion, containerMotion } from "@/utils/motions";
 
-import type { AboutProps } from "./About.types";
+import type { AboutProps } from "./types";
 
-const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
+export const About: React.FC<AboutProps> = ({ aboutRef }) => {
 	const router = useRouter();
 	const { cursorChange2Link, cursorChange2Default, cursorChange2Page } =
 		useCursor();
@@ -106,5 +106,3 @@ const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
 		</div>
 	);
 };
-
-export default About;
