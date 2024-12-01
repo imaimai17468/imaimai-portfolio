@@ -1,4 +1,4 @@
-import useMouse from "./useMouse";
+import { useMouse } from "./useMouse";
 
 export const useVariants = () => {
 	const mousePosition = useMouse();
