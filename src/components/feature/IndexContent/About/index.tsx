@@ -1,16 +1,17 @@
+import { Button, CharAnimation } from "@/components/common";
+import { useCursor } from "@/hooks/useCursor";
+import { childMotion, containerMotion } from "@/utils/motions";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { type RefObject, useMemo } from "react";
 import { FaBirthdayCake } from "react-icons/fa";
 import { GiPaintBrush } from "react-icons/gi";
 import { SiGithub, SiTwitter } from "react-icons/si";
 
-import { Button, CharAnimation } from "@/components/common";
-import { useCursor } from "@/hooks/useCursor";
-import { childMotion, containerMotion } from "@/utils/motions";
-
-import type { AboutProps } from "./types";
+export interface AboutProps {
+	aboutRef?: RefObject<HTMLDivElement>;
+}
 
 export const About: React.FC<AboutProps> = ({ aboutRef }) => {
 	const router = useRouter();

@@ -1,11 +1,12 @@
+import { CharAnimation } from "@/components/common";
 import { useMemo } from "react";
 import { BsMouseFill } from "react-icons/bs";
 
-import { CharAnimation } from "@/components/common";
+export interface TopProps {
+	topRef: React.RefObject<HTMLDivElement>;
+}
 
-import type { TopProps } from "./types";
-
-export const Top: React.FC<TopProps> = ({ topRef }: TopProps) => {
+export const Top: React.FC<TopProps> = ({ topRef }) => {
 	const timeText = useMemo(() => {
 		const date = new Date();
 		const hour = date.getHours();

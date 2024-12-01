@@ -4,9 +4,11 @@ import {
 	otherIcons,
 	toolIcons,
 } from "@/utils/icons";
-
 import { IconList } from "./IconList";
-import type { SkillProps } from "./types";
+
+export interface SkillProps {
+	skillRef: React.RefObject<HTMLDivElement>;
+}
 
 export const Skill: React.FC<SkillProps> = ({ skillRef }) => (
 	<div
