@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
-import type { TooltipProps } from "./type";
+export interface TooltipProps {
+	children: React.ReactNode;
+	text: string;
+}
 
 export const Tooltip: React.FC<TooltipProps> = ({
 	children,

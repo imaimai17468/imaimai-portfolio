@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import type { MotionValue } from "framer-motion";
 
-import type { ProgressCircleProps } from "./types";
+export interface ProgressCircleProps {
+	progress: MotionValue<number>;
+}
 
 export const ProgressCircle: React.FC<ProgressCircleProps> = ({
 	progress,

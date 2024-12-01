@@ -1,8 +1,10 @@
+import { childMotion, containerMotion } from "@/utils/motions";
 import { motion } from "framer-motion";
 
-import { childMotion, containerMotion } from "@/utils/motions";
-
-import type { CharAnimationProps } from "./types";
+export interface CharAnimationProps {
+	char: string;
+	className?: string;
+}
 
 export const CharAnimation: React.FC<CharAnimationProps> = ({
 	char,

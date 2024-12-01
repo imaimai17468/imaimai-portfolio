@@ -1,10 +1,11 @@
+import { NEWS_REVERSE } from "@/constants/news";
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { FaFrog } from "react-icons/fa";
 
-import { NEWS_REVERSE } from "@/constants/news";
-
-import type { NewsProps } from "./type";
+export interface NewsProps {
+	mode?: "absolute" | "relative";
+}
 
 const NewsTab: React.FC = () => (
 	<div className="relative z-0 flex max-h-40 flex-col gap-3 overflow-scroll border border-gray-200 bg-background p-2 text-xs">

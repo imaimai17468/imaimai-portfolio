@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-import type { ScratchProps } from "./type";
+export interface ScratchProps {
+	className?: string;
+	style?: React.CSSProperties;
+	togglePlay?: () => void;
+}
 
 export const Scratch: React.FC<ScratchProps> = ({
 	togglePlay,

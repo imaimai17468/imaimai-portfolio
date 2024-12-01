@@ -1,4 +1,8 @@
-import type { ModalProps } from "./type";
+export interface ModalProps {
+	children: React.ReactNode;
+	onClose: () => void;
+	title: string;
+}
 
 export const Modal: React.FC<ModalProps> = ({ children, title, onClose }) => (
 	<button
