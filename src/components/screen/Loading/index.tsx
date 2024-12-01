@@ -1,11 +1,9 @@
 "use client";
 
+import { CharAnimation } from "@/components/common";
 import { motion, useAnimation } from "framer-motion";
 import type React from "react";
 import { useEffect, useState } from "react";
-
-import { CharAnimation } from "@/components/common";
-
 import { SparklesCore } from "../SparklesCore";
 
 export const Loading: React.FC = () => {

@@ -4,13 +4,11 @@ import useSound from "use-sound";
 import { Scratch } from "@/components/common";
 import { SOUNDS } from "@/constants/sounds";
 
-import type { PlaylistProps } from "./Playlist.type";
+import type { PlaylistProps } from "./type";
 
 const MAX_LENGTH = 15;
 
-const Playlist = (props: PlaylistProps) => {
-	const { setOpen, isOpen } = props;
-
+export const Playlist: React.FC<PlaylistProps> = ({ setOpen, isOpen }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [nowIndex, setNowIndex] = useState(0);
 	const [isRandom, setIsRandom] = useState(false);
@@ -149,5 +147,3 @@ const Playlist = (props: PlaylistProps) => {
 		</div>
 	);
 };
-
-export default Playlist;

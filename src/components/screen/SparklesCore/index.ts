@@ -1,1 +1,0 @@
-export { SparklesCore } from "./SparklesCore";

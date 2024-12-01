@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import GLOBE from "vanta/dist/vanta.globe.min";
 
-const BackgroundAnimation = () => {
+export const BackgroundAnimation: React.FC = () => {
 	const vantaRef = useRef(null);
 
 	useEffect(() => {
@@ -40,5 +40,3 @@ const BackgroundAnimation = () => {
 		/>
 	);
 };
-
-export default BackgroundAnimation;

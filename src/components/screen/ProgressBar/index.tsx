@@ -4,14 +4,14 @@ import { useMemo } from "react";
 import { ProgressCircle } from "@/components/common";
 import { useCursor } from "@/hooks/useCursor";
 
-import type { ProgressBarProps } from "./ProgressBar.types";
+import type { ProgressBarProps } from "./types";
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
 	aboutRef,
 	applicationRef,
 	topRef,
 	skillsRef,
-}: ProgressBarProps) => {
+}) => {
 	const { scrollYProgress } = useScroll();
 	const { scrollYProgress: topScrollYProgress } = useScroll({
 		target: topRef,
@@ -108,5 +108,3 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
 		</div>
 	);
 };
-
-export default ProgressBar;

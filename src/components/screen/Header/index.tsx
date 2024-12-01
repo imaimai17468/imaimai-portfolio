@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { BsMusicNoteList } from "react-icons/bs";
 import { Playlist } from "../Playlist";
 
-export const Header = () => {
+export const Header: React.FC = () => {
 	const [time, setTime] = useState(() => {
 		const date = new Date();
 		const hour = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
@@ -89,5 +89,3 @@ export const Header = () => {
 		</>
 	);
 };
-
-export default Header;
