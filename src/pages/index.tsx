@@ -1,37 +1,8 @@
-import { About, Application, Skill, Top } from "@/components/feature";
-import { Loading, ProgressBar } from "@/components/screen";
-import { useCursor } from "@/hooks/useCursor";
+import { IndexContent } from "@/components/feature/IndexContent";
 import type { NextPage } from "next";
-import { useEffect, useRef } from "react";
 
 const IndexPage: NextPage = () => {
-	const topRef = useRef(null);
-	const aboutRef = useRef(null);
-	const applicationRef = useRef(null);
-	const skillRef = useRef(null);
-	const { cursorChange2Default } = useCursor();
-
-	useEffect(() => {
-		cursorChange2Default();
-	}, [cursorChange2Default]);
-
-	return (
-		<div>
-			<Loading />
-			<ProgressBar
-				topRef={topRef}
-				aboutRef={aboutRef}
-				skillsRef={skillRef}
-				applicationRef={applicationRef}
-			/>
-			<div className="my-10 flex flex-col items-center gap-20">
-				<Top topRef={topRef} />
-				<About aboutRef={aboutRef} />
-				<Application applicationRef={applicationRef} />
-				<Skill skillRef={skillRef} />
-			</div>
-		</div>
-	);
+	return <IndexContent />;
 };
 
 export default IndexPage;

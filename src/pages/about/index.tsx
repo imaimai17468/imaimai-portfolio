@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 import { Button } from "@/components/common";
 import { TimeTable } from "@/components/feature/About/TimeTable";
-import { About } from "@/components/feature/Index/About";
+import { About } from "@/components/feature/IndexContent/About";
 import { ProgressBar } from "@/components/screen";
 import { EVENTS } from "@/constants/events";
 import { HISTORIES } from "@/constants/histories";

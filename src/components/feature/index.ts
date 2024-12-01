@@ -1,4 +1,4 @@
-export { About } from "./Index/About";
-export { Application } from "./Index/Application";
-export { Skill } from "./Index/Skill";
-export { Top } from "./Index/Top";
+export { About } from "./IndexContent/About";
+export { Application } from "./IndexContent/Application";
+export { Skill } from "./IndexContent/Skill";
+export { Top } from "./IndexContent/Top";
